@@ -1,7 +1,7 @@
 import re, json
 from parts import *
 
-src = open("/home/claude/site-build/legacy/index.html").read()
+src = open("./legacy-index.html").read()
 
 # ---- body between old header and old footer ----
 body = src.split("</header>", 1)[1].split("<footer", 1)[0]

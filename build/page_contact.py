@@ -11,7 +11,7 @@ INTENTS = [
  ("project", "Discuss a project", "A defined engagement with specific deliverables: Brand Voice AI foundations, website strategy, customer journey mapping, AI workflow planning, messaging systems, content operations, or training development.", "Start the conversation", mail("Project inquiry", "Hi John,\n\nThe project I have in mind: \n\nTimeline: \n\nName: \nBusiness: \nWebsite: "), False),
  ("advisory", "Ask about advisory support", "Ongoing strategic guidance for businesses implementing new systems, marketing plans, AI workflows, or organizational change, without hiring a full-time strategist.", "Ask about advisory", mail("Advisory support", "Hi John,\n\nWhat we are implementing and where we could use ongoing guidance: \n\nName: \nBusiness: \nWebsite: "), False),
  ("workshop", "Request a workshop or speaking engagement", "Virtual or in-person workshops, team training, conference sessions, and community education on practical AI adoption, brand voice, digital marketing, and business systems.", "Request a workshop", mail("Workshop or speaking request", "Hi John,\n\nAudience: \nTopic or focus: \nFormat (virtual / in-person): \nDate or timeframe: \n\nName: \nOrganization: "), False),
- ("government", "Discuss government contracting", "Pogue Digital Solutions, LLC is registered in SAM.gov (NAICS 541611, PSC D302) and is a Navy veteran-owned business. A capability statement is available on request.", "Contact for contracting", mail("Government contracting inquiry", "Hi John,\n\nAgency or prime contractor: \nOpportunity or need: \n\nName: \nTitle: \nOrganization: "), False),
+ ("government", "Discuss government contracting", "Pogue Digital Solutions, LLC is an active SAM.gov registrant (UEI Y6S7ZHLJH5V6, CAGE 219K1, primary NAICS 541613) and a Navy veteran-owned business. A capability statement is available on request.", "Contact for contracting", mail("Government contracting inquiry", "Hi John,\n\nAgency or prime contractor: \nOpportunity or need: \n\nName: \nTitle: \nOrganization: "), False),
  ("partnerships", "Explore partnerships or affiliates", "Referral partnerships, co-hosted workshops, community collaborations, and affiliate relationships with tools that fit the human-approved AI philosophy.", "Propose a partnership", mail("Partnership inquiry", "Hi John,\n\nWhat I have in mind: \n\nName: \nOrganization: \nWebsite: "), False),
  ("general", "Submit a general inquiry", "Anything that does not fit the other boxes. You will hear back from John, not an autoresponder.", "Send a note", mail("General inquiry", "Hi John,\n\n"), False),
 ]
@@ -81,13 +81,13 @@ html = head("Contact | Book a Strategy Call with Pogue Digital Solutions",
       <h2 style="margin-top:12px;">Registered, veteran-owned, and ready to support the mission.</h2>
       <p style="margin-top:16px;">Pogue Digital Solutions, LLC supports government agencies, contractors, educational institutions, veteran service organizations, nonprofits, and healthcare-related organizations with AI adoption planning, workforce training, communication strategy, process documentation, and knowledge organization.</p>
       <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-        <span class="pill">SAM.gov active</span><span class="pill">NAICS 541611</span><span class="pill">PSC D302</span><span class="pill">Navy veteran-owned</span>
+        <span class="pill">SAM.gov active</span><span class="pill">UEI Y6S7ZHLJH5V6</span><span class="pill">CAGE 219K1</span><span class="pill">NAICS 541613</span><span class="pill">Navy veteran-owned</span>
       </div>
     </div>
     <div class="card reveal">
       <span class="card-eyebrow">Capability statement</span>
       <h3 style="font-size:19px;">Available on request</h3>
-      <p style="font-size:14.5px;">Email with your agency or prime contractor and the opportunity you have in mind, and John will send the current capability statement along with UEI and CAGE details.</p>
+      <p style="font-size:14.5px;">Email with your agency or prime contractor and the opportunity you have in mind, and John will send the current capability statement. Codes, registrations, and core capabilities are on the <a href="government.html">Government Services page</a>.</p>
       <a href="{mail("Capability statement request", "Hi John,\n\nPlease send the Pogue Digital Solutions, LLC capability statement.\n\nAgency or prime contractor: \nOpportunity: \n\nName: \nTitle: ")}" class="btn btn-outline-navy" style="margin-top:14px;">Request the Capability Statement <span class="btn-arrow">&rarr;</span></a>
     </div>
   </div>

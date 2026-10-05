@@ -236,9 +236,9 @@ html = head(
         <p style="margin-top:18px; font-size:16.5px;">Pogue Digital Solutions, LLC supports organizations that need clearer communication, practical training, documented systems, customer or stakeholder insights, and responsible AI adoption.</p>
         <p style="font-size:16.5px;">As a Navy veteran-founded company, we bring a mission-focused approach centered on preparation, accountability, adaptability, and service.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-          <span class="pill">SAM.gov registered</span><span class="pill">NAICS 541611</span><span class="pill">PSC D302</span><span class="pill">Veteran-owned</span>
+          <span class="pill">SAM.gov active</span><span class="pill">UEI Y6S7ZHLJH5V6</span><span class="pill">CAGE 219K1</span><span class="pill">NAICS 541613</span><span class="pill">Veteran-owned</span>
         </div>
-        <a href="contact.html#government" class="btn btn-outline-gold" style="margin-top:26px;">Explore Organizational Services <span class="btn-arrow">&rarr;</span></a>
+        <a href="government.html" class="btn btn-outline-gold" style="margin-top:26px;">Explore Government and Organizational Services <span class="btn-arrow">&rarr;</span></a>
       </div>
       <div class="grid-2" style="gap:18px;">
         <div class="card-glass">

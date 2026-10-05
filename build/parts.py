@@ -15,6 +15,7 @@ NAV = [
     ("assessments.html", "Assessments"),
     ("resources.html", "Resources"),
     ("compass-method.html", "Compass"),
+    ("government.html", "Government"),
     ("about.html", "About"),
     ("contact.html", "Contact"),
 ]
@@ -99,6 +100,7 @@ def footer():
         <a href="assessments.html">Assessments</a>
         <a href="resources.html">Resources</a>
         <a href="compass-method.html">The Compass Method</a>
+        <a href="government.html">Government Services</a>
         <a href="about.html">About John M Pogue</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -108,14 +110,14 @@ def footer():
         <a href="solutions.html#ai-automation">AI and Automation</a>
         <a href="solutions.html#digital-strategy">Digital Strategy</a>
         <a href="solutions.html#training">Training and Workshops</a>
-        <a href="solutions.html#organizations">Government and Organizational Services</a>
+        <a href="government.html">Government and Organizational Services</a>
       </div>
       <div>
         <h4>Connect</h4>
         <a href="{CALENDLY}" target="_blank" rel="noopener">Book a Strategy Call</a>
         <a href="mailto:{EMAIL}">{EMAIL}</a>
         <a href="contact.html">Request a Workshop</a>
-        <a href="contact.html">Government Contracting</a>
+        <a href="government.html#codes">UEI, CAGE, and NAICS</a>
         <p style="color:rgba(255,255,255,0.45); font-size:13px; margin-top:14px;">Conroe, Texas<br>Serving Greater Houston and clients nationwide</p>
       </div>
     </div>
