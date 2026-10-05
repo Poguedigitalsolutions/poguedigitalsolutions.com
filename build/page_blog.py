@@ -83,6 +83,8 @@ PUBLISHER = {"@type": "Organization", "@id": ORG_ID, "name": "Pogue Digital Solu
 posts = []
 for path in glob.glob(f"{ART_DIR}/*.md"):
     meta, body = parse(path)
+    if meta.get("hold") == "yes":
+        continue  # kept in the repo but not published
     body, faq_items = split_faq(body)
     md = markdown.Markdown(extensions=["toc"], extension_configs={"toc": {"toc_depth": "2"}})
     html_body = md.convert(body)
@@ -100,7 +102,13 @@ for path in glob.glob(f"{ART_DIR}/*.md"):
         html_body = html_body[:lede_end] + "\n" + toc_html + html_body[lede_end:]
         html_body = html_body.replace("<p><strong>The short answer:</strong>",
                                       '<p class="lede" id="short-answer"><strong>The short answer:</strong>', 1)
+    elif len(toc) >= 4:
+        html_body = ('<nav class="article-toc" aria-label="In this article"><span class="eyebrow">In this article</span><ol>' +
+                     "".join(f'<li><a href="#{i}">{n}</a></li>' for i, n in toc) + "</ol></nav>\n" + html_body)
     html_body = link_ctas(html_body)
+    if meta.get("source"):
+        html_body += (f'\n<p class="source-note">Originally published on <a href="{meta["source"]}" target="_blank" rel="noopener">LinkedIn</a>. '
+                      'Comments and the conversation live there.</p>')
     words = len(re.findall(r"\w+", plain(html_body)))
     meta.update(short_answer=short_answer, words=words, faq=faq_items, toc=toc)
     posts.append((meta, html_body))
@@ -120,6 +128,8 @@ for idx, (meta, html_body) in enumerate(posts):
         "keywords": keywords, "wordCount": meta["words"], "inLanguage": "en-US",
         "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", "#short-answer"]},
     }
+    if meta.get("source"):
+        posting["sameAs"] = [meta["source"]]
     graph = [posting, {"@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
         {"@type": "ListItem", "position": 2, "name": "Blog", "item": SITE + "/blog/"},
@@ -144,7 +154,8 @@ for idx, (meta, html_body) in enumerate(posts):
              f'<meta name="author" content="John M Pogue">\n')
 
     # one related post: the next one in the list, wrapping around
-    rel = posts[(idx + 1) % len(posts)][0] if len(posts) > 1 else None
+    others = [p[0] for p in posts[idx + 1:] + posts[:idx]]
+    rel = next((m for m in others if m["category"] == meta["category"]), others[0] if others else None)
     related = f'''
 <section class="tight">
   <div class="wrap" style="max-width:900px;">
@@ -205,13 +216,14 @@ for idx, (meta, html_body) in enumerate(posts):
 
 
 def row(meta):
-    return f'''<a class="article-row" href="blog/{meta["slug"]}.html">
+    return f'''<a class="article-row" data-cat="{meta["category"]}" href="blog/{meta["slug"]}.html">
   <div><span class="card-eyebrow">{meta["category"]} &middot; {nice_date(meta["date"])} &middot; {meta["reading_time"]}</span><h3>{meta["title"]}</h3><p>{meta["description"]}</p></div>
   <span class="go">READ &rarr;</span>
 </a>
 '''
 
 rows = "".join(row(m) for m, _ in posts)
+START_HERE = {"what-is-brand-voice-ai", "what-should-a-small-business-automate-first", "how-do-you-capture-the-knowledge-inside-a-founders-head"}
 
 # ---------------- blog/index.html ----------------
 BLOG_LD = json.dumps({"@context": "https://schema.org", "@graph": [
@@ -240,12 +252,22 @@ page = head("Blog | Brand Voice, AI, and Business Systems for Small Business",
 <section>
   <div class="wrap" style="max-width:900px;">
     <div class="section-head reveal"><span class="eyebrow">Latest Articles</span><h2>Start with the question you have.</h2></div>
-    <div class="article-list reveal">
+    <div class="cat-filter reveal" role="group" aria-label="Filter by topic">
+      <button type="button" class="active" data-cat="">All ({len(posts)})</button>
+      {"".join(f'<button type="button" data-cat="{c}">{c} ({sum(1 for m, _ in posts if m["category"] == c)})</button>' for c in cats)}
+    </div>
+    <div class="article-list reveal" id="post-list">
 {rows}    </div>
     <p class="reveal" style="margin-top:28px; font-size:14px;">Follow along with the <a href="blog/feed.xml" style="color:var(--gold-dim);">RSS feed</a>, or connect with John on <a href="{LINKEDIN}" target="_blank" rel="noopener" style="color:var(--gold-dim);">LinkedIn</a>.</p>
   </div>
 </section>
 
+<script>
+document.querySelectorAll('.cat-filter button').forEach(b => b.addEventListener('click', () => {{
+  document.querySelectorAll('.cat-filter button').forEach(x => x.classList.toggle('active', x === b));
+  document.querySelectorAll('#post-list .article-row').forEach(r => {{ r.hidden = !!b.dataset.cat && r.dataset.cat !== b.dataset.cat; }});
+}}));
+</script>
 {cta_band("Not Sure Where to Start?", "Take a free assessment and the result will point you to the right article, tool, or conversation.", primary=("Take an Assessment", "assessments.html"))}
 ''' + footer()
 open("blog/index.html", "w").write(page)
@@ -303,7 +325,7 @@ page = head("Resources | Articles on Brand Voice, AI, and Business Systems",
   <div class="wrap" style="max-width:900px;">
     <div class="section-head reveal"><span class="eyebrow">From the Blog</span><h2>Start here.</h2></div>
     <div class="article-list reveal">
-{rows}    </div>
+{"".join(row(m) for m, _ in posts if m["slug"] in START_HERE)}    </div>
     <div class="reveal" style="margin-top:28px;"><a href="blog/index.html" class="btn btn-outline-navy">See all articles on the blog <span class="btn-arrow">&rarr;</span></a></div>
   </div>
 </section>
