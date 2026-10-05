@@ -64,14 +64,15 @@ for p in pages:
 open("sitemap.xml", "w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 
 # ---- 3b. robots.txt ----
-# Search and answer engines that cite and link back are welcome. GPTBot (OpenAI model training)
-# stays blocked per the standing decision; OAI-SearchBot and ChatGPT-User are what put the site in ChatGPT answers.
-ANSWER_BOTS = ["OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User", "Claude-SearchBot",
-               "Claude-User", "Googlebot", "Bingbot", "Applebot", "DuckDuckBot"]
-robots = "# Pogue Digital Solutions, LLC\n# Answer engines are welcome to read and cite this site. See /llms.txt for a summary.\n\n"
+# Oct 5, 2026: John wants every AI engine to read the site, so training crawlers (GPTBot, ClaudeBot,
+# Google-Extended, etc.) are allowed alongside the search/answer crawlers. Nothing is blocked.
+AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User",
+           "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Meta-ExternalAgent",
+           "Amazonbot", "MistralAI-User", "DuckAssistBot", "CCBot", "cohere-ai"]
+SEARCH_BOTS = ["Googlebot", "Bingbot", "Applebot", "DuckDuckBot"]
+robots = "# Pogue Digital Solutions, LLC\n# Search engines and AI engines are welcome to read, cite, and learn from this site.\n# Summary for language models: /llms.txt (full text: /llms-full.txt)\n\n"
 robots += "User-agent: *\nAllow: /\n\n"
-robots += "".join(f"User-agent: {b}\n" for b in ANSWER_BOTS) + "Allow: /\n\n"
-robots += "User-agent: GPTBot\nDisallow: /\n\n"
+robots += "".join(f"User-agent: {b}\n" for b in SEARCH_BOTS + AI_BOTS) + "Allow: /\n\n"
 robots += f"Sitemap: {SITE}/sitemap.xml\n"
 open("robots.txt", "w").write(robots)
 
