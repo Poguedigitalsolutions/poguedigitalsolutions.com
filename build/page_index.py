@@ -39,7 +39,7 @@ rep("Meet John M. Pogue", "Meet John M Pogue", 2)
 
 # Unbuilt destinations: no dead links
 rep('<a href="#compass" class="btn btn-outline-navy" style="margin-top:22px;">Explore The Compass Method <span class="btn-arrow">&rarr;</span></a>',
-    '<a href="assessments.html#compass" class="btn btn-outline-navy" style="margin-top:22px;">Take the Compass Assessment <span class="btn-arrow">&rarr;</span></a>')
+    '<a href="compass-method.html" class="btn btn-outline-navy" style="margin-top:22px;">Explore The Compass Method <span class="btn-arrow">&rarr;</span></a>')
 rep('<div class="reveal" style="margin-top:28px;"><a href="#resources" class="btn btn-outline-navy">Visit the Resource Center <span class="btn-arrow">&rarr;</span></a></div>',
     '<div class="reveal" style="margin-top:28px;"><a href="resources.html" class="btn btn-outline-navy">Visit the Resource Center <span class="btn-arrow">&rarr;</span></a></div>')
 rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3>', '<a href="what-is-brand-voice-ai.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3>')
