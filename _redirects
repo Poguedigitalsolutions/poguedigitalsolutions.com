@@ -1,1 +1,2 @@
-https://www.poguedigitalsolutions.com/* https://poguedigitalsolutions.com/:splat 301
+# www -> apex is handled by a Cloudflare redirect rule on the zone; Pages _redirects only supports path rules.
+/index.html / 301
