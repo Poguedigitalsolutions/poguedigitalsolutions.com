@@ -5,6 +5,6 @@
 /img/*
   Cache-Control: public, max-age=2592000
 /css/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=600, must-revalidate
 /js/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=600, must-revalidate

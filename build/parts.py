@@ -1,7 +1,9 @@
 """Shared page parts for the Pogue Digital Solutions site.
 Pages are assembled by build.py from these parts so header/footer/head never drift."""
 
+import time
 SITE = "https://poguedigitalsolutions.com"
+ASSET_VER = time.strftime("%Y%m%d%H%M")
 CALENDLY = "https://calendly.com/poguedigitalsolutions/30min"
 EMAIL = "poguedigitalsolutions@gmail.com"
 LINKEDIN = "https://www.linkedin.com/in/johnpogue"
@@ -42,7 +44,7 @@ def head(title, description, path, jsonld=None, og_image="img/hero-founder-compo
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="{SITE}/{og_image}">
-{ld}<link rel="stylesheet" href="css/styles.css">
+{ld}<link rel="stylesheet" href="css/styles.css?v={ASSET_VER}">
 </head>
 <body>
 '''
@@ -122,7 +124,7 @@ def footer():
   </div>
 </footer>
 
-<script src="js/site.js"></script>
+<script src="js/site.js?v={ASSET_VER}"></script>
 </body>
 </html>
 '''
