@@ -55,10 +55,10 @@ SECTIONS = [
 <p>Our consulting work often involves AI tools. If you become a client, our written agreement with you will spell out how we handle the business information you share for a project, which tools may process it, and how a person reviews the work. We do not put a visitor's emails or booking details into AI tools for any purpose other than replying to and serving that person.</p>
 '''),
 ("How we protect information", '''
-<p>We use reputable providers, two-step sign-in on business accounts, and limited access to client files. No website or email system is perfectly secure, so please do not send passwords, full account numbers, or other highly sensitive details by email.</p>
+<p>We use reasonable administrative and technical safeguards and reputable service providers to protect the information we hold. No website or email system is perfectly secure, so please do not send passwords, full account numbers, or other highly sensitive details by email.</p>
 '''),
 ("Your choices and requests", f'''
-<p>You can ask us to tell you what personal information we have about you, correct it, or delete it. Email <a href="mailto:{EMAIL}">{EMAIL}</a> and we will respond within 30 days. We may need to confirm who you are first, and we may keep records the law requires us to keep.</p>
+<p>You can ask us to tell you what personal information we have about you, correct it, or delete it. Email <a href="mailto:{EMAIL}">{EMAIL}</a> and we will respond within a reasonable time. We may need to confirm who you are first, and we may keep records the law requires us to keep.</p>
 <p>You can also block or delete cookies in your browser settings. Because this site does not depend on cookies, it will work the same either way.</p>
 '''),
 ("Children", '''
@@ -69,7 +69,7 @@ SECTIONS = [
 '''),
 ("Contact", f'''
 <p>Questions about this policy or your information:</p>
-<p>Pogue Digital Solutions, LLC<br>Conroe, Texas<br><a href="mailto:{EMAIL}">{EMAIL}</a><br>(346) 367-4600</p>
+<p>Pogue Digital Solutions, LLC<br>Conroe, Texas<br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
 '''),
 ]
 
