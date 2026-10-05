@@ -137,7 +137,7 @@ def footer():
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Pogue Digital Solutions, LLC. All rights reserved.</span>
+      <span>&copy; 2026 Pogue Digital Solutions, LLC. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></span>
       <span class="footer-seal"><img src="img/logo-seal-sm.png" alt="">VETERAN-OWNED &middot; CONROE, TX</span>
     </div>
   </div>
