@@ -1,2 +1,10 @@
 # www -> apex is handled by a Cloudflare redirect rule on the zone; Pages _redirects only supports path rules.
 /index.html / 301
+# Articles moved into the blog on Oct 4, 2026
+/what-is-brand-voice-ai /blog/what-is-brand-voice-ai 301
+/what-is-brand-voice-ai.html /blog/what-is-brand-voice-ai 301
+/what-should-a-small-business-automate-first /blog/what-should-a-small-business-automate-first 301
+/what-should-a-small-business-automate-first.html /blog/what-should-a-small-business-automate-first 301
+/how-do-you-capture-the-knowledge-inside-a-founders-head /blog/how-do-you-capture-the-knowledge-inside-a-founders-head 301
+/how-do-you-capture-the-knowledge-inside-a-founders-head.html /blog/how-do-you-capture-the-knowledge-inside-a-founders-head 301
+/blog/index /blog/ 301

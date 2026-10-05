@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pogue Digital Solutions | AI Strategy, Brand Voice & Business Systems</title>
 <meta name="description" content="Pogue Digital Solutions, LLC helps founder-led businesses organize their knowledge, clarify their brand voice, and build practical AI-assisted marketing and business systems.">
-<link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="canonical" href="https://poguedigitalsolutions.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pogue Digital Solutions, LLC">
@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="Pogue Digital Solutions | AI Strategy, Brand Voice & Business Systems">
 <meta name="twitter:description" content="Pogue Digital Solutions, LLC helps founder-led businesses organize their knowledge, clarify their brand voice, and build practical AI-assisted marketing and business systems.">
 <meta name="twitter:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
+<link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="/blog/feed.xml">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -31,7 +32,8 @@
   "@type": "Person",
   "name": "John M Pogue",
   "jobTitle": "Founder & Creative Strategist",
-  "url": "https://poguedigitalsolutions.com/about.html"
+  "url": "https://poguedigitalsolutions.com/about",
+  "@id": "https://poguedigitalsolutions.com/about#john-m-pogue"
  },
  "address": {
   "@type": "PostalAddress",
@@ -54,7 +56,8 @@
  "sameAs": [
   "https://www.linkedin.com/in/johnpogue"
  ],
- "email": "poguedigitalsolutions@gmail.com"
+ "email": "poguedigitalsolutions@gmail.com",
+ "@id": "https://poguedigitalsolutions.com/#organization"
 }
 </script>
 <script type="application/ld+json">
@@ -75,15 +78,28 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="css/styles.css?v=202610042145">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "@id": "https://poguedigitalsolutions.com/#website",
+ "name": "Pogue Digital Solutions",
+ "url": "https://poguedigitalsolutions.com/",
+ "publisher": {
+  "@id": "https://poguedigitalsolutions.com/#organization"
+ },
+ "inLanguage": "en-US"
+}
+</script>
+<link rel="stylesheet" href="/css/styles.css?v=202610042204">
 </head>
 <body>
 <header class="site-header">
   <div class="nav-shell">
-    <a href="index.html" class="brand" aria-label="Pogue Digital Solutions, LLC home">
-      <img src="img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC" class="brand-logo">
+    <a href="/" class="brand" aria-label="Pogue Digital Solutions, LLC home">
+      <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC" class="brand-logo">
     </a>
-    <nav class="main-nav" aria-label="Primary"><a href="index.html" class="active">Home</a><a href="solutions.html">Solutions</a><a href="assessments.html">Assessments</a><a href="resources.html">Resources</a><a href="compass-method.html">Compass</a><a href="government.html">Government</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <nav class="main-nav" aria-label="Primary"><a href="/" class="active">Home</a><a href="/solutions">Solutions</a><a href="/assessments">Assessments</a><a href="/blog/">Blog</a><a href="/resources">Resources</a><a href="/compass-method">Compass</a><a href="/government">Government</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
     <a href="https://calendly.com/poguedigitalsolutions/30min" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Call</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
       <span></span><span></span><span></span>
@@ -91,7 +107,7 @@
   </div>
 </header>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="index.html" class="active">Home<span>01</span></a><a href="solutions.html">Solutions<span>02</span></a><a href="assessments.html">Assessments<span>03</span></a><a href="resources.html">Resources<span>04</span></a><a href="compass-method.html">Compass<span>05</span></a><a href="government.html">Government<span>06</span></a><a href="about.html">About<span>07</span></a><a href="contact.html">Contact<span>08</span></a>
+  <a href="/" class="active">Home<span>01</span></a><a href="/solutions">Solutions<span>02</span></a><a href="/assessments">Assessments<span>03</span></a><a href="/blog/">Blog<span>04</span></a><a href="/resources">Resources<span>05</span></a><a href="/compass-method">Compass<span>06</span></a><a href="/government">Government<span>07</span></a><a href="/about">About<span>08</span></a><a href="/contact">Contact<span>09</span></a>
   <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-gold drawer-cta" target="_blank" rel="noopener">Book a Strategy Call</a>
   <div class="drawer-foot">POGUE DIGITAL SOLUTIONS, LLC &middot; CONROE, TX</div>
 </div>
@@ -140,17 +156,17 @@
       <p style="font-size:17px; max-width:540px; margin-top:22px;">Your ideas, experience, customer knowledge, processes, and stories shouldn&rsquo;t stay scattered across documents, inboxes, conversations, and your memory.</p>
       <p style="font-size:17px; max-width:540px;">Pogue Digital Solutions, LLC helps founder-led businesses organize that knowledge, clarify their message, and build practical AI-assisted systems that improve consistency without erasing the human voice behind the business.</p>
       <div style="display:flex; gap:16px; margin-top:30px; flex-wrap:wrap;">
-        <a href="assessments.html" class="btn btn-gold">Discover What Your Business Needs <span class="btn-arrow">&rarr;</span></a>
-        <a href="solutions.html" class="btn btn-outline-gold">Explore Our Solutions</a>
+        <a href="/assessments" class="btn btn-gold">Discover What Your Business Needs <span class="btn-arrow">&rarr;</span></a>
+        <a href="/solutions" class="btn btn-outline-gold">Explore Our Solutions</a>
       </div>
       <p style="font-family:var(--font-display); font-style:italic; font-size:22px; color:var(--gold-bright); margin-top:38px;">&ldquo;Don&rsquo;t tell me it can&rsquo;t be done!&rdquo;</p>
       <p style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.05em; color:var(--text-on-ink-dim); margin-top:6px;">Start with curiosity. Build with strategy. Finish with a system.</p>
     </div>
 
     <div class="portrait-lockup reveal">
-  <img src="img/logo-seal.png" alt="" class="seal">
+  <img src="/img/logo-seal.png" alt="" class="seal">
   <div class="photo-card no-fade">
-    <img src="img/portrait-john-desk.jpg" alt="John M Pogue, founder of Pogue Digital Solutions, LLC, at his desk working on AI strategy and business systems" width="520" height="916" loading="eager">
+    <img src="/img/portrait-john-desk.jpg" alt="John M Pogue, founder of Pogue Digital Solutions, LLC, at his desk working on AI strategy and business systems" width="520" height="916" loading="eager">
   </div>
   <div class="badge"><strong>John M Pogue</strong><span>Navy Veteran &middot; Founder &amp; Creative Strategist</span></div>
 </div>
@@ -242,17 +258,17 @@
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
           <span class="pill">Brand voice development</span><span class="pill">Founder knowledge capture</span><span class="pill">Approval workflows</span>
         </div>
-        <a href="solutions.html#brand-voice-ai" class="btn btn-outline-navy" style="margin-top:20px;">Explore Brand Voice AI <span class="btn-arrow">&rarr;</span></a>
+        <a href="/solutions#brand-voice-ai" class="btn btn-outline-navy" style="margin-top:20px;">Explore Brand Voice AI <span class="btn-arrow">&rarr;</span></a>
       </div>
       <div class="card">
         <h3 style="font-size:19px;">AI and Automation</h3>
         <p style="font-size:14.5px;">We help you identify repetitive work, organize the process, and build practical AI workflows. Technology is chosen after the need is understood, not before.</p>
-        <a href="solutions.html#ai-automation" class="btn btn-outline-navy" style="margin-top:16px;">Explore AI and Automation <span class="btn-arrow">&rarr;</span></a>
+        <a href="/solutions#ai-automation" class="btn btn-outline-navy" style="margin-top:16px;">Explore AI and Automation <span class="btn-arrow">&rarr;</span></a>
       </div>
       <div class="card">
         <h3 style="font-size:19px;">Digital Strategy</h3>
         <p style="font-size:14.5px;">Connects your goals, audience, message, content, technology, and measurement into one coordinated plan, instead of disconnected tactics.</p>
-        <a href="solutions.html#digital-strategy" class="btn btn-outline-navy" style="margin-top:16px;">Explore Digital Strategy <span class="btn-arrow">&rarr;</span></a>
+        <a href="/solutions#digital-strategy" class="btn btn-outline-navy" style="margin-top:16px;">Explore Digital Strategy <span class="btn-arrow">&rarr;</span></a>
       </div>
       <div class="card">
         <h3>Training and Workshops</h3>
@@ -260,7 +276,7 @@
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
           <span class="pill">Practical AI adoption</span><span class="pill">Brand voice &amp; messaging</span><span class="pill">Human-centered AI</span>
         </div>
-        <a href="solutions.html#training" class="btn btn-outline-navy" style="margin-top:20px;">View Training Options <span class="btn-arrow">&rarr;</span></a>
+        <a href="/solutions#training" class="btn btn-outline-navy" style="margin-top:20px;">View Training Options <span class="btn-arrow">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -281,7 +297,7 @@
       <div class="card-glass"><span class="card-eyebrow">3. Execution</span><p style="font-size:14.5px;">Your people and AI tools use the system to prepare work, maintain consistency, and support execution.</p></div>
     </div>
     <p class="reveal" style="font-family:var(--font-display); font-style:italic; font-size:clamp(20px,2.4vw,26px); color:var(--gold-bright); margin-top:36px; max-width:640px;">The system prepares the work, waits for your approval, and helps execute it in your brand voice.</p>
-    <a href="solutions.html#brand-voice-ai" class="btn btn-gold reveal" style="margin-top:24px;">Learn About Brand Voice AI <span class="btn-arrow">&rarr;</span></a>
+    <a href="/solutions#brand-voice-ai" class="btn btn-gold reveal" style="margin-top:24px;">Learn About Brand Voice AI <span class="btn-arrow">&rarr;</span></a>
   </div>
 </section>
 
@@ -311,12 +327,12 @@
       <p>You do not need to know exactly what service you need. Our assessments help identify where your business is strong, where information is getting lost, and where a clearer strategy or system could improve your work.</p>
     </div>
     <div class="grid-4 reveal">
-      <div class="card"><h3 style="font-size:16px;">Brand Voice Quick Check</h3><p style="font-size:13.5px;">Discover whether your business communicates consistently across people, platforms, and AI tools.</p><a href="assessments.html#brand-voice" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">Check Your Brand Voice</a></div>
-      <div class="card"><h3 style="font-size:16px;">AI Readiness Assessment</h3><p style="font-size:13.5px;">Evaluate whether your business has what it needs to use AI effectively.</p><a href="assessments.html#ai-readiness" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">Measure Your AI Readiness</a></div>
-      <div class="card"><h3 style="font-size:16px;">Business Systems Assessment</h3><p style="font-size:13.5px;">Identify repetitive work, undocumented processes, and automation opportunities.</p><a href="assessments.html#continuity" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">Review Your Systems</a></div>
-      <div class="card"><h3 style="font-size:16px;">Compass Assessment</h3><p style="font-size:13.5px;">Explore how your purpose, skills, opportunities, and service align with your direction.</p><a href="assessments.html#compass" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">Find Your Bearing</a></div>
+      <div class="card"><h3 style="font-size:16px;">Brand Voice Quick Check</h3><p style="font-size:13.5px;">Discover whether your business communicates consistently across people, platforms, and AI tools.</p><a href="/assessments#brand-voice" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">Check Your Brand Voice</a></div>
+      <div class="card"><h3 style="font-size:16px;">AI Readiness Assessment</h3><p style="font-size:13.5px;">Evaluate whether your business has what it needs to use AI effectively.</p><a href="/assessments#ai-readiness" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">Measure Your AI Readiness</a></div>
+      <div class="card"><h3 style="font-size:16px;">Business Systems Assessment</h3><p style="font-size:13.5px;">Identify repetitive work, undocumented processes, and automation opportunities.</p><a href="/assessments#continuity" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">Review Your Systems</a></div>
+      <div class="card"><h3 style="font-size:16px;">Compass Assessment</h3><p style="font-size:13.5px;">Explore how your purpose, skills, opportunities, and service align with your direction.</p><a href="/assessments#compass" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">Find Your Bearing</a></div>
     </div>
-    <div class="reveal center" style="margin-top:32px;"><a href="assessments.html" class="btn btn-gold">View All Assessments <span class="btn-arrow">&rarr;</span></a></div>
+    <div class="reveal center" style="margin-top:32px;"><a href="/assessments" class="btn btn-gold">View All Assessments <span class="btn-arrow">&rarr;</span></a></div>
   </div>
 </section>
 
@@ -382,7 +398,7 @@
     <h2 style="color:#fff; margin-top:14px;">Meet John M Pogue</h2>
     <p style="margin-top:18px; font-size:16.5px;">A Navy veteran and former Hospital Corpsman, John brings a service-centered perspective to strategy, communication, and technology. He believes the most valuable knowledge in a business often lives in the stories and judgment of the people doing the work.</p>
     <p style="font-family:var(--font-display); font-style:italic; font-size:clamp(19px,2.2vw,24px); color:var(--gold-bright); margin-top:24px;">&ldquo;Helping people understand themselves and the systems around them so they can live and work with greater freedom, confidence, purpose, and humanity.&rdquo;</p>
-    <a href="about.html" class="btn btn-outline-gold" style="margin-top:26px;">Learn More About John <span class="btn-arrow">&rarr;</span></a>
+    <a href="/about" class="btn btn-outline-gold" style="margin-top:26px;">Learn More About John <span class="btn-arrow">&rarr;</span></a>
   </div>
 </section>
 
@@ -396,7 +412,7 @@
       <span class="pill">Center: Heart</span><span class="pill">North: Purpose</span><span class="pill">East: Skill</span><span class="pill">West: Opportunity</span><span class="pill">South: Service</span>
     </div>
     <p style="margin-top:20px; font-size:16px;">Before a business can train AI to communicate clearly, the business must understand what it believes, who it serves, and where it&rsquo;s going. The Compass Method helps uncover that direction. Brand Voice AI helps turn it into a working system.</p>
-    <a href="compass-method.html" class="btn btn-outline-navy" style="margin-top:22px;">Explore The Compass Method <span class="btn-arrow">&rarr;</span></a>
+    <a href="/compass-method" class="btn btn-outline-navy" style="margin-top:22px;">Explore The Compass Method <span class="btn-arrow">&rarr;</span></a>
   </div>
 </section>
 
@@ -408,13 +424,13 @@
       <h2>Practical Resources for Building a More Consistent Business</h2>
     </div>
     <div class="grid-3 reveal">
-      <a href="what-is-brand-voice-ai.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3><p style="font-size:14px;">How businesses organize their identity, messaging, knowledge, and processes so people and AI communicate consistently.</p></a>
-      <a href="what-should-a-small-business-automate-first.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Should a Small Business Automate First?</h3><p style="font-size:14px;">How to identify useful automation opportunities without buying unnecessary software.</p></a>
-      <a href="how-do-you-capture-the-knowledge-inside-a-founders-head.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">How Do You Capture the Knowledge Inside a Founder&rsquo;s Head?</h3><p style="font-size:14px;">Turning experience, stories, decisions, and undocumented knowledge into a usable resource.</p></a>
+      <a href="/blog/what-is-brand-voice-ai" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3><p style="font-size:14px;">How businesses organize their identity, messaging, knowledge, and processes so people and AI communicate consistently.</p></a>
+      <a href="/blog/what-should-a-small-business-automate-first" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Should a Small Business Automate First?</h3><p style="font-size:14px;">How to identify useful automation opportunities without buying unnecessary software.</p></a>
+      <a href="/blog/how-do-you-capture-the-knowledge-inside-a-founders-head" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">How Do You Capture the Knowledge Inside a Founder&rsquo;s Head?</h3><p style="font-size:14px;">Turning experience, stories, decisions, and undocumented knowledge into a usable resource.</p></a>
       <div class="card"><span class="card-eyebrow">Resource</span><h3 style="font-size:16.5px;">AI Toolbox</h3><p style="font-size:14px;">Recommended AI, marketing, automation, and business tools with plain-English explanations.</p></div>
       <div class="card"><span class="card-eyebrow">Resource</span><h3 style="font-size:16.5px;">Custom AI Tools</h3><p style="font-size:14px;">Guided assistants for customer journey mapping, avatar research, email creation, and brand development.</p></div>
     </div>
-    <div class="reveal" style="margin-top:28px;"><a href="resources.html" class="btn btn-outline-navy">Visit the Resource Center <span class="btn-arrow">&rarr;</span></a></div>
+    <div class="reveal" style="margin-top:28px;"><a href="/resources" class="btn btn-outline-navy">Visit the Resource Center <span class="btn-arrow">&rarr;</span></a></div>
   </div>
 </section>
 
@@ -426,7 +442,7 @@
       <span class="eyebrow">Systems in Action</span>
       <h2 style="color:#fff; margin-top:14px;">From an Idea to an Organized Business Operating System</h2>
       <p style="margin-top:16px; font-size:15.5px;">Founder knowledge, marketing information, customer insights, and communication standards were spread across hundreds of files and conversations.</p>
-      <a href="about.html" class="btn btn-outline-gold" style="margin-top:22px;">Read the Story Behind It <span class="btn-arrow">&rarr;</span></a>
+      <a href="/about" class="btn btn-outline-gold" style="margin-top:22px;">Read the Story Behind It <span class="btn-arrow">&rarr;</span></a>
     </div>
     <div class="card-glass reveal">
       <span class="card-eyebrow">Featured Project &middot; Brand Voice AI</span>
@@ -457,7 +473,7 @@
         <h2 style="color:#fff; font-size:clamp(26px,3.2vw,38px);">Your Business Already Has the Raw Material</h2>
         <p style="margin-top:16px; font-size:16px;">The knowledge, experience, ideas, stories, processes, and customer understanding are already there. Now they need to be organized into a system that can support your next stage of growth.</p>
         <div style="display:flex; gap:16px; justify-content:center; margin-top:28px; flex-wrap:wrap;">
-          <a href="assessments.html" class="btn btn-gold">Take an Assessment <span class="btn-arrow">&rarr;</span></a>
+          <a href="/assessments" class="btn btn-gold">Take an Assessment <span class="btn-arrow">&rarr;</span></a>
           <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-outline-gold" target="_blank" rel="noopener">Schedule a Strategy Conversation</a>
         </div>
         <p style="font-family:var(--font-display); font-style:italic; font-size:clamp(18px,2vw,22px); color:var(--gold-bright); margin-top:32px;">&ldquo;Don&rsquo;t tell me it can&rsquo;t be done. Let&rsquo;s find out how it can.&rdquo;</p>
@@ -470,7 +486,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="img/logo-full.png" alt="Pogue Digital Solutions, LLC. Strategy. Systems. Solutions." class="footer-logo">
+        <img src="/img/logo-full.png" alt="Pogue Digital Solutions, LLC. Strategy. Systems. Solutions." class="footer-logo">
         <p style="color:rgba(255,255,255,0.55); font-size:14px; max-width:270px;">Pogue Digital Solutions, LLC helps founder-led businesses and organizations organize their knowledge, clarify their brand voice, and build practical AI-assisted systems.</p>
         <p class="footer-motto">&ldquo;Don&rsquo;t tell me it can&rsquo;t be done.&rdquo;</p>
         <div class="footer-social">
@@ -479,39 +495,40 @@
       </div>
       <div>
         <h4>Pages</h4>
-        <a href="index.html">Home</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="assessments.html">Assessments</a>
-        <a href="resources.html">Resources</a>
-        <a href="compass-method.html">The Compass Method</a>
-        <a href="government.html">Government Services</a>
-        <a href="about.html">About John M Pogue</a>
-        <a href="contact.html">Contact</a>
+        <a href="/">Home</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/assessments">Assessments</a>
+        <a href="/blog/">Blog</a>
+        <a href="/resources">Resources</a>
+        <a href="/compass-method">The Compass Method</a>
+        <a href="/government">Government Services</a>
+        <a href="/about">About John M Pogue</a>
+        <a href="/contact">Contact</a>
       </div>
       <div>
         <h4>Solutions</h4>
-        <a href="solutions.html#brand-voice-ai">Brand Voice AI</a>
-        <a href="solutions.html#ai-automation">AI and Automation</a>
-        <a href="solutions.html#digital-strategy">Digital Strategy</a>
-        <a href="solutions.html#training">Training and Workshops</a>
-        <a href="government.html">Government and Organizational Services</a>
+        <a href="/solutions#brand-voice-ai">Brand Voice AI</a>
+        <a href="/solutions#ai-automation">AI and Automation</a>
+        <a href="/solutions#digital-strategy">Digital Strategy</a>
+        <a href="/solutions#training">Training and Workshops</a>
+        <a href="/government">Government and Organizational Services</a>
       </div>
       <div>
         <h4>Connect</h4>
         <a href="https://calendly.com/poguedigitalsolutions/30min" target="_blank" rel="noopener">Book a Strategy Call</a>
         <a href="mailto:poguedigitalsolutions@gmail.com">poguedigitalsolutions@gmail.com</a>
-        <a href="contact.html">Request a Workshop</a>
-        <a href="government.html#codes">UEI, CAGE, and NAICS</a>
+        <a href="/contact">Request a Workshop</a>
+        <a href="/government#codes">UEI, CAGE, and NAICS</a>
         <p style="color:rgba(255,255,255,0.45); font-size:13px; margin-top:14px;">Conroe, Texas<br>Serving Greater Houston and clients nationwide</p>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Pogue Digital Solutions, LLC. All rights reserved.</span>
-      <span class="footer-seal"><img src="img/logo-seal-sm.png" alt="">VETERAN-OWNED &middot; CONROE, TX</span>
+      <span class="footer-seal"><img src="/img/logo-seal-sm.png" alt="">VETERAN-OWNED &middot; CONROE, TX</span>
     </div>
   </div>
 </footer>
 
-<script src="js/site.js?v=202610042145"></script>
+<script src="/js/site.js?v=202610042204"></script>
 </body>
 </html>

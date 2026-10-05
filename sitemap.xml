@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://poguedigitalsolutions.com/</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/solutions.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/assessments.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/resources.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/compass-method.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/government.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/about.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/contact.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/what-is-brand-voice-ai.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/what-should-a-small-business-automate-first.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://poguedigitalsolutions.com/how-do-you-capture-the-knowledge-inside-a-founders-head.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/about</loc><lastmod>2026-10-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/assessments</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/blog/how-do-you-capture-the-knowledge-inside-a-founders-head</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/blog/</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/blog/what-is-brand-voice-ai</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/blog/what-should-a-small-business-automate-first</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/compass-method</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/contact</loc><lastmod>2026-10-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/government</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/</loc><lastmod>2026-10-04</lastmod><priority>1.0</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/resources</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
+  <url><loc>https://poguedigitalsolutions.com/solutions</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
 </urlset>

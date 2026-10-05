@@ -2,8 +2,8 @@ import json
 from parts import *
 
 PERSON = json.dumps({"@context": "https://schema.org", "@graph": [
- {"@type": "Person", "name": "John M Pogue", "url": SITE + "/about.html", "jobTitle": "Founder & Creative Strategist",
-  "worksFor": {"@type": "Organization", "name": "Pogue Digital Solutions, LLC", "url": SITE + "/"},
+ {"@type": "Person", "@id": PERSON_ID, "name": "John M Pogue", "url": SITE + "/about.html", "jobTitle": "Founder & Creative Strategist",
+  "worksFor": {"@type": "Organization", "@id": ORG_ID, "name": "Pogue Digital Solutions, LLC", "url": SITE + "/"},
   "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Full Sail University"}],
   "sameAs": [LINKEDIN], "email": EMAIL,
   "description": "John M Pogue is the Founder and Creative Strategist of Pogue Digital Solutions, LLC. He is a Navy veteran and former Hospital Corpsman who holds a Master of Science in Digital Marketing from Full Sail University and a bachelor's degree in Visual Communication. His work focuses on AI-assisted business systems, brand voice, digital strategy, customer communication, training, and practical technology adoption.",

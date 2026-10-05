@@ -1,7 +1,8 @@
+import os
 import re, json
 from parts import *
 
-src = open("./legacy-index.html").read()
+src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "legacy-index.html")).read()
 
 # ---- body between old header and old footer ----
 body = src.split("</header>", 1)[1].split("<footer", 1)[0]
@@ -42,11 +43,11 @@ rep('<a href="#compass" class="btn btn-outline-navy" style="margin-top:22px;">Ex
     '<a href="compass-method.html" class="btn btn-outline-navy" style="margin-top:22px;">Explore The Compass Method <span class="btn-arrow">&rarr;</span></a>')
 rep('<div class="reveal" style="margin-top:28px;"><a href="#resources" class="btn btn-outline-navy">Visit the Resource Center <span class="btn-arrow">&rarr;</span></a></div>',
     '<div class="reveal" style="margin-top:28px;"><a href="resources.html" class="btn btn-outline-navy">Visit the Resource Center <span class="btn-arrow">&rarr;</span></a></div>')
-rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3>', '<a href="what-is-brand-voice-ai.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3>')
+rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3>', '<a href="blog/what-is-brand-voice-ai.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3>')
 rep('so people and AI communicate consistently.</p></div>', 'so people and AI communicate consistently.</p></a>')
-rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Should a Small Business Automate First?</h3>', '<a href="what-should-a-small-business-automate-first.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Should a Small Business Automate First?</h3>')
+rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Should a Small Business Automate First?</h3>', '<a href="blog/what-should-a-small-business-automate-first.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Should a Small Business Automate First?</h3>')
 rep('without buying unnecessary software.</p></div>', 'without buying unnecessary software.</p></a>')
-rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">How Do You Capture the Knowledge Inside a Founder&rsquo;s Head?</h3>', '<a href="how-do-you-capture-the-knowledge-inside-a-founders-head.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">How Do You Capture the Knowledge Inside a Founder&rsquo;s Head?</h3>')
+rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">How Do You Capture the Knowledge Inside a Founder&rsquo;s Head?</h3>', '<a href="blog/how-do-you-capture-the-knowledge-inside-a-founders-head.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">How Do You Capture the Knowledge Inside a Founder&rsquo;s Head?</h3>')
 rep('into a usable resource.</p></div>', 'into a usable resource.</p></a>')
 rep('<a href="#case-studies" class="btn btn-outline-gold" style="margin-top:22px;">View Case Studies <span class="btn-arrow">&rarr;</span></a>',
     '<a href="about.html" class="btn btn-outline-gold" style="margin-top:22px;">Read the Story Behind It <span class="btn-arrow">&rarr;</span></a>')
@@ -77,6 +78,8 @@ blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', src, 
 blocks = [b.strip().replace("John M. Pogue", "John M Pogue") for b in blocks]
 org = json.loads(blocks[0]); org["sameAs"] = [LINKEDIN]; org["email"] = EMAIL
 org["founder"]["url"] = SITE + "/about.html"
+org["@id"] = ORG_ID; org["founder"]["@id"] = PERSON_ID
+blocks.append(json.dumps({"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "name": "Pogue Digital Solutions", "url": SITE + "/", "publisher": {"@id": ORG_ID}, "inLanguage": "en-US"}, indent=1))
 blocks[0] = json.dumps(org, indent=1)
 
 html = head("Pogue Digital Solutions | AI Strategy, Brand Voice & Business Systems",

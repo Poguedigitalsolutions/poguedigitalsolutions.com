@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Pogue Digital Solutions Blog</title>
+  <link>https://poguedigitalsolutions.com/blog/</link>
+  <atom:link href="https://poguedigitalsolutions.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Articles by John M Pogue on brand voice, AI adoption, automation, and capturing founder knowledge.</description>
+  <language>en-us</language>
+  <lastBuildDate>Mon, 05 Oct 2026 12:00:00 +0000</lastBuildDate>
+  <item>
+    <title>What Should a Small Business Automate First?</title>
+    <link>https://poguedigitalsolutions.com/blog/what-should-a-small-business-automate-first</link>
+    <guid isPermaLink="true">https://poguedigitalsolutions.com/blog/what-should-a-small-business-automate-first</guid>
+    <pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+    <category>AI and Automation</category>
+    <dc:creator>John M Pogue</dc:creator>
+    <description>The first thing to automate is the task you repeat most often with the least judgment. Here is how to find it, why most businesses pick wrong, and a short method for deciding before you buy any software.</description>
+  </item>
+  <item>
+    <title>What Is Brand Voice AI?</title>
+    <link>https://poguedigitalsolutions.com/blog/what-is-brand-voice-ai</link>
+    <guid isPermaLink="true">https://poguedigitalsolutions.com/blog/what-is-brand-voice-ai</guid>
+    <pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+    <category>Brand Voice</category>
+    <dc:creator>John M Pogue</dc:creator>
+    <description>Brand Voice AI is an AI-assisted business operating system that captures a company&#x27;s knowledge, voice, and standards so people and AI tools can create consistent work. Here is what it organizes, how it works, and who it is for.</description>
+  </item>
+  <item>
+    <title>How Do You Capture the Knowledge Inside a Founder&#x27;s Head?</title>
+    <link>https://poguedigitalsolutions.com/blog/how-do-you-capture-the-knowledge-inside-a-founders-head</link>
+    <guid isPermaLink="true">https://poguedigitalsolutions.com/blog/how-do-you-capture-the-knowledge-inside-a-founders-head</guid>
+    <pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+    <category>Business Systems</category>
+    <dc:creator>John M Pogue</dc:creator>
+    <description>Founder knowledge gets captured one conversation at a time, not in a single brain-dump session. Here is the interview method, the categories that matter, and why most documentation efforts fail before they start.</description>
+  </item>
+</channel>
+</rss>

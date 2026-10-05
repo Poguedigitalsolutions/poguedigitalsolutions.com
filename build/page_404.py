@@ -1,45 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found | Pogue Digital Solutions</title>
-<meta name="description" content="The page you were looking for has moved or does not exist.">
-<link rel="icon" type="image/png" href="/img/favicon.png">
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<meta name="robots" content="noindex">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Pogue Digital Solutions, LLC">
-<meta property="og:title" content="Page Not Found | Pogue Digital Solutions">
-<meta property="og:description" content="The page you were looking for has moved or does not exist.">
-<meta property="og:url" content="https://poguedigitalsolutions.com/404">
-<meta property="og:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Page Not Found | Pogue Digital Solutions">
-<meta name="twitter:description" content="The page you were looking for has moved or does not exist.">
-<meta name="twitter:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
-<link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="/blog/feed.xml">
-<link rel="stylesheet" href="/css/styles.css?v=202610042204">
-</head>
-<body>
-<header class="site-header">
-  <div class="nav-shell">
-    <a href="/" class="brand" aria-label="Pogue Digital Solutions, LLC home">
-      <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC" class="brand-logo">
-    </a>
-    <nav class="main-nav" aria-label="Primary"><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/assessments">Assessments</a><a href="/blog/">Blog</a><a href="/resources">Resources</a><a href="/compass-method">Compass</a><a href="/government">Government</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
-    <a href="https://calendly.com/poguedigitalsolutions/30min" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Call</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-<div class="nav-drawer" id="nav-drawer">
-  <a href="/">Home<span>01</span></a><a href="/solutions">Solutions<span>02</span></a><a href="/assessments">Assessments<span>03</span></a><a href="/blog/">Blog<span>04</span></a><a href="/resources">Resources<span>05</span></a><a href="/compass-method">Compass<span>06</span></a><a href="/government">Government<span>07</span></a><a href="/about">About<span>08</span></a><a href="/contact">Contact<span>09</span></a>
-  <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-gold drawer-cta" target="_blank" rel="noopener">Book a Strategy Call</a>
-  <div class="drawer-foot">POGUE DIGITAL SOLUTIONS, LLC &middot; CONROE, TX</div>
-</div>
-<section class="on-ink" style="min-height:70vh; display:flex; align-items:center;">
+"""The branded 404 page. Cloudflare Pages serves 404.html for any missing route,
+including nested ones like /blog/missing, so every link on it is root-relative after build_all."""
+from parts import *
+
+BODY = r'''<section class="on-ink" style="min-height:70vh; display:flex; align-items:center;">
   <svg class="compass-bg" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
   <defs>
     <radialGradient id="cg" cx="50%" cy="50%" r="50%">
@@ -76,59 +39,14 @@
     <h1 style="font-size:clamp(34px,5vw,58px); color:#fff; margin-top:16px;">That page is not on the chart.</h1>
     <p style="font-size:17px; margin-top:18px;">The link may be out of date, or the page has moved. Pick a heading below.</p>
     <div style="display:flex; gap:14px; justify-content:center; margin-top:30px; flex-wrap:wrap;">
-      <a href="/" class="btn btn-gold">Back to Home <span class="btn-arrow">&rarr;</span></a>
-      <a href="/solutions" class="btn btn-outline-gold">See Solutions</a>
+      <a href="index.html" class="btn btn-gold">Back to Home <span class="btn-arrow">&rarr;</span></a>
+      <a href="solutions.html" class="btn btn-outline-gold">See Solutions</a>
       <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-outline-gold" target="_blank" rel="noopener">Book a Call</a>
     </div>
   </div>
 </section>
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <img src="/img/logo-full.png" alt="Pogue Digital Solutions, LLC. Strategy. Systems. Solutions." class="footer-logo">
-        <p style="color:rgba(255,255,255,0.55); font-size:14px; max-width:270px;">Pogue Digital Solutions, LLC helps founder-led businesses and organizations organize their knowledge, clarify their brand voice, and build practical AI-assisted systems.</p>
-        <p class="footer-motto">&ldquo;Don&rsquo;t tell me it can&rsquo;t be done.&rdquo;</p>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/johnpogue" target="_blank" rel="noopener" aria-label="John M Pogue on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h4>Pages</h4>
-        <a href="/">Home</a>
-        <a href="/solutions">Solutions</a>
-        <a href="/assessments">Assessments</a>
-        <a href="/blog/">Blog</a>
-        <a href="/resources">Resources</a>
-        <a href="/compass-method">The Compass Method</a>
-        <a href="/government">Government Services</a>
-        <a href="/about">About John M Pogue</a>
-        <a href="/contact">Contact</a>
-      </div>
-      <div>
-        <h4>Solutions</h4>
-        <a href="/solutions#brand-voice-ai">Brand Voice AI</a>
-        <a href="/solutions#ai-automation">AI and Automation</a>
-        <a href="/solutions#digital-strategy">Digital Strategy</a>
-        <a href="/solutions#training">Training and Workshops</a>
-        <a href="/government">Government and Organizational Services</a>
-      </div>
-      <div>
-        <h4>Connect</h4>
-        <a href="https://calendly.com/poguedigitalsolutions/30min" target="_blank" rel="noopener">Book a Strategy Call</a>
-        <a href="mailto:poguedigitalsolutions@gmail.com">poguedigitalsolutions@gmail.com</a>
-        <a href="/contact">Request a Workshop</a>
-        <a href="/government#codes">UEI, CAGE, and NAICS</a>
-        <p style="color:rgba(255,255,255,0.45); font-size:13px; margin-top:14px;">Conroe, Texas<br>Serving Greater Houston and clients nationwide</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Pogue Digital Solutions, LLC. All rights reserved.</span>
-      <span class="footer-seal"><img src="/img/logo-seal-sm.png" alt="">VETERAN-OWNED &middot; CONROE, TX</span>
-    </div>
-  </div>
-</footer>
+'''
 
-<script src="/js/site.js?v=202610042204"></script>
-</body>
-</html>
+page = head("Page Not Found | Pogue Digital Solutions", "The page you were looking for has moved or does not exist.", "404.html", indexable=False) + header("") + BODY + footer()
+open("404.html", "w").write(page)
+print("404.html", len(page))

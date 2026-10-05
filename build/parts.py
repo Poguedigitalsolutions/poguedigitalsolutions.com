@@ -7,12 +7,16 @@ ASSET_VER = time.strftime("%Y%m%d%H%M")
 CALENDLY = "https://calendly.com/poguedigitalsolutions/30min"
 EMAIL = "poguedigitalsolutions@gmail.com"
 LINKEDIN = "https://www.linkedin.com/in/johnpogue"
+# Stable entity IDs so every page's JSON-LD points at the same Organization and Person.
+ORG_ID = SITE + "/#organization"
+PERSON_ID = SITE + "/about#john-m-pogue"
 
 # Only pages that actually exist are navigable. Unbuilt pages get added here when they ship.
 NAV = [
     ("index.html", "Home"),
     ("solutions.html", "Solutions"),
     ("assessments.html", "Assessments"),
+    ("blog/index.html", "Blog"),
     ("resources.html", "Resources"),
     ("compass-method.html", "Compass"),
     ("government.html", "Government"),
@@ -20,8 +24,17 @@ NAV = [
     ("contact.html", "Contact"),
 ]
 
-def head(title, description, path, jsonld=None, og_image="img/hero-founder-composite.jpg"):
-    canonical = f"{SITE}/{'' if path == 'index.html' else path}"
+def clean_path(path):
+    """Cloudflare Pages serves about.html at /about and blog/index.html at /blog/.
+    Canonicals, sitemap, and schema use those final URLs so nothing points at a redirect."""
+    if path in ("index.html", ""):
+        return "/"
+    if path.endswith("index.html"):
+        return "/" + path[: -len("index.html")]
+    return "/" + (path[:-5] if path.endswith(".html") else path)
+
+def head(title, description, path, jsonld=None, og_image="img/hero-founder-composite.jpg", og_type="website", extra_meta="", indexable=True):
+    canonical = SITE + clean_path(path)
     ld = ""
     if jsonld:
         for block in jsonld:
@@ -35,8 +48,8 @@ def head(title, description, path, jsonld=None, og_image="img/hero-founder-compo
 <meta name="description" content="{description}">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="canonical" href="{canonical}">
-<meta property="og:type" content="website">
+{f'<link rel="canonical" href="{canonical}">' if indexable else '<meta name="robots" content="noindex">'}
+<meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="Pogue Digital Solutions, LLC">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
@@ -46,7 +59,8 @@ def head(title, description, path, jsonld=None, og_image="img/hero-founder-compo
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="{SITE}/{og_image}">
-{ld}<link rel="stylesheet" href="css/styles.css?v={ASSET_VER}">
+<link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="blog/feed.xml">
+{extra_meta}{ld}<link rel="stylesheet" href="css/styles.css?v={ASSET_VER}">
 </head>
 <body>
 '''
@@ -98,6 +112,7 @@ def footer():
         <a href="index.html">Home</a>
         <a href="solutions.html">Solutions</a>
         <a href="assessments.html">Assessments</a>
+        <a href="blog/index.html">Blog</a>
         <a href="resources.html">Resources</a>
         <a href="compass-method.html">The Compass Method</a>
         <a href="government.html">Government Services</a>
