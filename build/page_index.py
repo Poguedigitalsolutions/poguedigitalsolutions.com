@@ -1,7 +1,7 @@
 import re, json
 from parts import *
 
-src = open("./build/legacy-index.html").read()
+src = open("/home/claude/site-build/legacy/index.html").read()
 
 # ---- body between old header and old footer ----
 body = src.split("</header>", 1)[1].split("<footer", 1)[0]
@@ -41,7 +41,13 @@ rep("Meet John M. Pogue", "Meet John M Pogue", 2)
 rep('<a href="#compass" class="btn btn-outline-navy" style="margin-top:22px;">Explore The Compass Method <span class="btn-arrow">&rarr;</span></a>',
     '<a href="assessments.html#compass" class="btn btn-outline-navy" style="margin-top:22px;">Take the Compass Assessment <span class="btn-arrow">&rarr;</span></a>')
 rep('<div class="reveal" style="margin-top:28px;"><a href="#resources" class="btn btn-outline-navy">Visit the Resource Center <span class="btn-arrow">&rarr;</span></a></div>',
-    '<div class="reveal" style="margin-top:28px; display:flex; gap:14px; align-items:center; flex-wrap:wrap;"><span class="pill">Resource Center launching soon</span><a href="contact.html#general" class="btn btn-outline-navy">Ask for early access <span class="btn-arrow">&rarr;</span></a></div>')
+    '<div class="reveal" style="margin-top:28px;"><a href="resources.html" class="btn btn-outline-navy">Visit the Resource Center <span class="btn-arrow">&rarr;</span></a></div>')
+rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3>', '<a href="what-is-brand-voice-ai.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Is Brand Voice AI?</h3>')
+rep('so people and AI communicate consistently.</p></div>', 'so people and AI communicate consistently.</p></a>')
+rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Should a Small Business Automate First?</h3>', '<a href="what-should-a-small-business-automate-first.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">What Should a Small Business Automate First?</h3>')
+rep('without buying unnecessary software.</p></div>', 'without buying unnecessary software.</p></a>')
+rep('<div class="card"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">How Do You Capture the Knowledge Inside a Founder&rsquo;s Head?</h3>', '<a href="how-do-you-capture-the-knowledge-inside-a-founders-head.html" class="card" style="text-decoration:none;"><span class="card-eyebrow">Article</span><h3 style="font-size:16.5px;">How Do You Capture the Knowledge Inside a Founder&rsquo;s Head?</h3>')
+rep('into a usable resource.</p></div>', 'into a usable resource.</p></a>')
 rep('<a href="#case-studies" class="btn btn-outline-gold" style="margin-top:22px;">View Case Studies <span class="btn-arrow">&rarr;</span></a>',
     '<a href="about.html" class="btn btn-outline-gold" style="margin-top:22px;">Read the Story Behind It <span class="btn-arrow">&rarr;</span></a>')
 rep('<a href="#contact" class="btn btn-outline-gold">Schedule a Strategy Conversation</a>',

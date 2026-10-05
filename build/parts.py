@@ -11,6 +11,7 @@ NAV = [
     ("index.html", "Home"),
     ("solutions.html", "Solutions"),
     ("assessments.html", "Assessments"),
+    ("resources.html", "Resources"),
     ("about.html", "About"),
     ("contact.html", "Contact"),
 ]
@@ -93,6 +94,7 @@ def footer():
         <a href="index.html">Home</a>
         <a href="solutions.html">Solutions</a>
         <a href="assessments.html">Assessments</a>
+        <a href="resources.html">Resources</a>
         <a href="about.html">About John M Pogue</a>
         <a href="contact.html">Contact</a>
       </div>
