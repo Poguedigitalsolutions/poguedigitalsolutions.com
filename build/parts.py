@@ -5,7 +5,7 @@ import time
 SITE = "https://poguedigitalsolutions.com"
 ASSET_VER = time.strftime("%Y%m%d%H%M")
 CALENDLY = "https://calendly.com/poguedigitalsolutions/30min"
-EMAIL = "poguedigitalsolutions@gmail.com"
+EMAIL = "john@poguedigitalsolutions.com"
 LINKEDIN = "https://www.linkedin.com/in/johnpogue"
 # Stable entity IDs so every page's JSON-LD points at the same Organization and Person.
 ORG_ID = SITE + "/#organization"
