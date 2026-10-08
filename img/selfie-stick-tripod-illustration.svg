@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t d">
+  <title id="t">Phone on a selfie stick tripod filming hands at work</title>
+  <desc id="d">Illustration of a smartphone mounted on an extended selfie stick tripod, angled down over a table where a pair of hands works on a quilt square, with a small wireless remote beside it.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#142B4E"/>
+      <stop offset="1" stop-color="#0F2544"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F2D680"/>
+      <stop offset="1" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- soft light behind -->
+  <circle cx="300" cy="150" r="190" fill="#F2D680" opacity="0.06"/>
+
+  <!-- table -->
+  <rect x="0" y="380" width="800" height="120" fill="#FAF8F2"/>
+  <rect x="0" y="380" width="800" height="8" fill="#F1ECDF"/>
+
+  <!-- quilt square on table -->
+  <g transform="translate(470 392)">
+    <rect width="210" height="70" rx="4" fill="#F1ECDF" stroke="#9C812A" stroke-width="2"/>
+    <rect x="8" y="8" width="60" height="25" fill="#D4AF37" opacity="0.85"/>
+    <rect x="75" y="8" width="60" height="25" fill="#0F2544" opacity="0.85"/>
+    <rect x="142" y="8" width="60" height="25" fill="#D4AF37" opacity="0.85"/>
+    <rect x="8" y="38" width="60" height="25" fill="#0F2544" opacity="0.85"/>
+    <rect x="75" y="38" width="60" height="25" fill="#D4AF37" opacity="0.85"/>
+    <rect x="142" y="38" width="60" height="25" fill="#0F2544" opacity="0.85"/>
+  </g>
+
+  <!-- hands -->
+  <g fill="#E8C9A8" stroke="#9C7A5B" stroke-width="2">
+    <path d="M470 440 q-30 -6 -55 4 q-14 6 -6 16 q20 4 48 -2 z"/>
+    <path d="M680 440 q30 -6 55 4 q14 6 6 16 q-20 4 -48 -2 z"/>
+  </g>
+
+  <!-- tripod legs -->
+  <g stroke="#23231F" stroke-width="7" stroke-linecap="round">
+    <line x1="230" y1="300" x2="160" y2="400"/>
+    <line x1="230" y1="300" x2="300" y2="400"/>
+    <line x1="230" y1="300" x2="232" y2="405"/>
+  </g>
+  <!-- extended stick -->
+  <rect x="223" y="120" width="14" height="185" rx="5" fill="#58564D"/>
+  <rect x="226" y="120" width="8" height="185" rx="3" fill="#23231F" opacity="0.35"/>
+  <!-- collar joints -->
+  <rect x="219" y="200" width="22" height="10" rx="3" fill="#23231F"/>
+  <rect x="219" y="290" width="22" height="14" rx="3" fill="#23231F"/>
+
+  <!-- tilt head arm reaching out over the work -->
+  <path d="M230 122 L330 92" stroke="#23231F" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="230" cy="122" r="10" fill="#23231F"/>
+
+  <!-- phone tilted down toward hands -->
+  <g transform="translate(335 95) rotate(28)">
+    <rect x="-34" y="-62" width="68" height="124" rx="10" fill="#060B14"/>
+    <rect x="-28" y="-54" width="56" height="108" rx="6" fill="url(#screen)"/>
+    <circle cx="0" cy="0" r="12" fill="#0F2544" opacity="0.85"/>
+    <circle cx="0" cy="0" r="6" fill="#C0392B"/>
+    <!-- clamp -->
+    <rect x="-40" y="-10" width="8" height="20" rx="2" fill="#23231F"/>
+    <rect x="32" y="-10" width="8" height="20" rx="2" fill="#23231F"/>
+  </g>
+
+  <!-- field of view -->
+  <path d="M370 170 L470 392 L680 392 L395 150 Z" fill="#F2D680" opacity="0.08"/>
+
+  <!-- remote on table -->
+  <g transform="translate(330 400)">
+    <rect width="34" height="54" rx="10" fill="#23231F"/>
+    <circle cx="17" cy="18" r="8" fill="#D4AF37"/>
+    <rect x="11" y="34" width="12" height="4" rx="2" fill="#58564D"/>
+  </g>
+
+  <!-- labels -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#FAF8F2">
+    <text x="560" y="96" font-size="26">Steady phone.</text>
+    <text x="560" y="132" font-size="26">Hands free.</text>
+    <text x="560" y="168" font-size="26" fill="#F2D680">Ready to travel.</text>
+  </g>
+</svg>

@@ -15,6 +15,8 @@ keywords: selfie stick tripod, beginner creator gear, filming with your phone, f
 
 *As an Amazon Associate I earn from qualifying purchases. If you buy through a link on this page, I may earn a small commission at no extra cost to you.*
 
+<figure style="margin:28px 0"><img src="/img/selfie-stick-tripod-illustration.svg" alt="Illustration of a phone on a selfie stick tripod, angled down to film hands working on a quilt square, with a small wireless remote on the table" width="800" height="500" style="width:100%;height:auto;border-radius:8px" loading="lazy"></figure>
+
 ## Why this comes before everything else
 
 Most of the people I coach are starting a business later in life. They have a smartphone, a story worth telling, and a skill people want to learn. What they do not have yet is a steady way to film it.
