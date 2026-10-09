@@ -245,8 +245,8 @@ def breadcrumb(name, path):
 # Paste each step's token from ClickFunnels here (format: cfp_ + 24 characters). While the
 # subscribe token is empty the form renders as "opening soon" and nothing is submitted.
 CF_SDK = "https://sdk.myclickfunnels.com/sdk.js"
-CF_TOKEN_SUBSCRIBE = ""
-CF_TOKEN_THANKS = ""
+CF_TOKEN_SUBSCRIBE = "cfp_IVinWnub6HIEGTfMxSMWBr3o"
+CF_TOKEN_THANKS = "cfp_kuxgC7yYvg2uSTHBM0OBfXJG"
 
 # Runs in <head> before paint: when a page is shown inside another page's iframe, hide the
 # site chrome so only the signup card shows.
