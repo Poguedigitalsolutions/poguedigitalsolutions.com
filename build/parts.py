@@ -235,3 +235,32 @@ def breadcrumb(name, path):
     return json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
         {"@type": "ListItem", "position": 2, "name": name, "item": f"{SITE}/{path}"}]}, indent=1)
+
+# ---------------- Blog subscribe (ClickFunnels) ----------------
+# The signup form lives on ONE page, /subscribe, registered in ClickFunnels as an External page
+# step in the "Blog Updates" funnel. ClickFunnels only accepts signups from the exact URL a token
+# was issued for, so the boxes on the blog index and at the end of each post are iframes of that
+# page instead of copies of the form. After a signup, ClickFunnels sends the visitor to the next
+# funnel step, /subscribe/thanks.
+# Paste each step's token from ClickFunnels here (format: cfp_ + 24 characters). While the
+# subscribe token is empty the form renders as "opening soon" and nothing is submitted.
+CF_SDK = "https://sdk.myclickfunnels.com/sdk.js"
+CF_TOKEN_SUBSCRIBE = ""
+CF_TOKEN_THANKS = ""
+
+# Runs in <head> before paint: when a page is shown inside another page's iframe, hide the
+# site chrome so only the signup card shows.
+EMBED_DETECT = "<script>try{if(window.self!==window.top)document.documentElement.classList.add('embedded')}catch(e){document.documentElement.classList.add('embedded')}</script>\n"
+
+def cf_meta(token):
+    return f'<meta name="cf-page-token" content="{token}">\n' if token else ""
+
+def cf_script(token):
+    return f'<script src="{CF_SDK}" defer></script>\n' if token else ""
+
+def subscribe_embed(variant="post"):
+    """The signup box placed on blog pages. It frames /subscribe so the one registered
+    ClickFunnels page handles every signup."""
+    return f'''<div class="sub-embed sub-embed-{variant} reveal">
+  <iframe class="sub-frame" src="subscribe.html" title="Subscribe to new articles by email" loading="lazy"></iframe>
+</div>'''

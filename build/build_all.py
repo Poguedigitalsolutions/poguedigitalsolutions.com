@@ -36,7 +36,7 @@ def rewrite(html):
     html = re.sub(re.escape(SITE) + r"/([\w/-]+)\.html", lambda m: SITE + "/" + m.group(1), html)
     return html
 
-pages = sorted(glob.glob("*.html") + glob.glob("blog/*.html"))
+pages = sorted(glob.glob("*.html") + glob.glob("blog/*.html") + glob.glob("subscribe/*.html"))
 for p in pages:
     src = open(p).read()
     open(p, "w").write(rewrite(src))

@@ -24,6 +24,21 @@
     });
   }
 
+  // ---- Subscribe box: size each framed signup card to its content ----
+  document.querySelectorAll('iframe.sub-frame').forEach(function (f) {
+    var fit = function () {
+      try {
+        var root = f.contentDocument && f.contentDocument.querySelector('.sub-root');
+        if (root && root.offsetHeight) f.style.height = root.offsetHeight + 'px';
+      } catch (e) {}
+    };
+    f.addEventListener('load', function () {
+      fit();
+      try { new ResizeObserver(fit).observe(f.contentDocument.querySelector('.sub-root')); } catch (e) {}
+    });
+    fit();
+  });
+
   // ---- Scroll reveal ----
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var els = document.querySelectorAll('.reveal');

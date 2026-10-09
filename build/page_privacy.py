@@ -1,11 +1,11 @@
 """Privacy Policy. Plain-language policy that describes what this static site actually does:
-no forms, no tracking cookies, Cloudflare hosting and cookie-free Web Analytics, Google Fonts,
+one blog signup form (ClickFunnels), no advertising cookies, Cloudflare hosting and cookie-free Web Analytics, Google Fonts,
 outbound links to Calendly and LinkedIn, and email through Gmail. Update it when the stack changes."""
 from parts import *
 import json
 
-UPDATED = "October 5, 2026"
-UPDATED_ISO = "2026-10-05"
+UPDATED = "October 8, 2026"
+UPDATED_ISO = "2026-10-08"
 
 SECTIONS = [
 ("Who we are", f'''
@@ -14,7 +14,7 @@ SECTIONS = [
 '''),
 ("The short version", '''
 <ul>
-<li>This site has no sign-up forms, no accounts, and no comment sections.</li>
+<li>The only form on this site is the blog signup, which asks for your first name and email so we can send you new articles. There are no accounts and no comment sections.</li>
 <li>We do not use advertising cookies or tracking pixels, and we do not sell or rent your information to anyone.</li>
 <li>We count visits with Cloudflare Web Analytics, which does not use cookies and does not follow you across other websites.</li>
 <li>If you email us or book a call, we use what you send only to reply and to do the work you asked about.</li>
@@ -23,6 +23,7 @@ SECTIONS = [
 ("Information you choose to give us", f'''
 <p><strong>Email.</strong> Buttons on this site that say "email" open your own email program with a message addressed to {EMAIL}. Nothing is sent until you press send. When you do, we receive whatever you wrote, along with your name and email address.</p>
 <p><strong>Booking a call.</strong> The "Book a Call" buttons take you to Calendly, a separate scheduling service. Calendly collects the details you enter there, such as your name, email address, and answers to any booking questions, and shares them with us so we can hold the meeting. Calendly's own privacy policy covers how Calendly handles that information.</p>
+<p><strong>Blog email updates.</strong> If you subscribe to the blog, you give us your first name and email address. The signup form is run by ClickFunnels, which stores your details as a contact for us and sends the emails. We use them only to send new articles and occasional updates from Pogue Digital Solutions, LLC. Every email has an unsubscribe link, and you can also ask us by email to remove you.</p>
 <p><strong>Assessments and workshop requests.</strong> These currently work by email, so the same rules as email apply.</p>
 <p>We use this information to answer your questions, schedule and hold meetings, prepare proposals, and deliver services you hire us for. We keep it only as long as we need it for those purposes or as long as the law or our own records require, such as for tax and contract records.</p>
 '''),
@@ -30,7 +31,7 @@ SECTIONS = [
 <p><strong>Visit counts.</strong> We use Cloudflare Web Analytics to see which pages people read, which sites sent them here, and general details such as country, browser, and device type. It does not set cookies, does not create a profile of you, and is not used for advertising.</p>
 <p><strong>Server and security logs.</strong> Cloudflare hosts and protects this site. Like any web host, it processes technical information such as your IP address and browser details to deliver pages, block attacks, and keep the site running.</p>
 <p><strong>Fonts.</strong> This site loads its typefaces from Google Fonts. When a page loads, your browser asks Google's servers for the font files, which means Google receives your IP address and basic browser information. Google says it does not use Google Fonts requests to build advertising profiles.</p>
-<p><strong>Cookies.</strong> We do not set cookies on this site. Cloudflare may use a strictly necessary security cookie to tell real visitors from automated attacks. Calendly and LinkedIn set their own cookies once you go to their sites.</p>
+<p><strong>Cookies.</strong> We do not set advertising cookies on this site. Cloudflare may use a strictly necessary security cookie to tell real visitors from automated attacks. The blog signup form loads a ClickFunnels script that may set its own cookies and record that the form was viewed and submitted. Calendly and LinkedIn set their own cookies once you go to their sites.</p>
 '''),
 ("Services we rely on", '''
 <p>A few outside companies handle parts of how this site and business run. Each has its own privacy policy:</p>
@@ -38,6 +39,7 @@ SECTIONS = [
 <li><strong>Cloudflare</strong>: website hosting, security, email forwarding, and cookie-free visit counts.</li>
 <li><strong>Google</strong>: Google Fonts on this site, and Gmail for business email.</li>
 <li><strong>Calendly</strong>: scheduling calls.</li>
+<li><strong>ClickFunnels</strong>: the blog signup form, the subscriber list, and blog update emails.</li>
 <li><strong>LinkedIn</strong>: only if you follow a link to John M Pogue's profile.</li>
 </ul>
 <p>Links to other websites, including the articles cited in our blog, lead to sites we do not control. Their privacy practices are their own.</p>
@@ -76,7 +78,7 @@ SECTIONS = [
 toc = "".join(f'<li><a href="privacy.html#s{i}">{t}</a></li>' for i, (t, _) in enumerate(SECTIONS, 1))
 body = "".join(f'<h2 id="s{i}">{t}</h2>\n{h.strip()}\n' for i, (t, h) in enumerate(SECTIONS, 1))
 
-DESC = "How Pogue Digital Solutions, LLC handles information on poguedigitalsolutions.com: no forms, no tracking cookies, cookie-free analytics, and plain answers about email and Calendly bookings."
+DESC = "How Pogue Digital Solutions, LLC handles information on poguedigitalsolutions.com: the blog signup, cookie-free analytics, no advertising cookies, and plain answers about email and Calendly bookings."
 
 jsonld = [json.dumps({
     "@context": "https://schema.org", "@type": "WebPage", "name": "Privacy Policy",

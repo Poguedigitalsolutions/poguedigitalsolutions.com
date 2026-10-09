@@ -195,6 +195,11 @@ for idx, (meta, html_body) in enumerate(posts):
   </div>
 </section>
 {faq_block}
+<section class="tight sub-section">
+  <div class="wrap" style="max-width:760px;">
+    {subscribe_embed("post")}
+  </div>
+</section>
 <section class="on-paper-dim tight">
   <div class="wrap" style="max-width:760px;">
     <div class="author-card reveal">
@@ -249,7 +254,13 @@ page = head("Blog | Brand Voice, AI, and Business Systems for Small Business",
   </div>
 </section>
 
-<section>
+<section class="tight sub-section sub-section-index">
+  <div class="wrap" style="max-width:900px;">
+    {subscribe_embed("index")}
+  </div>
+</section>
+
+<section style="padding-top:24px;">
   <div class="wrap" style="max-width:900px;">
     <div class="section-head reveal"><span class="eyebrow">Latest Articles</span><h2>Start with the question you have.</h2></div>
     <div class="cat-filter reveal" role="group" aria-label="Filter by topic">
