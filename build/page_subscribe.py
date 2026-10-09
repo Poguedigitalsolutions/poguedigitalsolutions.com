@@ -16,7 +16,7 @@ posts = json.load(open(os.path.join(os.path.dirname(__file__), ".posts.json")))
 LIVE = bool(CF_TOKEN_SUBSCRIBE)
 
 if LIVE:
-    form = '''<form class="sub-form">
+    form = '''<form class="sub-form" target="_top">
       <label class="sub-field"><span>First name</span>
         <input type="text" name="first_name" data-cf-element="first-name" autocomplete="given-name" required></label>
       <label class="sub-field"><span>Email</span>
