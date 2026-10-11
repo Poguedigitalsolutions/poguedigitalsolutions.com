@@ -7,6 +7,7 @@ ASSET_VER = time.strftime("%Y%m%d%H%M")
 CALENDLY = "https://calendly.com/poguedigitalsolutions/30min"
 EMAIL = "john@poguedigitalsolutions.com"
 LINKEDIN = "https://www.linkedin.com/in/johnpogue"
+STARWEAVER = "https://www.starweaver.com/channels/john-pogue/about-me"
 # Stable entity IDs so every page's JSON-LD points at the same Organization and Person.
 ORG_ID = SITE + "/#organization"
 PERSON_ID = SITE + "/about#john-m-pogue"

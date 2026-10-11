@@ -5,7 +5,7 @@ PERSON = json.dumps({"@context": "https://schema.org", "@graph": [
  {"@type": "Person", "@id": PERSON_ID, "name": "John M Pogue", "url": SITE + "/about.html", "jobTitle": "Founder & Creative Strategist",
   "worksFor": {"@type": "Organization", "@id": ORG_ID, "name": "Pogue Digital Solutions, LLC", "url": SITE + "/"},
   "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Full Sail University"}],
-  "sameAs": [LINKEDIN], "email": EMAIL,
+  "sameAs": [LINKEDIN, STARWEAVER], "email": EMAIL,
   "description": "John M Pogue is the Founder and Creative Strategist of Pogue Digital Solutions, LLC. He is a Navy veteran and former Hospital Corpsman who holds a Master of Science in Digital Marketing from Full Sail University and a bachelor's degree in Visual Communication. His work focuses on AI-assisted business systems, brand voice, digital strategy, customer communication, training, and practical technology adoption.",
   "knowsAbout": ["AI-assisted business systems", "Brand voice strategy", "Digital marketing strategy", "Customer journey mapping", "Visual communication", "Veteran entrepreneurship", "The Compass Method"]},
  json.loads(breadcrumb("About John M Pogue", "about.html"))]}, indent=1)
@@ -76,7 +76,7 @@ html = head("About John M Pogue | Navy Veteran, Founder, Creative Strategist",
       <div class="card-glass"><span class="card-eyebrow">Practice</span><h3 style="font-size:18px;">AI &amp; Digital Marketing Consultant</h3><p style="font-size:14.5px;">AI-assisted business systems, brand voice, digital strategy, customer communication, and training.</p></div>
       <div class="card-glass"><span class="card-eyebrow">Original framework</span><h3 style="font-size:18px;">Brand Voice AI</h3><p style="font-size:14.5px;">An AI-assisted business operating system that captures founder knowledge and keeps human approval in the loop.</p></div>
       <div class="card-glass"><span class="card-eyebrow">Original framework</span><h3 style="font-size:18px;">The Compass Method</h3><p style="font-size:14.5px;">Heart at the center. Purpose, Skill, Opportunity, and Service at the four points. Lead with heart. Navigate with purpose.</p></div>
-      <div class="card-glass span-2"><span class="card-eyebrow">Teaching</span><h3 style="font-size:18px;">Workshops, training, and community education</h3><p style="font-size:14.5px;">Practical AI adoption, brand voice, digital marketing, and business systems for entrepreneurs, teams, veteran-owned businesses, nonprofits, and organizations. See one, do one, teach one.</p></div>
+      <div class="card-glass span-2"><span class="card-eyebrow">Teaching</span><h3 style="font-size:18px;">Workshops, training, and community education</h3><p style="font-size:14.5px;">Practical AI adoption, brand voice, digital marketing, and business systems for entrepreneurs, teams, veteran-owned businesses, nonprofits, and organizations. See one, do one, teach one.</p><p style="font-size:14.5px; margin-top:12px;"><a href="{STARWEAVER}" target="_blank" rel="noopener" style="color:var(--gold);">John&rsquo;s instructor channel on Starweaver&nbsp;&rarr;</a></p></div>
     </div>
   </div>
 </section>

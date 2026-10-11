@@ -21,7 +21,7 @@ CONTACT_LD = json.dumps({"@context": "https://schema.org", "@graph": [
   "about": {"@type": "Organization", "name": "Pogue Digital Solutions, LLC", "url": SITE + "/", "email": EMAIL,
             "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "email": EMAIL, "areaServed": "US", "availableLanguage": "English"}],
             "address": {"@type": "PostalAddress", "addressLocality": "Conroe", "addressRegion": "TX", "addressCountry": "US"},
-            "sameAs": [LINKEDIN]}},
+            "sameAs": [LINKEDIN, STARWEAVER]}},
  json.loads(breadcrumb("Contact", "contact.html"))]}, indent=1)
 
 cards = ""

@@ -74,7 +74,7 @@ def post_url(slug):
 
 
 AUTHOR = {"@type": "Person", "@id": PERSON_ID, "name": "John M Pogue", "url": SITE + "/about",
-          "jobTitle": "Founder & Creative Strategist", "sameAs": [LINKEDIN],
+          "jobTitle": "Founder & Creative Strategist", "sameAs": [LINKEDIN, STARWEAVER],
           "worksFor": {"@id": ORG_ID}}
 PUBLISHER = {"@type": "Organization", "@id": ORG_ID, "name": "Pogue Digital Solutions, LLC", "url": SITE + "/",
              "logo": {"@type": "ImageObject", "url": SITE + "/img/logo-horizontal.png"}}

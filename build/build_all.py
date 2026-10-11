@@ -10,7 +10,7 @@ import glob, json, os, re, subprocess, sys, time, html as htmlmod
 ROOT = os.getcwd()
 BUILD = os.path.join(ROOT, "build")
 sys.path.insert(0, BUILD)
-from parts import SITE, CALENDLY, EMAIL, LINKEDIN, clean_path
+from parts import SITE, CALENDLY, EMAIL, LINKEDIN, STARWEAVER, clean_path
 
 TODAY = time.strftime("%Y-%m-%d")
 
@@ -94,6 +94,7 @@ FACTS = f"""## Key facts
 - Book a call: {CALENDLY}
 - Email: {EMAIL}
 - LinkedIn: {LINKEDIN}
+- Starweaver instructor channel: {STARWEAVER}
 """
 
 core = ["index.html", "solutions.html", "assessments.html", "compass-method.html", "government.html", "about.html", "contact.html"]
