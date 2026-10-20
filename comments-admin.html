@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Moderation for blog comments.">
 <meta name="twitter:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
 <link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="/blog/feed.xml">
-<link rel="stylesheet" href="/css/styles.css?v=202610201546">
+<link rel="stylesheet" href="/css/styles.css?v=202610201551">
 </head>
 <body>
 <header class="site-header">
@@ -42,7 +42,7 @@
 
 <section class="tight" style="padding-top:56px;">
   <div class="wrap" style="max-width:860px;">
-    <nav aria-label="Breadcrumb" class="crumbs"><a href="/">Home</a> / Comment moderation</nav>
+    <span class="eyebrow">Moderation</span>
     <h1 style="font-size:clamp(28px,3.6vw,40px); margin-top:16px;">Blog Comments</h1>
     <p style="margin-top:10px; color:var(--charcoal);">Everything readers submit lands here first. Approve it to publish, mark it spam to hide it, or delete it for good.</p>
 
@@ -86,7 +86,7 @@
     return fetch('/api/admin/comments'+(qs||''),{method:method,headers:{'authorization':'Bearer '+key,'content-type':'application/json'},body:body?JSON.stringify(body):undefined})
       .then(function(r){ if(r.status===401) throw new Error('Wrong key.'); return r.json(); });
   }
-  function show(){ unlock.hidden=true; panel.hidden=false; load(); }
+  function show(){ unlock.hidden=true; unlock.style.display='none'; panel.hidden=false; load(); }
   function load(){
     document.querySelectorAll('#tabs .btn').forEach(function(b){ b.classList.toggle('is-active', b.dataset.status===status); });
     list.innerHTML='<p class="comments-empty">Loading&hellip;</p>';
@@ -168,6 +168,6 @@
   </div>
 </footer>
 
-<script src="/js/site.js?v=202610201546"></script>
+<script src="/js/site.js?v=202610201551"></script>
 </body>
 </html>
