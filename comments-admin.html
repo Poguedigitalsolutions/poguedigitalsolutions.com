@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment Moderation</title>
+<meta name="description" content="Moderation for blog comments.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pogue Digital Solutions, LLC">
+<meta property="og:title" content="Comment Moderation">
+<meta property="og:description" content="Moderation for blog comments.">
+<meta property="og:url" content="https://poguedigitalsolutions.com/comments-admin">
+<meta property="og:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comment Moderation">
+<meta name="twitter:description" content="Moderation for blog comments.">
+<meta name="twitter:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
+<link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="/blog/feed.xml">
+<link rel="stylesheet" href="/css/styles.css?v=202610201536">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-shell">
+    <a href="/" class="brand" aria-label="Pogue Digital Solutions, LLC home">
+      <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC" class="brand-logo">
+    </a>
+    <nav class="main-nav" aria-label="Primary"><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/assessments">Assessments</a><a href="/blog/">Blog</a><a href="/resources">Resources</a><a href="/compass-method">Compass</a><a href="/government">Government</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+    <a href="https://calendly.com/poguedigitalsolutions/30min" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Call</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/">Home<span>01</span></a><a href="/solutions">Solutions<span>02</span></a><a href="/assessments">Assessments<span>03</span></a><a href="/blog/">Blog<span>04</span></a><a href="/resources">Resources<span>05</span></a><a href="/compass-method">Compass<span>06</span></a><a href="/government">Government<span>07</span></a><a href="/about">About<span>08</span></a><a href="/contact">Contact<span>09</span></a>
+  <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-gold drawer-cta" target="_blank" rel="noopener">Book a Strategy Call</a>
+  <div class="drawer-foot">POGUE DIGITAL SOLUTIONS, LLC &middot; CONROE, TX</div>
+</div>
+
+<section class="tight" style="padding-top:56px;">
+  <div class="wrap" style="max-width:860px;">
+    <nav aria-label="Breadcrumb" class="crumbs"><a href="/">Home</a> / Comment moderation</nav>
+    <h1 style="font-size:clamp(28px,3.6vw,40px); margin-top:16px;">Blog Comments</h1>
+    <p style="margin-top:10px; color:var(--charcoal);">Everything readers submit lands here first. Approve it to publish, mark it spam to hide it, or delete it for good.</p>
+
+    <form id="unlock" class="comments-form" style="margin-top:28px;">
+      <label>Admin key <input name="key" type="password" autocomplete="current-password" required></label>
+      <div class="comments-foot">
+        <button class="btn btn-gold" type="submit">Unlock &rarr;</button>
+        <p class="comments-note"></p>
+      </div>
+    </form>
+
+    <div id="panel" hidden>
+      <div class="comments-foot" style="margin-top:28px;">
+        <div class="tabs" id="tabs">
+          <button class="btn btn-outline-navy" data-status="pending">Pending <span id="n-pending"></span></button>
+          <button class="btn btn-outline-navy" data-status="approved">Approved <span id="n-approved"></span></button>
+          <button class="btn btn-outline-navy" data-status="spam">Spam <span id="n-spam"></span></button>
+        </div>
+        <button class="btn btn-outline-navy" id="lock" type="button">Lock</button>
+      </div>
+      <div class="comments-list" id="mod-list" style="margin-top:22px;"></div>
+    </div>
+  </div>
+</section>
+<style>
+.tabs { display:flex; flex-wrap:wrap; gap:10px; }
+.tabs .btn.is-active { background:var(--ink); color:var(--white); border-color:var(--ink); }
+.mod-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.mod-actions button { font:inherit; font-size:13px; padding:7px 14px; border-radius:var(--radius-pill); border:1px solid var(--line-light); background:var(--white); cursor:pointer; }
+.mod-actions button:hover { border-color:var(--gold); }
+.mod-actions .danger:hover { border-color:#a33; color:#a33; }
+.mod-meta { font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--gold-dim); margin-top:6px; }
+</style>
+<script>
+(function(){
+  var KEY='pds_comments_admin_key', key=sessionStorage.getItem(KEY)||'', status='pending';
+  var unlock=document.getElementById('unlock'), panel=document.getElementById('panel'), list=document.getElementById('mod-list');
+  var note=unlock.querySelector('.comments-note');
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function api(method,qs,body){
+    return fetch('/api/admin/comments'+(qs||''),{method:method,headers:{'authorization':'Bearer '+key,'content-type':'application/json'},body:body?JSON.stringify(body):undefined})
+      .then(function(r){ if(r.status===401) throw new Error('Wrong key.'); return r.json(); });
+  }
+  function show(){ unlock.hidden=true; panel.hidden=false; load(); }
+  function load(){
+    document.querySelectorAll('#tabs .btn').forEach(function(b){ b.classList.toggle('is-active', b.dataset.status===status); });
+    list.innerHTML='<p class="comments-empty">Loading&hellip;</p>';
+    api('GET','?status='+status).then(function(d){
+      ['pending','approved','spam'].forEach(function(s){ document.getElementById('n-'+s).textContent=d.counts[s]?'('+d.counts[s]+')':''; });
+      if(!d.comments.length){ list.innerHTML='<p class="comments-empty">Nothing here.</p>'; return; }
+      list.innerHTML=d.comments.map(function(c){
+        var acts='';
+        if(status!=='approved') acts+='<button data-act="approved" data-id="'+c.id+'">Approve</button>';
+        if(status!=='pending') acts+='<button data-act="pending" data-id="'+c.id+'">Move to pending</button>';
+        if(status!=='spam') acts+='<button data-act="spam" data-id="'+c.id+'">Spam</button>';
+        acts+='<button class="danger" data-act="delete" data-id="'+c.id+'">Delete</button>';
+        return '<div class="comment"><div class="comment-head"><strong>'+esc(c.author)+'</strong><time>'+esc(c.created_at)+' UTC</time></div>'
+          +'<div class="mod-meta">On <a href="/blog/'+esc(c.slug)+'" target="_blank" rel="noopener">'+esc(c.slug)+'</a>'+(c.email?' &middot; '+esc(c.email):'')+'</div>'
+          +'<p style="margin-top:10px;">'+esc(c.body).replace(/\n/g,'<br>')+'</p><div class="mod-actions">'+acts+'</div></div>';
+      }).join('');
+    }).catch(function(e){ list.innerHTML='<p class="comments-empty">'+esc(e.message)+'</p>'; });
+  }
+  unlock.addEventListener('submit',function(ev){
+    ev.preventDefault(); key=unlock.key.value.trim(); note.textContent='Checking\u2026';
+    api('GET','?status=pending').then(function(){ sessionStorage.setItem(KEY,key); note.textContent=''; show(); })
+      .catch(function(e){ note.textContent=e.message; });
+  });
+  document.getElementById('tabs').addEventListener('click',function(ev){ var b=ev.target.closest('[data-status]'); if(b){ status=b.dataset.status; load(); } });
+  document.getElementById('lock').addEventListener('click',function(){ sessionStorage.removeItem(KEY); key=''; location.reload(); });
+  list.addEventListener('click',function(ev){
+    var b=ev.target.closest('[data-act]'); if(!b) return;
+    var id=Number(b.dataset.id), act=b.dataset.act;
+    if(act==='delete'){ if(!confirm('Delete this comment permanently?')) return; api('DELETE','',{id:id}).then(load); return; }
+    api('PATCH','',{id:id,status:act}).then(load);
+  });
+  if(key) show();
+})();
+</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="/img/logo-full.png" alt="Pogue Digital Solutions, LLC. Strategy. Systems. Solutions." class="footer-logo">
+        <p style="color:rgba(255,255,255,0.55); font-size:14px; max-width:270px;">Pogue Digital Solutions, LLC helps founder-led businesses and organizations organize their knowledge, clarify their brand voice, and build practical AI-assisted systems.</p>
+        <p class="footer-motto">&ldquo;Don&rsquo;t tell me it can&rsquo;t be done.&rdquo;</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/johnpogue" target="_blank" rel="noopener" aria-label="John M Pogue on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="/">Home</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/assessments">Assessments</a>
+        <a href="/blog/">Blog</a>
+        <a href="/resources">Resources</a>
+        <a href="/compass-method">The Compass Method</a>
+        <a href="/government">Government Services</a>
+        <a href="/about">About John M Pogue</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <a href="/solutions#brand-voice-ai">Brand Voice AI</a>
+        <a href="/solutions#ai-automation">AI and Automation</a>
+        <a href="/solutions#digital-strategy">Digital Strategy</a>
+        <a href="/solutions#training">Training and Workshops</a>
+        <a href="/government">Government and Organizational Services</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://calendly.com/poguedigitalsolutions/30min" target="_blank" rel="noopener">Book a Strategy Call</a>
+        <a href="mailto:john@poguedigitalsolutions.com">john@poguedigitalsolutions.com</a>
+        <a href="/contact">Request a Workshop</a>
+        <a href="/government#codes">UEI, CAGE, and NAICS</a>
+        <p style="color:rgba(255,255,255,0.45); font-size:13px; margin-top:14px;">Conroe, Texas<br>Serving Greater Houston and clients nationwide</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Pogue Digital Solutions, LLC. All rights reserved. &middot; <a href="/privacy">Privacy Policy</a></span>
+      <span class="footer-seal"><img src="/img/logo-seal-sm.png" alt="">VETERAN-OWNED &middot; CONROE, TX</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=202610201536"></script>
+</body>
+</html>

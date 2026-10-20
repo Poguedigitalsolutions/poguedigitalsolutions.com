@@ -259,6 +259,33 @@ def cf_meta(token):
 def cf_script(token):
     return f'<script src="{CF_SDK}" defer></script>\n' if token else ""
 
+# Cloudflare Turnstile site key (public). The matching secret lives in Pages env as TURNSTILE_SECRET.
+TURNSTILE_SITE_KEY = "REPLACE_WITH_TURNSTILE_SITE_KEY"
+
+def comments_block(slug):
+    """Reader comments on a blog post. Served by functions/api/comments/[slug].js;
+    every comment is held until John approves it at /comments-admin."""
+    return f'''<div id="comments" class="comments reveal" data-slug="{slug}" data-turnstile="{TURNSTILE_SITE_KEY}">
+  <div class="section-head"><span class="eyebrow">Comments</span></div>
+  <div class="comments-list"><p class="comments-empty">Loading comments&hellip;</p></div>
+  <form class="comments-form" novalidate>
+    <h3>Join the conversation</h3>
+    <div class="row-2">
+      <label>Name <input name="author" type="text" maxlength="80" required autocomplete="name"></label>
+      <label>Email (never shown) <input name="email" type="email" maxlength="254" autocomplete="email"></label>
+    </div>
+    <label>Comment <textarea name="body" maxlength="2000" required></textarea></label>
+    <div class="hp" aria-hidden="true"><label>Website <input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+    <div class="cf-turnstile"></div>
+    <div class="comments-foot">
+      <button class="btn btn-gold" type="submit">Post Comment <span class="btn-arrow">&rarr;</span></button>
+      <p class="comments-note"></p>
+    </div>
+    <p class="comments-hint">Comments are read by John before they appear. Keep it kind and on topic.</p>
+  </form>
+</div>
+<script src="js/comments.js?v={ASSET_VER}" defer></script>'''
+
 def subscribe_embed(variant="post"):
     """The signup box placed on blog pages. It frames /subscribe so the one registered
     ClickFunnels page handles every signup."""

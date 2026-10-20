@@ -213,6 +213,11 @@ for idx, (meta, html_body) in enumerate(posts):
     </div>
   </div>
 </section>
+<section class="tight">
+  <div class="wrap" style="max-width:760px;">
+    {comments_block(slug)}
+  </div>
+</section>
 {related}
 {cta_band("Put This to Work", "Find out where your business stands with a free assessment, or talk it through with John.", primary=("Take an Assessment", "assessments.html"))}
 ''' + footer()

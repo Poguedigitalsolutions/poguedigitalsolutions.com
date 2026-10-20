@@ -1,0 +1,14 @@
+# Cloudflare Pages config. Bindings here apply to the Pages project when it builds from this repo.
+name = "poguedigitalsolutions-com"
+pages_build_output_dir = "."
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "COMMENTS_DB"
+database_name = "pds-comments"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+# Encrypted variables (set in the Pages project settings, never committed):
+#   TURNSTILE_SECRET  Turnstile secret key
+#   ADMIN_KEY         long random passphrase for /comments-admin
+#   IP_SALT           optional random string used to hash commenter IPs
