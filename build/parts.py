@@ -260,7 +260,7 @@ def cf_script(token):
     return f'<script src="{CF_SDK}" defer></script>\n' if token else ""
 
 # Cloudflare Turnstile site key (public). The matching secret lives in Pages env as TURNSTILE_SECRET.
-TURNSTILE_SITE_KEY = "REPLACE_WITH_TURNSTILE_SITE_KEY"
+TURNSTILE_SITE_KEY = "0x4AAAAAAFeNqymqVLxGdg70"
 
 def comments_block(slug):
     """Reader comments on a blog post. Served by functions/api/comments/[slug].js;
