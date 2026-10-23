@@ -1,0 +1,24 @@
+# Cross-post kit: Tell Me Your Origin Story
+
+Original (publish here first): https://poguedigitalsolutions.com/blog/tell-me-your-origin-story
+
+Order: 1) this site  2) LinkedIn  3) Medium  4) Substack / anywhere else.
+Paste the matching footer at the end of each copy. Keep the link exactly as written.
+
+## LinkedIn article footer
+
+Originally published at https://poguedigitalsolutions.com/blog/tell-me-your-origin-story
+
+## LinkedIn post (teaser)
+
+Marvel made superheroes human by showing their struggles. Your business has an origin story too, and telling it is how customers come to root for you.
+
+Full article: https://poguedigitalsolutions.com/blog/tell-me-your-origin-story
+
+## Medium / Substack footer
+
+This article was first published on my site. Read the original, and the rest of the series, at https://poguedigitalsolutions.com/blog/tell-me-your-origin-story
+
+## Medium canonical link setting
+
+https://poguedigitalsolutions.com/blog/tell-me-your-origin-story

@@ -1,0 +1,24 @@
+# Cross-post kit: What I'd Do With a $2,000 Tariff Refund (Credit Avenger Style)
+
+Original (publish here first): https://poguedigitalsolutions.com/blog/what-id-do-with-a-2000-tariff-refund
+
+Order: 1) this site  2) LinkedIn  3) Medium  4) Substack / anywhere else.
+Paste the matching footer at the end of each copy. Keep the link exactly as written.
+
+## LinkedIn article footer
+
+Originally published at https://poguedigitalsolutions.com/blog/what-id-do-with-a-2000-tariff-refund
+
+## LinkedIn post (teaser)
+
+The Credit Avenger plan for a $2,000 windfall: shore up the emergency fund, hit the debt snowball, kill a monthly payment, and invest in skills that pay.
+
+Full article: https://poguedigitalsolutions.com/blog/what-id-do-with-a-2000-tariff-refund
+
+## Medium / Substack footer
+
+This article was first published on my site. Read the original, and the rest of the series, at https://poguedigitalsolutions.com/blog/what-id-do-with-a-2000-tariff-refund
+
+## Medium canonical link setting
+
+https://poguedigitalsolutions.com/blog/what-id-do-with-a-2000-tariff-refund

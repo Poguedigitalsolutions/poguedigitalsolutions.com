@@ -106,9 +106,10 @@ for path in glob.glob(f"{ART_DIR}/*.md"):
         html_body = ('<nav class="article-toc" aria-label="In this article"><span class="eyebrow">In this article</span><ol>' +
                      "".join(f'<li><a href="#{i}">{n}</a></li>' for i, n in toc) + "</ol></nav>\n" + html_body)
     html_body = link_ctas(html_body)
+    # Standing rule: the site is always the original. A LinkedIn copy is "also on", never the source.
     if meta.get("source"):
-        html_body += (f'\n<p class="source-note">Originally published on <a href="{meta["source"]}" target="_blank" rel="noopener">LinkedIn</a>. '
-                      'Comments and the conversation live there.</p>')
+        html_body += (f'\n<p class="source-note">This article also appears on <a href="{meta["source"]}" target="_blank" rel="noopener">LinkedIn</a>, '
+                      'where you can join the conversation.</p>')
     words = len(re.findall(r"\w+", plain(html_body)))
     meta.update(short_answer=short_answer, words=words, faq=faq_items, toc=toc)
     posts.append((meta, html_body))
@@ -366,3 +367,38 @@ print("resources.html", len(page))
 # metadata for build_all.py (sitemap, llms.txt)
 json.dump([{k: m[k] for k in ("title", "slug", "description", "category", "date", "updated", "short_answer")} for m, _ in posts],
           open(os.path.join(os.path.dirname(__file__), ".posts.json"), "w"), indent=1)
+
+# Cross-post kit. Standing rule: publish on the site first, then copy to LinkedIn, Medium,
+# Substack, etc. Every copy links back to the post here so the site stays the original.
+# One Markdown file per post in build/crosspost/ with the footer to paste under each copy.
+XP_DIR = os.path.join(os.path.dirname(__file__), "crosspost")
+os.makedirs(XP_DIR, exist_ok=True)
+for meta, _ in posts:
+    url = post_url(meta["slug"])
+    kit = f"""# Cross-post kit: {meta["title"]}
+
+Original (publish here first): {url}
+
+Order: 1) this site  2) LinkedIn  3) Medium  4) Substack / anywhere else.
+Paste the matching footer at the end of each copy. Keep the link exactly as written.
+
+## LinkedIn article footer
+
+Originally published at {url}
+
+## LinkedIn post (teaser)
+
+{meta["short_answer"] or meta["description"]}
+
+Full article: {url}
+
+## Medium / Substack footer
+
+This article was first published on my site. Read the original, and the rest of the series, at {url}
+
+## Medium canonical link setting
+
+{url}
+"""
+    open(os.path.join(XP_DIR, f"{meta['slug']}.md"), "w").write(kit)
+print("crosspost kits", len(posts))
