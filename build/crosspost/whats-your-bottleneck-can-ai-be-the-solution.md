@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/whats-your-bottleneck-can-ai-be-the-solution
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Adding AI does not remove a bottleneck. It can help you reach it faster. Where AI work slows down before, during, and after, and how to open the flow.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/whats-your-bottleneck-can-ai-be-the-solution
 

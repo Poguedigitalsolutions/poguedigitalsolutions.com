@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/the-builders-asked-for-brakes
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-AI companies asked to slow down. The government gave three answers at once. A Navy surgical count, film ratings, and the ESRB show what real oversight needs.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/the-builders-asked-for-brakes
 

@@ -386,9 +386,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at {url}
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-{meta["short_answer"] or meta["description"]}
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: {url}
 

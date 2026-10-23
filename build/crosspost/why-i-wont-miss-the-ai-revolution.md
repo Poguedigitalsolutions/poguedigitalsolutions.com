@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/why-i-wont-miss-the-ai-revolution
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-John M Pogue watched the internet and smartphone revolutions from the sidelines. Why he is prepared for the AI revolution, and why this time he is in the game.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/why-i-wont-miss-the-ai-revolution
 

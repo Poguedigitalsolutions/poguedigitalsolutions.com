@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/how-i-get-my-iphone-to-tell-me-its-done-charging
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-iOS has no built-in "fully charged" alert, but you can build one in about a minute with a Shortcuts automation that fires at a battery level you choose. Set it to 80% instead of 100%, because sitting at a full charge is what wears a lithium-ion battery down. On an iPhone 15 or newer, the Charge Limit setting does the job without any alert at all.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/how-i-get-my-iphone-to-tell-me-its-done-charging
 

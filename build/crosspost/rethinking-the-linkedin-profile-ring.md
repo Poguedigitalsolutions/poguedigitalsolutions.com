@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/rethinking-the-linkedin-profile-ring
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-LinkedIn only offers an #OpenToWork ring. How John M Pogue turned that limitation into a custom profile badge, a branding workflow, and a Custom GPT.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/rethinking-the-linkedin-profile-ring
 

@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/before-we-forget-how-to-read
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-AI will not ban reading, but it could make reading optional, and optional skills fade. The fix is order. Let a child do the reading and use AI to coach, the way my grandmother taught me math with dominoes. AI that reads with a child can build a reader. AI that reads for a child replaces one.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/before-we-forget-how-to-read
 

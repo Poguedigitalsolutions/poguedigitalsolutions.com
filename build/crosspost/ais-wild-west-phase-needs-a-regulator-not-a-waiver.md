@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/ais-wild-west-phase-needs-a-regulator-not-a-waiver
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-AI labs want an antitrust waiver to coordinate on safety. Lessons from debt collection and Sarbanes-Oxley point to an independent public referee instead.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/ais-wild-west-phase-needs-a-regulator-not-a-waiver
 

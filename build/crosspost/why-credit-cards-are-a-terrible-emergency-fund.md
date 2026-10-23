@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/why-credit-cards-are-a-terrible-emergency-fund
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Available credit is not savings. Card companies can cut limits or close accounts when you need them most. The Credit Avenger case for a real cash reserve.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/why-credit-cards-are-a-terrible-emergency-fund
 

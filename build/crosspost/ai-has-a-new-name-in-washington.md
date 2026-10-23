@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/ai-has-a-new-name-in-washington
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Federal agencies now call AI "super intelligence," and a new Super Intelligence Force led by Director of National Intelligence Jay Clayton has 120 days to report on AI's risks and opportunities. The name change is mostly PR, but small business owners should learn the term, use both words for a while, and watch for the task force report around early February 2027.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/ai-has-a-new-name-in-washington
 

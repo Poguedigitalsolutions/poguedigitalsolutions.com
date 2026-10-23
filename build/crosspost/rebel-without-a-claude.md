@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/rebel-without-a-claude
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-AI is making entrepreneurs sound alike. The fix is giving AI more of you: your stories, opinions, humor, and values, so it amplifies the identity you already have.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/rebel-without-a-claude
 

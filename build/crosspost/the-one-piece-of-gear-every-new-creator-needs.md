@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/the-one-piece-of-gear-every-new-creator-needs
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Get a selfie stick that also stands up as a tripod, with a small wireless remote. It holds your phone steady, lets you film without anyone else in the room, and folds up small enough to travel. It is inexpensive, and it is the first thing I recommend to every client I coach. The one I suggest is the Liphisy 50" Selfie Stick Travel Tripod.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/the-one-piece-of-gear-every-new-creator-needs
 

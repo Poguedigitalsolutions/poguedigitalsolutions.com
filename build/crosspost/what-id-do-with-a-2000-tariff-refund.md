@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/what-id-do-with-a-2000-tariff-refund
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-The Credit Avenger plan for a $2,000 windfall: shore up the emergency fund, hit the debt snowball, kill a monthly payment, and invest in skills that pay.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/what-id-do-with-a-2000-tariff-refund
 

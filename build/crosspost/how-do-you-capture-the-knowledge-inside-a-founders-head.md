@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/how-do-you-capture-the-knowledge-inside-a-founders-head
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-You do it through structured conversation, not a questionnaire, and you do it in rounds. A founder cannot sit down and write out everything they know, because most of what they know does not feel like knowledge to them. It feels like common sense. The job is to ask the questions that make the invisible visible, record the answers, organize them into categories a stranger could use, and then come back for a second pass once the founder sees what they missed.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/how-do-you-capture-the-knowledge-inside-a-founders-head
 

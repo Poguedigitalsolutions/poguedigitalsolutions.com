@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/what-roger-corman-taught-me-about-learning-ai
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Three lessons from filmmaker Roger Corman that apply to learning AI: do the rough things first, plan but be ready to change, and open big and close big.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/what-roger-corman-taught-me-about-learning-ai
 

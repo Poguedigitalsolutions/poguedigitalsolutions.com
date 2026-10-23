@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/afraid-ai-will-take-your-job
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-How to become harder to replace with AI: open big by defining the problem, let AI do the heavy lifting, and close big with human judgment and accountability.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/afraid-ai-will-take-your-job
 

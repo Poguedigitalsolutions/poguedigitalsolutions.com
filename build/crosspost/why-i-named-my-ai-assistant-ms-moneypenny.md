@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/why-i-named-my-ai-assistant-ms-moneypenny
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-What a land tech in an oil and gas office taught John M Pogue about the job an AI assistant should do: organize, draft, guard the calendar, and never send without a yes.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/why-i-named-my-ai-assistant-ms-moneypenny
 

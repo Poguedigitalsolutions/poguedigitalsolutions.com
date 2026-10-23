@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/ai-marketing-is-not-a-funnel-anymore
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Customers do not fall through a funnel. Marketing in the AI era needs continuity across research, brand, offers, content, and approval: a business operating system.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/ai-marketing-is-not-a-funnel-anymore
 

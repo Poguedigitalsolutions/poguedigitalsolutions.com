@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/tell-me-your-origin-story
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Marvel made superheroes human by showing their struggles. Your business has an origin story too, and telling it is how customers come to root for you.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/tell-me-your-origin-story
 

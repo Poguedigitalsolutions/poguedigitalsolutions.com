@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/a-starship-traded-its-library-for-a-ride-home
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-A 1995 Star Trek: Voyager episode explains why your stories are the one thing AI cannot produce when anyone can publish a thousand posts a day.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/a-starship-traded-its-library-for-a-ride-home
 

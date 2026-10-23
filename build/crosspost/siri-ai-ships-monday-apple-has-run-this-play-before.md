@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/siri-ai-ships-monday-apple-has-run-this-play-before
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Apple is paying Google to power the new Siri while building its own replacement. The Motorola ROKR shows how this partnership may end, and what small businesses can learn.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/siri-ai-ships-monday-apple-has-run-this-play-before
 

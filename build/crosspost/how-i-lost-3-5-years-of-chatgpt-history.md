@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/how-i-lost-3-5-years-of-chatgpt-history
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-One ChatGPT app update wiped three and a half years of organized projects. Why you should export your AI history every 90 days, and the backup guide to do it.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/how-i-lost-3-5-years-of-chatgpt-history
 

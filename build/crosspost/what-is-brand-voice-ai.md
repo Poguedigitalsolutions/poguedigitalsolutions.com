@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/what-is-brand-voice-ai
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Brand Voice AI is an AI-assisted business operating system. It captures what a company knows, how it communicates, who it serves, and how it makes decisions, then organizes that into a foundation that people and AI tools can both work from. The result is consistency. Your website, your emails, your proposals, and your AI-drafted content all sound like the same business, and a human approves the work before it goes out.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/what-is-brand-voice-ai
 

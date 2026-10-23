@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/the-hourglass-at-50
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Nobody can add sand to the hourglass, but AI can change how much each grain carries. Scheduled morning and evening briefs turned my nightly 30-minute review into a few minutes of reading. The hours you get back only count if you spend them where your heart is.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/the-hourglass-at-50
 

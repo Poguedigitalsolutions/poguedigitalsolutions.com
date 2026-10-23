@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/what-should-a-small-business-automate-first
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-Automate the task you repeat most often that requires the least judgment. For most small businesses that is one of three things: answering the same inbound question, sending the same follow-up, or moving the same information from one place to another by hand. Pick one. Document how you do it today. Then, and only then, look at tools.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/what-should-a-small-business-automate-first
 

@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/we-already-accepted-the-machine
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-In 1713 a boy rigged a steam engine to run its own valves. The same lesson applies to AI: automate the repetition and keep human judgment where it belongs.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/we-already-accepted-the-machine
 

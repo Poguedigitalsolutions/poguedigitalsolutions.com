@@ -9,9 +9,10 @@ Paste the matching footer at the end of each copy. Keep the link exactly as writ
 
 Originally published at https://poguedigitalsolutions.com/blog/why-isnt-america-a-perfect-100
 
-## LinkedIn post (teaser)
+## LinkedIn teaser post
 
-A veteran looks at why Freedom House scores the United States 81 out of 100, how freedom indexes define freedom, and what a homegrown scorecard might weigh.
+Hook: written per article (five options drafted, John picks one), never the short answer.
+End the post with:
 
 Full article: https://poguedigitalsolutions.com/blog/why-isnt-america-a-perfect-100
 
