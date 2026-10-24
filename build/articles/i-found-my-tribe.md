@@ -27,6 +27,8 @@ I understood that fan. I found my tribe too!
 
 I'm a Navy veteran. My tribe follows me everywhere I go. When I meet another veteran, a stranger becomes family in about thirty seconds. We swap ships and rates, and then we're just talking like we've known each other for years, swapping stories and making jokes. We both leave with a smile, and it brightens our day.
 
+I find that every week thanks to a LinkedIn group called Civi Connect. [Hal Fischer](https://www.linkedin.com/in/halfischer/), who runs it, makes sure every local event shows up on the calendar, not just his own. Every Wednesday there's a dinner meetup where we eat and talk with other veterans. Those meetups make my week worthwhile.
+
 Writer Sebastian Junger argues in his book [*Tribe*](https://link.amazon/B0hrf8BFF) that many veterans miss the belonging of their unit more than anything else about service. I believe him. That feeling doesn't leave when the uniform comes off.
 
 ## Then I watched Lucy Darling
