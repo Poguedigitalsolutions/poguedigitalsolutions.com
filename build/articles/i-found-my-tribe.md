@@ -105,7 +105,7 @@ That's what a tribe does. It puts its people on a pedestal. The Navy Memorial sa
 - [*Tribe: On Homecoming and Belonging*](https://link.amazon/B0hrf8BFF), Sebastian Junger. Why veterans miss the belonging of their units, and what modern life lost.
 - [*Tribes: We Need You to Lead Us*](https://link.amazon/B0hDJ1JTm), Seth Godin. How anyone can gather a tribe around an idea, written for people building businesses and movements.
 - [*The Art of Gathering*](https://link.amazon/B02DSVMeB), Priya Parker. How great hosts turn an event into an experience, much like Lucy's party.
-- *The Ritual Process*, Victor Turner. The anthropology behind communitas, the bond formed through shared ritual.
+- [*The Ritual Process*](https://link.amazon/B00Ld9Ekm), Victor Turner. The anthropology behind communitas, the bond formed through shared ritual.
 - [*Strange Journey: The Story of Rocky Horror* (2025)](https://link.amazon/B0hU7uzhO), directed by Linus O'Brien. Now on Prime Video and Apple TV.
 - [*The Official Rocky Horror Late Night Double Feature: The 50th Anniversary Two-Volume Collector's Edition*](https://link.amazon/B0eFrynOw). The official 50th anniversary collection for fans who want the full story.
 - [Carisa Hendrix's Magic Algorithm](https://www.youtube.com/watch?v=YFe1NFEBWYA), *Comedy Means Business*. How she built Lucy Darling into a touring business.
