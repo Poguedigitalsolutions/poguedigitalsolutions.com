@@ -49,8 +49,7 @@ for i in range(32):
     a=i*11.25
     if i%8==0: continue
     if i%4==0: rose.append((205,a,42,22.5,0.65))
-    elif i%2==0: rose.append((165,a,30,11.25,0.5))
-    else: rose.append((215,a,18,4.5,0.4))   # long thin 32-wind needles like the reference
+
 rose.sort(key=lambda x:x[0])
 parts=[point(a,Lp,w,sp,op) for Lp,a,w,sp,op in rose]
 # cardinal arms with diamond letter plates at the tips
@@ -65,7 +64,7 @@ for i in range(8):
     a=i*45+22.5; p=pt(100,a)
     hub.append(f'<path d="M{f(pt(108,a))} L{f(pt(100,a-3))} L{f(pt(92,a))} L{f(pt(100,a+3))} Z" fill="{G}" fill-opacity="0.4"/>')
 hubsvg=f'''<g fill="none" stroke="{G}" stroke-opacity="0.5" stroke-width="0.9">
-    <circle cx="400" cy="400" r="116"/><circle cx="400" cy="400" r="84"/>{''.join(hub)}
+    <circle cx="400" cy="400" r="100"/>
   </g>'''
 letters=''.join(f'<text x="{pt(246,a)[0]:.1f}" y="{pt(246,a)[1]+8:.1f}">{t}</text>' for a,t in ((0,'N'),(90,'E'),(180,'S'),(270,'W')))
 inter=''.join(f'<text x="{pt(232,a)[0]:.1f}" y="{pt(232,a)[1]+5:.1f}" transform="rotate({a if a<180 else a-360} {pt(232,a)[0]:.1f} {pt(232,a)[1]:.1f})">{t}</text>' for a,t in ((45,'NE'),(135,'SE'),(225,'SW'),(315,'NW')))
@@ -95,7 +94,6 @@ svg=f'''<svg class="compass-bg" viewBox="0 0 800 800" aria-hidden="true" focusab
   {hubsvg}
   {rosesvg}
   <g font-family="Georgia, 'Times New Roman', serif" fill="{L}" fill-opacity="0.85" text-anchor="middle" font-size="24">{letters}</g>
-  <g font-family="Georgia, 'Times New Roman', serif" fill="{L}" fill-opacity="0.55" text-anchor="middle" font-size="13">{inter}</g>
   {anchor}
 </svg>'''
 open(sys.argv[1],'w').write(svg); print(len(svg))
