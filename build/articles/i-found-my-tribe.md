@@ -13,6 +13,8 @@ keywords: building a tribe, community building, brand community, customer loyalt
 
 **The short answer:** A tribe is the group that accepts you as you are and won't let you fall. The Navy, the Rocky Horror Picture Show, and the Lucy Darling Show look like they have nothing in common. They share the same seven parts, and once you can name those parts, you can build a tribe on purpose.
 
+*Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.*
+
 ## Three words from a documentary
 
 I was watching a documentary about the Rocky Horror Picture Show when a fan said three words that stopped me: "I found my tribe."
@@ -96,6 +98,8 @@ That's what a tribe does. It puts its people on a pedestal. The Navy Memorial sa
 - [*Tribe: On Homecoming and Belonging*](https://link.amazon/B0hrf8BFF), Sebastian Junger (2016).
 
 ## Further reading
+
+*Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.*
 
 - [*Tribe: On Homecoming and Belonging*](https://link.amazon/B0hrf8BFF), Sebastian Junger. Why veterans miss the belonging of their units, and what modern life lost.
 - [*Tribes: We Need You to Lead Us*](https://link.amazon/B0hDJ1JTm), Seth Godin. How anyone can gather a tribe around an idea, written for people building businesses and movements.
