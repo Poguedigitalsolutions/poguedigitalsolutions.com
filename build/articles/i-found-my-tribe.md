@@ -6,6 +6,7 @@ author: John M Pogue
 date: 2026-10-24
 category: Marketing
 reading_time: 6 min
+source: https://www.linkedin.com/pulse/i-found-my-tribe-john-m-pogue-kxnec/
 keywords: building a tribe, community building, brand community, customer loyalty, Rocky Horror Picture Show, Lucy Darling, Carisa Hendrix, Navy veterans, Lone Sailor, belonging
 ---
 
