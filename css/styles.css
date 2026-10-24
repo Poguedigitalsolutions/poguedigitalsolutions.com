@@ -657,8 +657,9 @@ nav.main-nav a { font-size: 11.5px; letter-spacing: 0.06em; }
 .article-body ul, .article-body ol { padding-left: 22px; margin: 0 0 1.4em; }
 .article-body li { margin-bottom: 8px; }
 .article-body strong { color: var(--ink); }
-.article-body a { color: var(--gold-dim); text-underline-offset: 3px; }
-.article-body a:hover { color: var(--ink); }
+.article-body a { color: #1a5fb4; text-underline-offset: 3px; }
+.article-body a:visited { color: #5b3a9e; }
+.article-body a:hover { color: #0b3d80; }
 .article-body em { color: inherit; }
 .article-meta { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-on-ink-dim); }
 .article-meta img, .article-byline img { width: 36px !important; height: 36px !important; max-width: 36px; flex: 0 0 36px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; border: 1px solid rgba(212,175,55,0.4); }
