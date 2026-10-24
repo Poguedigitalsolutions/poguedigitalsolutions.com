@@ -150,43 +150,10 @@ def footer():
 '''
 
 def compass_svg():
-    """Decorative rotating compass rose used behind hero sections."""
-    ticks = ""
-    for i in range(72):
-        ang = i * 5
-        L = 14 if i % 18 == 0 else (9 if i % 6 == 0 else 5)
-        ticks += f'<line x1="400" y1="{400-330}" x2="400" y2="{400-330+L}" transform="rotate({ang} 400 400)"/>'
-    return f'''<svg class="compass-bg" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
-  <defs>
-    <radialGradient id="cg" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.18"/>
-      <stop offset="60%" stop-color="#D4AF37" stop-opacity="0.04"/>
-      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="sweepg" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#F2D680" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#F2D680" stop-opacity="0.55"/>
-    </linearGradient>
-  </defs>
-  <circle cx="400" cy="400" r="360" fill="url(#cg)"/>
-  <g class="ring-outer" fill="none" stroke="#D4AF37" stroke-opacity="0.45" stroke-width="1">
-    <circle cx="400" cy="400" r="330"/>
-    <circle cx="400" cy="400" r="318" stroke-dasharray="2 10"/>
-    <g stroke-width="1.2">{ticks}</g>
-  </g>
-  <g class="ring-inner" fill="none" stroke="#D4AF37" stroke-opacity="0.3" stroke-width="1">
-    <circle cx="400" cy="400" r="230"/>
-    <circle cx="400" cy="400" r="150" stroke-dasharray="1 6"/>
-    <path d="M400 170 L412 388 L400 400 L388 388 Z M400 630 L412 412 L400 400 L388 412 Z M170 400 L388 388 L400 400 L388 412 Z M630 400 L412 388 L400 400 L412 412 Z" fill="#D4AF37" fill-opacity="0.12" stroke-opacity="0.5"/>
-  </g>
-  <g class="sweep">
-    <path d="M400 400 L400 70 A330 330 0 0 1 560 110 Z" fill="url(#sweepg)" opacity="0.5"/>
-  </g>
-  <g font-family="IBM Plex Mono, monospace" font-size="18" fill="#F2D680" fill-opacity="0.7" text-anchor="middle">
-    <text x="400" y="52">N</text><text x="754" y="407">E</text><text x="400" y="760">S</text><text x="46" y="407">W</text>
-  </g>
-  <circle cx="400" cy="400" r="5" fill="#F2D680"/>
-</svg>'''
+    # Line-art 32-point compass rose. Regenerate with: python3 build/compass_build.py build/compass.svg
+    import os
+    with open(os.path.join(os.path.dirname(__file__), "compass.svg"), encoding="utf-8") as fh:
+        return fh.read()
 
 def hero_portrait(caption="Founder &amp; Creative Strategist", name="John M Pogue"):
     return f'''<div class="portrait-lockup reveal">
