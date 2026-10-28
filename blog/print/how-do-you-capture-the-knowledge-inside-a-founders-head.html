@@ -30,9 +30,9 @@ a { color:var(--ink); }
 .sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
 @media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
 
-.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--ink); }
-.letterhead img { filter:grayscale(1) brightness(0); width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
-.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--soft); text-align:right; }
+.letterhead { padding-bottom:6px; border-bottom:2px solid var(--ink); break-inside:avoid; }
+.letterhead img { display:block; width:100%; max-width:5.2in; height:auto; margin:0 auto; }
+.letterhead .site { display:block; text-align:center; margin-top:2px; font-family:'IBM Plex Mono',monospace; font-size:8pt; letter-spacing:.12em; text-transform:uppercase; color:var(--soft); }
 
 .eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
 h1 { font-size:24pt; margin:8px 0 10px; }
@@ -98,7 +98,7 @@ sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft
 </div>
 <main class="sheet">
   <header class="letterhead">
-    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <img src="/img/print-header.png" alt="Pogue Digital Solutions, LLC. Strategy, Systems, Solutions. Strategic thinking. Smarter systems. Measurable results.">
     <span class="site">poguedigitalsolutions.com/blog</span>
   </header>
   <span class="eyebrow">Business Systems</span>
