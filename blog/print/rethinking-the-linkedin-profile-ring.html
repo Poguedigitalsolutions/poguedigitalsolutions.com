@@ -30,9 +30,9 @@ a { color:var(--ink); }
 .sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
 @media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
 
-.letterhead { padding-bottom:6px; border-bottom:2px solid var(--ink); break-inside:avoid; }
-.letterhead img { display:block; width:100%; height:auto; margin:0; }
-.letterhead .site { display:block; text-align:center; margin-top:2px; font-family:'IBM Plex Mono',monospace; font-size:8pt; letter-spacing:.12em; text-transform:uppercase; color:var(--soft); }
+.letterhead { break-inside:avoid; }
+.letterhead img { display:block; width:100%; height:auto; margin:0; padding-bottom:6px; border-bottom:2px solid var(--ink); }
+.letterhead .site { display:block; text-align:center; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9pt; letter-spacing:.06em; color:var(--ink); text-decoration:none; }
 
 .eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
 h1 { font-size:24pt; margin:8px 0 10px; }
@@ -99,7 +99,7 @@ sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft
 <main class="sheet">
   <header class="letterhead">
     <img src="/img/print-header.png" alt="Pogue Digital Solutions, LLC. Strategy, Systems, Solutions. Strategic thinking. Smarter systems. Measurable results.">
-    <span class="site">poguedigitalsolutions.com/blog</span>
+    <a class="site" href="https://poguedigitalsolutions.com/blog/">poguedigitalsolutions.com/blog</a>
   </header>
   <span class="eyebrow">Brand Voice</span>
   <h1>Don't Tell Me It Can't Be Done: Rethinking the LinkedIn Profile Ring</h1>
