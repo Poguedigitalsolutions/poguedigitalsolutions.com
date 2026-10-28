@@ -213,12 +213,12 @@ for idx, (meta, html_body) in enumerate(posts):
   </div>
 </section>
 {faq_block}
-{next_block}
 <section class="tight sub-section">
   <div class="wrap" style="max-width:760px;">
     {subscribe_embed("post")}
   </div>
 </section>
+{next_block}
 <section class="on-paper-dim tight">
   <div class="wrap" style="max-width:760px;">
     <div class="author-card reveal">
