@@ -29,7 +29,7 @@ else:
 CARD = f'''<div class="sub-card">
   <span class="eyebrow">Get New Articles</span>
   <h2 class="sub-title">New articles, sent to your inbox.</h2>
-  <p class="sub-copy">When John M Pogue publishes a new piece on brand voice, AI, or business systems, you get it by email. No spam, and you can unsubscribe any time.</p>
+  <p class="sub-copy">One email each time John M Pogue publishes a new article on brand voice, AI, or business systems, usually once or twice a week. No spam, and you can unsubscribe any time.</p>
   {form}
   <p class="sub-fine">We use your name and email only to send blog updates. See the <a href="privacy.html#s3" target="_top">Privacy Policy</a>.</p>
 </div>'''

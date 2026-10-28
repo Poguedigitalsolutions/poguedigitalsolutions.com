@@ -22,8 +22,6 @@ He never learned to read it himself. He never needed to.
 
 I'm writing this as a warning, because that boy doesn't exist yet. Whether he ever does depends on choices we make in the next few years.
 
-*Follow me for more on using AI to make people more capable, while keeping the human skills we can't afford to lose.*
-
 ## How a skill fades
 
 Nobody bans a skill. Nobody holds a vote to retire it. It fades one convenience at a time.

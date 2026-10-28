@@ -52,7 +52,7 @@ rep('into a usable resource.</p></div>', 'into a usable resource.</p></a>')
 rep('<a href="#case-studies" class="btn btn-outline-gold" style="margin-top:22px;">View Case Studies <span class="btn-arrow">&rarr;</span></a>',
     '<a href="about.html" class="btn btn-outline-gold" style="margin-top:22px;">Read the Story Behind It <span class="btn-arrow">&rarr;</span></a>')
 rep('<a href="#contact" class="btn btn-outline-gold">Schedule a Strategy Conversation</a>',
-    f'<a href="{CALENDLY}" class="btn btn-outline-gold" target="_blank" rel="noopener">Schedule a Strategy Conversation</a>')
+    f'<a href="{CALENDLY}" class="btn btn-outline-gold" target="_blank" rel="noopener">Book a Strategy Call</a>')
 
 # Solutions: four equal cards instead of an uneven bento
 rep('<div class="bento reveal">\n      <div class="card span-2">\n        <h3>Brand Voice AI</h3>', '<div class="grid-2 reveal">\n      <div class="card">\n        <h3>Brand Voice AI</h3>')

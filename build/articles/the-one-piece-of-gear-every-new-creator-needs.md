@@ -13,7 +13,7 @@ keywords: selfie stick tripod, beginner creator gear, filming with your phone, f
 
 **The short answer:** Get a selfie stick that also stands up as a tripod, with a small wireless remote. It holds your phone steady, lets you film without anyone else in the room, and folds up small enough to travel. It is inexpensive, and it is the first thing I recommend to every client I coach. The one I suggest is the <a href="https://link.amazon/B0aKdCVgD" target="_blank" rel="sponsored nofollow noopener">Liphisy 50" Selfie Stick Travel Tripod</a>.
 
-*As an Amazon Associate I earn from qualifying purchases. If you buy through a link on this page, I may earn a small commission at no extra cost to you.*
+*Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.*
 
 <figure style="margin:28px 0"><img src="/img/selfie-stick-tripod-illustration.svg" alt="Illustration of a phone on a selfie stick tripod, angled down to film hands working on a quilt square, with a small wireless remote on the table" width="800" height="500" style="width:100%;height:auto;border-radius:8px" loading="lazy"></figure>
 

@@ -2,7 +2,13 @@
 blog/feed.xml (RSS), and resources.html (which points into the blog).
 
 Article front matter: title, slug, description, author, date, category, reading_time,
-optional updated (YYYY-MM-DD) and keywords (comma list).
+optional updated (YYYY-MM-DD), keywords (comma list), and image (a hand-made social banner,
+e.g. img/banners/<slug>.jpg). Without image, og_cards.py draws a title card for the post.
+
+Article template (every post): the short answer, the body, then "## References" (plain source
+links, no affiliate links) and "## Further reading". Amazon links get rel="sponsored", and the
+affiliate disclosure is placed directly under the Further reading heading automatically.
+The build lists any post missing either section.
 
 AEO hooks in the Markdown:
   - Open with a paragraph starting "**The short answer:**". It becomes the styled lede
@@ -18,6 +24,7 @@ from email.utils import format_datetime
 import markdown
 from parts import *
 import print_view
+import og_cards
 
 ART_DIR = os.path.join(os.path.dirname(__file__), "articles")
 PORTRAIT = "img/portrait-john-desk.jpg"
@@ -59,6 +66,20 @@ def link_ctas(h):
     }
     for k, v in repl.items():
         h = h.replace(k, v, 1)
+    return h
+
+
+DISCLOSURE = ("<p class=\"affiliate-note\"><em>Some links in this article are affiliate links. "
+              "As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</em></p>")
+AMAZON = re.compile(r'<a href="(https://(?:link\.amazon|amzn\.to|www\.amazon\.com)[^"]*)"(?![^>]*rel=)')
+
+
+def affiliate(h):
+    """Mark Amazon links as sponsored and put the disclosure under the Further reading heading."""
+    h = AMAZON.sub(r'<a href="\1" target="_blank" rel="sponsored nofollow noopener"', h)
+    m = re.search(r'(<h2 id="further-reading">[^<]*</h2>)(.*?)(?=<h2 |\Z)', h, re.S | re.I)
+    if m and re.search(r"link\.amazon|amzn\.to|amazon\.com", m.group(2)) and "Amazon Associate" not in m.group(2):
+        h = h[:m.end(1)] + "\n" + DISCLOSURE + h[m.end(1):]
     return h
 
 
@@ -106,7 +127,7 @@ for path in glob.glob(f"{ART_DIR}/*.md"):
     elif len(toc) >= 4:
         html_body = ('<nav class="article-toc" aria-label="In this article"><span class="eyebrow">In this article</span><ol>' +
                      "".join(f'<li><a href="#{i}">{n}</a></li>' for i, n in toc) + "</ol></nav>\n" + html_body)
-    html_body = link_ctas(html_body)
+    html_body = affiliate(link_ctas(html_body))
     # Standing rule: the site is always the original. A LinkedIn copy is "also on", never the source.
     if meta.get("source"):
         html_body += (f'\n<p class="source-note">This article also appears on <a href="{meta["source"]}" target="_blank" rel="noopener">LinkedIn</a>, '
@@ -117,8 +138,21 @@ for path in glob.glob(f"{ART_DIR}/*.md"):
 
 posts.sort(key=lambda p: (p[0]["date"], p[0]["title"]), reverse=True)
 
+def template_gaps(h):
+    if 'id="references-and-further-reading"' in h:
+        return ["References and Further reading share one heading"]
+    return [sec for sec, anchor in (("References", "references"), ("Further reading", "further-reading"))
+            if f'id="{anchor}"' not in h]
+missing = [(m["slug"], template_gaps(h)) for m, h in posts]
+missing = [(slug, secs) for slug, secs in missing if secs]
+if missing:
+    print(f"template check: {len(missing)} posts do not match the article template")
+    for slug, secs in missing:
+        print("  ", slug, "->", ", ".join(secs))
+
 for idx, (meta, html_body) in enumerate(posts):
     slug, url = meta["slug"], post_url(meta["slug"])
+    og_image = meta.get("image") or og_cards.card(slug, meta["title"], meta["category"])
     keywords = [k.strip() for k in meta.get("keywords", "").split(",") if k.strip()] or [meta["category"]]
     posting = {
         "@type": "BlogPosting", "@id": url + "#article", "headline": meta["title"],
@@ -126,7 +160,7 @@ for idx, (meta, html_body) in enumerate(posts):
         "author": AUTHOR, "publisher": PUBLISHER, "isPartOf": {"@id": BLOG_ID},
         "datePublished": meta["date"], "dateModified": meta["updated"],
         "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url,
-        "image": SITE + "/img/hero-founder-composite.jpg", "articleSection": meta["category"],
+        "image": f"{SITE}/{og_image}", "articleSection": meta["category"],
         "keywords": keywords, "wordCount": meta["words"], "inLanguage": "en-US",
         "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", "#short-answer"]},
     }
@@ -187,7 +221,7 @@ for idx, (meta, html_body) in enumerate(posts):
 </section>''' if rel else ""
 
     page = head(f'{meta["title"]} | Pogue Digital Solutions Blog', meta["description"], f"blog/{slug}.html",
-                jsonld=jsonld, og_type="article", extra_meta=extra) + header("blog/index.html") + f'''
+                jsonld=jsonld, og_image=og_image, og_type="article", extra_meta=extra) + header("blog/index.html") + f'''
 <section class="on-ink tight post-hero" style="padding-top:56px; padding-bottom:64px;">
   {compass_svg()}
   <div class="wrap reveal" style="max-width:820px;">
@@ -365,18 +399,6 @@ page = head("Resources | Articles on Brand Voice, AI, and Business Systems",
     <div class="article-list reveal">
 {"".join(row(m) for m, _ in posts if m["slug"] in START_HERE)}    </div>
     <div class="reveal" style="margin-top:28px;"><a href="blog/index.html" class="btn btn-outline-navy">See all articles on the blog <span class="btn-arrow">&rarr;</span></a></div>
-  </div>
-</section>
-
-<section class="on-paper-dim">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">Coming Next</span><h2>More is on the way.</h2><p>The Resource Center will grow into an answer library. Here is what is in the queue.</p></div>
-    <div class="grid-3 reveal">
-      <div class="card"><span class="card-eyebrow">Tools</span><h3 style="font-size:17px;">AI Toolbox</h3><p style="font-size:14px;">Recommended AI, marketing, automation, and business tools with plain-English explanations of who each one is for.</p></div>
-      <div class="card"><span class="card-eyebrow">Tools</span><h3 style="font-size:17px;">Custom AI Assistants</h3><p style="font-size:14px;">Guided assistants for customer journey mapping, avatar research, email creation, and brand development.</p></div>
-      <div class="card"><span class="card-eyebrow">Downloads</span><h3 style="font-size:17px;">Worksheets and Checklists</h3><p style="font-size:14px;">Brand voice worksheets, an AI readiness checklist, customer journey templates, and knowledge-capture exercises.</p></div>
-    </div>
-    <div class="reveal" style="margin-top:28px;"><a href="contact.html#general" class="btn btn-outline-navy">Ask to be notified <span class="btn-arrow">&rarr;</span></a></div>
   </div>
 </section>
 

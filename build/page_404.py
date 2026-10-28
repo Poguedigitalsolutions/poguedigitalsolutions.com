@@ -41,7 +41,7 @@ BODY = r'''<section class="on-ink" style="min-height:70vh; display:flex; align-i
     <div style="display:flex; gap:14px; justify-content:center; margin-top:30px; flex-wrap:wrap;">
       <a href="index.html" class="btn btn-gold">Back to Home <span class="btn-arrow">&rarr;</span></a>
       <a href="solutions.html" class="btn btn-outline-gold">See Solutions</a>
-      <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-outline-gold" target="_blank" rel="noopener">Book a Call</a>
+      <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-outline-gold" target="_blank" rel="noopener">Book a Strategy Call</a>
     </div>
   </div>
 </section>

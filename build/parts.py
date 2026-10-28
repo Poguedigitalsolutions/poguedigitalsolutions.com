@@ -19,8 +19,8 @@ NAV = [
     ("assessments.html", "Assessments"),
     ("blog/index.html", "Blog"),
     ("resources.html", "Resources"),
-    ("compass-method.html", "Compass"),
-    ("government.html", "Government"),
+    ("compass-method.html", "The Compass Method"),
+    ("government.html", "Government Services"),
     ("about.html", "About"),
     ("contact.html", "Contact"),
 ]
@@ -81,7 +81,7 @@ def header(active):
       <img src="img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC" class="brand-logo">
     </a>
     <nav class="main-nav" aria-label="Primary">{links}</nav>
-    <a href="{CALENDLY}" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Call</a>
+    <a href="{CALENDLY}" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Strategy Call</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
       <span></span><span></span><span></span>
     </button>
@@ -132,7 +132,7 @@ def footer():
         <a href="solutions.html#ai-automation">AI and Automation</a>
         <a href="solutions.html#digital-strategy">Digital Strategy</a>
         <a href="solutions.html#training">Training and Workshops</a>
-        <a href="government.html">Government and Organizational Services</a>
+        <a href="government.html">Government Services</a>
       </div>
       <div>
         <h4>Connect</h4>
@@ -170,7 +170,7 @@ def hero_portrait(caption="Founder &amp; Creative Strategist", name="John M Pogu
   <div class="badge"><strong>{name}</strong><span>{caption}</span></div>
 </div>'''
 
-def cta_band(eyebrow, heading, primary=("Take an Assessment", "assessments.html"), secondary=("Schedule a Strategy Conversation", CALENDLY), closing=None):
+def cta_band(eyebrow, heading, primary=("Take an Assessment", "assessments.html"), secondary=("Book a Strategy Call", CALENDLY), closing=None):
     sec_attrs = ' target="_blank" rel="noopener"' if secondary and secondary[1].startswith("http") else ""
     sec = f'<a href="{secondary[1]}" class="btn btn-outline-gold"{sec_attrs}>{secondary[0]}</a>' if secondary else ""
     close = f'<p style="font-family:var(--font-display); font-style:italic; font-size:clamp(18px,2vw,22px); color:var(--gold-bright); margin-top:32px;">{closing}</p>' if closing else ""

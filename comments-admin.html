@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comment Moderation</title>
-<meta name="description" content="Moderation for blog comments.">
+<title>Comments and Messages</title>
+<meta name="description" content="Moderation for blog comments and the contact form inbox.">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pogue Digital Solutions, LLC">
-<meta property="og:title" content="Comment Moderation">
-<meta property="og:description" content="Moderation for blog comments.">
+<meta property="og:title" content="Comments and Messages">
+<meta property="og:description" content="Moderation for blog comments and the contact form inbox.">
 <meta property="og:url" content="https://poguedigitalsolutions.com/comments-admin">
 <meta property="og:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Comment Moderation">
-<meta name="twitter:description" content="Moderation for blog comments.">
+<meta name="twitter:title" content="Comments and Messages">
+<meta name="twitter:description" content="Moderation for blog comments and the contact form inbox.">
 <meta name="twitter:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
 <link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="/blog/feed.xml">
-<link rel="stylesheet" href="/css/styles.css?v=202610280232">
+<link rel="stylesheet" href="/css/styles.css?v=202610281625">
 </head>
 <body>
 <header class="site-header">
@@ -27,15 +27,15 @@
     <a href="/" class="brand" aria-label="Pogue Digital Solutions, LLC home">
       <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC" class="brand-logo">
     </a>
-    <nav class="main-nav" aria-label="Primary"><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/assessments">Assessments</a><a href="/blog/">Blog</a><a href="/resources">Resources</a><a href="/compass-method">Compass</a><a href="/government">Government</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
-    <a href="https://calendly.com/poguedigitalsolutions/30min" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Call</a>
+    <nav class="main-nav" aria-label="Primary"><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/assessments">Assessments</a><a href="/blog/">Blog</a><a href="/resources">Resources</a><a href="/compass-method">The Compass Method</a><a href="/government">Government Services</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+    <a href="https://calendly.com/poguedigitalsolutions/30min" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Strategy Call</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/">Home<span>01</span></a><a href="/solutions">Solutions<span>02</span></a><a href="/assessments">Assessments<span>03</span></a><a href="/blog/">Blog<span>04</span></a><a href="/resources">Resources<span>05</span></a><a href="/compass-method">Compass<span>06</span></a><a href="/government">Government<span>07</span></a><a href="/about">About<span>08</span></a><a href="/contact">Contact<span>09</span></a>
+  <a href="/">Home<span>01</span></a><a href="/solutions">Solutions<span>02</span></a><a href="/assessments">Assessments<span>03</span></a><a href="/blog/">Blog<span>04</span></a><a href="/resources">Resources<span>05</span></a><a href="/compass-method">The Compass Method<span>06</span></a><a href="/government">Government Services<span>07</span></a><a href="/about">About<span>08</span></a><a href="/contact">Contact<span>09</span></a>
   <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-gold drawer-cta" target="_blank" rel="noopener">Book a Strategy Call</a>
   <div class="drawer-foot">POGUE DIGITAL SOLUTIONS, LLC &middot; CONROE, TX</div>
 </div>
@@ -43,8 +43,8 @@
 <section class="tight" style="padding-top:56px;">
   <div class="wrap" style="max-width:860px;">
     <span class="eyebrow">Moderation</span>
-    <h1 style="font-size:clamp(28px,3.6vw,40px); margin-top:16px;">Blog Comments</h1>
-    <p style="margin-top:10px; color:var(--charcoal);">Everything readers submit lands here first. Approve it to publish, mark it spam to hide it, or delete it for good.</p>
+    <h1 style="font-size:clamp(28px,3.6vw,40px); margin-top:16px;">Comments and Messages</h1>
+    <p style="margin-top:10px; color:var(--charcoal);">Blog comments land here first. Approve one to publish it, mark it spam to hide it, or delete it for good. Contact form messages are under Messages.</p>
 
     <form id="unlock" class="comments-form" style="margin-top:28px;">
       <label>Admin key <input name="key" type="password" autocomplete="current-password" required></label>
@@ -60,6 +60,7 @@
           <button class="btn btn-outline-navy" data-status="pending">Pending <span id="n-pending"></span></button>
           <button class="btn btn-outline-navy" data-status="approved">Approved <span id="n-approved"></span></button>
           <button class="btn btn-outline-navy" data-status="spam">Spam <span id="n-spam"></span></button>
+          <button class="btn btn-outline-navy" data-status="messages">Messages <span id="n-new"></span></button>
         </div>
         <button class="btn btn-outline-navy" id="lock" type="button">Lock</button>
       </div>
@@ -87,9 +88,35 @@
       .then(function(r){ if(r.status===401) throw new Error('Wrong key.'); return r.json(); });
   }
   function show(){ unlock.hidden=true; unlock.style.display='none'; panel.hidden=false; load(); }
+  function msgApi(method,qs,body){
+    return fetch('/api/admin/messages'+(qs||''),{method:method,headers:{'authorization':'Bearer '+key,'content-type':'application/json'},body:body?JSON.stringify(body):undefined})
+      .then(function(r){ if(r.status===401) throw new Error('Wrong key.'); return r.json(); });
+  }
+  function messageCount(){
+    msgApi('GET','?status=new').then(function(d){ document.getElementById('n-new').textContent=d.counts['new']?'('+d.counts['new']+')':''; }).catch(function(){});
+  }
+  function loadMessages(){
+    Promise.all([msgApi('GET','?status=new'),msgApi('GET','?status=read')]).then(function(r){
+      document.getElementById('n-new').textContent=r[0].counts['new']?'('+r[0].counts['new']+')':'';
+      var all=r[0].messages.concat(r[1].messages);
+      if(!all.length){ list.innerHTML='<p class="comments-empty">No messages yet.</p>'; return; }
+      list.innerHTML=all.map(function(m){
+        var isNew=m.status==='new';
+        var acts='<a class="btn btn-gold" style="padding:7px 14px; font-size:13px;" href="mailto:'+encodeURIComponent(m.email)+'?subject='+encodeURIComponent('Re: your message to Pogue Digital Solutions')+'">Reply by email</a>'
+          +'<button data-msg="'+(isNew?'read':'new')+'" data-id="'+m.id+'">Mark '+(isNew?'read':'unread')+'</button>'
+          +'<button class="danger" data-msg="delete" data-id="'+m.id+'">Delete</button>';
+        return '<div class="comment"'+(isNew?' style="border-color:var(--gold);"':'')+'><div class="comment-head"><strong>'+esc(m.name)+(isNew?' &middot; New':'')+'</strong><time>'+esc(m.created_at)+' UTC</time></div>'
+          +'<div class="mod-meta">'+esc(m.topic)+' &middot; '+esc(m.email)+'</div>'
+          +'<p style="margin-top:10px;">'+esc(m.body).replace(/
+/g,'<br>')+'</p><div class="mod-actions">'+acts+'</div></div>';
+      }).join('');
+    }).catch(function(e){ list.innerHTML='<p class="comments-empty">'+esc(e.message)+'</p>'; });
+  }
   function load(){
     document.querySelectorAll('#tabs .btn').forEach(function(b){ b.classList.toggle('is-active', b.dataset.status===status); });
     list.innerHTML='<p class="comments-empty">Loading&hellip;</p>';
+    if(status==='messages') return loadMessages();
+    messageCount();
     api('GET','?status='+status).then(function(d){
       ['pending','approved','spam'].forEach(function(s){ document.getElementById('n-'+s).textContent=d.counts[s]?'('+d.counts[s]+')':''; });
       if(!d.comments.length){ list.innerHTML='<p class="comments-empty">Nothing here.</p>'; return; }
@@ -113,6 +140,12 @@
   document.getElementById('tabs').addEventListener('click',function(ev){ var b=ev.target.closest('[data-status]'); if(b){ status=b.dataset.status; load(); } });
   document.getElementById('lock').addEventListener('click',function(){ sessionStorage.removeItem(KEY); key=''; location.reload(); });
   list.addEventListener('click',function(ev){
+    var mb=ev.target.closest('[data-msg]');
+    if(mb){
+      var mid=Number(mb.dataset.id), ma=mb.dataset.msg;
+      if(ma==='delete'){ if(!confirm('Delete this message permanently?')) return; msgApi('DELETE','',{id:mid}).then(load); return; }
+      msgApi('PATCH','',{id:mid,status:ma}).then(load); return;
+    }
     var b=ev.target.closest('[data-act]'); if(!b) return;
     var id=Number(b.dataset.id), act=b.dataset.act;
     if(act==='delete'){ if(!confirm('Delete this comment permanently?')) return; api('DELETE','',{id:id}).then(load); return; }
@@ -150,7 +183,7 @@
         <a href="/solutions#ai-automation">AI and Automation</a>
         <a href="/solutions#digital-strategy">Digital Strategy</a>
         <a href="/solutions#training">Training and Workshops</a>
-        <a href="/government">Government and Organizational Services</a>
+        <a href="/government">Government Services</a>
       </div>
       <div>
         <h4>Connect</h4>
@@ -168,6 +201,6 @@
   </div>
 </footer>
 
-<script src="/js/site.js?v=202610280232"></script>
+<script src="/js/site.js?v=202610281625"></script>
 </body>
 </html>
