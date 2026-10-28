@@ -483,6 +483,7 @@ body.nav-locked { overflow: hidden; }
 nav.main-nav { gap: 22px; }
 nav.main-nav a { font-size: 11.5px; letter-spacing: 0.06em; }
 nav.main-nav a, .nav-cta { white-space: nowrap; }
+.brand { flex-shrink: 0; }
 @media (max-width: 1440px) {
   nav.main-nav { gap: 16px; }
   nav.main-nav a { font-size: 11px; letter-spacing: 0.04em; }
@@ -490,7 +491,7 @@ nav.main-nav a, .nav-cta { white-space: nowrap; }
   .nav-cta { padding: 11px 18px; letter-spacing: 0.03em; }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   nav.main-nav { display: none; }
   .nav-toggle { display: flex; }
   .nav-cta.nav-cta-desktop { display: none; }
