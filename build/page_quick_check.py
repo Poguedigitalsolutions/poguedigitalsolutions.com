@@ -18,6 +18,7 @@ FIELDS = (["quiz_score", "quiz_tier", "quiz_tier_summary", "quiz_next_step", "qu
 
 STYLE = """<style>
 .qc-wrap { max-width: 760px; margin: 0 auto; }
+.qc-wrap [hidden] { display: none !important; }
 .qc-card { background: var(--white); border: 1px solid var(--line-light); border-radius: var(--radius); padding: clamp(22px, 5vw, 44px); display: flex; flex-direction: column; gap: 20px; box-shadow: 0 24px 60px -32px rgba(6, 11, 20, 0.35); scroll-margin-top: 96px; }
 .qc-card h2 { font-size: clamp(22px, 3.4vw, 30px); line-height: 1.25; }
 .qc-card h3 { font-size: 19px; }
@@ -89,7 +90,7 @@ else:
     COPY_STEP = ""
 
 QUIZ = f'''<div class="qc-wrap" id="qc">
-  <section class="qc-card" id="qc-intro" aria-label="About the Quick Check">
+  <div role="region" class="qc-card" id="qc-intro" aria-label="About the Quick Check">
     <span class="eyebrow">Free Assessment &middot; Brand Voice AI</span>
     <h2>Does your business sound like the same business everywhere it shows up?</h2>
     <p>This check looks at how much of what makes you <em>you</em> is written down, how your team uses it, and whether your AI tools can work from it.</p>
@@ -106,9 +107,9 @@ QUIZ = f'''<div class="qc-wrap" id="qc">
     </div>
     <div class="qc-actions"><button class="btn btn-gold" id="qc-start" type="button">Start the Quick Check <span class="btn-arrow">&rarr;</span></button></div>
     <p class="qc-small">Rate each statement from 1 (Strongly disagree) to 5 (Strongly agree). Answer for how things are today, not how you want them to be.</p>
-  </section>
+  </div>
 
-  <section class="qc-card" id="qc-q" hidden aria-label="Quick Check statement">
+  <div role="region" class="qc-card" id="qc-q" hidden aria-label="Quick Check statement">
     <div>
       <div class="qc-progress-top"><span id="qc-q-layer"></span><span id="qc-q-count"></span></div>
       <div class="qc-bar"><i id="qc-q-bar"></i></div>
@@ -120,9 +121,9 @@ QUIZ = f'''<div class="qc-wrap" id="qc">
       <button class="qc-btn" id="qc-back" type="button">Back</button>
       <button class="qc-btn qc-btn-primary" id="qc-next" type="button" disabled>Next</button>
     </div>
-  </section>
+  </div>
 
-  <section class="qc-card" id="qc-result" hidden aria-label="Your Quick Check result">
+  <div role="region" class="qc-card" id="qc-result" hidden aria-label="Your Quick Check result">
     <span class="eyebrow">Your Result</span>
     <div class="qc-head">
       <svg class="qc-gauge" viewBox="0 0 200 124" role="img" aria-label="Score gauge from 12 to 60">
@@ -160,7 +161,7 @@ QUIZ = f'''<div class="qc-wrap" id="qc">
     </div>
     {FORM}
     <div class="qc-actions"><button class="qc-link" id="qc-retake" type="button">Retake the Quick Check</button></div>
-  </section>
+  </div>
 </div>'''
 
 DESC = "Take the free Brand Voice Quick Check: 12 statements, about 5 minutes, and a score out of 60 that shows whether your business sounds the same across people, platforms, and AI tools."
