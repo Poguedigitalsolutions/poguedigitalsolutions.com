@@ -482,6 +482,13 @@ body.nav-locked { overflow: hidden; }
 
 nav.main-nav { gap: 22px; }
 nav.main-nav a { font-size: 11.5px; letter-spacing: 0.06em; }
+nav.main-nav a, .nav-cta { white-space: nowrap; }
+@media (max-width: 1440px) {
+  nav.main-nav { gap: 16px; }
+  nav.main-nav a { font-size: 11px; letter-spacing: 0.04em; }
+  .nav-shell { gap: 18px; }
+  .nav-cta { padding: 11px 18px; letter-spacing: 0.03em; }
+}
 
 @media (max-width: 1080px) {
   nav.main-nav { display: none; }
