@@ -784,7 +784,7 @@ html.embedded .sub-main .wrap { max-width: none !important; padding: 0; }
 .comments-hint { font-size: 13px; color: var(--charcoal); margin: 0; opacity: 0.8; }
 @media (max-width: 600px) { .comments-form .row-2 { grid-template-columns: 1fr; } }
 
-/* ---- Print: link on each article, plus a clean fallback when someone presses Ctrl+P on the article page.
+/* ---- Print (black and white): link on each article, plus a clean fallback when someone presses Ctrl+P on the article page.
    The full print layout lives at /blog/print/<slug> (template: build/print_view.py). ---- */
 .article-meta .print-link { color: var(--gold-bright); text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.4); }
 .article-meta .print-link:hover { border-bottom-color: var(--gold-bright); }
@@ -796,10 +796,13 @@ html.embedded .sub-main .wrap { max-width: none !important; padding: 0; }
   .post-page section:not(.post-hero):not(.post-body):not(.post-faq) { display: none !important; }
   .post-page section { padding: 0 !important; background: #fff !important; }
   .post-page .wrap { max-width: none !important; padding: 0 !important; }
-  .post-page .post-hero { border-bottom: 2px solid #D4AF37; padding-bottom: 12px !important; margin-bottom: 20px; }
-  .post-page .post-hero h1 { color: #0B1F3A !important; font-size: 24pt !important; margin-top: 6px !important; }
+  .post-page .post-hero { border-bottom: 2px solid #000; padding-bottom: 12px !important; margin-bottom: 20px; }
+  .post-page .post-hero h1 { color: #000 !important; font-size: 24pt !important; margin-top: 6px !important; }
   .post-page .post-hero p, .post-page .article-meta, .post-page .article-byline strong { color: #444 !important; }
-  .post-page .post-hero .eyebrow { color: #9a7d1e !important; }
+  .post-page .post-hero .eyebrow { color: #555 !important; }
+  .post-page .article-body, .post-page .article-body p, .post-page .article-body strong, .post-page .article-body h2, .post-page .article-body h3, .post-page .faq summary { color: #000 !important; }
+  .post-page .article-body p.lede { background: none !important; border-left-color: #000 !important; }
+  .post-page .article-body blockquote { border-left-color: #000 !important; }
   .post-page .reveal { opacity: 1 !important; transform: none !important; }
   .post-page .article-body { max-width: none; font-size: 11pt; line-height: 1.6; }
   .post-page .article-body h2 { font-size: 16pt; margin: 1.4em 0 0.5em; break-after: avoid; }

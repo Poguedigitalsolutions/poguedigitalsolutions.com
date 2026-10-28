@@ -59,35 +59,36 @@ def _endnotes(body):
 
 PRINT_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
-:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+/* Black and white for printing: the page uses only black, grays, and white so it prints sharp on any printer
+   and saves color ink. Brand colors appear only in the screen toolbar, which never prints. */
+:root { --ink:#000; --text:#1a1a1a; --mid:#444; --soft:#666; --rule:#bdbdbd; --brand-navy:#0B1F3A; --brand-gold:#D4AF37; }
 * { box-sizing:border-box; }
-html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
-h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
-a { color:var(--navy); }
+body { margin:0; background:#e6e6e6; color:var(--text); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--ink); font-weight:700; line-height:1.2; }
+a { color:var(--ink); }
 
 /* ---- screen-only toolbar ---- */
 .print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
-  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+  padding:12px 16px; background:var(--brand-navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
 .print-bar a { color:#f0d77a; text-decoration:none; }
 .print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
-  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+  padding:10px 20px; background:var(--brand-gold); color:var(--brand-navy); font-weight:600; }
 .print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
 
 /* ---- the sheet: looks like paper on screen ---- */
 .sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
 @media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
 
-.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
-.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
-.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--ink); }
+.letterhead img { filter:grayscale(1) brightness(0); width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--soft); text-align:right; }
 
-.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
 h1 { font-size:24pt; margin:8px 0 10px; }
-.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
-.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+.dek { font-size:12pt; line-height:1.5; color:var(--mid); margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--mid);
   padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
-.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--ink); }
 
 .body { font-size:11pt; line-height:1.6; }
 .body p { margin:0 0 .85em; orphans:3; widows:3; }
@@ -95,16 +96,16 @@ h1 { font-size:24pt; margin:8px 0 10px; }
 .body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
 .body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
 .body li { margin-bottom:.35em; }
-.body strong { color:var(--navy); }
+.body strong { color:var(--ink); }
 .body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
-.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--ink); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:var(--text); }
 .body img { max-width:100%; height:auto; break-inside:avoid; }
 .body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
 .body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
 .body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
-.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
-.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
-sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+.body .lede { font-size:12pt; padding:12px 16px; border-left:3px solid var(--ink); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:var(--soft); font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft); margin-left:1px; }
 
 .faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
 .faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
@@ -112,24 +113,24 @@ sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold
 
 .endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
 .endnotes h2 { font-size:12pt; margin:0 0 8px; }
-.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:var(--mid); }
 .endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
 
-.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr; gap:6px; break-inside:avoid; }
-.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
-.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
-.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
-.subscribe-qr { grid-column:1 / -1; display:flex; gap:14px; align-items:center; margin:6px 0 4px; padding:10px 12px; border:1px solid var(--rule); border-left:3px solid var(--gold); background:var(--paper); break-inside:avoid; }
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--ink); display:grid; grid-template-columns:1fr; gap:6px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:var(--mid); margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--ink); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:var(--mid); word-break:break-all; }
+.subscribe-qr { grid-column:1 / -1; display:flex; gap:14px; align-items:center; margin:6px 0 4px; padding:10px 12px; border:1px solid var(--ink); break-inside:avoid; }
 .subscribe-qr img { width:.95in; height:.95in; display:block; flex:0 0 auto; }
-.subscribe-qr p { margin:0; font-size:9pt; line-height:1.45; color:#444; }
-.subscribe-qr strong { display:block; font-family:'Libre Caslon Text',Georgia,serif; font-size:10.5pt; color:var(--navy); margin-bottom:2px; }
-.subscribe-qr .u { font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#666; }
-.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+.subscribe-qr p { margin:0; font-size:9pt; line-height:1.45; color:var(--mid); }
+.subscribe-qr strong { display:block; font-family:'Libre Caslon Text',Georgia,serif; font-size:10.5pt; color:var(--ink); margin-bottom:2px; }
+.subscribe-qr .u { font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--soft); }
 
 /* ---- paper ---- */
 @page { size:letter; margin:.7in .75in .8in;
-  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
-  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); } }
 @media print {
   body { background:#fff; }
   .print-bar { display:none !important; }
