@@ -93,7 +93,7 @@ sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft
 </head>
 <body>
 <div class="print-bar">
-  <a href="/blog/why-isnt-america-a-perfect-100">&larr; Back to the article</a>
+  <a href="/blog/why-isnt-america-a-perfect-100" class="back-link">&larr; Back to the article</a>
   <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
   <button type="button" onclick="window.print()"><svg class="print-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/><circle cx="18" cy="12" r=".6" fill="currentColor" stroke="none"/></svg><span>Print or Save as PDF</span></button>
 </div>
@@ -171,6 +171,12 @@ sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft
     <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
   </footer>
 </main>
-<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+<script>
+document.querySelector(".back-link").addEventListener("click", e => {
+  let fromSite = false;
+  try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (_) {}
+  if (fromSite && history.length > 1) { e.preventDefault(); history.back(); }
+});
+if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
 </body>
 </html>

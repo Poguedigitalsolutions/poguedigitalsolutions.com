@@ -178,7 +178,7 @@ def render(meta, html_body):
 </head>
 <body>
 <div class="print-bar">
-  <a href="blog/{slug}.html">&larr; Back to the article</a>
+  <a href="blog/{slug}.html" class="back-link">&larr; Back to the article</a>
   <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
   <button type="button" onclick="window.print()">{PRINT_ICON}<span>Print or Save as PDF</span></button>
 </div>
@@ -206,7 +206,13 @@ def render(meta, html_body):
     <div class="copy">&copy; {YEAR} Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
   </footer>
 </main>
-<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+<script>
+document.querySelector(".back-link").addEventListener("click", e => {{
+  let fromSite = false;
+  try {{ fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; }} catch (_) {{}}
+  if (fromSite && history.length > 1) {{ e.preventDefault(); history.back(); }}
+}});
+if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
 </body>
 </html>
 '''

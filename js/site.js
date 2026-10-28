@@ -54,3 +54,22 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function (el) { io.observe(el); });
 })();
+
+// Read & Print: remember where the reader was, so Back (button or browser arrow) returns to the same spot.
+(function () {
+  var key = 'pds-scroll:' + location.pathname;
+  document.querySelectorAll('.print-link').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { sessionStorage.setItem(key, String(window.scrollY)); } catch (e) {}
+    });
+  });
+  function restore() {
+    var y = null;
+    try { y = sessionStorage.getItem(key); sessionStorage.removeItem(key); } catch (e) {}
+    if (y === null) return;
+    var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || {};
+    if (nav.type && nav.type !== 'back_forward') return;
+    window.scrollTo(0, parseInt(y, 10) || 0);
+  }
+  window.addEventListener('pageshow', function (e) { if (!e.persisted) restore(); });
+})();
