@@ -106,7 +106,11 @@
 
   function show(name) {
     Object.keys(screens).forEach(function (k) { screens[k].hidden = k !== name; });
-    root.scrollIntoView({ behavior: "auto", block: "start" });
+    // Scroll so the card's top sits just below the fixed header.
+    var head = document.querySelector("header");
+    var offset = (head ? head.getBoundingClientRect().bottom : 0) + 24;
+    var top = root.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: Math.max(0, top), behavior: "instant" });
   }
 
   function renderQ() {
