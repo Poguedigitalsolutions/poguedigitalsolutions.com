@@ -51,7 +51,7 @@ def split_faq(body):
 def link_ctas(h):
     """Turn assessment and call references in article text into real links."""
     repl = {
-        "Brand Voice Quick Check": '<a href="assessments.html#brand-voice">Brand Voice Quick Check</a>',
+        "Brand Voice Quick Check": '<a href="brand-voice-quick-check.html">Brand Voice Quick Check</a>',
         "AI Readiness Assessment": '<a href="assessments.html#ai-readiness">AI Readiness Assessment</a>',
         "Business Systems Assessment": '<a href="assessments.html#continuity">Business Systems Assessment</a>',
         "book a strategy call": f'<a href="{CALENDLY}" target="_blank" rel="noopener">book a strategy call</a>',

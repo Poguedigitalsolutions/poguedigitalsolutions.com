@@ -221,6 +221,11 @@ def breadcrumb(name, path):
 CF_SDK = "https://sdk.myclickfunnels.com/sdk.js"
 CF_TOKEN_SUBSCRIBE = "cfp_IVinWnub6HIEGTfMxSMWBr3o"
 CF_TOKEN_THANKS = "cfp_kuxgC7yYvg2uSTHBM0OBfXJG"
+# Brand Voice Quick Check (/brand-voice-quick-check) and its thanks step. Each needs its own External
+# page in ClickFunnels. While CF_TOKEN_QUIZ is empty the quiz still scores, but the "email my results"
+# form is left off the page and nothing is sent.
+CF_TOKEN_QUIZ = ""
+CF_TOKEN_QUIZ_THANKS = ""
 
 # Runs in <head> before paint: when a page is shown inside another page's iframe, hide the
 # site chrome so only the signup card shows.

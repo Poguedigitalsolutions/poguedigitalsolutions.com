@@ -8,13 +8,13 @@ FAQS = [
  ("Can my team take an assessment together?", "Yes. The AI Readiness and Business Systems assessments work well as a team exercise, and the results often make for a useful leadership conversation."),
 ]
 
-def card(id_, mins, title, desc, routes, label):
+def card(id_, mins, title, desc, routes, label, href="contact.html#assessment"):
     return f'''<div class="card stack-lg" id="{id_}">
   <span class="card-eyebrow">{mins} &middot; Free</span>
   <h3>{title}</h3>
   <p>{desc}</p>
   <p style="font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-dim);">Routes to: {routes}</p>
-  <a href="contact.html#assessment" class="btn btn-outline-navy" style="margin-top:12px;">{label} <span class="btn-arrow">&rarr;</span></a>
+  <a href="{href}" class="btn btn-outline-navy" style="margin-top:12px;">{label} <span class="btn-arrow">&rarr;</span></a>
 </div>'''
 
 html = head("Free Business Assessments | Brand Voice, AI Readiness, Systems, Compass",
@@ -36,7 +36,7 @@ html = head("Free Business Assessments | Brand Voice, AI Readiness, Systems, Com
 <section>
   <div class="wrap">
     <div class="grid-2 reveal" style="gap:24px;">
-      {card("brand-voice", "5 min", "Brand Voice Quick Check", "Discover whether your business has enough clarity and documentation to communicate consistently across people, platforms, and AI tools.", "Brand Voice AI", "Check Your Brand Voice")}
+      {card("brand-voice", "5 min", "Brand Voice Quick Check", "Discover whether your business has enough clarity and documentation to communicate consistently across people, platforms, and AI tools.", "Brand Voice AI", "Check Your Brand Voice", href="brand-voice-quick-check.html")}
       {card("ai-readiness", "8 min", "AI Readiness Assessment", "Evaluate whether your business has the information, processes, safeguards, and team readiness needed to use AI effectively.", "AI and Automation", "Measure Your AI Readiness")}
       {card("continuity", "7 min", "Business Systems Assessment", "Identify repetitive work, undocumented processes, bottlenecks, and opportunities for better organization or automation. A gut check on what would happen to your marketing and operations if you disappeared for a month.", "Digital Strategy and Automation", "Review Your Business Systems")}
       {card("compass", "10 min", "Compass Assessment", "Explore how your purpose, skills, opportunities, service, and decisions align with the direction you want to pursue. Built on <a href=\"compass-method.html\">the Compass Method</a>: Heart at the center, with Purpose, Skill, Opportunity, and Service at the four points.", "The Compass Method", "Find Your Bearing")}
@@ -97,7 +97,7 @@ html = head("Free Business Assessments | Brand Voice, AI Readiness, Systems, Com
   </div>
 </section>
 
-{cta_band("Ready When You Are", "Pick the assessment that matches the question you are already asking.", primary=("Check Your Brand Voice", "#brand-voice"), closing="&ldquo;Don&rsquo;t tell me it can&rsquo;t be done. Let&rsquo;s find out how it can.&rdquo;")}
+{cta_band("Ready When You Are", "Pick the assessment that matches the question you are already asking.", primary=("Check Your Brand Voice", "brand-voice-quick-check.html"), closing="&ldquo;Don&rsquo;t tell me it can&rsquo;t be done. Let&rsquo;s find out how it can.&rdquo;")}
 ''' + footer()
 
 open("./assessments.html", "w").write(html)

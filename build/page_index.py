@@ -62,9 +62,10 @@ rep('<a href="solutions.html" class="btn btn-outline-navy" style="margin-top:16p
 rep('<a href="solutions.html" class="btn btn-outline-navy" style="margin-top:20px;">View Training Options', '<a href="solutions.html#training" class="btn btn-outline-navy" style="margin-top:20px;">View Training Options')
 
 # Assessment cards link to the assessment anchors
-for label, anchor in [("Check Your Brand Voice","brand-voice"),("Measure Your AI Readiness","ai-readiness"),("Review Your Systems","continuity"),("Find Your Bearing","compass")]:
+# (the Brand Voice Quick Check is a live quiz, so its card goes straight to it)
+for label, target in [("Check Your Brand Voice","brand-voice-quick-check.html"),("Measure Your AI Readiness","assessments.html#ai-readiness"),("Review Your Systems","assessments.html#continuity"),("Find Your Bearing","assessments.html#compass")]:
     rep(f'<a href="assessments.html" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">{label}</a>',
-        f'<a href="assessments.html#{anchor}" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">{label}</a>')
+        f'<a href="{target}" class="btn btn-outline-navy" style="margin-top:14px; font-size:11px; padding:10px 16px;">{label}</a>')
 
 # FAQ list -> accordion
 faq_start = body.index('<div class="reveal" style="display:flex; flex-direction:column;">\n      <div style="padding:20px 0;">')

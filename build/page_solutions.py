@@ -113,7 +113,7 @@ html = head(
       </div>
       <div>
         <p class="quote-band">Your business knowledge becomes a working resource instead of remaining trapped in separate files, tools, and memories.</p>
-        <a href="assessments.html#brand-voice" class="btn btn-gold" style="margin-top:26px;">Take the Brand Voice Quick Check <span class="btn-arrow">&rarr;</span></a>
+        <a href="brand-voice-quick-check.html" class="btn btn-gold" style="margin-top:26px;">Take the Brand Voice Quick Check <span class="btn-arrow">&rarr;</span></a>
       </div>
     </div>
   </div>

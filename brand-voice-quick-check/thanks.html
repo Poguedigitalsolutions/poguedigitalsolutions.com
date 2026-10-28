@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Quick Check Results Are on the Way | Pogue Digital Solutions</title>
+<meta name="description" content="Your Brand Voice Quick Check results are on the way to your inbox.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pogue Digital Solutions, LLC">
+<meta property="og:title" content="Your Quick Check Results Are on the Way | Pogue Digital Solutions">
+<meta property="og:description" content="Your Brand Voice Quick Check results are on the way to your inbox.">
+<meta property="og:url" content="https://poguedigitalsolutions.com/brand-voice-quick-check/thanks">
+<meta property="og:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your Quick Check Results Are on the Way | Pogue Digital Solutions">
+<meta name="twitter:description" content="Your Brand Voice Quick Check results are on the way to your inbox.">
+<meta name="twitter:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
+<link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="/blog/feed.xml">
+<style>
+.qc-wrap { max-width: 760px; margin: 0 auto; }
+.qc-card { background: var(--white); border: 1px solid var(--line-light); border-radius: var(--radius); padding: clamp(22px, 5vw, 44px); display: flex; flex-direction: column; gap: 20px; box-shadow: 0 24px 60px -32px rgba(6, 11, 20, 0.35); scroll-margin-top: 96px; }
+.qc-card h2 { font-size: clamp(22px, 3.4vw, 30px); line-height: 1.25; }
+.qc-card h3 { font-size: 19px; }
+.qc-card p { margin: 0; }
+.qc-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.qc-chip { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill); background: var(--paper-dim); color: var(--ink); }
+.qc-layers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.qc-layer { border-top: 2px solid var(--gold); padding-top: 10px; }
+.qc-layer b { display: block; font-family: var(--font-display); font-size: 17px; color: var(--ink); }
+.qc-layer span { font-size: 14px; color: var(--charcoal-soft); }
+.qc-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.qc-small { font-size: 14px; color: var(--charcoal-soft); }
+.qc-progress-top { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal-soft); margin-bottom: 8px; }
+.qc-bar { height: 6px; background: var(--paper-dim); border-radius: 99px; overflow: hidden; }
+.qc-bar i { display: block; height: 100%; width: 0; background: var(--gold); transition: width .25s ease; }
+.qc-options { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.qc-opt { font: inherit; font-size: 14px; line-height: 1.25; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; padding: 14px 6px; border-radius: var(--radius-sm); border: 1px solid var(--line-light); background: var(--white); color: var(--ink); }
+.qc-opt:hover { border-color: var(--gold); }
+.qc-opt[aria-pressed="true"] { border-color: var(--gold); background: rgba(212, 175, 55, 0.14); box-shadow: inset 0 -3px 0 var(--gold); }
+.qc-num { font-family: var(--font-mono); font-size: 18px; }
+.qc-nav { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.qc-btn { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; border-radius: var(--radius-pill); padding: 13px 24px; border: 1px solid var(--ink); background: transparent; color: var(--ink); }
+.qc-btn:hover { background: var(--ink); color: var(--white); }
+.qc-btn-primary { background: var(--ink); color: var(--white); }
+.qc-btn-primary:hover { background: var(--navy); }
+.qc-btn:disabled { opacity: .4; cursor: not-allowed; }
+.qc-link { font: inherit; font-size: 14px; background: none; border: 0; padding: 4px 0; color: var(--charcoal-soft); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.qc-card button:focus-visible, .qc-card a:focus-visible, .qc-card input:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.qc-head { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 26px; align-items: center; }
+.qc-gauge { width: 200px; max-width: 100%; }
+.qc-score { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-dim); }
+.qc-rows { display: flex; flex-direction: column; gap: 12px; }
+.qc-row { display: grid; grid-template-columns: 110px minmax(0, 1fr) 54px; gap: 12px; align-items: center; font-size: 15px; }
+.qc-row .qc-bar { height: 8px; }
+.qc-n { font-family: var(--font-mono); text-align: right; color: var(--charcoal-soft); }
+.qc-weak { background: var(--paper-dim); border-radius: var(--radius-sm); padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.qc-next { border-left: 3px solid var(--gold); padding-left: 16px; display: flex; flex-direction: column; gap: 10px; }
+.qc-steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+.qc-form { display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--line-light); padding-top: 22px; }
+.qc-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.qc-form label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 600; color: var(--ink); }
+.qc-form input { font: inherit; font-weight: 400; padding: 11px 13px; border-radius: 10px; border: 1px solid var(--line-light); background: var(--paper); min-width: 0; }
+@media (max-width: 640px) {
+  .qc-layers, .qc-fields { grid-template-columns: 1fr; }
+  .qc-options { grid-template-columns: 1fr; }
+  .qc-opt { flex-direction: row; justify-content: flex-start; text-align: left; gap: 14px; padding: 12px 14px; font-size: 16px; }
+  .qc-head { grid-template-columns: 1fr; justify-items: start; }
+  .qc-row { grid-template-columns: 92px minmax(0, 1fr) 46px; }
+}
+@media (prefers-reduced-motion: reduce) { .qc-bar i, #qc-needle { transition: none !important; } }
+</style>
+<link rel="stylesheet" href="/css/styles.css?v=202610281709">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-shell">
+    <a href="/" class="brand" aria-label="Pogue Digital Solutions, LLC home">
+      <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC" class="brand-logo">
+    </a>
+    <nav class="main-nav" aria-label="Primary"><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/assessments" class="active">Assessments</a><a href="/blog/">Blog</a><a href="/resources">Resources</a><a href="/compass-method">Compass</a><a href="/government">Government</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+    <a href="https://calendly.com/poguedigitalsolutions/30min" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Call</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/">Home<span>01</span></a><a href="/solutions">Solutions<span>02</span></a><a href="/assessments" class="active">Assessments<span>03</span></a><a href="/blog/">Blog<span>04</span></a><a href="/resources">Resources<span>05</span></a><a href="/compass-method">Compass<span>06</span></a><a href="/government">Government<span>07</span></a><a href="/about">About<span>08</span></a><a href="/contact">Contact<span>09</span></a>
+  <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-gold drawer-cta" target="_blank" rel="noopener">Book a Strategy Call</a>
+  <div class="drawer-foot">POGUE DIGITAL SOLUTIONS, LLC &middot; CONROE, TX</div>
+</div>
+
+<section class="on-paper-dim" style="padding-top:72px; padding-bottom:96px;">
+  <div class="wrap">
+<div class="qc-wrap"><div class="qc-card">
+  <span class="eyebrow">Results on the way</span>
+  <h2>Thanks. Check your inbox for your full results.</h2>
+  <p>Your email goes through each of your 12 answers, with a short note on what it means and one idea to raise that score. If you don&rsquo;t see it in a few minutes, check your promotions or spam folder and mark it as safe.</p>
+  <div class="qc-actions">
+    <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-gold" target="_blank" rel="noopener">Book a Strategy Call <span class="btn-arrow">&rarr;</span></a>
+    <a href="/assessments" class="btn btn-outline-navy">See all assessments</a>
+  </div>
+</div></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="/img/logo-full.png" alt="Pogue Digital Solutions, LLC. Strategy. Systems. Solutions." class="footer-logo">
+        <p style="color:rgba(255,255,255,0.55); font-size:14px; max-width:270px;">Pogue Digital Solutions, LLC helps founder-led businesses and organizations organize their knowledge, clarify their brand voice, and build practical AI-assisted systems.</p>
+        <p class="footer-motto">&ldquo;Don&rsquo;t tell me it can&rsquo;t be done.&rdquo;</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/johnpogue" target="_blank" rel="noopener" aria-label="John M Pogue on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="/">Home</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/assessments">Assessments</a>
+        <a href="/blog/">Blog</a>
+        <a href="/resources">Resources</a>
+        <a href="/compass-method">The Compass Method</a>
+        <a href="/government">Government Services</a>
+        <a href="/about">About John M Pogue</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <a href="/solutions#brand-voice-ai">Brand Voice AI</a>
+        <a href="/solutions#ai-automation">AI and Automation</a>
+        <a href="/solutions#digital-strategy">Digital Strategy</a>
+        <a href="/solutions#training">Training and Workshops</a>
+        <a href="/government">Government and Organizational Services</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://calendly.com/poguedigitalsolutions/30min" target="_blank" rel="noopener">Book a Strategy Call</a>
+        <a href="mailto:john@poguedigitalsolutions.com">john@poguedigitalsolutions.com</a>
+        <a href="/contact">Request a Workshop</a>
+        <a href="/government#codes">UEI, CAGE, and NAICS</a>
+        <p style="color:rgba(255,255,255,0.45); font-size:13px; margin-top:14px;">Conroe, Texas<br>Serving Greater Houston and clients nationwide</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Pogue Digital Solutions, LLC. All rights reserved. &middot; <a href="/privacy">Privacy Policy</a></span>
+      <span class="footer-seal"><img src="/img/logo-seal-sm.png" alt="">VETERAN-OWNED &middot; CONROE, TX</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=202610281709"></script>
+</body>
+</html>
