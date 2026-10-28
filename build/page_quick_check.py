@@ -19,7 +19,7 @@ FIELDS = (["quiz_score", "quiz_tier", "quiz_tier_summary", "quiz_next_step", "qu
 STYLE = """<style>
 .qc-wrap { max-width: 760px; margin: 0 auto; }
 .qc-wrap [hidden] { display: none !important; }
-.qc-card { background: var(--white); border: 1px solid var(--line-light); border-radius: var(--radius); padding: clamp(22px, 5vw, 44px); display: flex; flex-direction: column; gap: 20px; box-shadow: 0 24px 60px -32px rgba(6, 11, 20, 0.35); scroll-margin-top: 96px; }
+.qc-card { background: var(--white); border: 1px solid var(--line-light); border-radius: var(--radius); padding: clamp(22px, 5vw, 44px); display: flex; flex-direction: column; gap: 20px; box-shadow: 0 24px 60px -32px rgba(6, 11, 20, 0.35); scroll-margin-top: 130px; }
 .qc-card h2 { font-size: clamp(22px, 3.4vw, 30px); line-height: 1.25; }
 .qc-card h3 { font-size: 19px; }
 .qc-card p { margin: 0; }
