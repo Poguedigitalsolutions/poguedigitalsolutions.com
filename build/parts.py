@@ -224,8 +224,8 @@ CF_TOKEN_THANKS = "cfp_kuxgC7yYvg2uSTHBM0OBfXJG"
 # Brand Voice Quick Check (/brand-voice-quick-check) and its thanks step. Each needs its own External
 # page in ClickFunnels. While CF_TOKEN_QUIZ is empty the quiz still scores, but the "email my results"
 # form is left off the page and nothing is sent.
-CF_TOKEN_QUIZ = ""
-CF_TOKEN_QUIZ_THANKS = ""
+CF_TOKEN_QUIZ = "cfp_jo5oOEiwcpEcMDsS564r1QS7"
+CF_TOKEN_QUIZ_THANKS = "cfp_sbQ98Q1kTd7sKN9rAnrmkQxx"
 
 # Runs in <head> before paint: when a page is shown inside another page's iframe, hide the
 # site chrome so only the signup card shows.
