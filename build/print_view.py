@@ -20,7 +20,7 @@ To change the look of every print page, edit PRINT_CSS below and rebuild.
 """
 import re, html as htmlmod
 from datetime import datetime
-from parts import SITE, clean_path
+from parts import SITE, clean_path, PRINT_ICON
 
 YEAR = datetime.now().year
 
@@ -71,7 +71,7 @@ a { color:var(--ink); }
 .print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
   padding:12px 16px; background:var(--brand-navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
 .print-bar a { color:#f0d77a; text-decoration:none; }
-.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+.print-bar button { display:inline-flex; align-items:center; gap:8px; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
   padding:10px 20px; background:var(--brand-gold); color:var(--brand-navy); font-weight:600; }
 .print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
 
@@ -179,7 +179,7 @@ def render(meta, html_body):
 <div class="print-bar">
   <a href="blog/{slug}.html">&larr; Back to the article</a>
   <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
-  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+  <button type="button" onclick="window.print()">{PRINT_ICON}<span>Print or Save as PDF</span></button>
 </div>
 <main class="sheet">
   <header class="letterhead">

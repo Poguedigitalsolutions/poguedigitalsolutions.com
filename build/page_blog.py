@@ -185,7 +185,7 @@ for idx, (meta, html_body) in enumerate(posts):
       <span>Published <time datetime="{meta["date"]}">{nice_date(meta["date"])}</time></span>
       {updated_line}
       <span>{meta["reading_time"]} read</span>
-      <a class="print-link" href="blog/print/{slug}.html" rel="nofollow">Print this article</a>
+      <a class="print-link" href="blog/print/{slug}.html" rel="nofollow" title="Open a clean, printer-friendly copy">{PRINT_ICON}<span>Print</span></a>
     </div>
   </div>
 </section>
