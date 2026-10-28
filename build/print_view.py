@@ -10,7 +10,8 @@ What the print view does differently from the article page:
     article" list at the end prints the full web address, so the paper copy can
     still be checked.
   - Header block with logo, title, byline, dates; footer block with the article's
-    web address, author bio, and copyright.
+    web address, author bio, a QR code to sign up for updates (img/qr-subscribe.svg,
+    points at /subscribe), and copyright.
   - Page numbers and the title run along the bottom of each page in Chrome and Edge.
   - noindex, with a canonical pointing at the real article, so search engines never
     treat it as a duplicate.
@@ -114,10 +115,15 @@ sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold
 .endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
 .endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
 
-.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr; gap:6px; break-inside:avoid; }
 .colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
 .colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
 .colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.subscribe-qr { grid-column:1 / -1; display:flex; gap:14px; align-items:center; margin:6px 0 4px; padding:10px 12px; border:1px solid var(--rule); border-left:3px solid var(--gold); background:var(--paper); break-inside:avoid; }
+.subscribe-qr img { width:.95in; height:.95in; display:block; flex:0 0 auto; }
+.subscribe-qr p { margin:0; font-size:9pt; line-height:1.45; color:#444; }
+.subscribe-qr strong { display:block; font-family:'Libre Caslon Text',Georgia,serif; font-size:10.5pt; color:var(--navy); margin-bottom:2px; }
+.subscribe-qr .u { font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#666; }
 .colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
 
 /* ---- paper ---- */
@@ -190,6 +196,10 @@ def render(meta, html_body):
   {endnotes}
   <footer class="colophon">
     <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="subscribe-qr">
+      <img src="img/qr-subscribe.svg" alt="QR code to sign up for new articles by email at poguedigitalsolutions.com/subscribe">
+      <p><strong>Get new articles by email</strong>Scan the code with your phone camera to sign up for updates.<br><span class="u">poguedigitalsolutions.com/subscribe</span></p>
+    </div>
     <div class="url">Read online, comment, or share: {article_url}</div>
     <div class="copy">&copy; {YEAR} Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
   </footer>
