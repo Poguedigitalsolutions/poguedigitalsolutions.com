@@ -81,7 +81,7 @@ a { color:var(--ink); }
 
 .letterhead { break-inside:avoid; }
 .letterhead img { display:block; width:100%; height:auto; margin:0; padding-bottom:6px; border-bottom:2px solid var(--ink); }
-.letterhead .site { display:block; text-align:center; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9pt; letter-spacing:.06em; color:var(--ink); text-decoration:none; }
+.letterhead .site { display:block; text-align:right; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9pt; letter-spacing:.06em; color:var(--ink); text-decoration:none; }
 
 .eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
 h1 { font-size:24pt; margin:8px 0 10px; }
