@@ -155,8 +155,23 @@ for idx, (meta, html_body) in enumerate(posts):
              f'<meta property="article:section" content="{meta["category"]}">\n'
              f'<meta name="author" content="John M Pogue">\n')
 
-    # one related post: the next one in the list, wrapping around
-    others = [p[0] for p in posts[idx + 1:] + posts[:idx]]
+    # Next article: the next newest post (published just before this one). The oldest loops to the newest.
+    nxt = posts[(idx + 1) % len(posts)][0] if len(posts) > 1 else None
+    next_block = ""
+    if nxt:
+        label = "Next Article" if idx + 1 < len(posts) else "Back to the Newest Article"
+        next_block = f'''
+<section class="tight next-section">
+  <div class="wrap" style="max-width:760px;">
+    <a class="next-post" href="blog/{nxt["slug"]}.html" rel="next">
+      <span class="next-text"><span class="eyebrow">{label}</span><strong>{nxt["title"]}</strong><span class="next-meta">{nxt["category"]} &middot; {nxt["reading_time"]} read</span></span>
+      <span class="next-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>'''
+
+    # Keep Reading: one more post from the same topic, skipping the Next Article so the two never repeat
+    others = [p[0] for p in posts[idx + 1:] + posts[:idx] if not nxt or p[0]["slug"] != nxt["slug"]]
     rel = next((m for m in others if m["category"] == meta["category"]), others[0] if others else None)
     related = f'''
 <section class="tight">
@@ -198,6 +213,7 @@ for idx, (meta, html_body) in enumerate(posts):
   </div>
 </section>
 {faq_block}
+{next_block}
 <section class="tight sub-section">
   <div class="wrap" style="max-width:760px;">
     {subscribe_embed("post")}
