@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How I Get My iPhone to Tell Me It's Done Charging | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="iOS has no built-in full-charge alert, but the Shortcuts app can build one in a minute. Here's the setup, and why 80% is a better target than 100% for your battery.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/how-i-get-my-iphone-to-tell-me-its-done-charging">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/how-i-get-my-iphone-to-tell-me-its-done-charging">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">AI and Automation</span>
+  <h1>How I Get My iPhone to Tell Me It's Done Charging</h1>
+  <p class="dek">iOS has no built-in full-charge alert, but the Shortcuts app can build one in a minute. Here's the setup, and why 80% is a better target than 100% for your battery.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published October 20, 2026 &middot; 3 min read</div>
+  <article class="body">
+<p class="lede" id="short-answer"><strong>The short answer:</strong> iOS has no built-in "fully charged" alert, but you can build one in about a minute with a Shortcuts automation that fires at a battery level you choose. Set it to 80% instead of 100%, because sitting at a full charge is what wears a lithium-ion battery down. On an iPhone 15 or newer, the Charge Limit setting does the job without any alert at all.</p>
+<h2 id="a-small-question-with-a-useful-answer">A small question with a useful answer</h2>
+<p>This afternoon I plugged in my iPhone and wondered why it can't just tell me when it's full. I wanted to unplug it at 100% and stop cooking the battery on the charger for hours.</p>
+<p>I approach every problem with curiosity, so the deep dive begins. iOS has no built-in "fully charged" alert. You can build one yourself in about a minute with the Shortcuts app, which is already on your phone. Along the way I learned that 100% isn't the number I should have been chasing.</p>
+<h2 id="how-to-set-up-a-full-charge-alert">How to set up a full-charge alert</h2>
+<p>Here's the whole setup. No apps to buy, nothing to download.</p>
+<ol>
+<li>Open the <strong>Shortcuts</strong> app and tap <strong>Automation</strong> at the bottom of the screen.</li>
+<li>Tap <strong>+</strong> (or <strong>New Automation</strong>) and choose <strong>Battery Level</strong>.</li>
+<li>Drag the slider to <strong>100%</strong>, pick <strong>Equals 100%</strong>, and select <strong>Run Immediately</strong> so it doesn't ask you every time.</li>
+<li>Tap <strong>Next</strong>, then <strong>New Blank Automation</strong>.</li>
+<li>Add the action <strong>Show Notification</strong> and type your message, something like "Fully charged. Unplug me."</li>
+<li>Want to hear it from across the room? Add <strong>Speak Text</strong> as a second action.</li>
+<li>Tap <strong>Done</strong>.</li>
+</ol>
+<p>Next time your phone hits 100%, it taps you on the shoulder.</p>
+<h2 id="what-i-learned-100-is-the-wrong-target">What I learned: 100% is the wrong target</h2>
+<p>I grew up thinking you had to "condition" a battery by running it full and empty. That was true for older battery types. Your iPhone uses lithium-ion, and what wears it down is sitting at a high charge for long stretches, especially when it's warm.</p>
+<p>Unplugging at 100% beats leaving it on the charger all night. Stopping around 80% is better still. So if you build the alert, set it to 80% instead of 100%. Same steps, different number.</p>
+<p>If you have an iPhone 15 or newer, you may not need the alert at all. Go to <strong>Settings &gt; Battery &gt; Charging</strong> and set a charge limit between 80% and 100%. The phone stops charging near your limit and holds it there while plugged in. It will occasionally top off to 100% on its own, which helps it keep the battery reading accurate. That's normal.</p>
+<p>On an older iPhone, turn on <strong>Optimized Battery Charging</strong> in the same menu. It learns your routine and holds at 80% until shortly before you usually unplug.</p>
+<h2 id="the-bigger-lesson">The bigger lesson</h2>
+<p>I started with a tool question: how do I get an alert? The better question was the one I ask before every project. What are we trying to accomplish today? I wanted a longer-lasting battery. The alert was one way to get there, and the charge limit turned out to be a simpler one.</p>
+<p>That's how I work with clients at Pogue Digital Solutions, LLC. Strategy comes before software. Once you know the goal, the right tool is usually already sitting on your phone or in your business, waiting for you to use it. Knowing where to look is where my skills come into play for your business.</p>
+<p>If you try this, tell me in the comments which route you picked. And if you have a small process in your business you wish would just tap you on the shoulder, that's exactly the kind of problem I like to solve.</p>
+<h2 id="references-and-further-reading">References and further reading</h2>
+<ul>
+<li><a href="https://support.apple.com/108055">About Charge Limit and Optimized Battery Charging on iPhone</a><sup class="ref">[1]</sup>, Apple Support. Apple's own explanation of both settings, which iPhones support them, and why the phone sometimes charges past your limit.</li>
+<li><a href="https://support.apple.com/guide/shortcuts/apde31e9638b/ios">Setting triggers in Shortcuts on iPhone or iPad</a><sup class="ref">[2]</sup>, Apple Shortcuts User Guide. The official walkthrough for automations like the Battery Level trigger used in this article.</li>
+<li><a href="https://batteryuniversity.com/article/bu-808-how-to-prolong-lithium-based-batteries">BU-808: How to Prolong Lithium-based Batteries</a><sup class="ref">[3]</sup>, Battery University. The research behind the advice: sitting at a full charge stresses a lithium-ion battery more than normal use does, and a lower charge target extends its life.</li>
+<li><a href="https://www.gearpatrol.com/tech/iphone-charge-limit-feature">Your iPhone Quietly Got a New Feature to Extend Its Battery Life</a><sup class="ref">[4]</sup>, Gear Patrol. A plain-English look at the Charge Limit setting and how the phone learns your habits.</li>
+</ul>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://support.apple.com/108055</li><li>https://support.apple.com/guide/shortcuts/apde31e9638b/ios</li><li>https://batteryuniversity.com/article/bu-808-how-to-prolong-lithium-based-batteries</li><li>https://www.gearpatrol.com/tech/iphone-charge-limit-feature</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/how-i-get-my-iphone-to-tell-me-its-done-charging</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>

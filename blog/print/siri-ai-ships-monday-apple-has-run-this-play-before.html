@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siri AI Ships Monday. | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="Apple is paying Google to power the new Siri while building its own replacement. The Motorola ROKR shows how this partnership may end, and what small businesses can learn.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/siri-ai-ships-monday-apple-has-run-this-play-before">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/siri-ai-ships-monday-apple-has-run-this-play-before">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">AI Industry and Policy</span>
+  <h1>Siri AI Ships Monday.</h1>
+  <p class="dek">Apple is paying Google to power the new Siri while building its own replacement. The Motorola ROKR shows how this partnership may end, and what small businesses can learn.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published September 9, 2026 &middot; 5 min read</div>
+  <article class="body">
+<p><em>Apple Has Run This Play Before. Ask Motorola.</em></p>
+<p>On Monday, iOS 27 arrives, and Siri finally becomes something close to the assistant Apple promised us two years ago. Part of that new intelligence comes from Google, which agreed to be completely invisible inside the product. Apple pays roughly a billion dollars a year for access to the technology behind Gemini, and Google gets no logo, no branding, no relationship with the customer, on paper that looks like the partnership of the decade. I read it as a lease with a very carefully written exit clause.</p>
+<p>Look at how we got here. In February 2024, Apple killed Project Titan, its self-driving car, after ten years and more than ten billion dollars. There was no press release, just an internal announcement. About two thousand people were on that team. The software and machine-learning folks moved into Apple's AI group. Roughly six hundred others, the battery engineers and the test drivers, got layoff notices. Four months later, Apple Intelligence was announced at WWDC, and the story became a decade of car research redirected into AI, all that talent pointed at something better. I spent ten years at Cox Communications, so I know that language. You'd ask where Cindy went because you hadn't seen her all week, and management would tell you she got promoted to customer. Redirected is a word that only ever describes the people still in the building. Then the rollout came late and thin. The personal-context Siri that got the loudest applause never shipped. By March 2025, Siri had been taken from the executive who owned it and handed to the Vision Pro lead. That July, the man running Apple's foundation models team left for Meta on a package reported at over $200 million, and at least three more of his researchers followed him out within the month. In November 2025, Bloomberg reported Apple was shopping for outside help. In January, Google signed the deal. Two and a half years from "we've got this" to "we need to buy this."</p>
+<p>What shipped in June was not one Google model but a family of five. Four are Apple's own, trained on Apple's infrastructure and then refined using Gemini's output. Only the top tier is built on the licensed Google foundation, and only that tier runs on Google's cloud. The contract term that should make Google's board sit up straight is the right to distill. Apple paid Google to teach models that Apple owns outright and gets to keep running long after the contract ends. Apple's own AI server chip goes into mass production this year, and Apple-operated data centers are penciled in for 2027.</p>
+<p>If that pattern feels familiar, it should. In 2004 Apple partnered with Motorola to put iTunes on a phone, and Motorola's CEO was thrilled. The ROKR launched at an Apple event in September 2005, crippled at exactly one hundred songs, on a carrier deal Apple didn't control. At that same event, Apple introduced the iPod nano and buried its own partner's launch in the coverage. The press called the ROKR the "CROCKR." Sixteen months later, Apple announced the iPhone on Cingular, the same carrier it had just spent two years learning how to negotiate with. Cingular was rebranding as AT&amp;T that same year, which is why we all remember it as the AT&amp;T exclusive. Motorola got a punchline. Apple got an education, and that failure is exactly what convinced Steve Jobs to build the phone himself.</p>
+<p>Google is not Motorola, and I'll say so plainly. Motorola never saw it coming. Google runs a frontier lab, knows this playbook cold, and signed anyway, partly to keep OpenAI from owning the assistant layer on a billion iPhones. Google also pays Apple around twenty billion a year for search placement, so Apple can't discard it the way it discarded a handset maker, and federal judges are watching this one. Google priced the risk with its eyes open.</p>
+<p>Strip the differences away and the shape is the same one Imagination Technologies saw when it lost Apple's GPU business overnight, and the one Intel saw when it lost the Mac and then sold Apple its modem division. Apple rarely walks in the front door of a new category. It walks in through somebody else's, next to a partner who already knows the room, and it pays close attention on the way in. Motorola knew phones and carriers. Intel knew silicon. Google knows frontier AI. Apple borrows the experience, keeps the customer, keeps the brand, and starts building the replacement in the room next door.</p>
+<p>That's patience, and patience is rare. But if you run a small business and a giant ever offers to partner with you, ask what they're learning from you and what you get to keep once they've learned it. When only one side walks away smarter, that's an apprenticeship, not a partnership, and you're the teacher.</p>
+<h2 id="references">References</h2>
+<p>Primary sources first, because most of what circulates on this deal is aggregator blogs recycling the same paragraph.</p>
+<p><strong>What Apple actually shipped:</strong> Introducing the Third Generation of Apple's Foundation Models (Apple Machine Learning Research). The five-model family, parameter counts, and Apple's own description of where Google's work touches it. <a href="https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models">https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models</a><sup class="ref">[1]</sup></p>
+<p><strong>The release date:</strong> Apple confirms iOS 27 release date: September 14 (9to5Mac) <a href="https://9to5mac.com/2026/09/09/apple-confirms-ios-27-release-date-september-14/">https://9to5mac.com/2026/09/09/apple-confirms-ios-27-release-date-september-14/</a><sup class="ref">[2]</sup></p>
+<p>iOS 27 with Siri AI will be available on September 14 (Engadget) <a href="https://www.engadget.com/2254005/ios-27-with-siri-ai-will-be-available-on-september-14/">https://www.engadget.com/2254005/ios-27-with-siri-ai-will-be-available-on-september-14/</a><sup class="ref">[3]</sup></p>
+<p><strong>The talent Apple lost first:</strong> Meta Poached Apple's Ruoming Pang With Pay Package Over $200 Million (Bloomberg, paywalled) <a href="https://www.bloomberg.com/news/articles/2025-07-09/meta-poached-apple-s-pang-with-pay-package-over-200-million">https://www.bloomberg.com/news/articles/2025-07-09/meta-poached-apple-s-pang-with-pay-package-over-200-million</a><sup class="ref">[4]</sup></p>
+<p>Apple Continues Losing AI Experts to Meta (MacRumors) <a href="https://www.macrumors.com/2025/07/29/apple-continues-losing-ai-experts-to-meta/">https://www.macrumors.com/2025/07/29/apple-continues-losing-ai-experts-to-meta/</a><sup class="ref">[5]</sup></p>
+<p><strong>The Motorola history:</strong> Flashback: the Motorola ROKR E1 was a dud, but it paved the way for the iPhone (GSMArena). Confirms the 100-song cap, the iPod nano launching the same day, and that Cingular became AT&amp;T in 2007. <a href="https://www.gsmarena.com/flashback_the_motorola_rokr_e1_was_a_dud_but_it_paved_the_way_for_the_iphone-news-38934.php">https://www.gsmarena.com/flashback_the_motorola_rokr_e1_was_a_dud_but_it_paved_the_way_for_the_iphone-news-38934.php</a><sup class="ref">[6]</sup></p>
+<p>Motorola ROKR E1 (Wikipedia). Dates, specs, pricing, and the press reaction. <a href="https://en.wikipedia.org/wiki/Motorola_Rokr_E1">https://en.wikipedia.org/wiki/Motorola_Rokr_E1</a><sup class="ref">[7]</sup></p>
+<h2 id="further-reading">Further reading</h2>
+<p><strong>If you only read one thing beyond Apple's own paper,</strong> Apple's Gemini-Siri Deal Is the Next Microsoft Antitrust Case, Not the Next App Store Fight (Luis Blanquez, The Antitrust Attorney Blog, May 2026). The sharpest argument published on this deal: Apple does not compete with Gemini; it neutralizes it by absorbing it, and swapping suppliers does not cure a foreclosure problem. <a href="https://www.theantitrustattorney.com/apples-gemini-siri-deal-is-the-next-microsoft-antitrust-case-not-the-next-app-store-fight/">https://www.theantitrustattorney.com/apples-gemini-siri-deal-is-the-next-microsoft-antitrust-case-not-the-next-app-store-fight/</a><sup class="ref">[8]</sup></p>
+<p><strong>The original scoop:</strong> Apple Plans to Use 1.2 Trillion Parameter Google Gemini Model to Power New Siri (Mark Gurman, Bloomberg, Nov 2025, paywalled) <a href="https://www.bloomberg.com/news/articles/2025-11-05/apple-plans-to-use-1-2-trillion-parameter-google-gemini-model-to-power-new-siri">https://www.bloomberg.com/news/articles/2025-11-05/apple-plans-to-use-1-2-trillion-parameter-google-gemini-model-to-power-new-siri</a><sup class="ref">[9]</sup></p>
+<p><strong>The counterargument, worth reading against the grain:</strong> Apple's new foundation models don't contain a drop of Gemini (AppleInsider). The headline overcorrects, and the comments do a good job explaining why. Distillation from a frontier model is still a dependency. <a href="https://appleinsider.com/articles/26/06/08/apples-new-foundation-models-dont-contain-a-drop-of-gemini-as-we-said-they-wouldnt">https://appleinsider.com/articles/26/06/08/apples-new-foundation-models-dont-contain-a-drop-of-gemini-as-we-said-they-wouldnt</a><sup class="ref">[10]</sup></p>
+<p><strong>Where the exit ramp gets built:</strong> Apple-Google Gemini Partnership: Infrastructure (Introl). Best available on Baltra silicon, Apple's own data centers, and the 2027 roadmap. <a href="https://introl.com/blog/apple-google-gemini-partnership-siri-ai-infrastructure-2026">https://introl.com/blog/apple-google-gemini-partnership-siri-ai-infrastructure-2026</a><sup class="ref">[11]</sup></p>
+<p class="source-note">This article also appears on <a href="https://www.linkedin.com/pulse/siri-ai-ships-monday-john-m-pogue-aht4c" target="_blank" rel="noopener">LinkedIn</a><sup class="ref">[12]</sup>, where you can join the conversation.</p>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models</li><li>https://9to5mac.com/2026/09/09/apple-confirms-ios-27-release-date-september-14/</li><li>https://www.engadget.com/2254005/ios-27-with-siri-ai-will-be-available-on-september-14/</li><li>https://www.bloomberg.com/news/articles/2025-07-09/meta-poached-apple-s-pang-with-pay-package-over-200-million</li><li>https://www.macrumors.com/2025/07/29/apple-continues-losing-ai-experts-to-meta/</li><li>https://www.gsmarena.com/flashback_the_motorola_rokr_e1_was_a_dud_but_it_paved_the_way_for_the_iphone-news-38934.php</li><li>https://en.wikipedia.org/wiki/Motorola_Rokr_E1</li><li>https://www.theantitrustattorney.com/apples-gemini-siri-deal-is-the-next-microsoft-antitrust-case-not-the-next-app-store-fight/</li><li>https://www.bloomberg.com/news/articles/2025-11-05/apple-plans-to-use-1-2-trillion-parameter-google-gemini-model-to-power-new-siri</li><li>https://appleinsider.com/articles/26/06/08/apples-new-foundation-models-dont-contain-a-drop-of-gemini-as-we-said-they-wouldnt</li><li>https://introl.com/blog/apple-google-gemini-partnership-siri-ai-infrastructure-2026</li><li>https://www.linkedin.com/pulse/siri-ai-ships-monday-john-m-pogue-aht4c</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/siri-ai-ships-monday-apple-has-run-this-play-before</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>

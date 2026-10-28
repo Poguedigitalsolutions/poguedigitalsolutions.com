@@ -17,11 +17,12 @@ from datetime import datetime, timezone
 from email.utils import format_datetime
 import markdown
 from parts import *
+import print_view
 
 ART_DIR = os.path.join(os.path.dirname(__file__), "articles")
 PORTRAIT = "img/portrait-john-desk.jpg"
 BLOG_ID = SITE + "/blog/#blog"
-os.makedirs("blog", exist_ok=True)
+os.makedirs("blog/print", exist_ok=True)
 
 
 def parse(path):
@@ -140,7 +141,7 @@ for idx, (meta, html_body) in enumerate(posts):
     if meta["faq"]:
         jsonld.append(faq_jsonld(meta["faq"]))
         faq_block = f'''
-<section class="on-paper-dim tight">
+<section class="on-paper-dim tight post-faq">
   <div class="wrap" style="max-width:760px;">
     <div class="section-head reveal"><span class="eyebrow">FAQ</span><h2 id="faq">Frequently Asked Questions</h2></div>
     {faq(meta["faq"])}
@@ -172,7 +173,7 @@ for idx, (meta, html_body) in enumerate(posts):
 
     page = head(f'{meta["title"]} | Pogue Digital Solutions Blog', meta["description"], f"blog/{slug}.html",
                 jsonld=jsonld, og_type="article", extra_meta=extra) + header("blog/index.html") + f'''
-<section class="on-ink tight" style="padding-top:56px; padding-bottom:64px;">
+<section class="on-ink tight post-hero" style="padding-top:56px; padding-bottom:64px;">
   {compass_svg()}
   <div class="wrap reveal" style="max-width:820px;">
     <nav aria-label="Breadcrumb" class="crumbs"><a href="index.html">Home</a> / <a href="blog/index.html">Blog</a></nav>
@@ -184,11 +185,12 @@ for idx, (meta, html_body) in enumerate(posts):
       <span>Published <time datetime="{meta["date"]}">{nice_date(meta["date"])}</time></span>
       {updated_line}
       <span>{meta["reading_time"]} read</span>
+      <a class="print-link" href="blog/print/{slug}.html" rel="nofollow">Print this article</a>
     </div>
   </div>
 </section>
 
-<section>
+<section class="post-body">
   <div class="wrap">
     <article class="article-body reveal">
 {html_body}
@@ -222,7 +224,10 @@ for idx, (meta, html_body) in enumerate(posts):
 {related}
 {cta_band("Put This to Work", "Find out where your business stands with a free assessment, or talk it through with John.", primary=("Take an Assessment", "assessments.html"))}
 ''' + footer()
+    page = page.replace("<body>", '<body class="post-page">', 1)
     open(f"blog/{slug}.html", "w").write(page)
+    # Print view: same article, laid out for paper. Template lives in build/print_view.py.
+    open(f"blog/print/{slug}.html", "w").write(print_view.render(meta, html_body))
     print("blog/" + slug, len(page))
 
 

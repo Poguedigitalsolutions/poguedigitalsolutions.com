@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before We Forget How to Read | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="Reading scores were falling before AI arrived. Used the wrong way, AI could make reading a privilege again. Used the right way, it could be the best reading coach we have ever had.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/before-we-forget-how-to-read">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/before-we-forget-how-to-read">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">AI and Automation</span>
+  <h1>Before We Forget How to Read</h1>
+  <p class="dek">Reading scores were falling before AI arrived. Used the wrong way, AI could make reading a privilege again. Used the right way, it could be the best reading coach we have ever had.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published October 12, 2026 &middot; 7 min read</div>
+  <article class="body">
+<p class="lede" id="short-answer"><strong>The short answer:</strong> AI will not ban reading, but it could make reading optional, and optional skills fade. The fix is order. Let a child do the reading and use AI to coach, the way my grandmother taught me math with dominoes. AI that reads <em>with</em> a child can build a reader. AI that reads <em>for</em> a child replaces one.</p>
+<p>Picture a kitchen table in 2040. A 14-year-old gets a handwritten letter in the mail from his grandfather. Two full pages, written slowly by a man who wanted his grandson to have something to keep.</p>
+<p>The boy holds it up to his glasses. The AI reads it aloud, then sums it up in three bullet points. He nods, says "cool," and goes back to his game.</p>
+<p>He never learned to read it himself. He never needed to.</p>
+<p>I'm writing this as a warning, because that boy doesn't exist yet. Whether he ever does depends on choices we make in the next few years.</p>
+<p><em>Follow me for more on using AI to make people more capable, while keeping the human skills we can't afford to lose.</em></p>
+<h2 id="how-a-skill-fades">How a skill fades</h2>
+<p>Nobody bans a skill. Nobody holds a vote to retire it. It fades one convenience at a time.</p>
+<p>We already watched it happen with cursive. Keyboards were faster, so schools stopped teaching it, and now many young adults struggle to read a handwritten note from their own grandparents. Nobody planned that outcome. It was simply easier.</p>
+<p>People and animals take the path of least resistance. I believe that to my core. And learning to read is hard. It takes years of slow, frustrating practice before it gets easy. When a voice can answer any question you ask, a child has every reason to skip the hard part.</p>
+<h2 id="the-slide-started-before-ai">The slide started before AI</h2>
+<p>I want to be fair here. AI didn't start this problem. The numbers were falling before most people had heard of ChatGPT.</p>
+<p>On the 2024 Nation's Report Card, about a third of American eighth graders scored below the basic reading level. That's the largest share since the test began. Around 40 percent of fourth graders were below basic too, the most since 2002. Back in 2023, only 14 percent of students said they read for fun every day.</p>
+<p>Phones, the pandemic, and missed school days all played a part. AI showed up to a fire that was already burning. The question is whether it pours water on it or gasoline.</p>
+<h2 id="what-ai-changes">What AI changes</h2>
+<p>In 2025, researchers at MIT put 54 college students in three groups and had them write essays while sensors tracked their brain activity. One group used ChatGPT. One used Google. One used nothing but their own heads.</p>
+<p>The ChatGPT group showed the weakest brain engagement of all three. Most of them couldn't recall a single sentence from the essay they had just turned in. The researchers called this "cognitive debt." You get the easy win today and pay for it later with interest.</p>
+<p>The finding that stuck with me came at the end. Students who did their own thinking first and brought in AI afterward showed the strongest engagement of any AI session. They were the same students using the same tool, and the order made the difference.</p>
+<p>The study measured writing, and it was small. But the lesson carries over to reading. If a machine summarizes every page before you try it yourself, you never build the stamina to read a hard one.</p>
+<h2 id="what-worries-me-most">What worries me most</h2>
+<p>I don't think reading will disappear completely. I think something worse could happen. It could become a privilege again.</p>
+<p>For most of human history, reading belonged to priests, nobles, and scholars. Everyone else learned what they were told. Mass literacy, where nearly every child learns to read, is only about 150 years old. That's a short run, and nothing guarantees it lasts.</p>
+<p>If we drift, I see two groups forming. A small group reads deeply, checks sources, and thinks for themselves. A much larger group gets the world summarized by a machine and takes the summary on faith.</p>
+<p>The line between them won't follow income as neatly as you'd expect. It will follow habits. Families that make kids read before they ask the machine will raise readers. Families that hand over a tablet to keep the peace mostly won't.</p>
+<p>That second group will have a harder time getting good jobs, because the work left over will go to people who can tell when the AI is wrong. They'll also be easier to mislead. When everything you know comes through a summary, whoever controls the summary shapes what you believe.</p>
+<h2 id="what-my-grandmother-knew">What my grandmother knew</h2>
+<p>When I was in second grade, I wasn't a strong student, especially in math. So my grandmother started playing dominoes with me. Mostly just me, and not so much my twin brother.</p>
+<p>In dominoes, you score by adding up the ends to make multiples of five. At first, she'd help me with the totals. After a while, she stopped. She told me I'd have to figure it out. So I counted on my fingers until I had an answer, then looked up and asked if I was right. She'd say yes with a big smile.</p>
+<p>I didn't want to let her down. That's how I learned to count by fives.</p>
+<p>Years later, after I joined the military, I came home for a visit and told her how much I loved those domino games. That's when she told me why we played so much. She knew I was having a hard time with math.</p>
+<p>She helped me until I could stand on my own, then she stepped back and let me do the hard part. That's the job I want AI to do for our kids.</p>
+<h2 id="the-same-tool-can-teach">The same tool can teach</h2>
+<p>Here's the hopeful part, and it's why I'm writing a warning instead of a eulogy.</p>
+<p>AI may turn out to be the best reading coach we've ever had. Harvard researcher Ying Xu found that AI companions who ask kids questions while they read can improve comprehension and vocabulary. Kids engaged even more with a real person, which tells me the human still matters most.</p>
+<p>Northern Ireland is now running a year-long trial that gives more than 15,000 students an AI reading tutor, with a matched group for comparison. Researchers in Sweden, Germany, and the U.S. are running similar studies.</p>
+<p>Every one of those tools has something in common. The child does the reading. The AI listens, asks questions, and helps when they get stuck. That's the line we have to hold. AI that reads <em>with</em> a child can build a reader. AI that reads <em>for</em> a child replaces one.</p>
+<h2 id="what-each-of-us-can-do">What each of us can do</h2>
+<p>When I lost my job as a debt collector and went back to school for my master's, reading is what carried me. Nobody could summarize my way through it. I had to sit with hard pages until they made sense, and that's the muscle I'm asking all of us to protect.</p>
+<p><strong>If you're a parent or grandparent:</strong></p>
+<ul>
+<li>Make reading come before asking. Let the AI help your child sound out a word, then let them finish the page.</li>
+<li>Read out loud together, even after they can read alone.</li>
+<li>Write them letters by hand. Give them a reason to want to read.</li>
+</ul>
+<p><strong>If you lead a team:</strong></p>
+<ul>
+<li>Ask people to read the source before they trust the summary.</li>
+<li>Make it normal to say "I read the whole thing" in a meeting.</li>
+<li>Reward the person who catches the AI's mistake.</li>
+</ul>
+<p><strong>If you use AI every day, like I do:</strong></p>
+<ul>
+<li>Write your own first draft before you open the chat window.</li>
+<li>Finish one long article or book chapter each week without asking for a summary.</li>
+<li>When AI gives you an answer, read where it came from at least some of the time.</li>
+</ul>
+<h2 id="lets-keep-that-boy-fictional">Let's keep that boy fictional</h2>
+<p>I believe technology should serve people. It should never quietly train us to serve it.</p>
+<p>AI is the most useful tool I've ever worked with, and I'll keep using it every day. I just refuse to let it do my reading for me, and I hope you'll refuse too.</p>
+<p>That boy at the kitchen table, holding a letter he can't read, is a warning. He's a future we can still walk away from.</p>
+<p>So here's my ask. Pick up something long this week and read it with your own eyes. Then tell me what you read, and what you plan to do to keep reading alive in your home or your team.</p>
+<p><em>John M Pogue: Curiosity is my superpower.</em></p>
+<h2 id="references">References</h2>
+<ul>
+<li>Association of California School Administrators. (2025, February 3). NAEP "report card" shows decline in U.S. reading scores. <em>EdCal</em>. <a href="https://edcal.acsa.org/news-briefs-2-3-25">https://edcal.acsa.org/news-briefs-2-3-25</a><sup class="ref">[1]</sup></li>
+<li>Department of Education Northern Ireland. (2026). <em>Education Minister announces research study evaluating how AI tools can support literacy</em>. <a href="https://www.education-ni.gov.uk/news/education-minister-announces-research-study-evaluating-how-ai-tools-can-support-literacy">https://www.education-ni.gov.uk/news/education-minister-announces-research-study-evaluating-how-ai-tools-can-support-literacy</a><sup class="ref">[2]</sup></li>
+<li>Independent Florida Alligator. (2026, April 13). Can AI teach kids to read? UF researchers create interactive literacy app. <em>The Alligator</em>. <a href="https://www.alligator.org/article/2026/04/ai-literacy-app">https://www.alligator.org/article/2026/04/ai-literacy-app</a><sup class="ref">[3]</sup></li>
+<li>Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., &amp; Maes, P. (2025). <em>Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task</em> [Preprint]. arXiv. <a href="https://arxiv.org/abs/2506.08872">https://arxiv.org/abs/2506.08872</a><sup class="ref">[4]</sup></li>
+<li>The Hill. (2025). What to know about the latest declines in student scores on the Nation's Report Card. <em>Yahoo News</em>. <a href="https://www.yahoo.com/news/articles/know-latest-declines-student-scores-165934896.html">https://www.yahoo.com/news/articles/know-latest-declines-student-scores-165934896.html</a><sup class="ref">[5]</sup></li>
+</ul>
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li>Maryanne Wolf, <em>Reader, Come Home: The Reading Brain in a Digital World</em> (2018). A reading scientist writes letters to the reader about what screens are doing to deep reading, and how to protect it in children and adults.</li>
+<li>Nicholas Carr, <em>The Shallows: What the Internet Is Doing to Our Brains</em> (2010). The earlier warning about skimming culture. Read it and ask what changes when the machine does the skimming for us.</li>
+<li>Emily Hanford, <em>Sold a Story</em> (APM Reports podcast, 2022). How American schools taught millions of kids to guess at words instead of sounding them out, and what it cost them. <a href="https://features.apmreports.org/sold-a-story/">https://features.apmreports.org/sold-a-story/</a><sup class="ref">[6]</sup></li>
+<li>The Nation's Report Card. The official source for U.S. reading scores, with results by state and grade. <a href="https://www.nationsreportcard.gov/">https://www.nationsreportcard.gov/</a><sup class="ref">[7]</sup></li>
+</ul>
+<p class="source-note">This article also appears on <a href="https://www.linkedin.com/pulse/before-we-forget-how-read-john-m-pogue-pwlfc/" target="_blank" rel="noopener">LinkedIn</a><sup class="ref">[8]</sup>, where you can join the conversation.</p>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://edcal.acsa.org/news-briefs-2-3-25</li><li>https://www.education-ni.gov.uk/news/education-minister-announces-research-study-evaluating-how-ai-tools-can-support-literacy</li><li>https://www.alligator.org/article/2026/04/ai-literacy-app</li><li>https://arxiv.org/abs/2506.08872</li><li>https://www.yahoo.com/news/articles/know-latest-declines-student-scores-165934896.html</li><li>https://features.apmreports.org/sold-a-story/</li><li>https://www.nationsreportcard.gov/</li><li>https://www.linkedin.com/pulse/before-we-forget-how-read-john-m-pogue-pwlfc/</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/before-we-forget-how-to-read</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>

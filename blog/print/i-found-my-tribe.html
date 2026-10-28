@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Found My Tribe: What the Navy, Rocky Horror, and Lucy Darling Have in Common | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="A Navy veteran, a cult film, and a viral magician share the same seven parts of a tribe. Name those parts and you can build a community on purpose.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/i-found-my-tribe">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/i-found-my-tribe">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">Marketing</span>
+  <h1>I Found My Tribe: What the Navy, Rocky Horror, and Lucy Darling Have in Common</h1>
+  <p class="dek">A Navy veteran, a cult film, and a viral magician share the same seven parts of a tribe. Name those parts and you can build a community on purpose.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published October 24, 2026 &middot; 6 min read</div>
+  <article class="body">
+<p class="lede" id="short-answer"><strong>The short answer:</strong> A tribe is the group that accepts you as you are and won't let you fall. The Navy, the Rocky Horror Picture Show, and the Lucy Darling Show look like they have nothing in common. They share the same seven parts, and once you can name those parts, you can build a tribe on purpose.</p>
+<h2 id="three-words-from-a-documentary">Three words from a documentary</h2>
+<p>I was watching a documentary about the Rocky Horror Picture Show when a fan said three words that stopped me: "I found my tribe."</p>
+<p>He didn't mean he found a movie he liked. He meant he found his people. The ones who accepted him for who he was. The ones who would always be there to pick him up.</p>
+<p>Fifty years after the film flopped in theaters, people still show up at midnight in fishnets to shout back at the screen. The film's own creator, Richard O'Brien, has said Rocky doesn't belong to him anymore. It belongs to the fans.</p>
+<p>I understood that fan. I found my tribe too!</p>
+<p><em>Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</em></p>
+<h2 id="my-tribe-wears-a-ballcap">My tribe wears a ballcap</h2>
+<p>I'm a Navy veteran. My tribe follows me everywhere I go. When I meet another veteran, a stranger becomes family in about thirty seconds. We swap ships and rates, and then we're just talking like we've known each other for years, swapping stories and making jokes. We both leave with a smile, and it brightens our day.</p>
+<p>I find that every week thanks to <a href="https://thecivvie.com">The Civvie</a><sup class="ref">[1]</sup>, a community for Houston veterans. Its leader, <a href="https://www.linkedin.com/in/halfischer/">Hal Fischer</a><sup class="ref">[2]</sup>, makes sure every local event shows up on the calendar, not just his own. Every Wednesday there's a Civvie Connect dinner meetup where we eat and talk with other veterans. Those meetups make my week worthwhile.</p>
+<p>Writer Sebastian Junger argues in his book <a href="https://link.amazon/B0hrf8BFF"><em>Tribe</em></a><sup class="ref">[3]</sup> that many veterans miss the belonging of their unit more than anything else about service. I believe him. That feeling doesn't leave when the uniform comes off.</p>
+<h2 id="then-i-watched-lucy-darling">Then I watched Lucy Darling</h2>
+<p>Carisa Hendrix plays Lucy Darling, a 1940s socialite with a cocktail in one hand and a magic trick in the other. A clip of her show went viral in late 2024. Since then, more than 150,000 people have come to see her live.</p>
+<p>The magic is great, but the audience is what caught my eye. Fans dress up for the night. They fight for front-row seats so they can be part of the act. They come back again and bring their friends. Lucy stays after the show to meet them.</p>
+<p>Hendrix said it herself in a 2024 interview: "The show is not a show, but is instead an experience." The audience isn't separated from the stage. Even the people who never get pulled up are part of it. To me, it feels like Lucy is hosting a party and everyone is welcome.</p>
+<p>She treats her volunteers like guests of honor. When someone she pulls on stage gets a laugh, she gives them the credit, because she wants them to walk away feeling like a winner. During her Chicago residency, some fans came back once a month to be part of it.</p>
+<p>I heard Carisa Hendrix say on Deadline's Comedy Means Business that she doesn't want people leaving with "I finally got to see Lucy Darling." She wants them saying, "I saw her for the first time, and I'll be back." That's how you build a tribe.</p>
+<p>Then I learned something that tied it all together. Before she was Lucy Darling, Carisa Hendrix spent ages 12 to 15 in a Rocky Horror shadow cast, acting out the film in front of the screen while the audience shouted back. She did it basically full time and calls it her "gateway drug" into performing. It was her only stage experience before she went professional. She grew up inside a tribe. Now she has her very own. Rocky's rituals grew up on their own. Lucy's were designed by someone who learned them as a kid.</p>
+<p>She and her fans have built something larger than the sum of its parts. I haven't been to a show yet. I'm ready to embrace the experience and meet the tribe.</p>
+<h2 id="the-seven-parts-of-a-tribe">The seven parts of a tribe</h2>
+<p>A cult film, a magician, and the Navy. I kept asking what they share. When I laid them side by side, the same seven parts showed up in all three.</p>
+<ol>
+<li><strong>Permission to be yourself.</strong> Rocky says "Don't dream it. Be it." Lucy offers a night off from reality. The Navy makes you earn your place, and then you belong.</li>
+<li><strong>Participation.</strong> Rocky fans shout callbacks and do the Time Warp. Lucy's fans sing, dance, and get pulled on stage. In the Navy, nobody watches. Everyone has a part to play.</li>
+<li><strong>Markers.</strong> Fishnets. Cocktail dresses. The uniform, and later the ballcap with your ship on it.</li>
+<li><strong>Initiation.</strong> Rocky first-timers are called "virgins." Lucy has your first show. The Navy has boot camp, the Shellback ceremony for your first time crossing the equator, and many other traditions.</li>
+<li><strong>Repetition.</strong> Midnight every week for fifty years. Fans who return again and again. Reunions and Veterans Day.</li>
+<li><strong>Shared ownership.</strong> The creator lets go, and the people take it over.</li>
+<li><strong>Nobody left behind.</strong> Misfits find a home. Fans get treated like friends. Sailors pick each other up.</li>
+</ol>
+<p>A tribe is an inclusive culture. Some let you in at the door, like Rocky and Lucy. Some make you earn it, like the Navy. Once you're in, you belong.</p>
+<p>Take away any one of these, and you get an audience instead of a tribe. A concert with no participation is a show. A club with no permission to be yourself is a membership.</p>
+<p>For anyone building a business or a community, one difference matters most. Rocky's rituals grew up on their own, from the fans. Lucy built hers into the show on purpose. That means a tribe can be designed.</p>
+<p>From a digital marketing perspective, studying how successful tribes are made can teach you how to turn customers into a community that comes back and brings friends.</p>
+<h2 id="keep-the-lone-sailor">Keep the Lone Sailor</h2>
+<p>In Washington, DC, at the US Navy Memorial, a bronze sailor stands with his sea bag at his feet. He's called the Lone Sailor.</p>
+<p>The sculptor, Stanley Bleifeld, built him from several models instead of one, so he would stand for every sailor. The bronze came from historic ships, including the USS Constitution and the USS Maine. The ships are inside the sailor.</p>
+<p>He almost didn't make it. When the design committee nearly cut him, someone spoke up: "Keep the Lone Sailor!"</p>
+<p>I know why. It wasn't about the ships, the planes, or even the officers. The lifeblood and beating heart of the Navy is the Lone Sailor.</p>
+<p>That's what a tribe does. It puts its people on a pedestal. The Navy Memorial says he's called the Lone Sailor, yet he's hardly ever alone. I've never been alone either. I found my tribe.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.navymemorial.org/lone-sailor-history">History of the Lone Sailor</a><sup class="ref">[4]</sup>. US Navy Memorial.</li>
+<li><a href="https://theclio.com/entry/170461">Lone Sailor Statue at Pearl Harbor</a><sup class="ref">[5]</sup>. Clio.</li>
+<li><a href="https://filmotomy.com/strange-journey-the-story-of-rocky-horror-2025-review/">Strange Journey: The Story of Rocky Horror, review</a><sup class="ref">[6]</sup>. Filmotomy.</li>
+<li><a href="https://lovehorror.co.uk/?p=93463">Sane Inside Insanity review</a><sup class="ref">[7]</sup>. Love Horror.</li>
+<li><a href="https://www.broadwayworld.com/article/LUCY-DARLINGS-HALLOWEEN-SPOOKTACULAR-to-Play-Tanger-Center-20260817">Lucy Darling's Halloween Spooktacular</a><sup class="ref">[8]</sup>. BroadwayWorld.</li>
+<li><a href="https://www.ypradio.org/arts/2026-05-14/magician-and-comedian-lucy-darling-brings-tour-to-montana">Lucy Darling tour</a><sup class="ref">[9]</sup>. Yellowstone Public Radio.</li>
+<li><a href="https://www.tangercenter.com/news/detail/caris-hendrix-brings-lucy-darlings-halloween-spooktacular-to-the-triad-on-october-31">Lucy Darling</a><sup class="ref">[10]</sup>. Tanger Center.</li>
+<li><a href="https://windycitytimes.com/2024/02/12/carisa-hendrix-mesmerizes-as-lucy-darling-in-teatro-zinzanni/">Carisa Hendrix interview</a><sup class="ref">[11]</sup>. <em>Windy City Times</em>, February 2024.</li>
+<li><a href="https://thewilbur.com/artist/lucy-darling/">Lucy Darling: The More the Merrier</a><sup class="ref">[12]</sup>. Wilbur Theatre.</li>
+<li><a href="https://www.youtube.com/watch?v=YFe1NFEBWYA">Carisa Hendrix's Magic Algorithm</a><sup class="ref">[13]</sup>. <em>Comedy Means Business</em>, Deadline (YouTube).</li>
+<li><a href="https://www.youtube.com/shorts/5HNtY437h6k">Carisa Hendrix on her Rocky Horror shadow cast</a><sup class="ref">[14]</sup>. YouTube Short.</li>
+<li><a href="https://www.talktheatretome.com/theatre/lucydarlinginterview">Interview: Carisa Hendrix on Lucy Darling</a><sup class="ref">[15]</sup>. Talk Theatre to Me.</li>
+<li><a href="https://link.amazon/B0hrf8BFF"><em>Tribe: On Homecoming and Belonging</em></a><sup class="ref">[3]</sup>, Sebastian Junger (2016).</li>
+</ul>
+<h2 id="further-reading">Further reading</h2>
+<p><em>Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</em></p>
+<ul>
+<li><a href="https://link.amazon/B0hrf8BFF"><em>Tribe: On Homecoming and Belonging</em></a><sup class="ref">[3]</sup>, Sebastian Junger. Why veterans miss the belonging of their units, and what modern life lost.</li>
+<li><a href="https://link.amazon/B0hDJ1JTm"><em>Tribes: We Need You to Lead Us</em></a><sup class="ref">[16]</sup>, Seth Godin. How anyone can gather a tribe around an idea, written for people building businesses and movements.</li>
+<li><a href="https://link.amazon/B02DSVMeB"><em>The Art of Gathering</em></a><sup class="ref">[17]</sup>, Priya Parker. How great hosts turn an event into an experience, much like Lucy's party.</li>
+<li><a href="https://link.amazon/B00Ld9Ekm"><em>The Ritual Process</em></a><sup class="ref">[18]</sup>, Victor Turner. The anthropology behind communitas, the bond formed through shared ritual.</li>
+<li><a href="https://link.amazon/B0hU7uzhO"><em>Strange Journey: The Story of Rocky Horror</em> (2025)</a><sup class="ref">[19]</sup>, directed by Linus O'Brien. Now on Prime Video and Apple TV.</li>
+<li><a href="https://link.amazon/B0eFrynOw"><em>The Official Rocky Horror Late Night Double Feature: The 50th Anniversary Two-Volume Collector's Edition</em></a><sup class="ref">[20]</sup>. The official 50th anniversary collection for fans who want the full story.</li>
+<li><a href="https://www.youtube.com/watch?v=YFe1NFEBWYA">Carisa Hendrix's Magic Algorithm</a><sup class="ref">[13]</sup>, <em>Comedy Means Business</em>. How she built Lucy Darling into a touring business.</li>
+<li><a href="https://www.navymemorial.org/lone-sailor-history">History of the Lone Sailor</a><sup class="ref">[4]</sup>. US Navy Memorial.</li>
+</ul>
+<p class="source-note">This article also appears on <a href="https://www.linkedin.com/pulse/i-found-my-tribe-john-m-pogue-kxnec/" target="_blank" rel="noopener">LinkedIn</a><sup class="ref">[21]</sup>, where you can join the conversation.</p>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://thecivvie.com</li><li>https://www.linkedin.com/in/halfischer/</li><li>https://link.amazon/B0hrf8BFF</li><li>https://www.navymemorial.org/lone-sailor-history</li><li>https://theclio.com/entry/170461</li><li>https://filmotomy.com/strange-journey-the-story-of-rocky-horror-2025-review/</li><li>https://lovehorror.co.uk/?p=93463</li><li>https://www.broadwayworld.com/article/LUCY-DARLINGS-HALLOWEEN-SPOOKTACULAR-to-Play-Tanger-Center-20260817</li><li>https://www.ypradio.org/arts/2026-05-14/magician-and-comedian-lucy-darling-brings-tour-to-montana</li><li>https://www.tangercenter.com/news/detail/caris-hendrix-brings-lucy-darlings-halloween-spooktacular-to-the-triad-on-october-31</li><li>https://windycitytimes.com/2024/02/12/carisa-hendrix-mesmerizes-as-lucy-darling-in-teatro-zinzanni/</li><li>https://thewilbur.com/artist/lucy-darling/</li><li>https://www.youtube.com/watch?v=YFe1NFEBWYA</li><li>https://www.youtube.com/shorts/5HNtY437h6k</li><li>https://www.talktheatretome.com/theatre/lucydarlinginterview</li><li>https://link.amazon/B0hDJ1JTm</li><li>https://link.amazon/B02DSVMeB</li><li>https://link.amazon/B00Ld9Ekm</li><li>https://link.amazon/B0hU7uzhO</li><li>https://link.amazon/B0eFrynOw</li><li>https://www.linkedin.com/pulse/i-found-my-tribe-john-m-pogue-kxnec/</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/i-found-my-tribe</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Brand Voice AI? | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="Brand Voice AI is an AI-assisted business operating system that captures a company's knowledge, voice, and standards so people and AI tools can create consistent work. Here is what it organizes, how it works, and who it is for.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/what-is-brand-voice-ai">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/what-is-brand-voice-ai">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">Brand Voice</span>
+  <h1>What Is Brand Voice AI?</h1>
+  <p class="dek">Brand Voice AI is an AI-assisted business operating system that captures a company's knowledge, voice, and standards so people and AI tools can create consistent work. Here is what it organizes, how it works, and who it is for.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published October 5, 2026 &middot; 7 min read</div>
+  <article class="body">
+<p class="lede" id="short-answer"><strong>The short answer:</strong> Brand Voice AI is an AI-assisted business operating system. It captures what a company knows, how it communicates, who it serves, and how it makes decisions, then organizes that into a foundation that people and AI tools can both work from. The result is consistency. Your website, your emails, your proposals, and your AI-drafted content all sound like the same business, and a human approves the work before it goes out.</p>
+<p>Most people use AI to make more content. Brand Voice AI uses AI to make the content you already produce more consistent, and to make the knowledge behind it survive.</p>
+<h2 id="the-problem-it-solves">The problem it solves</h2>
+<p>Here is what I see in almost every founder-led business I talk with.</p>
+<p>The owner knows the business cold. They know which customers are a good fit and which are a headache. They know why the company does things a certain way. They know the story of how it started, the mistakes that shaped the process, the three questions every new client asks. None of that is written down anywhere useful.</p>
+<p>Some of it lives in a branding kit in a Google Drive folder nobody opens. Some of it is in old emails. Some of it is in a notes app. Most of it is in the owner's head, and the owner is too busy running the business to write down how they run the business.</p>
+<p>Then AI shows up. The owner opens ChatGPT, types "write me a LinkedIn post about our services," and gets back something that could have been written for any company in any industry. It is grammatical, confident, and completely generic. So they try again with a longer prompt. Better, but still not them. After a week they either give up on AI or start publishing content that sounds like somebody else's company.</p>
+<p>The AI did not fail. It was never given anything to work with.</p>
+<h2 id="what-brand-voice-ai-organizes">What Brand Voice AI organizes</h2>
+<p>Brand Voice AI starts with a structured capture of the business, not a prompt. The categories look like this:</p>
+<ul>
+<li>Mission, vision, and values, in the owner's words</li>
+<li>Founder knowledge and experience: the judgment calls, the hard-won rules</li>
+<li>Brand voice and communication standards: tone, vocabulary, what you never say</li>
+<li>Products, services, and offers, including how you describe them to a stranger</li>
+<li>Customer avatars and audience insights: who you serve and what they are afraid of</li>
+<li>Customer journeys: how someone goes from first hearing of you to referring you</li>
+<li>Stories, examples, and case studies</li>
+<li>Content standards and campaign structures</li>
+<li>Internal processes and playbooks</li>
+<li>Approval requirements: who signs off on what</li>
+<li>AI instructions and safeguards</li>
+<li>The questions customers ask over and over</li>
+</ul>
+<p>That list is long on purpose. A brand voice is not a tone setting. It is the sum of what a business knows and believes, expressed in a particular way. Capture only the tone and you get polished writing that says nothing true.</p>
+<h2 id="the-three-layers">The three layers</h2>
+<p>The system is built in three layers, and the order matters.</p>
+<p><strong>Layer 1: Foundation.</strong> This is the capture. I sit with the founder, sometimes for several sessions, and pull out what is in their head one conversation at a time. Identity, audience, offers, stories, differentiators, terminology, tone. It gets written down and organized so a new hire could read it and understand the company.</p>
+<p><strong>Layer 2: Playbooks.</strong> The foundation gets turned into guidance people can follow. How we write a proposal. How we respond to a cold inquiry. What a monthly content cadence looks like. What has to be approved and by whom. This is where the business stops depending on the founder being in the room.</p>
+<p><strong>Layer 3: Execution.</strong> Now the AI tools come in. They read the foundation and the playbooks, and they prepare work in the company's actual voice: drafts, outlines, follow-ups, research summaries. A human reviews and approves before anything is published, sent, or delivered.</p>
+<p>The approval step is not optional and it is not a formality. It is the whole point.</p>
+<h2 id="open-big-let-ai-carry-the-middle-close-big">Open big, let AI carry the middle, close big</h2>
+<p>I describe the working rhythm this way. The human opens big: defines the problem, sets the direction, says what a good result looks like. AI carries the middle: the research, the organizing, the drafting, the repetition. The human closes big: reviews, corrects, adds judgment and experience, puts the story in.</p>
+<p>AI can carry the load. It should not choose the destination.</p>
+<h2 id="where-this-came-from">Where this came from</h2>
+<p>Brand Voice AI started as a problem I had myself.</p>
+<p>In the summer of 2026 I migrated 674 files out of a ChatGPT workspace I had been using for over three years. Marketing plans, customer research, drafts, half-finished frameworks, conversation logs. When I finally saw it all in one place, I realized two things. First, there was a real business in there. Second, almost none of it was organized in a way that another person, or another AI tool, could use.</p>
+<p>I spent weeks sorting it into categories. Identity here, customer insights there, processes, standards, stories. When I was done, I could hand the organized set to any AI tool and get back work that sounded like me and reflected what I actually believed. The quality jump was not from a better model. It was from better input.</p>
+<p>That is the system I now build for clients.</p>
+<p>The other story that shaped it came from a fellow veteran. He had built a solid business over many years and wanted to sell it. Buyers kept walking away with the same objection: "You are the business." Every process, every customer relationship, every bit of judgment lived in his head. The company had no value without him in the chair. He had never written down how he ran it, so there was nothing to sell.</p>
+<p>Brand Voice AI is the fix for that problem, whether or not you ever plan to sell. Knowledge that lives only in one person's head is a liability.</p>
+<h2 id="who-it-is-for">Who it is for</h2>
+<p>Brand Voice AI fits best for:</p>
+<ul>
+<li>Founder-led companies where the owner's expertise is the product</li>
+<li>Consultants, coaches, and professional service providers</li>
+<li>Solopreneurs preparing to grow or hire</li>
+<li>Businesses whose marketing sounds different depending on who wrote it that week</li>
+<li>Teams adopting AI without any shared standards</li>
+<li>Any organization where too much depends on one person's memory</li>
+</ul>
+<p>It is not a good fit for businesses that want AI to run unsupervised, or for anyone looking for a tool that produces volume without a human in the loop.</p>
+<h2 id="a-concrete-example">A concrete example</h2>
+<p>A consultant I will call Dana writes a good proposal. It takes her four hours and she dreads it. Her assistant writes a proposal and it comes back wrong in a dozen small ways: the wrong framing of the offer, the wrong tone for that client, a service described in words Dana would never use.</p>
+<p>With Brand Voice AI in place, the foundation holds Dana's offer descriptions, her tone rules, her three standard proposal structures, and examples of proposals that won. The playbook says which structure to use for which client type and what Dana must personally review. The assistant, or an AI assistant, drafts a proposal from that foundation in twenty minutes. Dana reviews it in fifteen, changes two paragraphs, and sends it. The proposal sounds like Dana because it was built from Dana.</p>
+<h2 id="where-to-start">Where to start</h2>
+<p>If you want to know whether your business has enough clarity and documentation to communicate consistently, take the <a href="/assessments#brand-voice">Brand Voice Quick Check</a><sup class="ref">[1]</sup>. It takes five minutes and ends with a plain read on where you stand. If you already know the knowledge is trapped and you want to get it out, <a href="https://calendly.com/poguedigitalsolutions/30min" target="_blank" rel="noopener">book a strategy call</a><sup class="ref">[2]</sup> and we will talk about what a foundation session would look like for your business.</p>
+<p>Either way, start by asking one question: if I disappeared for a month, what would my business forget?</p>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://poguedigitalsolutions.com/assessments#brand-voice</li><li>https://calendly.com/poguedigitalsolutions/30min</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/what-is-brand-voice-ai</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>

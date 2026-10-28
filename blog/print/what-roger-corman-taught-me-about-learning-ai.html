@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Roger Corman Taught Me About Learning AI | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="Three lessons from filmmaker Roger Corman that apply to learning AI: do the rough things first, plan but be ready to change, and open big and close big.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/what-roger-corman-taught-me-about-learning-ai">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/what-roger-corman-taught-me-about-learning-ai">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">AI and Automation</span>
+  <h1>What Roger Corman Taught Me About Learning AI</h1>
+  <p class="dek">Three lessons from filmmaker Roger Corman that apply to learning AI: do the rough things first, plan but be ready to change, and open big and close big.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published July 27, 2026 &middot; 3 min read</div>
+  <article class="body">
+<p><strong>Don't tell me it can't be done.</strong></p>
+<p>One of my favorite moments came from an interview with legendary filmmaker Roger Corman on <em>The Last Drive-In with Joe Bob Briggs</em>.</p>
+<p>He wasn't talking about artificial intelligence.</p>
+<p>He wasn't talking about marketing.</p>
+<p>He wasn't talking about business.</p>
+<p>He was talking about filmmaking.</p>
+<p>Yet every lesson he shared applies almost perfectly to learning AI.</p>
+<p>As I listened, I realized these same principles have guided me through every major transition in my life, from serving as a Navy Corpsman to earning my master's degree in digital marketing, building businesses, and now helping others understand AI.</p>
+<p>Here are three lessons that every AI learner should remember.</p>
+<h2 id="1-be-brave-enough-to-do-the-rough-things-first">1. Be Brave Enough to Do the Rough Things First</h2>
+<p>Roger Corman said:</p>
+<blockquote>
+<p>"Be brave enough to do the rough things first."</p>
+</blockquote>
+<p>When people begin learning AI, they usually avoid the parts that feel intimidating.</p>
+<p>They watch videos instead of experimenting.</p>
+<p>They keep collecting prompts instead of writing their own.</p>
+<p>They spend weeks researching which AI platform is "best" instead of opening one and asking a question.</p>
+<p>Sound familiar?</p>
+<p>The hardest part is rarely learning AI.</p>
+<p>The hardest part is starting before you feel ready.</p>
+<p>Instead of asking:</p>
+<p><em>"Which AI tool should I learn?"</em></p>
+<p>Try asking:</p>
+<p><em>"What problem do I need to solve today?"</em></p>
+<p>Then use AI to solve it.</p>
+<p>Experience beats theory every single time.</p>
+<h2 id="2-have-a-great-plan-be-ready-to-change-it">2. Have a Great Plan. Be Ready to Change It.</h2>
+<p>Technology changes faster than almost any industry in history.</p>
+<p>The AI tool you master today may look completely different six months from now.</p>
+<p>A new model will launch.</p>
+<p>A new feature will appear.</p>
+<p>Another company will change pricing.</p>
+<p>If your identity is tied to one platform, you're going to become frustrated.</p>
+<p>Instead, build skills that transfer.</p>
+<p>Learn how to ask better questions.</p>
+<p>Learn how to organize information.</p>
+<p>Learn how to think critically about AI-generated answers.</p>
+<p>Learn how to verify sources.</p>
+<p>Those skills will remain valuable long after today's tools evolve.</p>
+<p>The destination stays the same.</p>
+<p>The route will almost certainly change.</p>
+<h2 id="3-open-big-close-big">3. Open Big. Close Big.</h2>
+<p>Roger Corman also said something that stuck with me:</p>
+<blockquote>
+<p>"Open big and close big."</p>
+</blockquote>
+<p>I think that applies to learning as well.</p>
+<p>Start with a project that excites you.</p>
+<p>Build something.</p>
+<p>Create something.</p>
+<p>Automate something.</p>
+<p>Solve a real problem.</p>
+<p>Then finish it.</p>
+<p>Don't leave twenty unfinished AI experiments scattered across your desktop.</p>
+<p>Complete one.</p>
+<p>Publish one.</p>
+<p>Share one.</p>
+<p>Teach one.</p>
+<p>People remember finished work.</p>
+<p>More importantly, <em>you</em> remember finishing.</p>
+<p>Confidence isn't built by consuming more information.</p>
+<p>It's built by completing meaningful projects.</p>
+<h2 id="the-middle-is-where-most-people-quit">The Middle Is Where Most People Quit</h2>
+<p>Joe Bob Briggs summarized Roger Corman's advice by saying we're all trying to write new chapters in our lives.</p>
+<p>That resonated with me.</p>
+<p>Every one of us has difficult days.</p>
+<p>Every one of us is learning something new.</p>
+<p>Every one of us has moments when we wonder whether we're smart enough, experienced enough, or too late to start.</p>
+<p>The middle is messy.</p>
+<p>That's normal.</p>
+<p>Don't judge your progress by the awkward middle chapters.</p>
+<p>Keep moving.</p>
+<h2 id="my-challenge-to-you">My Challenge to You</h2>
+<p>This week, choose one AI project you've been avoiding.</p>
+<p>Don't watch another tutorial.</p>
+<p>Don't buy another course.</p>
+<p>Don't wait for permission.</p>
+<p>Open ChatGPT, Gemini, Claude, Copilot, or whichever AI assistant you prefer.</p>
+<p>Ask one meaningful question.</p>
+<p>Solve one real problem.</p>
+<p>Then tomorrow, solve another.</p>
+<p>Curiosity is my superpower.</p>
+<p>Maybe it can become yours, too.</p>
+<p>Because learning AI isn't really about artificial intelligence.</p>
+<p>It's about developing the confidence to explore the unknown.</p>
+<p>And if someone tells you it can't be done...</p>
+<p>Smile.</p>
+<p>Then prove them wrong!</p>
+<p class="source-note">This article also appears on <a href="https://www.linkedin.com/pulse/what-roger-corman-taught-me-learning-ai-john-m-pogue-belyc" target="_blank" rel="noopener">LinkedIn</a><sup class="ref">[1]</sup>, where you can join the conversation.</p>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://www.linkedin.com/pulse/what-roger-corman-taught-me-learning-ai-john-m-pogue-belyc</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/what-roger-corman-taught-me-about-learning-ai</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>

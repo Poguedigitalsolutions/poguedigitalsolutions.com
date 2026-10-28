@@ -1,0 +1,200 @@
+"""Print view template for blog articles.
+
+page_blog.py calls render(meta, html_body, related_url) for every post and writes
+blog/print/<slug>.html. Live URL: /blog/print/<slug>
+
+What the print view does differently from the article page:
+  - No site header, nav, hero, subscribe box, comments, related posts, or CTA band.
+  - White page, Caslon headings, Inter body, sized in points for US Letter.
+  - Every link in the article gets a numbered marker [1], and a "Links in this
+    article" list at the end prints the full web address, so the paper copy can
+    still be checked.
+  - Header block with logo, title, byline, dates; footer block with the article's
+    web address, author bio, and copyright.
+  - Page numbers and the title run along the bottom of each page in Chrome and Edge.
+  - noindex, with a canonical pointing at the real article, so search engines never
+    treat it as a duplicate.
+
+To change the look of every print page, edit PRINT_CSS below and rebuild.
+"""
+import re, html as htmlmod
+from datetime import datetime
+from parts import SITE, clean_path
+
+YEAR = datetime.now().year
+
+
+def _nice(d):
+    return datetime.strptime(d, "%Y-%m-%d").strftime("%B %-d, %Y")
+
+
+def _absolute(href):
+    """Paper needs full addresses. Relative site links become https://poguedigitalsolutions.com/..."""
+    if re.match(r"^(https?:|mailto:)", href):
+        return href
+    path, rest = re.match(r"([^#?]*)(.*)", href).groups()
+    return SITE + clean_path(path.lstrip("/")) + rest
+
+
+def _endnotes(body):
+    """Number every link and collect the addresses. The same address keeps one number."""
+    notes, seen = [], {}
+
+    def mark(m):
+        attrs, text = m.group(1), m.group(2)
+        href = re.search(r'href="([^"]+)"', attrs)
+        if not href or href.group(1).startswith("#"):
+            return text  # in-page jump links mean nothing on paper
+        url = htmlmod.unescape(_absolute(href.group(1)))
+        if url not in seen:
+            notes.append(url)
+            seen[url] = len(notes)
+        n = seen[url]
+        return f'<a{attrs}>{text}</a><sup class="ref">[{n}]</sup>'
+
+    body = re.sub(r"<a(\s[^>]*)>(.*?)</a>", mark, body, flags=re.S)
+    return body, notes
+
+
+PRINT_CSS = """
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+"""
+
+
+def render(meta, html_body):
+    """Return the full HTML for one article's print view."""
+    slug = meta["slug"]
+    article_url = f"{SITE}/blog/{slug}"
+    # The table of contents is for clicking, not paper.
+    body = re.sub(r'<nav class="article-toc".*?</nav>\s*', "", html_body, flags=re.S)
+
+    faq_html = ""
+    if meta.get("faq"):
+        faq_html = '<section class="faq-print"><h2>Frequently Asked Questions</h2>' + "".join(
+            f'<h3>{q}</h3><div class="a">{a}</div>' for q, a in meta["faq"]) + "</section>"
+
+    # Number links across the body and the FAQ together so the list stays in reading order.
+    combined, notes = _endnotes(body + "\n<!--faq-->\n" + faq_html)
+    body, faq_html = combined.split("\n<!--faq-->\n", 1)
+
+    endnotes = ""
+    if notes:
+        endnotes = ('<section class="endnotes"><h2>Links in this article</h2><ol>' +
+                    "".join(f"<li>{htmlmod.escape(u)}</li>" for u in notes) + "</ol></section>")
+
+    updated = f' &middot; Updated {_nice(meta["updated"])}' if meta["updated"] != meta["date"] else ""
+    title = meta["title"]
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title} | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="{meta["description"]}">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="{article_url}">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<style>{PRINT_CSS}</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="blog/{slug}.html">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">{meta["category"]}</span>
+  <h1>{title}</h1>
+  <p class="dek">{meta["description"]}</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published {_nice(meta["date"])}{updated} &middot; {meta["reading_time"]} read</div>
+  <article class="body">
+{body}
+  </article>
+  {faq_html}
+  {endnotes}
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: {article_url}</div>
+    <div class="copy">&copy; {YEAR} Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>
+'''

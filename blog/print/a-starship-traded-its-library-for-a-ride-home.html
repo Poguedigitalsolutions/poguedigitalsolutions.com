@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Starship Traded Its Library for a Ride Home | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="A 1995 Star Trek: Voyager episode explains why your stories are the one thing AI cannot produce when anyone can publish a thousand posts a day.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/a-starship-traded-its-library-for-a-ride-home">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/a-starship-traded-its-library-for-a-ride-home">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">Brand Voice</span>
+  <h1>A Starship Traded Its Library for a Ride Home</h1>
+  <p class="dek">A 1995 Star Trek: Voyager episode explains why your stories are the one thing AI cannot produce when anyone can publish a thousand posts a day.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published September 24, 2026 &middot; 5 min read</div>
+  <article class="body">
+<p><em>What a 1995 Star Trek episode says about standing out when AI can post a thousand times a day</em></p>
+<p>I spent this week at Funnel Hacking Live, the ClickFunnels conference, where this year's theme was "The A.I. Era." One idea kept coming back from the stage: AI can now produce social media faster than any person or team. Peter Swain, an AI educator who works with service businesses, described a man who was publishing 20 posts a day. His goal was 1,000. That is one post every 86 seconds, around the clock. The algorithms are letting it all through.</p>
+<p>So here is the question I wrote in my notes. If one person can publish 1,000 posts a day, how does anyone find yours? People scrolling will have a harder time finding anything original.</p>
+<p>AI can draft all day, but it can't decide what matters to your client, what to leave out, or when to say nothing. Your stories are what truly set you apart, making you feel valued and confident in your authenticity.</p>
+<p>A Star Trek episode from 1995 made that case better than I can.</p>
+<h2 id="the-planet-that-paid-for-stories">The planet that paid for stories</h2>
+<p>In the first season of <em>Star Trek: Voyager</em>, the ship is stranded 70,000 light-years from Earth. At full speed, the trip home would take about 75 years. Each episode, the crew looks for a faster way.</p>
+<p>In "Prime Factors," they find one. They meet the Sikarians, a warm, pleasure-loving people whose culture treats stories as a measure of a person's character. A good story is a gift. A new story is treasure. In one moment I still remember, a crew member tells a small, funny story about two people on the ship, and the Sikarian listening asks for permission to retell it. That is how seriously they held ownership of a story.</p>
+<p>The Sikarians also had a device called a spatial trajector. It could fold space and move a person 40,000 light-years in a single jump. For Voyager, that was more than half the distance home.</p>
+<p>Captain Janeway offered a trade: the ship's entire library of literature for the trajector. The Sikarian leader said no. Their law forbade sharing their technology.</p>
+<p>Then a Sikarian named Jaret Otel came forward with a quiet offer. He would hand over the trajector in exchange for the library. He wanted to be the one who brought all those new stories to his people, and the prestige that came with it.</p>
+<p>Janeway refused. She would not go around another people's laws to get her crew home, even though she wanted to get them home more than anything.</p>
+<p>Some of her crew saw it differently. Tuvok, her most trusted officer, made the trade behind her back. B'Elanna Torres and two engineers tried to install the device. They were being human about it. Yes, it broke the rules. It would also get everyone home to their families.</p>
+<p>It failed. The trajector only worked on the Sikarian homeworld because it drew power from the planet's crystal mantle. When they switched it on, it nearly blew up the ship. Torres destroyed it with a phaser.</p>
+<h2 id="why-this-story-stays-with-me">Why this story stays with me</h2>
+<p>A civilization that could jump a person 40,000 light-years valued stories more than that technology. One of them was willing to break his own laws to get them first.</p>
+<p>Think about what that says about scarcity. The Sikarians had the machine. What they didn't have were the stories of a crew from the other side of the galaxy: their families, their mistakes, the small funny moments between two people on a ship.</p>
+<p>That is where we are with AI. The machine is everywhere now. Anyone can generate 1,000 posts a day. No tool can generate the day you had, the patient you held a hand for, the customer who called back to say thank you, or the thing your son said at dinner. Those belong to you.</p>
+<p>The episode has a second lesson, and I think it matters just as much. The crew grabbed a shortcut that only worked under someone else's conditions. Once they left that planet, it fell apart and nearly took the ship with it. A thousand AI posts a day works on the algorithm's terms, until the algorithm changes. Your stories go wherever you go.</p>
+<h2 id="how-to-put-your-stories-to-work">How to put your stories to work</h2>
+<p><strong>Keep a story log.</strong> When something happens that makes you laugh, teaches you something, or changes your mind, write down three lines about it that day. You will forget the details faster than you think.</p>
+<p><strong>Give credit, and ask when it's personal.</strong> If a story or idea came from someone else, say where you got it. Respecting others' stories builds trust and makes your audience feel valued.</p>
+<p><strong>You don't need a dramatic turning point.</strong> The Sikarians valued a short, funny story about two crewmates. Small, specific moments make your stories relatable and meaningful to others.</p>
+<p><strong>Let AI assist in shaping your story:</strong> tightening drafts or finding stronger openings, while ensuring the core memory, feeling, and point remain authentically yours.</p>
+<h2 id="the-trade-id-make">The trade I'd make</h2>
+<p>Janeway knew what her crew's stories were worth. She was willing to trade the whole library to get them home, and she still would not cheat to do it.</p>
+<p>Your stories are worth that much too. In a feed filling up at one post every 86 seconds, they are the one thing nobody else can produce. Tell them, protect them, and give credit when they belong to someone else.</p>
+<p>The Sikarians would have paid for yours.</p>
+<p><em>John M Pogue: Curiosity is my superpower.</em></p>
+<h2 id="references">References</h2>
+<ul>
+<li>"Prime Factors (Star Trek: Voyager)." Wikipedia. <a href="https://en.wikipedia.org/wiki/Prime_Factors_(Star_Trek:_Voyager)">https://en.wikipedia.org/wiki/Prime_Factors_(Star_Trek:_Voyager)</a><sup class="ref">[1]</sup></li>
+<li>"Prime Factors (episode)." Memory Alpha. <a href="https://memory-alpha.fandom.com/wiki/Prime_Factors_(episode)">https://memory-alpha.fandom.com/wiki/Prime_Factors_(episode)</a><sup class="ref">[2]</sup></li>
+<li>"Sikarian." Memory Alpha. <a href="https://memory-alpha.fandom.com/wiki/Sikarian">https://memory-alpha.fandom.com/wiki/Sikarian</a><sup class="ref">[3]</sup></li>
+<li>"Funnel Hacking LIVE: Encore, The A.I. Era." ClickFunnels. <a href="https://www.funnelhackinglive.com/fhl2026">https://www.funnelhackinglive.com/fhl2026</a><sup class="ref">[4]</sup></li>
+</ul>
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li>Keith R.A. DeCandido, "Star Trek: Voyager Rewatch: 'Prime Factors.'" Reactor. <a href="https://reactormag.com/star-trek-voyager-rewatch-prime-factors/">https://reactormag.com/star-trek-voyager-rewatch-prime-factors/</a><sup class="ref">[5]</sup></li>
+<li>Jamahl Epsicokhan, "Prime Factors." Jammer's Reviews. <a href="https://www.jammersreviews.com/st-voy/s1/prime.php">https://www.jammersreviews.com/st-voy/s1/prime.php</a><sup class="ref">[6]</sup></li>
+<li>"Prime Factors." StarTrek.com database. <a href="https://www.startrek.com/database_article/prime-factors">https://www.startrek.com/database_article/prime-factors</a><sup class="ref">[7]</sup></li>
+</ul>
+<p class="source-note">This article also appears on <a href="https://www.linkedin.com/pulse/starship-traded-its-library-ride-home-john-m-pogue-ujagf" target="_blank" rel="noopener">LinkedIn</a><sup class="ref">[8]</sup>, where you can join the conversation.</p>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://en.wikipedia.org/wiki/Prime_Factors_(Star_Trek:_Voyager)</li><li>https://memory-alpha.fandom.com/wiki/Prime_Factors_(episode)</li><li>https://memory-alpha.fandom.com/wiki/Sikarian</li><li>https://www.funnelhackinglive.com/fhl2026</li><li>https://reactormag.com/star-trek-voyager-rewatch-prime-factors/</li><li>https://www.jammersreviews.com/st-voy/s1/prime.php</li><li>https://www.startrek.com/database_article/prime-factors</li><li>https://www.linkedin.com/pulse/starship-traded-its-library-ride-home-john-m-pogue-ujagf</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/a-starship-traded-its-library-for-a-ride-home</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>

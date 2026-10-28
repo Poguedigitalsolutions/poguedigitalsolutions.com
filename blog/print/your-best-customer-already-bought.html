@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your best customer already bought. | Print View | Pogue Digital Solutions</title>
+<meta name="description" content="Your past customers are your most valuable asset. Three ways a small business can sell them the next thing: the natural next purchase, a maintenance plan, and an introduction.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/your-best-customer-already-bought">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root { --navy:#0B1F3A; --gold:#D4AF37; --gold-dim:#9a7d1e; --charcoal:#2B2B2B; --rule:#d9d4c7; --paper:#F7F4EC; }
+* { box-sizing:border-box; }
+html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body { margin:0; background:#e9e6de; color:var(--charcoal); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--navy); font-weight:700; line-height:1.2; }
+a { color:var(--navy); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--gold); color:var(--navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.letterhead img { width:150px; height:auto; display:block; margin:-14px 0 -10px -12px; }
+.letterhead .site { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.08em; text-transform:uppercase; color:#666; text-align:right; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:#444; margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:#555;
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--navy); }
+
+.body { font-size:11pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--navy); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--gold); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:#333; }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; background:var(--paper); border-left:3px solid var(--gold); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:#666; font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--gold-dim); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:#444; }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--gold); display:grid; grid-template-columns:1fr auto; gap:6px 20px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:#444; margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--navy); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:#444; word-break:break-all; }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:#888; }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"Pogue Digital Solutions, LLC"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:#888; } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/your-best-customer-already-bought">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()">Print or Save as PDF</button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC">
+    <span class="site">poguedigitalsolutions.com/blog</span>
+  </header>
+  <span class="eyebrow">Marketing</span>
+  <h1>Your best customer already bought.</h1>
+  <p class="dek">Your past customers are your most valuable asset. Three ways a small business can sell them the next thing: the natural next purchase, a maintenance plan, and an introduction.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published September 8, 2026 &middot; 4 min read</div>
+  <article class="body">
+<p><em>What do you sell them next?</em></p>
+<p>My dad ran his own plumbing business for most of his working life. He's 86 now, retired, and still can't walk past a dripping faucet without saying something about it. When I was a kid, I watched him leave the house for jobs the same way every time. Somebody called, he fixed it, he drove home.</p>
+<p>That was the whole business. The phone rings, the truck rolls, the invoice gets paid, and you start over tomorrow from zero.</p>
+<p>A lot of owner-operators still run that way, and it works right up until it doesn't. The phone gets quiet for two weeks in February, and you feel it in your stomach. So you do what everybody says. You buy more leads, you boost a post, you throw money at strangers who have never heard your name, while the people who already trusted you with their house and their credit card sit in a folder you haven't opened since the job closed.</p>
+<p>Those folks are your most valuable asset, and most shops treat them like a receipt.</p>
+<p>When you don't sell them anything next, somebody else does. Their water heater went out eighteen months after you fixed their line; they couldn't find your card; they searched online; and a company with a larger ad budget received the call. Silence cost you that job, not the competitor's ad budget.</p>
+<p>What do you plan to sell them next? Three answers, and none of them require you to become a marketer.</p>
+<h2 id="1-the-thing-they-were-always-going-to-need-anyway">1. The thing they were always going to need anyway</h2>
+<p>Every trade has a natural next purchase, and you already know yours. Roof job, then gutters. Brake job, then tires. Cut and color, then the six-week touch-up. Deck build, then the yearly seal. You aren't talking anyone into anything. You're telling a person who already likes you that the thing they'll need in ninety days can be handled by the guy who did the last job right.</p>
+<p>My twin brother James has done auto body and paint for over thirty years. He'll tell you people spend on horsepower and neglect the four patches of rubber actually touching the road. Business works the same way. Everybody wants a bigger engine, more leads, more ads, more noise. Traction is what you already have with the people who paid you once.</p>
+<h2 id="2-the-maintenance-version">2. The maintenance version</h2>
+<p>One-time jobs make a living. Repeat jobs make a business. Twice-a-year HVAC checkup, quarterly pest treatment, monthly lawn plan, annual inspection. Put a small price on it, make it easy to say yes, and get it on the calendar before you leave the driveway.</p>
+<p>Run the numbers for your own shop. Say you close fifteen jobs a month and four of those customers take a $30 monthly plan. That's $120 in month one. Add four more every month and you collect roughly $9,400 over that first year, and you walk into next January with $1,440 a month already on the books, assuming they stay. No new leads required. Swap in your own prices and do the arithmetic on paper. It's usually more than people expect.</p>
+<h2 id="3-the-introduction">3. The introduction</h2>
+<p>Your happy customers know other people with the same house, the same truck, the same problem. Most owners never ask, or they ask in a way that feels like begging. Try this instead, three days after the job, by text:</p>
+<p>"Glad we got that fixed. If a neighbor ever needs the same thing, send them my number, and I'll take good care of them."</p>
+<p>That's it. No coupon, no gimmick. Twelve seconds of your day.</p>
+<h2 id="the-part-nobody-does">The part nobody does</h2>
+<p>You need a list. A spreadsheet with name, phone, what you did for them, and the date will beat any CRM you'll never finish setting up. Build it tonight from your invoices. Once a month, look at whom you served twelve months ago and reach out with something useful, like a "hey, it's about that time" reminder from someone they've already let into their home.</p>
+<p>I spent years on the other side of this, in collections, calling people on the worst day of their month. What I learned is that people remember exactly how you treated them when they were vulnerable. A customer who let you into their house or under their hood was vulnerable too. They handed you their money and their trust, and that trust doesn't expire on its own. It fades when you stop showing up.</p>
+<p>You already did the hardest part. You earned somebody. Take care of them again.</p>
+<p>What's the natural second sale in your business? Put it in the comments, and I'll help you think it through.</p>
+<p class="source-note">This article also appears on <a href="https://www.linkedin.com/pulse/your-best-customer-already-bought-john-m-pogue-d1tdf" target="_blank" rel="noopener">LinkedIn</a><sup class="ref">[1]</sup>, where you can join the conversation.</p>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://www.linkedin.com/pulse/your-best-customer-already-bought-john-m-pogue-d1tdf</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/your-best-customer-already-bought</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>
