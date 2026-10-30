@@ -8,6 +8,9 @@ category: AI and Automation
 reading_time: 10 min
 keywords: how to ask AI questions, prompting tips for beginners, I, Robot, AI hallucinations, AI slop, AI memory, temporary chat, prompt engineering, Mata v. Avianca
 source: https://www.linkedin.com/pulse/how-ask-ai-right-question-lesson-from-i-robot-john-m-pogue-siiec/
+banner: img/how-to-ask-ai-the-right-question-banner-john-m-pogue.jpg
+social_image: img/how-to-ask-ai-the-right-question-social-john-m-pogue.jpg
+banner_alt: Banner for the article "How to Ask AI the Right Question: A Lesson From I, Robot" by John M Pogue. John M Pogue, in a black cap, sits deep in thought beside a glowing blue hologram of an older scientist that says "That, detective, is the right question." Three steps run along the bottom: ask better questions, check the answers, teach your AI to know you. Pogue Digital Solutions and Brand Voice AI logos. PogueDigitalSolutions.com.
 ---
 
 # How to Ask AI the Right Question: A Lesson From I, Robot

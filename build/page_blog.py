@@ -126,7 +126,7 @@ for idx, (meta, html_body) in enumerate(posts):
         "author": AUTHOR, "publisher": PUBLISHER, "isPartOf": {"@id": BLOG_ID},
         "datePublished": meta["date"], "dateModified": meta["updated"],
         "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url,
-        "image": SITE + "/img/hero-founder-composite.jpg", "articleSection": meta["category"],
+        "image": SITE + "/" + meta.get("social_image", "img/hero-founder-composite.jpg"), "articleSection": meta["category"],
         "keywords": keywords, "wordCount": meta["words"], "inLanguage": "en-US",
         "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", "#short-answer"]},
     }
@@ -154,6 +154,12 @@ for idx, (meta, html_body) in enumerate(posts):
              f'<meta property="article:author" content="John M Pogue">\n'
              f'<meta property="article:section" content="{meta["category"]}">\n'
              f'<meta name="author" content="John M Pogue">\n')
+    banner_block = ""
+    if meta.get("banner"):
+        alt = htmlmod.escape(meta.get("banner_alt", ""), quote=True)
+        extra += f'<meta property="og:image:alt" content="{alt}">\n<meta name="twitter:image:alt" content="{alt}">\n'
+        banner_block = (f'<figure class="post-banner" style="margin:0 0 32px;"><img src="{meta["banner"]}" alt="{alt}" '
+                        'width="1600" height="900" loading="eager" style="width:100%; height:auto; display:block; border-radius:8px;"></figure>\n')
 
     # Next article: the next newest post (published just before this one). The oldest loops to the newest.
     nxt = posts[(idx + 1) % len(posts)][0] if len(posts) > 1 else None
@@ -187,7 +193,8 @@ for idx, (meta, html_body) in enumerate(posts):
 </section>''' if rel else ""
 
     page = head(f'{meta["title"]} | Pogue Digital Solutions Blog', meta["description"], f"blog/{slug}.html",
-                jsonld=jsonld, og_type="article", extra_meta=extra) + header("blog/index.html") + f'''
+                jsonld=jsonld, og_type="article", extra_meta=extra,
+                og_image=meta.get("social_image", "img/hero-founder-composite.jpg")) + header("blog/index.html") + f'''
 <section class="on-ink tight post-hero" style="padding-top:56px; padding-bottom:64px;">
   {compass_svg()}
   <div class="wrap reveal" style="max-width:820px;">
@@ -208,7 +215,7 @@ for idx, (meta, html_body) in enumerate(posts):
 <section class="post-body">
   <div class="wrap">
     <article class="article-body reveal">
-{html_body}
+{banner_block}{html_body}
     </article>
   </div>
 </section>
