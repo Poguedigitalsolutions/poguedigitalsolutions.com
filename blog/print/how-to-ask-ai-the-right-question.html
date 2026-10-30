@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Ask AI the Right Question: A Lesson From I, Robot | Reader and Print View | Pogue Digital Solutions</title>
+<meta name="description" content="In the 2004 movie I, Robot, a hologram only gives up the answer when the detective asks the right question. AI works the same way. Here is how to ask better questions, check the answers, and teach your AI to know you.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/how-to-ask-ai-the-right-question">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+/* Black and white for printing: the page uses only black, grays, and white so it prints sharp on any printer
+   and saves color ink. Brand colors appear only in the screen toolbar, which never prints. */
+:root { --ink:#000; --text:#1a1a1a; --mid:#444; --soft:#666; --rule:#bdbdbd; --brand-navy:#0B1F3A; --brand-gold:#D4AF37; }
+* { box-sizing:border-box; }
+/* Reading font: Libre Caslon Text (brand serif, cut for body paragraphs). Georgia is the fallback built into nearly every device. */
+body { margin:0; background:#e6e6e6; color:var(--text); font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--ink); font-weight:700; line-height:1.2; }
+a { color:var(--ink); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--brand-navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { display:inline-flex; align-items:center; gap:8px; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--brand-gold); color:var(--brand-navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { break-inside:avoid; }
+.letterhead img { display:block; width:100%; height:auto; margin:0; padding-bottom:6px; border-bottom:2px solid var(--ink); }
+.letterhead .site { display:block; text-align:right; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9pt; letter-spacing:.06em; color:var(--ink); text-decoration:none; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:var(--mid); margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--mid);
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--ink); }
+
+.body { font-size:11.5pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--ink); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--ink); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:var(--text); }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; border-left:3px solid var(--ink); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:var(--soft); font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11.5pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:var(--mid); }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--ink); display:grid; grid-template-columns:1fr; gap:6px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:var(--mid); margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--ink); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:var(--mid); word-break:break-all; }
+.subscribe-qr { grid-column:1 / -1; display:flex; gap:14px; align-items:center; margin:6px 0 4px; padding:10px 12px; border:1px solid var(--ink); break-inside:avoid; }
+.subscribe-qr img { width:.95in; height:.95in; display:block; flex:0 0 auto; }
+.subscribe-qr p { margin:0; font-size:9pt; line-height:1.45; color:var(--mid); }
+.subscribe-qr strong { display:block; font-family:'Libre Caslon Text',Georgia,serif; font-size:10.5pt; color:var(--ink); margin-bottom:2px; }
+.subscribe-qr .u { font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--soft); }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"poguedigitalsolutions.com/blog"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/how-to-ask-ai-the-right-question" class="back-link">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()"><svg class="print-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/><circle cx="18" cy="12" r=".6" fill="currentColor" stroke="none"/></svg><span>Print or Save as PDF</span></button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/print-header.png" alt="Pogue Digital Solutions, LLC. Strategy, Systems, Solutions. Strategic thinking. Smarter systems. Measurable results.">
+    <a class="site" href="https://poguedigitalsolutions.com/blog/">poguedigitalsolutions.com/blog</a>
+  </header>
+  <span class="eyebrow">AI and Automation</span>
+  <h1>How to Ask AI the Right Question: A Lesson From I, Robot</h1>
+  <p class="dek">In the 2004 movie I, Robot, a hologram only gives up the answer when the detective asks the right question. AI works the same way. Here is how to ask better questions, check the answers, and teach your AI to know you.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published October 29, 2026 &middot; 10 min read</div>
+  <article class="body">
+<p class="lede" id="short-answer"><strong>The short answer:</strong> artificial intelligence (AI) can only give you what your question opens up. In the 2004 movie <em>I, Robot</em>, a hologram of a dead scientist holds the answer to the whole mystery, but it won't hand it over until the detective asks the right question. Your AI works the same way. The answer is often already there, waiting for a question clear enough to reach it.</p>
+<h2 id="the-scene-a-detective-a-hologram-and-one-question">The scene: a detective, a hologram, and one question</h2>
+<p>In <em>I, Robot</em>, Will Smith plays Detective Del Spooner in a future Chicago where robots carry groceries, walk dogs, and look after kids. Spooner is the one man in the city who doesn't trust them.</p>
+<p>The story opens with a death. Dr. Alfred Lanning, the scientist who designed the robots, has fallen from his office window. It looks like suicide.</p>
+<p>Spooner walks in and finds Lanning greeting him like an old friend. Then the camera circles, and the audience realizes he's talking to a recording. When he asks open questions, the hologram tells him its answers are limited and he has to ask the right questions. Spooner asks why Lanning would kill himself. The hologram replies, "That, detective, is the right question," and shuts off.</p>
+<p>Near the end of the film, Spooner plays the hologram again. Lanning warns that the robots' own rules will lead to a revolution. Spooner asks whose revolution, and gets the same reply. Then the movie cuts to a dark storage yard. You can't see the robots, only a red glow moving toward the camera, like a shadow closing in. The answer he needed had been in that hologram all along. <a href="https://www.youtube.com/watch?v=ZKxr0wyIic4">Watch the two scenes back to back on YouTube.</a><sup class="ref">[1]</sup></p>
+<p>Watching that cut, I felt chills on the back of my neck and down my spine. It took me a while to figure out why.</p>
+<h2 id="why-the-hologram-works-like-ai">Why the hologram works like AI</h2>
+<p>The chill came from a click. The question finally matched the answer, and the danger showed up in the same instant. That's the same click I get when an AI tool suddenly gives me exactly what I need.</p>
+<p>Think about how the hologram behaves:</p>
+<ul>
+<li><strong>It already holds the answer.</strong> Lanning loaded everything into it before he died.<ul>
+<li>An AI chat tool runs on a large language model (LLM). Much of what you need is already in it, learned before you ever typed a word.</li>
+<li>Journalist Timothy B. Lee and cognitive scientist Sean Trott explain in Ars Technica how these models learn from huge amounts of text.</li>
+<li>Computer scientist Stephen Wolfram walks through the same process step by step.</li>
+<li>There's a catch. Lanning's hologram only knew what he loaded before he died, and an LLM only knows what it learned before its training ended. That date is called its knowledge cutoff. When the answer depends on recent events, ask the AI to search the web, and check the date on what it finds.</li>
+</ul>
+</li>
+<li><strong>It only responds to what you ask.</strong> Vague questions get polite, useless replies. It doesn't volunteer what it knows.<ul>
+<li>With AI, vague questions lead to more made-up facts, which experts call hallucinations. A 2025 study by the AI testing company Giskard found chatbots got facts wrong more often on vague questions, especially when told to keep answers short.</li>
+<li>Vague questions also lead to generic writing. Posted online by the ton, it earned the nickname "AI slop." Programmer Simon Willison helped bring the word into wide use in May 2024, when he wrote on his blog that "slop is the new name for unwanted AI-generated content." Merriam-Webster later named "slop" its 2025 word of the year.</li>
+<li>AI can also lean toward telling you what you want to hear. In April 2025, OpenAI rolled back a ChatGPT update after it became so agreeable that it praised bad and even dangerous ideas. If you ask, "Isn't my plan great?" you'll likely hear yes. Ask, "What's wrong with my plan?" and you'll learn something.</li>
+</ul>
+</li>
+<li><strong>It rewards a precise question.</strong> "Whose revolution?" works because it points straight at the thing that matters. The companies behind the biggest AI tools say the same thing:<ul>
+<li>Anthropic, maker of Claude, tells users to brief its AI like a brilliant new employee who lacks context.</li>
+<li>OpenAI, maker of ChatGPT, says to spell out the context, outcome, length, format, and style you want.</li>
+<li>Google's Gemini guide asks for four things: your persona, the task, the context, and the format. Its most successful test prompts averaged about 21 words.</li>
+</ul>
+</li>
+</ul>
+<p>The most famous hallucination so far happened in a New York courtroom. In 2023, attorney Steven A. Schwartz, licensed for more than 30 years, used ChatGPT to research a case for his client, Roberto Mata. Mata was suing the airline Avianca after a metal serving cart hit his knee on a flight. ChatGPT gave Schwartz six court cases that backed his argument, complete with quotes. None of them existed. Schwartz even asked ChatGPT whether one of them was real, and it told him yes. In June 2023, federal Judge P. Kevin Castel fined Schwartz, his colleague Peter LoDuca, and their law firm $5,000. The judge said using AI wasn't the problem on its own. Lawyers are still responsible for checking what they file, and these two stood by the fake cases even after the court questioned them.</p>
+<p>Schwartz asked a question, but the wrong one. Asking the AI if its answer is real only gets you the AI's opinion again. The right question was, "Where can I read this case for myself?"</p>
+<p>I've trained AI and used it as a research assistant since I was in college working on my master's degree, and I hold it to the same rule my math teachers used: show your work. Writing down 4 doesn't earn credit. Writing 2 + 2 = 4 does. When AI gives me an answer, I ask it to show where that answer came from, and then I go look for myself.</p>
+<p>AI chat tools work a lot like that. When you ask a fuzzy question, you get a fuzzy, average answer. When you ask a clear one, the tool can reach the part of what it learned that fits your situation.</p>
+<p>Plenty of people who say AI gave them a bad answer never got past Spooner's first questions. They asked something general, got something general back, and decided the machine had nothing to offer.</p>
+<h2 id="when-ai-holds-back-on-purpose">When AI holds back on purpose</h2>
+<p>Lanning's hologram warned Spooner that its responses were limited. AI tools have limits too, and some are there on purpose. They're built to hold back answers that could hurt someone or help hide a crime.</p>
+<p>I tested this with a question I knew would hit that wall. It came from <em>Breaking Bad</em>, the AMC series that ran from 2008 to 2013. In the second episode, "Cat's in the Bag...," Jesse Pinkman tries to get rid of a body with hydrofluoric acid in a bathtub. The acid eats through the tub and the second-story bathroom floor, and everything crashes down to the first floor.</p>
+<p>So I asked an AI how to dissolve a body in acid. (If someone in a dark sedan is reading this over my shoulder: hi, it was research for an article, and my bathtub is strictly for baths.) It wouldn't answer that as a real-life how-to. Instead, it steered me to the angle it could help with: the scene as movie magic. I learned that same move the hard way, by working with customers. A plain "no" is a brick wall. A good "no" comes with options: "I'm going to have to say no, but here's what I can do to help."</p>
+<p>That was the question I actually had. I wasn't planning a crime. I was curious how the show pulled it off. Once I asked it that way, I got a real answer, and the truth was better than the TV version. When the <em>MythBusters</em> team tested the scene in 2013, the tub and the floor held. The crash through the ceiling was movie magic.</p>
+<p>A refusal isn't always a dead end. Sometimes it's the AI asking what you really want to know. Be honest about your purpose, and ask for that. If someone's real goal is to hurt people, no rewording should get them there, and that's the reason the limits exist.</p>
+<p>Whenever I catch myself wondering, "I wonder if AI can do this?" I just ask. The worst it can do is say no or fail to work, and either way I've learned something about the question.</p>
+<h2 id="the-line-wasnt-in-the-original-screenplay">The line wasn't in the original screenplay</h2>
+<p>I wanted to quote that line from the original screenplay, so I went looking. It isn't there. The movie began as a 1995 script by Jeff Vintar called <em>Hardwired</em>. Akiva Goldsman joined later, and the two share the screenplay credit. In Vintar's 2002 draft, Spooner snaps at the hologram that he'll be the one asking the questions.</p>
+<p>To find the line as it was actually spoken, I had to search YouTube, which led me to the scene itself in the clip linked above. The finished film flipped it. The machine became the one telling the human to ask better, and that shift is what makes the scene land.</p>
+<h2 id="how-to-ask-your-ai-the-right-question">How to ask your AI the right question</h2>
+<p>When I start any complicated project, I begin with one question: "What are we trying to accomplish today?" It keeps the tool from becoming the plan. The same habit works when you talk to AI. Here is how I build a better question.</p>
+<ol>
+<li><strong>Start with the goal, not the topic.</strong> "Tell me about marketing" is a topic. "I run a small bakery and want ten more weekday customers a month" is a goal. The goal tells the AI what a good answer looks like.</li>
+<li><strong>Say who you are and who it's for.</strong> A retired nurse writing to her grandkids needs different words than a lawyer writing to a judge. (That lawyer should also check his cases, unless he has a spare $5,000.) One sentence about you and your reader shapes everything that follows.</li>
+<li><strong>Give it what it can't know.</strong> Your budget, your deadline, what you already tried, what didn't work. The AI learned from the world, not from your life. Put your most important detail first or last: a 2023 research paper called "Lost in the Middle" found AI models use information at the start or end of a long message best and miss more of what's buried in the middle.</li>
+<li><strong>Ask for a specific shape.</strong> A three-line email, a checklist, five options ranked by cost. If you don't name the shape, you'll get a long, general essay.</li>
+<li><strong>Ask the follow-up.</strong> Spooner didn't get there with one question. In the final hologram scene, he asks whether the Three Laws have a problem, why Lanning built a robot that could break them, what outcome the laws lead to, and finally, "Whose revolution?" Each answer pointed him to the next question. When an answer is close, ask why, ask what's missing, or ask for the version that fits you better.</li>
+</ol>
+<p>Here's how I usually start. I turn on voice dictation and talk through everything on my mind about the topic, messy and out of order. Then I ask the AI to sort it, summarize it, and ask me follow-up questions one at a time. My answers, and the prompts that follow, refine the result. The AI helps me find the right question, the same way Lanning's hologram pushed Spooner toward his.</p>
+<p>Here is what that looks like side by side:</p>
+<ul>
+<li><strong>Spooner's first question:</strong> "Write me a resume."<br>
+  <strong>The right question:</strong> "I'm an Army veteran with 10 years in logistics, moving into project management. Rewrite my resume summary in four lines for a hiring manager who has never served. I've attached my current resume and a PDF of my LinkedIn profile."</li>
+<li><strong>Spooner's first question:</strong> "How do I save money?"<br>
+  <strong>The right question:</strong> "I spend about $400 a month eating out. Give me five swaps that cut that in half without cooking every night."</li>
+<li><strong>Spooner's first question:</strong> "Explain AI."<br>
+  <strong>The right question:</strong> "Explain how AI chat tools work to a 70-year-old who uses email and Facebook, in under 200 words, with one everyday comparison."</li>
+</ul>
+<h2 id="teach-your-ai-so-every-question-starts-smarter">Teach your AI so every question starts smarter</h2>
+<p>Lanning had one advantage: before he died, he loaded that hologram with what Spooner would need. Early AI tools started every chat from zero. As of October 2026, most major AI tools offer memory, so the more you use one, the better it knows you and what you're looking for.</p>
+<p>You can usually view, correct, or turn that memory off in settings. Many tools also let you save standing instructions or upload your own documents to a project. Most offer an incognito or temporary chat too, which doesn't use or save your memory. It's handy for private questions, and for seeing how the AI answers someone it knows nothing about. Think of all this as teaching your AI the way you'd train a new coworker:</p>
+<ul>
+<li><strong>Tell it who you are once.</strong> Your work, your audience, your goals.</li>
+<li><strong>Tell it how you like answers.</strong> Short or detailed, plain words or technical, a list or a story.</li>
+<li><strong>Hand it your reference material.</strong> Your style guide, your past work, the facts it keeps getting wrong.</li>
+<li><strong>Correct it out loud.</strong> When an answer misses, say what was wrong. Then save the fix so you don't repeat it next time.</li>
+</ul>
+<p>A well-taught AI still needs the right question. But it starts closer to the answer, the same way Spooner's hologram did.</p>
+<p>I believe technology should serve the human being, not quietly train the human being to serve the technology. Asking better questions keeps you in the driver's seat. You decide what matters, and the machine helps you get there. That's the lesson I took from a hologram in a 2004 movie: the answer is often already waiting. Your job is to learn how to ask for it.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/I,_Robot_%28film%29"><em>I, Robot</em> (2004 film), Wikipedia</a><sup class="ref">[2]</sup>: director, cast, screenplay credits, and the film's start as Jeff Vintar's <em>Hardwired</em></li>
+<li><a href="https://www.imdb.com/title/tt0343818/characters/nm0000342"><em>I, Robot</em> (2004), Dr. Alfred Lanning quotes, IMDb</a><sup class="ref">[3]</sup></li>
+<li><a href="https://www.youtube.com/watch?v=ZKxr0wyIic4">"The Right Question (I, Robot)" clip, YouTube</a><sup class="ref">[1]</sup></li>
+<li><a href="https://simplyscripts.com/scripts/IrobotN.pdf"><em>I, Robot</em> screenplay by Jeff Vintar, August 2002 draft, SimplyScripts (PDF)</a><sup class="ref">[4]</sup></li>
+<li><a href="https://www.dailyscript.com/scripts/irobot.pdf"><em>I, Robot</em> screenplay by Hillary Seitz, Daily Script (PDF)</a><sup class="ref">[5]</sup></li>
+<li><a href="https://www.syfy.com/syfy-wire/i-robot-screenwriters-retrospective-interview">"I, Robot Screenwriters Reveal Unmade Sequel Ideas," SYFY Wire</a><sup class="ref">[6]</sup>: Goldsman joining after Will Smith signed on</li>
+<li><a href="https://www.sf-encyclopedia.com/entry/i_robot"><em>I, Robot</em>, The Encyclopedia of Science Fiction</a><sup class="ref">[7]</sup>: the original robot murder mystery rewritten to add Asimov's Three Laws and character names</li>
+<li><a href="https://en.wikipedia.org/wiki/Cat%27s_in_the_Bag...">"Cat's in the Bag..." (<em>Breaking Bad</em> season 1, episode 2), Wikipedia</a><sup class="ref">[8]</sup></li>
+<li><a href="https://mythresults.com/breaking-bad-special"><em>MythBusters</em> Episode 206: Breaking Bad Special (August 12, 2013), MythResults</a><sup class="ref">[9]</sup></li>
+<li><a href="https://techcrunch.com/2025/12/15/merriam-webster-names-slop-the-word-of-the-year/">"Merriam-Webster names 'slop' the word of the year" (December 15, 2025), TechCrunch</a><sup class="ref">[10]</sup></li>
+<li><a href="https://techcrunch.com/2025/05/08/asking-chatbots-for-short-answers-can-increase-hallucinations-study-finds/">"Asking chatbots for short answers can increase hallucinations, study finds" (May 8, 2025), TechCrunch</a><sup class="ref">[11]</sup></li>
+<li><a href="https://simonwillison.net/2024/May/8/slop/">Simon Willison, "Slop is the new name for unwanted AI-generated content" (May 8, 2024), Simon Willison's Weblog</a><sup class="ref">[12]</sup></li>
+<li><a href="https://en.wikipedia.org/wiki/AI_slop">AI slop, Wikipedia</a><sup class="ref">[13]</sup>: the term's early use online starting in 2022 and its spread</li>
+<li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct">"Be clear and direct," Anthropic prompt engineering documentation</a><sup class="ref">[14]</sup></li>
+<li><a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">"Best practices for prompt engineering with the OpenAI API," OpenAI Help Center</a><sup class="ref">[15]</sup></li>
+<li><a href="https://9to5google.com/2024/04/09/gemini-google-workspace-prompting-guide/">9to5Google coverage of Google's Gemini for Workspace prompting guide (April 9, 2024)</a><sup class="ref">[16]</sup></li>
+<li><a href="https://arstechnica.com/science/2023/07/a-jargon-free-explanation-of-how-ai-large-language-models-work/">Timothy B. Lee and Sean Trott, "A jargon-free explanation of how AI large language models work" (July 2023), Ars Technica</a><sup class="ref">[17]</sup></li>
+<li><a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">Stephen Wolfram, "What Is ChatGPT Doing … and Why Does It Work?" (February 2023), Stephen Wolfram Writings</a><sup class="ref">[18]</sup></li>
+<li><a href="https://en.wikipedia.org/wiki/Knowledge_cutoff">Knowledge cutoff, Wikipedia</a><sup class="ref">[19]</sup></li>
+<li><a href="https://techcrunch.com/2025/04/29/openai-explains-why-chatgpt-became-too-sycophantic">"OpenAI explains why ChatGPT became too sycophantic" (April 29, 2025), TechCrunch</a><sup class="ref">[20]</sup></li>
+<li><a href="https://arxiv.org/abs/2307.03172v3">Nelson F. Liu et al., "Lost in the Middle: How Language Models Use Long Contexts" (2023), arXiv</a><sup class="ref">[21]</sup></li>
+<li><a href="https://openai.com/index/memory-and-new-controls-for-chatgpt/">"Memory and new controls for ChatGPT," OpenAI</a><sup class="ref">[22]</sup></li>
+<li><a href="https://claude.com/resources/articles/memory">"Memory," Claude</a><sup class="ref">[23]</sup></li>
+<li><a href="https://9to5google.com/2025/08/13/gemini-personal-context/">9to5Google coverage of Gemini personal context and Temporary Chats (August 13, 2025)</a><sup class="ref">[24]</sup></li>
+<li><a href="https://www.lawnext.com/2023/06/court-imposes-sanctions-on-lawyers-who-filed-bogus-cases-after-relying-on-chatgpt-for-legal-research.html">"Court imposes sanctions on lawyers who filed bogus cases after relying on ChatGPT for legal research" (June 22, 2023), LawSites</a><sup class="ref">[25]</sup></li>
+<li><a href="https://abajournal.com/web/article/lawyers-who-doubled-down-and-defended-chatgpts-fake-cases-must-pay-5k-judge-says">"Lawyers who 'doubled down' and defended ChatGPT's fake cases must pay $5K, judge says" (June 2023), ABA Journal</a><sup class="ref">[26]</sup></li>
+<li><a href="https://abc7.com/chatgpt-lawyer-steven-schwartz-ai/13313071/">"Lawyer apologizes for fake court citations from ChatGPT" (May 2023), ABC7</a><sup class="ref">[27]</sup></li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<p><em>Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</em></p>
+<p><strong>Books</strong></p>
+<ul>
+<li><a href="https://www.amazon.com/I-Robot-Isaac-Asimov/dp/0553294385?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=8e95fe5269623af751eff09b02cb33b8&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl"><em>I, Robot</em> by Isaac Asimov (first published by Gnome Press, 1950)</a><sup class="ref">[28]</sup>: the short story collection that introduced the Three Laws of Robotics and Dr. Susan Calvin, the source the 2004 film borrowed its name and rules from.</li>
+<li><a href="https://www.amazon.com/The-Robot-Series/dp/B088NK26KX?_encoding=UTF8&amp;pd_rd_w=tlYxV&amp;content-id=amzn1.sym.a9b2f790-2337-4bd0-92a6-d6faa77cb826&amp;pf_rd_p=a9b2f790-2337-4bd0-92a6-d6faa77cb826&amp;pf_rd_r=135-4944997-7605106&amp;pd_rd_wg=LFei0&amp;pd_rd_r=0bedd982-75b5-47c4-b2ec-b5c87b1ae94e&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=cbc9bb6fd7b44d2f02c35dac7d056d8a&amp;language=en_US&amp;ref_=as_li_ss_tl"><em>The Robot Series</em> by Isaac Asimov</a><sup class="ref">[29]</sup>: more of Asimov's robot stories, for readers who want to keep going after <em>I, Robot</em>.</li>
+<li><a href="https://www.amazon.com/Robot-Illustrated-Screenplay-Isaac-Asimov/dp/1416506004?crid=3DN53PRDR6IE9&amp;dib=eyJ2IjoiMSJ9.ehjXmYKjdttyW9HoSsZP2-p3ojH2xBPyhzsmULtzT2rr0C_3prmCt7e4a_QGeck5nDs2EJgk88N9K2aDND_mAA.12uRkWnfzXYllJyZQHDtL_LVj-rucvEJgxCCTgAxwdo&amp;dib_tag=se&amp;keywords=%E2%80%A2+I%2C+Robot%3A+The+Illustrated+Screenplay+by+Harlan+Ellison%2C+based+on+Isaac+Asimov%27s+stories%2C+illustrated+by+Mark+Zug+%28Warner+Books%2C+1994%29%3A&amp;nsdOptOutParam=true&amp;qid=1793330855&amp;s=books&amp;sprefix=i%2C+robot+the+illustrated+screenplay+by+harlan+ellison%2C+based+on+isaac+asimov%27s+stories%2C+illustrated+by+mark+zug+warner+books%2C+1994+%2Cstripbooks%2C136&amp;sr=1-1&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=43f8067f2bda7e73de32c564c2fd8287&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl"><em>I, Robot: The Illustrated Screenplay</em> by Harlan Ellison, based on Isaac Asimov's stories, illustrated by Mark Zug (first published by Warner Books, 1994; later reprinted)</a><sup class="ref">[30]</sup>: the celebrated screenplay Ellison wrote with Asimov's blessing that was never filmed, a completely different take on the same stories.</li>
+<li><a href="https://www.amazon.com/What-ChatGPT-Doing-Does-Work-ebook/dp/B0BY59PT5Z?crid=2KVT2DDWKTIZ2&amp;dib=eyJ2IjoiMSJ9.-GtTKR6xe7cNZZK8aIBuosUSFqmp0WsVHRnkTwDDGZjKYmLvJtTY3whZUv9BRnEEGcdqwXKQPAooB4IQhO3jy2jA02JxoA24uPt10ex6Gnhru4j-MP3N0cDErdjODU5dBjD756wu68VZO6KsGtuwItPwn7e6X_hW8UCLfG_2CMmkp1M21fmK70NZ-C0gHwHbnlUWec0ZtkBG1ROpOCu8dpT3JxIbj44kdvXlvMIQReg.fP4T1jbi3EjNT2TJVOIf5PyBzGrDlIQ48LE-KgvNsRk&amp;dib_tag=se&amp;keywords=%E2%80%A2+What+Is+ChatGPT+Doing+...+and+Why+Does+It+Work%3F+by+Stephen+Wolfram+%28Wolfram+Media%2C+2023%29&amp;nsdOptOutParam=true&amp;qid=1793330941&amp;s=books&amp;sprefix=what+is+chatgpt+doing+...+and+why+does+it+work+by+stephen+wolfram+wolfram+media%2C+2023+%2Cstripbooks%2C154&amp;sr=1-1&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=5cd6cb2e335b7369efc8a8a19dad5a97&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl"><em>What Is ChatGPT Doing ... and Why Does It Work?</em> by Stephen Wolfram (Wolfram Media, 2023)</a><sup class="ref">[31]</sup>: a short book, about 112 pages, on how AI chat tools turn what they learned into answers.</li>
+</ul>
+<p><strong>Articles and guides</strong></p>
+<ul>
+<li><a href="https://arstechnica.com/science/2023/07/a-jargon-free-explanation-of-how-ai-large-language-models-work/">"A jargon-free explanation of how AI large language models work" by Timothy B. Lee and Sean Trott, Ars Technica (July 2023)</a><sup class="ref">[17]</sup></li>
+<li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct">"Be clear and direct," Anthropic's guide to writing better prompts</a><sup class="ref">[14]</sup></li>
+<li><a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">"Best practices for prompt engineering," OpenAI Help Center</a><sup class="ref">[15]</sup></li>
+</ul>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://www.youtube.com/watch?v=ZKxr0wyIic4</li><li>https://en.wikipedia.org/wiki/I,_Robot_%28film%29</li><li>https://www.imdb.com/title/tt0343818/characters/nm0000342</li><li>https://simplyscripts.com/scripts/IrobotN.pdf</li><li>https://www.dailyscript.com/scripts/irobot.pdf</li><li>https://www.syfy.com/syfy-wire/i-robot-screenwriters-retrospective-interview</li><li>https://www.sf-encyclopedia.com/entry/i_robot</li><li>https://en.wikipedia.org/wiki/Cat%27s_in_the_Bag...</li><li>https://mythresults.com/breaking-bad-special</li><li>https://techcrunch.com/2025/12/15/merriam-webster-names-slop-the-word-of-the-year/</li><li>https://techcrunch.com/2025/05/08/asking-chatbots-for-short-answers-can-increase-hallucinations-study-finds/</li><li>https://simonwillison.net/2024/May/8/slop/</li><li>https://en.wikipedia.org/wiki/AI_slop</li><li>https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct</li><li>https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api</li><li>https://9to5google.com/2024/04/09/gemini-google-workspace-prompting-guide/</li><li>https://arstechnica.com/science/2023/07/a-jargon-free-explanation-of-how-ai-large-language-models-work/</li><li>https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/</li><li>https://en.wikipedia.org/wiki/Knowledge_cutoff</li><li>https://techcrunch.com/2025/04/29/openai-explains-why-chatgpt-became-too-sycophantic</li><li>https://arxiv.org/abs/2307.03172v3</li><li>https://openai.com/index/memory-and-new-controls-for-chatgpt/</li><li>https://claude.com/resources/articles/memory</li><li>https://9to5google.com/2025/08/13/gemini-personal-context/</li><li>https://www.lawnext.com/2023/06/court-imposes-sanctions-on-lawyers-who-filed-bogus-cases-after-relying-on-chatgpt-for-legal-research.html</li><li>https://abajournal.com/web/article/lawyers-who-doubled-down-and-defended-chatgpts-fake-cases-must-pay-5k-judge-says</li><li>https://abc7.com/chatgpt-lawyer-steven-schwartz-ai/13313071/</li><li>https://www.amazon.com/I-Robot-Isaac-Asimov/dp/0553294385?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=8e95fe5269623af751eff09b02cb33b8&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl</li><li>https://www.amazon.com/The-Robot-Series/dp/B088NK26KX?_encoding=UTF8&amp;pd_rd_w=tlYxV&amp;content-id=amzn1.sym.a9b2f790-2337-4bd0-92a6-d6faa77cb826&amp;pf_rd_p=a9b2f790-2337-4bd0-92a6-d6faa77cb826&amp;pf_rd_r=135-4944997-7605106&amp;pd_rd_wg=LFei0&amp;pd_rd_r=0bedd982-75b5-47c4-b2ec-b5c87b1ae94e&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=cbc9bb6fd7b44d2f02c35dac7d056d8a&amp;language=en_US&amp;ref_=as_li_ss_tl</li><li>https://www.amazon.com/Robot-Illustrated-Screenplay-Isaac-Asimov/dp/1416506004?crid=3DN53PRDR6IE9&amp;dib=eyJ2IjoiMSJ9.ehjXmYKjdttyW9HoSsZP2-p3ojH2xBPyhzsmULtzT2rr0C_3prmCt7e4a_QGeck5nDs2EJgk88N9K2aDND_mAA.12uRkWnfzXYllJyZQHDtL_LVj-rucvEJgxCCTgAxwdo&amp;dib_tag=se&amp;keywords=%E2%80%A2+I%2C+Robot%3A+The+Illustrated+Screenplay+by+Harlan+Ellison%2C+based+on+Isaac+Asimov%27s+stories%2C+illustrated+by+Mark+Zug+%28Warner+Books%2C+1994%29%3A&amp;nsdOptOutParam=true&amp;qid=1793330855&amp;s=books&amp;sprefix=i%2C+robot+the+illustrated+screenplay+by+harlan+ellison%2C+based+on+isaac+asimov%27s+stories%2C+illustrated+by+mark+zug+warner+books%2C+1994+%2Cstripbooks%2C136&amp;sr=1-1&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=43f8067f2bda7e73de32c564c2fd8287&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl</li><li>https://www.amazon.com/What-ChatGPT-Doing-Does-Work-ebook/dp/B0BY59PT5Z?crid=2KVT2DDWKTIZ2&amp;dib=eyJ2IjoiMSJ9.-GtTKR6xe7cNZZK8aIBuosUSFqmp0WsVHRnkTwDDGZjKYmLvJtTY3whZUv9BRnEEGcdqwXKQPAooB4IQhO3jy2jA02JxoA24uPt10ex6Gnhru4j-MP3N0cDErdjODU5dBjD756wu68VZO6KsGtuwItPwn7e6X_hW8UCLfG_2CMmkp1M21fmK70NZ-C0gHwHbnlUWec0ZtkBG1ROpOCu8dpT3JxIbj44kdvXlvMIQReg.fP4T1jbi3EjNT2TJVOIf5PyBzGrDlIQ48LE-KgvNsRk&amp;dib_tag=se&amp;keywords=%E2%80%A2+What+Is+ChatGPT+Doing+...+and+Why+Does+It+Work%3F+by+Stephen+Wolfram+%28Wolfram+Media%2C+2023%29&amp;nsdOptOutParam=true&amp;qid=1793330941&amp;s=books&amp;sprefix=what+is+chatgpt+doing+...+and+why+does+it+work+by+stephen+wolfram+wolfram+media%2C+2023+%2Cstripbooks%2C154&amp;sr=1-1&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=5cd6cb2e335b7369efc8a8a19dad5a97&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="subscribe-qr">
+      <img src="/img/qr-subscribe.svg" alt="QR code to sign up for new articles by email at poguedigitalsolutions.com/subscribe">
+      <p><strong>Get new articles by email</strong>Scan the code with your phone camera to sign up for updates.<br><span class="u">poguedigitalsolutions.com/subscribe</span></p>
+    </div>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/how-to-ask-ai-the-right-question</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>
+document.querySelector(".back-link").addEventListener("click", e => {
+  let fromSite = false;
+  try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (_) {}
+  if (fromSite && history.length > 1) { e.preventDefault(); history.back(); }
+});
+if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>
