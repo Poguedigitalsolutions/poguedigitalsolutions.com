@@ -7,6 +7,7 @@ date: 2026-10-30
 category: AI and Automation
 reading_time: 10 min
 keywords: how to ask AI questions, prompting tips for beginners, I, Robot, AI hallucinations, AI slop, AI memory, temporary chat, prompt engineering, Mata v. Avianca
+source: https://www.linkedin.com/pulse/how-ask-ai-right-question-lesson-from-i-robot-john-m-pogue-siiec/
 ---
 
 # How to Ask AI the Right Question: A Lesson From I, Robot
