@@ -6,6 +6,7 @@ author: John M Pogue
 date: 2026-10-31
 category: Marketing
 reading_time: 5 min
+source: https://www.linkedin.com/pulse/3-second-hook-8-second-myth-10-minute-rule-john-m-pogue-mooqc/
 keywords: 3-second hook, 8-second attention span myth, goldfish attention span, 10-minute rule, stop the scroll, video hooks, attention span research, fact-checking statistics
 ---
 
