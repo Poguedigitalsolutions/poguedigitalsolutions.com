@@ -50,7 +50,7 @@ I loved science so much in high school that I took science classes as electives 
 
 One day he was teaching the basics of planets and stars. I already knew most of it, and I wanted to give my classmates a chance. He asked a question and I looked around the room. Nobody raised a hand.
 
-So I answered. "Good." He asked another, and I answered again. "Good." Question after question, my hand was the only one in the air.
+So I raised my hand and answered. "Good." He asked another, and I answered again. "Good." Question after question, my hand was the only one in the air.
 
 Finally, he said, "Anybody but John, answer this question."
 
