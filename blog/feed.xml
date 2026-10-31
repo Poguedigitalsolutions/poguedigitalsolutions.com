@@ -6,7 +6,16 @@
   <atom:link href="https://poguedigitalsolutions.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Articles by John M Pogue on brand voice, AI adoption, automation, and capturing founder knowledge.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 30 Oct 2026 12:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 31 Oct 2026 12:00:00 +0000</lastBuildDate>
+  <item>
+    <title>The 3-Second Hook, the 8-Second Myth, and the 10-Minute Rule</title>
+    <link>https://poguedigitalsolutions.com/blog/the-3-second-hook-the-8-second-myth-and-the-10-minute-rule</link>
+    <guid isPermaLink="true">https://poguedigitalsolutions.com/blog/the-3-second-hook-the-8-second-myth-and-the-10-minute-rule</guid>
+    <pubDate>Sat, 31 Oct 2026 12:00:00 +0000</pubDate>
+    <category>Marketing</category>
+    <dc:creator>John M Pogue</dc:creator>
+    <description>John M Pogue traces the 8-second attention span claim from a Fandango commercial back to its source, shows the research behind the 3-second hook and the 10-minute classroom rule, and explains how to check a statistic before you repeat it.</description>
+  </item>
   <item>
     <title>How to Ask AI the Right Question: A Lesson From I, Robot</title>
     <link>https://poguedigitalsolutions.com/blog/how-to-ask-ai-the-right-question</link>

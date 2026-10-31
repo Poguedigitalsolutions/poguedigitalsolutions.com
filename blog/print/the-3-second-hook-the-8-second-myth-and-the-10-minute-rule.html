@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 3-Second Hook, the 8-Second Myth, and the 10-Minute Rule | Reader and Print View | Pogue Digital Solutions</title>
+<meta name="description" content="John M Pogue traces the 8-second attention span claim from a Fandango commercial back to its source, shows the research behind the 3-second hook and the 10-minute classroom rule, and explains how to check a statistic before you repeat it.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/the-3-second-hook-the-8-second-myth-and-the-10-minute-rule">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+/* Black and white for printing: the page uses only black, grays, and white so it prints sharp on any printer
+   and saves color ink. Brand colors appear only in the screen toolbar, which never prints. */
+:root { --ink:#000; --text:#1a1a1a; --mid:#444; --soft:#666; --rule:#bdbdbd; --brand-navy:#0B1F3A; --brand-gold:#D4AF37; }
+* { box-sizing:border-box; }
+/* Reading font: Libre Caslon Text (brand serif, cut for body paragraphs). Georgia is the fallback built into nearly every device. */
+body { margin:0; background:#e6e6e6; color:var(--text); font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--ink); font-weight:700; line-height:1.2; }
+a { color:var(--ink); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--brand-navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { display:inline-flex; align-items:center; gap:8px; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--brand-gold); color:var(--brand-navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { break-inside:avoid; }
+.letterhead img { display:block; width:100%; height:auto; margin:0; padding-bottom:6px; border-bottom:2px solid var(--ink); }
+.letterhead .site { display:block; text-align:right; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9pt; letter-spacing:.06em; color:var(--ink); text-decoration:none; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:var(--mid); margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--mid);
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--ink); }
+
+.body { font-size:11.5pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--ink); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--ink); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:var(--text); }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; border-left:3px solid var(--ink); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:var(--soft); font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11.5pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:var(--mid); }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--ink); display:grid; grid-template-columns:1fr; gap:6px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:var(--mid); margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--ink); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:var(--mid); word-break:break-all; }
+.subscribe-qr { grid-column:1 / -1; display:flex; gap:14px; align-items:center; margin:6px 0 4px; padding:10px 12px; border:1px solid var(--ink); break-inside:avoid; }
+.subscribe-qr img { width:.95in; height:.95in; display:block; flex:0 0 auto; }
+.subscribe-qr p { margin:0; font-size:9pt; line-height:1.45; color:var(--mid); }
+.subscribe-qr strong { display:block; font-family:'Libre Caslon Text',Georgia,serif; font-size:10.5pt; color:var(--ink); margin-bottom:2px; }
+.subscribe-qr .u { font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--soft); }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"poguedigitalsolutions.com/blog"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/the-3-second-hook-the-8-second-myth-and-the-10-minute-rule" class="back-link">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()"><svg class="print-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/><circle cx="18" cy="12" r=".6" fill="currentColor" stroke="none"/></svg><span>Print or Save as PDF</span></button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/print-header.png" alt="Pogue Digital Solutions, LLC. Strategy, Systems, Solutions. Strategic thinking. Smarter systems. Measurable results.">
+    <a class="site" href="https://poguedigitalsolutions.com/blog/">poguedigitalsolutions.com/blog</a>
+  </header>
+  <span class="eyebrow">Marketing</span>
+  <h1>The 3-Second Hook, the 8-Second Myth, and the 10-Minute Rule</h1>
+  <p class="dek">John M Pogue traces the 8-second attention span claim from a Fandango commercial back to its source, shows the research behind the 3-second hook and the 10-minute classroom rule, and explains how to check a statistic before you repeat it.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published October 31, 2026 &middot; 5 min read</div>
+  <article class="body">
+<h2 id="the-commercial-that-got-me-thinking">The Commercial That Got Me Thinking</h2>
+<p>I was watching TV when a Fandango commercial came on. It showed families struggling to get their kids to sit still. Then the family sits down together in front of a movie, and the kids don't move a muscle.</p>
+<p>As an ad for Fandango and family movie night, it makes sense. A good story holds a child in place better than any rule a parent can make.</p>
+<p>Then the commercial said something that stopped me. If something doesn't hook you in 8 seconds, you're gone.</p>
+<p>I've always taught 3 seconds. So I went looking for where the 8 came from, and what I found turned into a lesson about hooks, classrooms, and checking your sources.</p>
+<h2 id="3-seconds-or-8-seconds">3 Seconds or 8 Seconds</h2>
+<p>My 3-second number has a study behind it. Facebook asked the research firm Nielsen to look at 173 of its brand studies on Facebook video ads. People who saw an ad for 3 seconds or less still showed a 47% lift in ad recall, a 32% lift in brand awareness, and a 44% lift in purchase intent.</p>
+<p>Facebook's own summary put it this way: up to 47% of a video campaign's value arrived in the first 3 seconds, and up to 74% arrived in the first 10. Facebook even counts a video "view" at 3 seconds.</p>
+<p>The 8-second number has a much weaker story behind it. I'll get to that below, because it ties into everything else I found.</p>
+<h2 id="the-10-minute-rule-from-the-1970s-classroom">The 10-Minute Rule From the 1970s Classroom</h2>
+<p>The hook gets attention. Keeping it is the second half, and teachers have worked on that since the 1970s.</p>
+<ul>
+<li><strong>1971:</strong> Donald Bligh published <em>What's the Use of Lectures?</em>, a book still cited by teachers today. In later work, he measured students' pulses during class.</li>
+<li><strong>1976:</strong> Two researchers, Johnstone and Percival, visited 90 college lectures. They reported attention dipping in the first five minutes and again 10 to 18 minutes in.</li>
+<li><strong>1978:</strong> Hartley and Davies found students took fewer notes after 10 to 15 minutes of a lecture.</li>
+</ul>
+<p>Decades later, molecular biologist John Medina turned this into the 10-minute rule in his 2008 bestseller <em>Brain Rules</em>. He teaches at the University of Washington School of Medicine and breaks his hour-long lectures into 10-minute segments, one core idea each.</p>
+<p>Here's how I teach it. I coach people on affiliate marketing and social media so they can make money online, and the timing depends on what they're making.</p>
+<ul>
+<li><strong>A short video, around 2 minutes:</strong> you have 3 seconds to hook them. That opening decides whether viewers keep scrolling or stay. Marketers call this "stopping the scroll."</li>
+<li><strong>A long lecture or training:</strong> hook them early, then give about 10 minutes to one point before you change something: a story, a question, a demonstration, or a new voice. Then the clock starts over.</li>
+</ul>
+<h2 id="coach-castles-earth-science-class">Coach Castle's Earth Science Class</h2>
+<p>I loved science so much in high school that I took science classes as electives I didn't need. My Earth Science teacher was Coach Castle, a 6'4" football player who used his scholarship to study science instead of taking an easy major.</p>
+<p>One day he was teaching the basics of planets and stars. I already knew most of it, and I wanted to give my classmates a chance. He asked a question and I looked around the room. Nobody raised a hand.</p>
+<p>So I answered. "Good." He asked another, and I answered again. "Good." Question after question, my hand was the only one in the air.</p>
+<p>Finally, he said, "Anybody but John, answer this question."</p>
+<p>I smiled and lowered my hand, not in defeat, but in success. Somebody else finally spoke up, and the whole discussion opened up. More students joined in, and the room came alive.</p>
+<p>Coach Castle didn't change the subject. He changed the voice. That one sentence reset the room better than any new slide could have, and it's the kind of change the 10-minute rule is asking for.</p>
+<h2 id="where-the-numbers-fall-apart">Where the Numbers Fall Apart</h2>
+<p>When I dug into the sources, most of these numbers got shaky.</p>
+<p><strong>The 8-second "goldfish" number.</strong> This is the famous claim that human attention dropped from 12 seconds in 2000 to 8 seconds, one second shorter than a goldfish. It traces back to a 2015 report by Microsoft Canada. The figure didn't come from Microsoft's own research, though. The report credited a website called Statistic Brain, and no one has found the original data behind it. The British Broadcasting Corporation (BBC) investigated in 2017 and debunked it. There's also no evidence that goldfish have short attention spans. My guess is the Fandango writers pulled their 8 from this pool, since it's the most repeated version.</p>
+<p><strong>The 10-minute rule.</strong> In 2007, psychologists Karen Wilson and James Korn reviewed the classroom studies and found little support for a drop after 10 to 15 minutes. In 2016, Neil Bradbury, a professor of physiology at Rosalind Franklin University, found that the most often cited source barely discusses attention at all. The holes are easy to see:</p>
+<ul>
+<li>Johnstone and Percival watched only 13% of those lectures together, so most of the data came from one observer, and they never said how they measured attention.</li>
+<li>Students take notes fairly steadily, and the drop comes in the final ten minutes, not after the first ten.</li>
+<li>Bligh's pulse readings fell the same way in a discussion class as in a lecture.</li>
+</ul>
+<p><strong>The crap science.</strong> You may also see a claim that adult attention fell from 12 minutes in 1998 to 5 minutes in 2008. It came from Lloyds TSB Insurance, whose PR team ran a survey of 1,000 people about careless household accidents. Nobody measured anything. People were simply asked how long their attention span was. The Telegraph and the Daily Mail both pulled the story within hours of posting it. It still turns up in respectable books, including reading researcher Maryanne Wolf's <em>Reader, Come Home</em>, which shows how far a weak number can travel.</p>
+<p><strong>What holds up.</strong> The 3-second finding comes from real ad campaigns where recall was measured. It shows that most of an ad's value lands early. It doesn't say people leave at second 4.</p>
+<h2 id="dont-believe-everything-you-read-look-it-up">Don't Believe Everything You Read. Look It Up.</h2>
+<p>The 8-second goldfish ran in major magazines and newspapers. The 10-minute rule sits in a bestseller. The 12-minute survey made it into a book about reading. A number being repeated doesn't make it true.</p>
+<p>Before I repeat a statistic, I ask three questions:</p>
+<ol>
+<li>Who measured it?</li>
+<li>What did they measure?</li>
+<li>Who paid for it, and what were they selling?</li>
+</ol>
+<p>The Fandango commercial still got the most important part right. Kids who can't sit still will sit through a whole movie when the story is good. So hook people in 3 seconds, change something about every 10 minutes, and give them a story worth staying for. Then check your numbers before you share them.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://martech.org/even-brief-video-views-drive-brand-lift-facebook-nielsen-study-finds/">Even Brief Video Views Drive Brand Lift, Facebook-Nielsen Study Finds (MarTech)</a><sup class="ref">[1]</sup></li>
+<li><a href="https://www.smartinsights.com/social-media-marketing/facebook-marketing/facebook-video-advertising-creative-best-practices">Facebook video advertising creative best practices (Smart Insights)</a><sup class="ref">[2]</sup></li>
+<li><a href="https://marketingdive.com/news/brand-lift-happens-in-less-than-1-second-of-video-study-finds/377333">Brand lift happens in less than 1 second of video, study finds (Marketing Dive)</a><sup class="ref">[3]</sup></li>
+<li><a href="https://brainrules.net/">Brain Rules, John Medina's official site</a><sup class="ref">[4]</sup></li>
+<li><a href="https://mannerofspeaking.org/?p=11489">A brain hack for your next presentation (Manner of Speaking)</a><sup class="ref">[5]</sup></li>
+<li><a href="https://journals.sagepub.com/doi/10.1080/00986280701291291">Wilson and Korn, Attention During Lectures: Beyond Ten Minutes (Teaching of Psychology)</a><sup class="ref">[6]</sup></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/28145268/">Bradbury, Attention span during lectures: 8 seconds, 10 minutes, or more? (Advances in Physiology Education)</a><sup class="ref">[7]</sup></li>
+<li><a href="https://www.learningandthebrain.com/blog/?p=6109">The 10-Minute Rule: Is The Lecture Dead? (Learning and the Brain)</a><sup class="ref">[8]</sup></li>
+<li><a href="https://www.ntu.ac.uk/__data/assets/pdf_file/0033/1387590/a-quasi-experimental-investigation.pdf">A quasi-experimental investigation of lecture attention (Nottingham Trent University)</a><sup class="ref">[9]</sup></li>
+<li><a href="https://www.downes.ca/post/74864/rd">Busting the attention span myth (BBC, archived)</a><sup class="ref">[10]</sup></li>
+<li><a href="https://internet.psych.wisc.edu/wp-content/uploads/532-Master/532-UnitPages/Unit-09/Goldfish_MythBusting.pdf">Is Your Attention Span Shorter Than a Goldfish's? (Wall Street Journal excerpt)</a><sup class="ref">[11]</sup></li>
+<li><a href="https://www.discovermagazine.com/the-spooky-case-of-the-disappearing-crap-science-article-4922">The Spooky Case of the Disappearing Crap Science Article (Discover)</a><sup class="ref">[12]</sup></li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<p>Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p>
+<ul>
+<li><a href="https://www.amazon.com/dp/098326337X?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=a797a9e7605cec655744a485014b72d7&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl"><em>Brain Rules</em> by John Medina</a><sup class="ref">[13]</sup></li>
+<li><a href="https://www.amazon.com/dp/0787951625?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=bb0dd76b77577a16eba8291cc08ffc06&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl"><em>What's the Use of Lectures?</em> by Donald Bligh</a><sup class="ref">[14]</sup></li>
+<li><a href="https://www.amazon.com/dp/1949001008?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=2b00e27fb880e7356ce093b5892090dd&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl"><em>Hook Point: How to Stand Out in a 3-Second World</em> by Brendan Kane</a><sup class="ref">[15]</sup></li>
+<li><a href="https://www.amazon.com/dp/1335449418?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=ac71534b574c5b46db001d3b091efc51&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl"><em>Attention Span</em> by Gloria Mark</a><sup class="ref">[16]</sup></li>
+<li><a href="https://www.amazon.com/dp/1401957900?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=73cf2a5fb34b54508dfd58a96c7cfe65&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl"><em>Traffic Secrets</em> by Russell Brunson</a><sup class="ref">[17]</sup></li>
+</ul>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://martech.org/even-brief-video-views-drive-brand-lift-facebook-nielsen-study-finds/</li><li>https://www.smartinsights.com/social-media-marketing/facebook-marketing/facebook-video-advertising-creative-best-practices</li><li>https://marketingdive.com/news/brand-lift-happens-in-less-than-1-second-of-video-study-finds/377333</li><li>https://brainrules.net/</li><li>https://mannerofspeaking.org/?p=11489</li><li>https://journals.sagepub.com/doi/10.1080/00986280701291291</li><li>https://pubmed.ncbi.nlm.nih.gov/28145268/</li><li>https://www.learningandthebrain.com/blog/?p=6109</li><li>https://www.ntu.ac.uk/__data/assets/pdf_file/0033/1387590/a-quasi-experimental-investigation.pdf</li><li>https://www.downes.ca/post/74864/rd</li><li>https://internet.psych.wisc.edu/wp-content/uploads/532-Master/532-UnitPages/Unit-09/Goldfish_MythBusting.pdf</li><li>https://www.discovermagazine.com/the-spooky-case-of-the-disappearing-crap-science-article-4922</li><li>https://www.amazon.com/dp/098326337X?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=a797a9e7605cec655744a485014b72d7&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl</li><li>https://www.amazon.com/dp/0787951625?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=bb0dd76b77577a16eba8291cc08ffc06&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl</li><li>https://www.amazon.com/dp/1949001008?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=2b00e27fb880e7356ce093b5892090dd&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl</li><li>https://www.amazon.com/dp/1335449418?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=ac71534b574c5b46db001d3b091efc51&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl</li><li>https://www.amazon.com/dp/1401957900?&amp;linkCode=ll2&amp;tag=blog0ce1f-20&amp;linkId=73cf2a5fb34b54508dfd58a96c7cfe65&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="subscribe-qr">
+      <img src="/img/qr-subscribe.svg" alt="QR code to sign up for new articles by email at poguedigitalsolutions.com/subscribe">
+      <p><strong>Get new articles by email</strong>Scan the code with your phone camera to sign up for updates.<br><span class="u">poguedigitalsolutions.com/subscribe</span></p>
+    </div>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/the-3-second-hook-the-8-second-myth-and-the-10-minute-rule</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>
+document.querySelector(".back-link").addEventListener("click", e => {
+  let fromSite = false;
+  try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (_) {}
+  if (fromSite && history.length > 1) { e.preventDefault(); history.back(); }
+});
+if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>
