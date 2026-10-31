@@ -75,17 +75,17 @@ Coach Castle didn't change the subject. He changed the voice. That one sentence 
 
 When I dug into the sources, most of these numbers got shaky.
 
-**The 8-second "goldfish" number.** This is the famous claim that human attention dropped from 12 seconds in 2000 to 8 seconds, one second shorter than a goldfish. It traces back to a 2015 report by Microsoft Canada. The figure didn't come from Microsoft's own research, though. The report credited a website called Statistic Brain, and no one has found the original data behind it. The British Broadcasting Corporation (BBC) investigated in 2017 and debunked it. There's also no evidence that goldfish have short attention spans. My guess is the Fandango writers pulled their 8 from this pool, since it's the most repeated version.
+**The 8-second "goldfish" number:** This is the famous claim that human attention dropped from 12 seconds in 2000 to 8 seconds, one second shorter than a goldfish. It traces back to a 2015 report by Microsoft Canada. The figure didn't come from Microsoft's own research, though. The report credited a website called Statistic Brain, and no one has found the original data behind it. The British Broadcasting Corporation (BBC) investigated in 2017 and debunked it. There's also no evidence that goldfish have short attention spans. My guess is the Fandango writers pulled their 8 from this pool, since it's the most repeated version.
 
-**The 10-minute rule.** In 2007, psychologists Karen Wilson and James Korn reviewed the classroom studies and found little support for a drop after 10 to 15 minutes. In 2016, Neil Bradbury, a professor of physiology at Rosalind Franklin University, found that the most often cited source barely discusses attention at all. The holes are easy to see:
+**The 10-minute rule:** In 2007, psychologists Karen Wilson and James Korn reviewed the classroom studies and found little support for a drop after 10 to 15 minutes. In 2016, Neil Bradbury, a professor of physiology at Rosalind Franklin University, found that the most often cited source barely discusses attention at all. The holes are easy to see:
 
 - Johnstone and Percival watched only 13% of those lectures together, so most of the data came from one observer, and they never said how they measured attention.
 - Students take notes fairly steadily, and the drop comes in the final ten minutes, not after the first ten.
 - Bligh's pulse readings fell the same way in a discussion class as in a lecture.
 
-**The "crap science."** You may also see a claim that adult attention fell from 12 minutes in 1998 to 5 minutes in 2008. It came from Lloyds TSB Insurance, whose PR team ran a survey of 1,000 people about careless household accidents. Nobody measured anything. People were simply asked how long their attention span was. The Telegraph and the Daily Mail both pulled the story within hours of posting it. It still turns up in respectable books, including reading researcher Maryanne Wolf's *Reader, Come Home*, which shows how far a weak number can travel.
+**The "crap science":** You may also see a claim that adult attention fell from 12 minutes in 1998 to 5 minutes in 2008. It came from Lloyds TSB Insurance, whose PR team ran a survey of 1,000 people about careless household accidents. Nobody measured anything. People were simply asked how long their attention span was. The Telegraph and the Daily Mail both pulled the story within hours of posting it. It still turns up in respectable books, including reading researcher Maryanne Wolf's *Reader, Come Home*, which shows how far a weak number can travel.
 
-**What holds up.** The 3-second finding comes from real ad campaigns where recall was measured. It shows that most of an ad's value lands early. It doesn't say people leave at second 4.
+**What holds up:** The 3-second finding comes from real ad campaigns where recall was measured. It shows that most of an ad's value lands early. It doesn't say people leave at second 4.
 
 ## Don't Believe Everything You Read. Look It Up.
 
