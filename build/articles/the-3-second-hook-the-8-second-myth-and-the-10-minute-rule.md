@@ -7,6 +7,8 @@ date: 2026-10-31
 category: Marketing
 reading_time: 5 min
 source: https://www.linkedin.com/pulse/3-second-hook-8-second-myth-10-minute-rule-john-m-pogue-mooqc/
+image: img/john-m-pogue-3-second-hook-8-second-myth-10-minute-rule-social.jpg
+image_alt: Article banner for 'The 3-Second Hook, the 8-Second Myth, and the 10-Minute Rule' by John M Pogue. He stands on the left with arms crossed, wearing a black cap with a 'Hello My Name Is Trouble' patch and a navy T-shirt, against a stormy navy sky. Three gold icons list the article's points: 3 seconds, stop the scroll; 10 minutes, one core idea, then change something; fact-check, who measured it and what did they measure. A blue compass rose sits at the top right, with the Pogue Digital Solutions, LLC logo at the bottom left and the Brand Voice AI logo at the bottom right. PogueDigitalSolutions.com
 keywords: 3-second hook, 8-second attention span myth, goldfish attention span, 10-minute rule, stop the scroll, video hooks, attention span research, fact-checking statistics
 ---
 

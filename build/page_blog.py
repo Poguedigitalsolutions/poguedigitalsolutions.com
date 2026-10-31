@@ -2,7 +2,7 @@
 blog/feed.xml (RSS), and resources.html (which points into the blog).
 
 Article front matter: title, slug, description, author, date, category, reading_time,
-optional updated (YYYY-MM-DD) and keywords (comma list).
+optional updated (YYYY-MM-DD), keywords (comma list), and image + image_alt (social preview).
 
 AEO hooks in the Markdown:
   - Open with a paragraph starting "**The short answer:**". It becomes the styled lede
@@ -126,7 +126,7 @@ for idx, (meta, html_body) in enumerate(posts):
         "author": AUTHOR, "publisher": PUBLISHER, "isPartOf": {"@id": BLOG_ID},
         "datePublished": meta["date"], "dateModified": meta["updated"],
         "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url,
-        "image": SITE + "/img/hero-founder-composite.jpg", "articleSection": meta["category"],
+        "image": SITE + "/" + meta.get("image", "img/hero-founder-composite.jpg"), "articleSection": meta["category"],
         "keywords": keywords, "wordCount": meta["words"], "inLanguage": "en-US",
         "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", "#short-answer"]},
     }
@@ -187,7 +187,9 @@ for idx, (meta, html_body) in enumerate(posts):
 </section>''' if rel else ""
 
     page = head(f'{meta["title"]} | Pogue Digital Solutions Blog', meta["description"], f"blog/{slug}.html",
-                jsonld=jsonld, og_type="article", extra_meta=extra) + header("blog/index.html") + f'''
+                jsonld=jsonld, og_type="article", extra_meta=extra,
+                og_image=meta.get("image", "img/hero-founder-composite.jpg"),
+                og_image_alt=htmlmod.escape(meta.get("image_alt", ""), quote=True)) + header("blog/index.html") + f'''
 <section class="on-ink tight post-hero" style="padding-top:56px; padding-bottom:64px;">
   {compass_svg()}
   <div class="wrap reveal" style="max-width:820px;">

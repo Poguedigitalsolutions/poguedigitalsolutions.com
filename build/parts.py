@@ -34,7 +34,7 @@ def clean_path(path):
         return "/" + path[: -len("index.html")]
     return "/" + (path[:-5] if path.endswith(".html") else path)
 
-def head(title, description, path, jsonld=None, og_image="img/hero-founder-composite.jpg", og_type="website", extra_meta="", indexable=True):
+def head(title, description, path, jsonld=None, og_image="img/hero-founder-composite.jpg", og_type="website", extra_meta="", indexable=True, og_image_alt=""):
     canonical = SITE + clean_path(path)
     ld = ""
     if jsonld:
@@ -56,11 +56,11 @@ def head(title, description, path, jsonld=None, og_image="img/hero-founder-compo
 <meta property="og:description" content="{description}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:image" content="{SITE}/{og_image}">
-<meta name="twitter:card" content="summary_large_image">
+{f'<meta property="og:image:alt" content="{og_image_alt}">\n' if og_image_alt else ""}<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="{SITE}/{og_image}">
-<link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="blog/feed.xml">
+{f'<meta name="twitter:image:alt" content="{og_image_alt}">\n' if og_image_alt else ""}<link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="blog/feed.xml">
 {extra_meta}{ld}<link rel="stylesheet" href="css/styles.css?v={ASSET_VER}">
 </head>
 <body>
