@@ -400,10 +400,6 @@ footer.site-footer {
 .stack-lg > * + * { margin-top: 20px; }
 .center { text-align: center; margin-left: auto; margin-right: auto; }
 
-/* Scroll reveal — progressive enhancement only; content is visible by default */
-.reveal.reveal-init { opacity: 0; transform: translateY(26px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.reveal.reveal-init.revealed { opacity: 1; transform: translateY(0); }
-
 /* ---------------------------------- Responsive ---------------------------------- */
 
 @media (max-width: 900px) {
@@ -427,7 +423,6 @@ footer.site-footer {
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
-  .reveal.reveal-init { opacity: 1; transform: none; }
 }
 
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
@@ -804,7 +799,6 @@ html.embedded .sub-main .wrap { max-width: none !important; padding: 0; }
   .post-page .article-body, .post-page .article-body p, .post-page .article-body strong, .post-page .article-body h2, .post-page .article-body h3, .post-page .faq summary { color: #000 !important; }
   .post-page .article-body p.lede { background: none !important; border-left-color: #000 !important; }
   .post-page .article-body blockquote { border-left-color: #000 !important; }
-  .post-page .reveal { opacity: 1 !important; transform: none !important; }
   .post-page .article-body { max-width: none; font-size: 11pt; line-height: 1.6; }
   .post-page .article-body h2 { font-size: 16pt; margin: 1.4em 0 0.5em; break-after: avoid; }
   .post-page .article-body h3 { break-after: avoid; }

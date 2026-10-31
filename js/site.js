@@ -1,5 +1,5 @@
 // Pogue Digital Solutions site script.
-// 1) Mobile navigation drawer. 2) Scroll reveal (progressive enhancement).
+// Mobile navigation drawer and subscribe-box sizing.
 (function () {
   // ---- Mobile nav ----
   var toggle = document.querySelector('.nav-toggle');
@@ -38,21 +38,6 @@
     });
     fit();
   });
-
-  // ---- Scroll reveal ----
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var els = document.querySelectorAll('.reveal');
-  if (!els.length || !('IntersectionObserver' in window)) return;
-  els.forEach(function (el) { el.classList.add('reveal-init'); });
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  els.forEach(function (el) { io.observe(el); });
 })();
 
 // Read & Print: remember where the reader was, so Back (button or browser arrow) returns to the same spot.
