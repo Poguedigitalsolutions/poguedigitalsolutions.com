@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Link Clicks</title>
+<meta name="description" content="Private report of Amazon link clicks on this site.">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pogue Digital Solutions, LLC">
+<meta property="og:title" content="Amazon Link Clicks">
+<meta property="og:description" content="Private report of Amazon link clicks on this site.">
+<meta property="og:url" content="https://poguedigitalsolutions.com/clicks-admin">
+<meta property="og:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amazon Link Clicks">
+<meta name="twitter:description" content="Private report of Amazon link clicks on this site.">
+<meta name="twitter:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
+<link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="/blog/feed.xml">
+<link rel="stylesheet" href="/css/styles.css?v=202611072342">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-shell">
+    <a href="/" class="brand" aria-label="Pogue Digital Solutions, LLC home">
+      <img src="/img/logo-horizontal.png" alt="Pogue Digital Solutions, LLC" class="brand-logo">
+    </a>
+    <nav class="main-nav" aria-label="Primary"><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/assessments">Assessments</a><a href="/blog/">Blog</a><a href="/resources">Resources</a><a href="/compass-method">Compass</a><a href="/government">Government</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+    <a href="https://calendly.com/poguedigitalsolutions/30min" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener">Book a Call</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/">Home<span>01</span></a><a href="/solutions">Solutions<span>02</span></a><a href="/assessments">Assessments<span>03</span></a><a href="/blog/">Blog<span>04</span></a><a href="/resources">Resources<span>05</span></a><a href="/compass-method">Compass<span>06</span></a><a href="/government">Government<span>07</span></a><a href="/about">About<span>08</span></a><a href="/contact">Contact<span>09</span></a>
+  <a href="https://calendly.com/poguedigitalsolutions/30min" class="btn btn-gold drawer-cta" target="_blank" rel="noopener">Book a Strategy Call</a>
+  <div class="drawer-foot">POGUE DIGITAL SOLUTIONS, LLC &middot; CONROE, TX</div>
+</div>
+
+<section class="tight" style="padding-top:56px;">
+  <div class="wrap" style="max-width:960px;">
+    <span class="eyebrow">Private report</span>
+    <h1 style="font-size:clamp(28px,3.6vw,40px); margin-top:16px;">Amazon Link Clicks</h1>
+    <p style="margin-top:10px; color:var(--charcoal);">Which books and products readers clicked on this site, and on which page. Clicks only: Amazon's own reports show what sold.</p>
+
+    <form id="unlock" class="comments-form" style="margin-top:28px;">
+      <label>Admin key <input name="key" type="password" autocomplete="current-password" required></label>
+      <div class="comments-foot">
+        <button class="btn btn-gold" type="submit">Unlock &rarr;</button>
+        <p class="comments-note"></p>
+      </div>
+    </form>
+
+    <div id="panel" hidden>
+      <div class="comments-foot" style="margin-top:28px;">
+        <div class="tabs" id="tabs">
+          <button class="btn btn-outline-navy" data-days="7">7 days</button>
+          <button class="btn btn-outline-navy" data-days="30">30 days</button>
+          <button class="btn btn-outline-navy" data-days="90">90 days</button>
+          <button class="btn btn-outline-navy" data-days="all">All time</button>
+        </div>
+        <button class="btn btn-outline-navy" id="lock" type="button">Lock</button>
+      </div>
+      <p id="total" class="click-total"></p>
+      <h2 class="click-h">By book or product</h2>
+      <div class="click-wrap"><table class="click-table" id="t-item"></table></div>
+      <h2 class="click-h">By page</h2>
+      <div class="click-wrap"><table class="click-table" id="t-page"></table></div>
+      <h2 class="click-h">By tracking ID</h2>
+      <div class="click-wrap"><table class="click-table" id="t-tag"></table></div>
+    </div>
+  </div>
+</section>
+<style>
+.tabs { display:flex; flex-wrap:wrap; gap:10px; }
+.tabs .btn.is-active { background:var(--ink); color:var(--white); border-color:var(--ink); }
+.click-total { font-size:18px; margin-top:24px; }
+.click-h { font-size:20px; margin-top:32px; }
+.click-wrap { overflow-x:auto; margin-top:12px; }
+.click-table { width:100%; border-collapse:collapse; font-size:15px; }
+.click-table th, .click-table td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line-light); vertical-align:top; }
+.click-table th { font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--gold-dim); }
+.click-table td.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.click-table th.n { text-align:right; }
+.click-sub { font-size:13px; color:var(--charcoal); }
+</style>
+<script id="click-data" type="application/json">{"titles": {"0553294385": "I, Robot by Isaac Asimov", "B088NK26KX": "The Robot Series by Isaac Asimov", "1416506004": "I, Robot: The Illustrated Screenplay by Harlan Ellison, based on Isaac Asimov's stories, illustrated by Mark Zug", "B0BY59PT5Z": "What Is ChatGPT Doing ... and Why Does It Work? by Stephen Wolfram", "098326337X": "Brain Rules by John Medina", "0787951625": "What's the Use of Lectures? by Donald Bligh", "1949001008": "Hook Point: How to Stand Out in a 3-Second World by Brendan Kane", "1335449418": "Attention Span by Gloria Mark", "1401957900": "Traffic Secrets by Russell Brunson", "B0DLNZSRNB": "Liphisy 50\" Selfie Stick Travel Tripod"}, "pages": {"/blog/a-starship-traded-its-library-for-a-ride-home": "A Starship Traded Its Library for a Ride Home", "/blog/afraid-ai-will-take-your-job": "Afraid AI Will Take Your Job? Here's How to Become Harder to Replace", "/blog/ai-has-a-new-name-in-washington": "AI Has a New Name in Washington. Laughable or Not, Learn It.", "/blog/ai-marketing-is-not-a-funnel-anymore": "AI Marketing Is Not a Funnel Anymore. It Is a Business Operating System.", "/blog/ai-wont-take-your-job-but-it-will-change-who-keeps-it": "AI Won't Take Your Job, But It Will Change Who Keeps It!", "/blog/ais-wild-west-phase-needs-a-regulator-not-a-waiver": "AI's \"Wild West\" Phase Needs a Regulator, Not a Waiver", "/blog/before-we-forget-how-to-read": "Before We Forget How to Read", "/blog/from-miley-cyrus-to-my-own-stage-presence": "From Miley Cyrus to My Own Stage Presence", "/blog/how-do-you-capture-the-knowledge-inside-a-founders-head": "How Do You Capture the Knowledge Inside a Founder's Head?", "/blog/how-i-get-my-iphone-to-tell-me-its-done-charging": "How I Get My iPhone to Tell Me It's Done Charging", "/blog/how-i-lost-3-5-years-of-chatgpt-history": "How I Lost 3.5 Years of ChatGPT History in One App Update", "/blog/how-to-ask-ai-the-right-question": "How to Ask AI the Right Question: A Lesson From I, Robot", "/blog/i-found-my-tribe": "I Found My Tribe: What the Navy, Rocky Horror, and Lucy Darling Have in Common", "/blog/i-killed-my-best-idea-last-week": "I Killed My Best Idea Last Week", "/blog/rebel-without-a-claude": "Rebel Without a Claude: Stop Sounding Like Everyone Else's AI", "/blog/rely-on-your-own-wrist": "Rely on Your Own Wrist: What a Turkish War Games Notice Taught Me About AI", "/blog/rethinking-the-linkedin-profile-ring": "Don't Tell Me It Can't Be Done: Rethinking the LinkedIn Profile Ring", "/blog/siri-ai-ships-monday-apple-has-run-this-play-before": "Siri AI Ships Monday.", "/blog/tell-me-your-origin-story": "Tell Me Your Origin Story", "/blog/the-3-second-hook-the-8-second-myth-and-the-10-minute-rule": "The 3-Second Hook, the 8-Second Myth, and the 10-Minute Rule", "/blog/the-builders-asked-for-brakes": "The Builders Asked for Brakes. The Government Gave Three Answers.", "/blog/the-future-of-marketing-is-shareable-experiences": "The Future of Marketing Isn't Advertising. It's Shareable Experiences", "/blog/the-hourglass-at-50": "The Hourglass at 50", "/blog/the-one-piece-of-gear-every-new-creator-needs": "The One Piece of Gear Every New Creator Needs", "/blog/we-already-accepted-the-machine": "We Already Accepted the Machine. We Just Forgot We Did.", "/blog/what-id-do-with-a-2000-tariff-refund": "What I'd Do With a $2,000 Tariff Refund (Credit Avenger Style)", "/blog/what-is-brand-voice-ai": "What Is Brand Voice AI?", "/blog/what-roger-corman-taught-me-about-learning-ai": "What Roger Corman Taught Me About Learning AI", "/blog/what-should-a-small-business-automate-first": "What Should a Small Business Automate First?", "/blog/whats-your-bottleneck-can-ai-be-the-solution": "What's Your Bottleneck? Can AI Be the Solution?", "/blog/why-credit-cards-are-a-terrible-emergency-fund": "Why Credit Cards Are a Terrible \"Emergency Fund\"", "/blog/why-i-named-my-ai-assistant-ms-moneypenny": "Why I Named My AI Assistant Ms MoneyPenny", "/blog/why-i-wont-miss-the-ai-revolution": "Why I Won't Miss the AI Revolution", "/blog/why-isnt-america-a-perfect-100": "Why Isn't America a Perfect 100? A Veteran's Curiosity About Freedom Rankings", "/blog/your-best-customer-already-bought": "Your best customer already bought."}}</script>
+<script>
+(function(){
+  var KEY='pds_comments_admin_key', key=sessionStorage.getItem(KEY)||'', days='30';
+  var META=JSON.parse(document.getElementById('click-data').textContent);
+  var unlock=document.getElementById('unlock'), panel=document.getElementById('panel');
+  var note=unlock.querySelector('.comments-note');
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function itemName(item){
+    if(META.titles[item]) return esc(META.titles[item]);
+    return item.indexOf('amzn.to/')===0 ? 'Short link '+esc(item) : 'Amazon product '+esc(item);
+  }
+  function itemLink(item){ return item.indexOf('amzn.to/')===0 ? 'https://'+item : 'https://www.amazon.com/dp/'+item; }
+  function pageName(p){ return META.pages[p] ? esc(META.pages[p]) : (p==='/'?'Home page':esc(p)); }
+  function table(el, head, rows, empty){
+    el.innerHTML = rows.length ? '<thead><tr>'+head+'</tr></thead><tbody>'+rows.join('')+'</tbody>'
+                               : '<tbody><tr><td class="click-sub">'+empty+'</td></tr></tbody>';
+  }
+  function api(){
+    return fetch('/api/admin/clicks?days='+days,{headers:{'authorization':'Bearer '+key}})
+      .then(function(r){ if(r.status===401) throw new Error('Wrong key.'); return r.json(); });
+  }
+  function show(){ unlock.hidden=true; unlock.style.display='none'; panel.hidden=false; load(); }
+  function load(){
+    document.querySelectorAll('#tabs .btn').forEach(function(b){ b.classList.toggle('is-active', b.dataset.days===days); });
+    document.getElementById('total').textContent='Loading\u2026';
+    api().then(function(d){
+      var label = days==='all' ? 'all time' : 'the last '+days+' days';
+      document.getElementById('total').innerHTML='<strong>'+d.total+'</strong> Amazon link click'+(d.total===1?'':'s')+' in '+label+'.';
+      table(document.getElementById('t-item'),'<th>Book or product</th><th>Page</th><th>Tracking ID</th><th class="n">Clicks</th>',
+        d.byItem.map(function(r){ return '<tr><td><a href="/'+itemLink(r.item)+'" target="_blank" rel="noopener">'+itemName(r.item)+'</a></td><td><a href="/'+esc(r.page)+'">'+pageName(r.page)+'</a></td><td class="click-sub">'+esc(r.tag||'(none)')+'</td><td class="n">'+r.clicks+'</td></tr>'; }),
+        'No clicks in this range yet.');
+      table(document.getElementById('t-page'),'<th>Page</th><th class="n">Clicks</th>',
+        d.byPage.map(function(r){ return '<tr><td><a href="/'+esc(r.page)+'">'+pageName(r.page)+'</a></td><td class="n">'+r.clicks+'</td></tr>'; }),
+        'No clicks in this range yet.');
+      table(document.getElementById('t-tag'),'<th>Tracking ID</th><th class="n">Clicks</th>',
+        d.byTag.map(function(r){ return '<tr><td>'+esc(r.tag)+'</td><td class="n">'+r.clicks+'</td></tr>'; }),
+        'No clicks in this range yet.');
+    }).catch(function(e){ document.getElementById('total').textContent=e.message; });
+  }
+  unlock.addEventListener('submit',function(ev){
+    ev.preventDefault(); key=unlock.key.value.trim(); note.textContent='Checking\u2026';
+    api().then(function(){ sessionStorage.setItem(KEY,key); note.textContent=''; show(); })
+      .catch(function(e){ note.textContent=e.message; });
+  });
+  document.getElementById('tabs').addEventListener('click',function(ev){ var b=ev.target.closest('[data-days]'); if(b){ days=b.dataset.days; load(); } });
+  document.getElementById('lock').addEventListener('click',function(){ sessionStorage.removeItem(KEY); key=''; location.reload(); });
+  if(key) show();
+})();
+</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="/img/logo-full.png" alt="Pogue Digital Solutions, LLC. Strategy. Systems. Solutions." class="footer-logo">
+        <p style="color:rgba(255,255,255,0.55); font-size:14px; max-width:270px;">Pogue Digital Solutions, LLC helps founder-led businesses and organizations organize their knowledge, clarify their brand voice, and build practical AI-assisted systems.</p>
+        <p class="footer-motto">&ldquo;Don&rsquo;t tell me it can&rsquo;t be done.&rdquo;</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/johnpogue" target="_blank" rel="noopener" aria-label="John M Pogue on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="/">Home</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/assessments">Assessments</a>
+        <a href="/blog/">Blog</a>
+        <a href="/resources">Resources</a>
+        <a href="/compass-method">The Compass Method</a>
+        <a href="/government">Government Services</a>
+        <a href="/about">About John M Pogue</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <a href="/solutions#brand-voice-ai">Brand Voice AI</a>
+        <a href="/solutions#ai-automation">AI and Automation</a>
+        <a href="/solutions#digital-strategy">Digital Strategy</a>
+        <a href="/solutions#training">Training and Workshops</a>
+        <a href="/government">Government and Organizational Services</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://calendly.com/poguedigitalsolutions/30min" target="_blank" rel="noopener">Book a Strategy Call</a>
+        <a href="mailto:john@poguedigitalsolutions.com">john@poguedigitalsolutions.com</a>
+        <a href="/contact">Request a Workshop</a>
+        <a href="/government#codes">UEI, CAGE, and NAICS</a>
+        <p style="color:rgba(255,255,255,0.45); font-size:13px; margin-top:14px;">Conroe, Texas<br>Serving Greater Houston and clients nationwide</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Pogue Digital Solutions, LLC. All rights reserved. &middot; <a href="/privacy">Privacy Policy</a></span>
+      <span class="footer-seal"><img src="/img/logo-seal-sm.png" alt="">VETERAN-OWNED &middot; CONROE, TX</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=202611072342"></script>
+</body>
+</html>

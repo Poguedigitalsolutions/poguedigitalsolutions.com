@@ -9,3 +9,4 @@ Static site for Pogue Digital Solutions, LLC. Deployed on Cloudflare Pages from 
 - Preview locally with clean URLs: `python3 build/serve.py` then open http://127.0.0.1:8787.
 - `_redirects` and `_headers` are Cloudflare Pages config. `404.html` is served automatically for missing routes.
 - Clean URLs (`/about` for `about.html`) are on by default in Cloudflare Pages.
+- **Amazon link clicks (cookie-free):** `js/site.js` sends each click on an Amazon link to `/api/click` (`functions/api/click.js`), which stores only the page, the product ID (ASIN or amzn.to code), the tracking ID, and the date in the `link_clicks` table of the `COMMENTS_DB` D1 database. The private report is `/clicks-admin` (unlocks with `ADMIN_KEY`). Book names on the report come from the link text in `build/articles/*.md`. Create the table once with `npx wrangler d1 execute pds-comments --remote --file db/schema.sql`.

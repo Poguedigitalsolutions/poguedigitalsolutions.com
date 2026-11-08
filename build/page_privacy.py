@@ -1,11 +1,11 @@
 """Privacy Policy. Plain-language policy that describes what this static site actually does:
-one blog signup form (ClickFunnels), no advertising cookies, Cloudflare hosting and cookie-free Web Analytics, Google Fonts,
+one blog signup form (ClickFunnels), no advertising cookies, Cloudflare hosting, cookie-free Web Analytics and Amazon link click counts, Google Fonts,
 outbound links to Calendly and LinkedIn, and email through Gmail. Update it when the stack changes."""
 from parts import *
 import json
 
-UPDATED = "October 20, 2026"
-UPDATED_ISO = "2026-10-20"
+UPDATED = "November 7, 2026"
+UPDATED_ISO = "2026-11-07"
 
 SECTIONS = [
 ("Who we are", f'''
@@ -17,6 +17,7 @@ SECTIONS = [
 <li>There are two forms on this site: the blog signup, which asks for your first name and email so we can send you new articles, and the comment box under each blog post, which asks for a name and an optional email. There are no accounts.</li>
 <li>We do not use advertising cookies or tracking pixels, and we do not sell or rent your information to anyone.</li>
 <li>We count visits with Cloudflare Web Analytics, which does not use cookies and does not follow you across other websites.</li>
+<li>When you click a link to Amazon, we count which book or product was clicked and on which page. Nothing about you is recorded with that count.</li>
 <li>If you email us or book a call, we use what you send only to reply and to do the work you asked about.</li>
 </ul>
 '''),
@@ -30,6 +31,7 @@ SECTIONS = [
 '''),
 ("Information collected automatically", '''
 <p><strong>Visit counts.</strong> We use Cloudflare Web Analytics to see which pages people read, which sites sent them here, and general details such as country, browser, and device type. It does not set cookies, does not create a profile of you, and is not used for advertising.</p>
+<p><strong>Amazon link clicks.</strong> Some pages link to books and products on Amazon, and some of those links earn us a commission. When you click one, your browser sends us three things: the page you were on, the Amazon product number, and the Amazon tracking code in the link. We store those with the date. We do not store your IP address, a cookie, your browser details, or the time of day, so a click cannot be traced back to you. We use these counts to see which books and products readers find useful. Amazon's own handling of your visit is covered by Amazon's privacy notice.</p>
 <p><strong>Server and security logs.</strong> Cloudflare hosts and protects this site. Like any web host, it processes technical information such as your IP address and browser details to deliver pages, block attacks, and keep the site running.</p>
 <p><strong>Fonts.</strong> This site loads its typefaces from Google Fonts. When a page loads, your browser asks Google's servers for the font files, which means Google receives your IP address and basic browser information. Google says it does not use Google Fonts requests to build advertising profiles.</p>
 <p><strong>Cookies.</strong> We do not set advertising cookies on this site. Cloudflare may use a strictly necessary security cookie to tell real visitors from automated attacks, and the comment form uses Cloudflare Turnstile, a cookie-free check that stops bots without making you solve a puzzle. The blog signup form loads a ClickFunnels script that may set its own cookies and record that the form was viewed and submitted. Calendly and LinkedIn set their own cookies once you go to their sites.</p>
@@ -37,7 +39,7 @@ SECTIONS = [
 ("Services we rely on", '''
 <p>A few outside companies handle parts of how this site and business run. Each has its own privacy policy:</p>
 <ul>
-<li><strong>Cloudflare</strong>: website hosting, security, email forwarding, cookie-free visit counts, the Turnstile bot check, and storage for blog comments.</li>
+<li><strong>Cloudflare</strong>: website hosting, security, email forwarding, cookie-free visit counts, the Turnstile bot check, and storage for blog comments and Amazon link click counts.</li>
 <li><strong>Google</strong>: Google Fonts on this site, and Gmail for business email.</li>
 <li><strong>Calendly</strong>: scheduling calls.</li>
 <li><strong>ClickFunnels</strong>: the blog signup form, the subscriber list, and blog update emails.</li>

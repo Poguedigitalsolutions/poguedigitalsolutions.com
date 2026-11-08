@@ -58,3 +58,28 @@
   }
   window.addEventListener('pageshow', function (e) { if (!e.persisted) restore(); });
 })();
+
+// Amazon link clicks: count which book or product was clicked, on which page. Cookie-free.
+// Sends only the page path, the product ID (ASIN), and the tracking ID in the link. Report: /clicks-admin
+(function () {
+  if (!navigator.sendBeacon) return;
+  function record(e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var url;
+    try { url = new URL(a.href); } catch (err) { return; }
+    var host = url.hostname.replace(/^www\./, ''), item = null;
+    if (host === 'amazon.com' || host === 'smile.amazon.com') {
+      var m = url.pathname.match(/\/(?:dp|gp\/product|gp\/aw\/d)\/([A-Z0-9]{10})/i);
+      if (m) item = m[1].toUpperCase();
+    } else if (host === 'amzn.to') {
+      var code = url.pathname.replace(/^\/+|\/+$/g, '');
+      if (/^[A-Za-z0-9]{4,16}$/.test(code)) item = 'amzn.to/' + code;
+    }
+    if (!item) return;
+    var body = JSON.stringify({ page: location.pathname, item: item, tag: url.searchParams.get('tag') || '' });
+    try { navigator.sendBeacon('/api/click', new Blob([body], { type: 'text/plain' })); } catch (err) {}
+  }
+  document.addEventListener('click', record, true);
+  document.addEventListener('auxclick', function (e) { if (e.button === 1) record(e); }, true);
+})();
