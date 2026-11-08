@@ -34,12 +34,17 @@ export async function onRequestGet({ request, env }) {
   const binds = RANGES[days] ? [`-${RANGES[days] - 1} days`] : [];
   const q = (sql) => env.COMMENTS_DB.prepare(sql).bind(...binds).all().then((r) => r.results);
 
-  const [byItem, byPage, byTag, byDay] = await Promise.all([
+  let byItem, byPage, byTag, byDay;
+  try {
+    [byItem, byPage, byTag, byDay] = await Promise.all([
     q(`SELECT item, page, tag, COUNT(*) AS clicks, MAX(day) AS last_day FROM link_clicks ${where} GROUP BY item, page, tag ORDER BY clicks DESC, last_day DESC LIMIT 500`),
     q(`SELECT page, COUNT(*) AS clicks FROM link_clicks ${where} GROUP BY page ORDER BY clicks DESC LIMIT 200`),
     q(`SELECT COALESCE(tag, '(none)') AS tag, COUNT(*) AS clicks FROM link_clicks ${where} GROUP BY tag ORDER BY clicks DESC`),
     q(`SELECT day, COUNT(*) AS clicks FROM link_clicks ${where} GROUP BY day ORDER BY day DESC LIMIT 400`),
   ]);
+  } catch (err) {
+    return json({ error: "The click table is not set up yet. Run the link_clicks setup from db/schema.sql in the D1 console for pds-comments." }, 503);
+  }
   const total = byPage.reduce((n, r) => n + r.clicks, 0);
   return json({ days, total, byItem, byPage, byTag, byDay });
 }

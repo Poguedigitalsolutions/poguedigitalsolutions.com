@@ -99,7 +99,8 @@ body = f'''
   }}
   function api(){{
     return fetch('/api/admin/clicks?days='+days,{{headers:{{'authorization':'Bearer '+key}}}})
-      .then(function(r){{ if(r.status===401) throw new Error('Wrong key.'); return r.json(); }});
+      .then(function(r){{ if(r.status===401) throw new Error('Wrong key.'); return r.json().catch(function(){{ throw new Error('The report could not load. Try again in a minute.'); }}); }})
+      .then(function(d){{ if(d.error) throw new Error(d.error); return d; }});
   }}
   function show(){{ unlock.hidden=true; unlock.style.display='none'; panel.hidden=false; load(); }}
   function load(){{
