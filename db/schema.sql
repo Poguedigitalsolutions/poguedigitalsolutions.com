@@ -18,7 +18,7 @@ CREATE INDEX IF NOT EXISTS idx_comments_ip_time ON comments (ip_hash, created_at
 CREATE TABLE IF NOT EXISTS link_clicks (
   id    INTEGER PRIMARY KEY AUTOINCREMENT,
   page  TEXT NOT NULL,                       -- path the click came from, e.g. /blog/how-to-ask-ai-the-right-question
-  item  TEXT NOT NULL,                       -- Amazon ASIN, or amzn.to/<code> for short links
+  item  TEXT NOT NULL,                       -- Amazon ASIN, or amzn.to/<code> or link.amazon/<code>
   tag   TEXT,                                -- Associates tracking ID in the link, e.g. blog0ce1f-20
   day   TEXT NOT NULL DEFAULT (date('now'))  -- UTC date only
 );

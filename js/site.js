@@ -72,9 +72,9 @@
     if (host === 'amazon.com' || host === 'smile.amazon.com') {
       var m = url.pathname.match(/\/(?:dp|gp\/product|gp\/aw\/d)\/([A-Z0-9]{10})/i);
       if (m) item = m[1].toUpperCase();
-    } else if (host === 'amzn.to') {
+    } else if (host === 'amzn.to' || host === 'link.amazon') {
       var code = url.pathname.replace(/^\/+|\/+$/g, '');
-      if (/^[A-Za-z0-9]{4,16}$/.test(code)) item = 'amzn.to/' + code;
+      if (/^[A-Za-z0-9]{4,16}$/.test(code)) item = host + '/' + code;
     }
     if (!item) return;
     var body = JSON.stringify({ page: location.pathname, item: item, tag: url.searchParams.get('tag') || '' });

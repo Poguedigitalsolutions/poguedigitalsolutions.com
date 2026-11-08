@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Private report of Amazon link clicks on this site.">
 <meta name="twitter:image" content="https://poguedigitalsolutions.com/img/hero-founder-composite.jpg">
 <link rel="alternate" type="application/rss+xml" title="Pogue Digital Solutions Blog" href="/blog/feed.xml">
-<link rel="stylesheet" href="/css/styles.css?v=202611081324">
+<link rel="stylesheet" href="/css/styles.css?v=202611081339">
 </head>
 <body>
 <header class="site-header">
@@ -97,9 +97,9 @@
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function itemName(item){
     if(META.titles[item]) return esc(META.titles[item]);
-    return item.indexOf('amzn.to/')===0 ? 'Short link '+esc(item) : 'Amazon product '+esc(item);
+    return item.indexOf('/')>0 ? 'Short link '+esc(item) : 'Amazon product '+esc(item);
   }
-  function itemLink(item){ return item.indexOf('amzn.to/')===0 ? 'https://'+item : 'https://www.amazon.com/dp/'+item; }
+  function itemLink(item){ return item.indexOf('/')>0 ? 'https://'+item : 'https://www.amazon.com/dp/'+item; }
   function pageName(p){ return META.pages[p] ? esc(META.pages[p]) : (p==='/'?'Home page':esc(p)); }
   function table(el, head, rows, empty){
     el.innerHTML = rows.length ? '<thead><tr>'+head+'</tr></thead><tbody>'+rows.join('')+'</tbody>'
@@ -185,6 +185,6 @@
   </div>
 </footer>
 
-<script src="/js/site.js?v=202611081324"></script>
+<script src="/js/site.js?v=202611081339"></script>
 </body>
 </html>

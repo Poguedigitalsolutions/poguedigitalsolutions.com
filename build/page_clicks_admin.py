@@ -89,9 +89,9 @@ body = f'''
   function esc(s){{return String(s).replace(/[&<>"']/g,function(c){{return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[c];}});}}
   function itemName(item){{
     if(META.titles[item]) return esc(META.titles[item]);
-    return item.indexOf('amzn.to/')===0 ? 'Short link '+esc(item) : 'Amazon product '+esc(item);
+    return item.indexOf('/')>0 ? 'Short link '+esc(item) : 'Amazon product '+esc(item);
   }}
-  function itemLink(item){{ return item.indexOf('amzn.to/')===0 ? 'https://'+item : 'https://www.amazon.com/dp/'+item; }}
+  function itemLink(item){{ return item.indexOf('/')>0 ? 'https://'+item : 'https://www.amazon.com/dp/'+item; }}
   function pageName(p){{ return META.pages[p] ? esc(META.pages[p]) : (p==='/'?'Home page':esc(p)); }}
   function table(el, head, rows, empty){{
     el.innerHTML = rows.length ? '<thead><tr>'+head+'</tr></thead><tbody>'+rows.join('')+'</tbody>'

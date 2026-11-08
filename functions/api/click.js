@@ -4,7 +4,7 @@
 // Nothing about the visitor is kept.
 
 const PAGE = /^\/[a-z0-9/_-]{0,160}$/;
-const ITEM = /^([A-Z0-9]{10}|amzn\.to\/[A-Za-z0-9]{4,16})$/;
+const ITEM = /^([A-Z0-9]{10}|(?:amzn\.to|link\.amazon)\/[A-Za-z0-9]{4,16})$/;
 const TAG = /^[a-z0-9-]{1,40}$/;
 
 const done = (status = 204) => new Response(null, { status, headers: { "cache-control": "no-store" } });
