@@ -7,6 +7,7 @@ date: 2026-11-09
 category: AI and Automation
 reading_time: 4 min
 keywords: Click 2006 movie, Adam Sandler Click, AI autopilot, automation bias, AI habits, staying in control of AI, AI and daily life, human in the loop
+source: https://www.linkedin.com/pulse/what-adam-sandlers-click-teaches-us-letting-ai-run-your-john-m-pogue-ffz1f/
 ---
 
 # What Adam Sandler's Click Teaches Us About Letting AI Run Your Life
