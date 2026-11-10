@@ -6,6 +6,8 @@ author: John M Pogue
 date: 2026-11-09
 category: AI and Automation
 reading_time: 4 min
+image: img/john-m-pogue-click-ai-run-your-life-social.jpg
+image_alt: Article banner for 'What Click Teaches Us About Letting AI Run Your Life' by John M Pogue. A hand holds a glowing remote control with an AI chip button and presses fast-forward, sending a stream of app icons for video, email, calendar, shopping, and documents toward a blurred family laughing at a sunny breakfast table. A yellow sticky note reads 'Keep control: Don't skip what matters. Read, check, and edit. Choose your autopilots.' The Pogue Digital Solutions, LLC logo sits at the bottom left and the Brand Voice AI logo with its tagline 'Capture knowledge. Define your voice. Scale with AI.' at the bottom right. PogueDigitalSolutions.com
 keywords: Click 2006 movie, Adam Sandler Click, AI autopilot, automation bias, AI habits, staying in control of AI, AI and daily life, human in the loop
 source: https://www.linkedin.com/pulse/what-adam-sandlers-click-teaches-us-letting-ai-run-your-john-m-pogue-ffz1f/
 ---
