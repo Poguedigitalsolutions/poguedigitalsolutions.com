@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Adam Sandler's Click Teaches Us About Letting AI Run Your Life | Reader and Print View | Pogue Digital Solutions</title>
+<meta name="description" content="John M Pogue uses the 2006 comedy Click, where a magic remote learns to skip life for its owner, to explain automation bias and five habits that keep you in charge of the AI tools that learn from you.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/what-adam-sandlers-click-teaches-us-about-letting-ai-run-your-life">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+/* Black and white for printing: the page uses only black, grays, and white so it prints sharp on any printer
+   and saves color ink. Brand colors appear only in the screen toolbar, which never prints. */
+:root { --ink:#000; --text:#1a1a1a; --mid:#444; --soft:#666; --rule:#bdbdbd; --brand-navy:#0B1F3A; --brand-gold:#D4AF37; }
+* { box-sizing:border-box; }
+/* Reading font: Libre Caslon Text (brand serif, cut for body paragraphs). Georgia is the fallback built into nearly every device. */
+body { margin:0; background:#e6e6e6; color:var(--text); font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--ink); font-weight:700; line-height:1.2; }
+a { color:var(--ink); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--brand-navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { display:inline-flex; align-items:center; gap:8px; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--brand-gold); color:var(--brand-navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { break-inside:avoid; }
+.letterhead img { display:block; width:100%; height:auto; margin:0; padding-bottom:6px; border-bottom:2px solid var(--ink); }
+.letterhead .site { display:block; text-align:right; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9pt; letter-spacing:.06em; color:var(--ink); text-decoration:none; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:var(--mid); margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--mid);
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--ink); }
+
+.body { font-size:11.5pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--ink); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--ink); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:var(--text); }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; border-left:3px solid var(--ink); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:var(--soft); font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11.5pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:var(--mid); }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--ink); display:grid; grid-template-columns:1fr; gap:6px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:var(--mid); margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--ink); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:var(--mid); word-break:break-all; }
+.subscribe-qr { grid-column:1 / -1; display:flex; gap:14px; align-items:center; margin:6px 0 4px; padding:10px 12px; border:1px solid var(--ink); break-inside:avoid; }
+.subscribe-qr img { width:.95in; height:.95in; display:block; flex:0 0 auto; }
+.subscribe-qr p { margin:0; font-size:9pt; line-height:1.45; color:var(--mid); }
+.subscribe-qr strong { display:block; font-family:'Libre Caslon Text',Georgia,serif; font-size:10.5pt; color:var(--ink); margin-bottom:2px; }
+.subscribe-qr .u { font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--soft); }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"poguedigitalsolutions.com/blog"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/what-adam-sandlers-click-teaches-us-about-letting-ai-run-your-life" class="back-link">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()"><svg class="print-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/><circle cx="18" cy="12" r=".6" fill="currentColor" stroke="none"/></svg><span>Print or Save as PDF</span></button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/print-header.png" alt="Pogue Digital Solutions, LLC. Strategy, Systems, Solutions. Strategic thinking. Smarter systems. Measurable results.">
+    <a class="site" href="https://poguedigitalsolutions.com/blog/">poguedigitalsolutions.com/blog</a>
+  </header>
+  <span class="eyebrow">AI and Automation</span>
+  <h1>What Adam Sandler's Click Teaches Us About Letting AI Run Your Life</h1>
+  <p class="dek">John M Pogue uses the 2006 comedy Click, where a magic remote learns to skip life for its owner, to explain automation bias and five habits that keep you in charge of the AI tools that learn from you.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published November 9, 2026 &middot; 4 min read</div>
+  <article class="body">
+<p class="lede" id="short-answer"><strong>The short answer:</strong> In the 2006 comedy <em>Click</em>, Adam Sandler plays a man who uses a magic remote to skip the boring parts of his life. Then the remote learns his habits and starts skipping for him. Artificial intelligence (AI) tools that learn your preferences can do the same thing. They save time, and they also copy your shortcuts. The fix is to keep your hand on the remote for the choices that matter most.</p>
+<h2 id="what-click-is-about">What Click is about</h2>
+<p>Most of us have owned a TV remote with a fast-forward button. <em>Click</em> asks a simple question: what if that button worked on your life?</p>
+<p>The movie came out on June 23, 2006, from Columbia Pictures, directed by Frank Coraci. Sandler plays Michael Newman, an architect who works too much and keeps missing time with his wife and kids. One night he goes looking for a universal remote and meets Morty, a strange store clerk played by Christopher Walken. Morty hands him a remote that can pause, rewind, and fast-forward his own life.</p>
+<p>At first it feels like a gift. Michael skips arguments, traffic, and dinners he finds dull. He gets more done at work. On paper, his life gets more efficient.</p>
+<h2 id="the-turn-the-remote-learns-his-habits">The turn: the remote learns his habits</h2>
+<p>Here is the part people tend to forget. Michael keeps skipping the same kinds of moments, so the remote starts skipping them on its own. Morty explains that the remote programs itself based on what Michael chose before.</p>
+<p>Michael never told it to take over. He just used it the same way, over and over, until his habits became its settings. He ends up on autopilot, losing years he never got to live.</p>
+<p>The remote never did anything Michael hadn't taught it. That is what makes the story useful today.</p>
+<h2 id="where-ai-works-like-michaels-remote">Where AI works like Michael's remote</h2>
+<p>Many of the tools we use every day learn from what we do. The more we use them, the more they decide for us.</p>
+<ul>
+<li><strong>Streaming apps</strong> start the next episode before we choose to watch it.</li>
+<li><strong>Email and text apps</strong> suggest replies, and we tap the first one.</li>
+<li><strong>AI assistants</strong> draft a letter, a post, or a plan, and we send it without changing a word.</li>
+<li><strong>Calendar and shopping tools</strong> learn our patterns and fill in the next step for us.</li>
+</ul>
+<p>Each one saves a few seconds or minutes. None of them is a problem by itself. The risk shows up when we stop noticing the choices being made. Like Michael, we can end up on autopilot without ever deciding to give up control.</p>
+<h2 id="the-name-for-what-happened-to-michael-automation-bias">The name for what happened to Michael: automation bias</h2>
+<p>Researchers have a name for this pattern. <strong>Automation bias</strong> is the habit of trusting an automated system too much and checking its work too little.</p>
+<p>The idea came out of aviation research in the 1990s. Kathleen Mosier and Linda Skitka studied how airline pilots used automated cockpit aids. They found pilots sometimes followed the machine even when it was wrong, or missed a problem because the machine didn't flag it. A 2010 review in the <em>Journal of the American Medical Informatics Association</em> found the same pattern in health care, where doctors and nurses use computer systems to help make decisions.</p>
+<p>Here is the teachable moment. Automation bias is a human habit. The tool doesn't have to be broken for it to cause harm. Michael's remote worked perfectly. It did exactly what he had trained it to do. The trouble was that he stopped watching.</p>
+<h2 id="how-to-keep-your-hand-on-the-remote">How to keep your hand on the remote</h2>
+<p>You don't have to throw the remote away. AI is a great tool when you stay in charge of it. A few habits help:</p>
+<ol>
+<li><strong>Decide what you never skip.</strong> Family dinners, a hard talk with a friend, the first draft of something personal. Make your own list and protect it.</li>
+<li><strong>Read before you send.</strong> Treat an AI draft as a starting point. Change it until it sounds like you.</li>
+<li><strong>Fact-check every time.</strong> If AI gives you a number, a date, or a name, look it up at the source before you repeat it.</li>
+<li><strong>Turn off one autopilot setting.</strong> Pick one, like autoplay on your streaming app, and see what you choose when the choice is yours again.</li>
+<li><strong>Ask yourself who taught the tool.</strong> If its suggestions feel off, look at the habits you've been feeding it.</li>
+</ol>
+<h2 id="the-moments-worth-living-through">The moments worth living through</h2>
+<p><em>Click</em> is a comedy, but it lands because most of us know the feeling. We all have days we wish we could skip. Some of those days turn out to hold the things we miss most later: a kid's question, a long talk, a slow dinner with people we love.</p>
+<p>AI can give us back hours we used to waste. I want those hours spent on the people and work that matter. So use the remote. Just keep it in your own hand.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Click_(2006_film)">Click (2006 film), Wikipedia</a><sup class="ref">[1]</sup>: release date, studio, director, cast, and plot.</li>
+<li><a href="https://movies.fandom.com/wiki/Click">Click plot summary, Movies Fandom wiki</a><sup class="ref">[2]</sup>: Morty's explanation that the remote programs itself from Michael's earlier commands.</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751">Goddard, Roudsari, and Wyatt, "Automation bias: a systematic review of frequency, effect mediators, and mitigators," Journal of the American Medical Informatics Association, PubMed Central</a><sup class="ref">[3]</sup>: definition of automation bias, its roots in aviation research, and findings in health care.</li>
+<li><a href="https://agilebrandguide.com/wiki/martech-concepts/automation-bias/">Automation bias, Agile Brand Guide</a><sup class="ref">[4]</sup>: Kathleen Mosier and Linda Skitka introducing the term in 1990s pilot research.</li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<p><em>Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</em></p>
+<ul>
+<li><a href="https://link.amazon/B0dCnwE6P"><em>The Power of Habit: Why We Do What We Do in Life and Business</em></a><sup class="ref">[5]</sup> by Charles Duhigg (Random House, 2012). How habits form and how to change them, the same habits Michael's remote learned to copy.</li>
+<li><a href="https://link.amazon/B0cpcxwXx"><em>Digital Minimalism: Choosing a Focused Life in a Noisy World</em></a><sup class="ref">[6]</sup> by Cal Newport (Portfolio, 2019). A plan for choosing which technology earns a place in your life.</li>
+<li><a href="https://link.amazon/B09UF5RLb"><em>Co-Intelligence: Living and Working with AI</em></a><sup class="ref">[7]</sup> by Ethan Mollick (Portfolio, 2024). A Wharton professor's guide to using AI as a coworker and coach while you stay in charge.</li>
+<li><a href="https://link.amazon/B0ik0OdS1"><em>The Glass Cage: Automation and Us</em></a><sup class="ref">[8]</sup> by Nicholas Carr (W. W. Norton, 2014). A readable look at what we gain and what we lose when software takes over our work, from airline cockpits to GPS maps.</li>
+</ul>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://en.wikipedia.org/wiki/Click_(2006_film)</li><li>https://movies.fandom.com/wiki/Click</li><li>https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751</li><li>https://agilebrandguide.com/wiki/martech-concepts/automation-bias/</li><li>https://link.amazon/B0dCnwE6P</li><li>https://link.amazon/B0cpcxwXx</li><li>https://link.amazon/B09UF5RLb</li><li>https://link.amazon/B0ik0OdS1</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="subscribe-qr">
+      <img src="/img/qr-subscribe.svg" alt="QR code to sign up for new articles by email at poguedigitalsolutions.com/subscribe">
+      <p><strong>Get new articles by email</strong>Scan the code with your phone camera to sign up for updates.<br><span class="u">poguedigitalsolutions.com/subscribe</span></p>
+    </div>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/what-adam-sandlers-click-teaches-us-about-letting-ai-run-your-life</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>
+document.querySelector(".back-link").addEventListener("click", e => {
+  let fromSite = false;
+  try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (_) {}
+  if (fromSite && history.length > 1) { e.preventDefault(); history.back(); }
+});
+if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>
