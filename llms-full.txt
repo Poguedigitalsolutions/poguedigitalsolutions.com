@@ -57,7 +57,7 @@ Each one saves a few seconds or minutes. None of them is a problem by itself. Th
 
 Researchers have a name for this pattern. **Automation bias** is the habit of trusting an automated system too much and checking its work too little.
 
-The idea came out of aviation research in the 1990s. Kathleen Mosier and Linda Skitka studied how airline pilots used automated cockpit aids. They found pilots sometimes followed the machine even when it was wrong, or missed a problem because the machine didn't flag it. A 2010 review in the *Journal of the American Medical Informatics Association* found the same pattern in health care, where doctors and nurses use computer systems to help make decisions.
+The idea came out of aviation research in the 1990s. Kathleen Mosier and Linda Skitka studied how airline pilots used automated cockpit aids. They found pilots sometimes followed the machine even when it was wrong, or missed a problem because the machine didn't flag it. A 2012 review in the *Journal of the American Medical Informatics Association* found the same pattern in health care, where doctors and nurses use computer systems to help make decisions.
 
 Here is the teachable moment. Automation bias is a human habit. The tool doesn't have to be broken for it to cause harm. Michael's remote worked perfectly. It did exactly what he had trained it to do. The trouble was that he stopped watching.
 
