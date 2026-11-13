@@ -21,7 +21,7 @@ Teachers have used a simple exercise for decades to prove this. They ask a class
 
 The exercise was built to teach children how computers work. A 1999 classroom version from National Engineers Week, adapted from an Intel education kit, states the goal plainly: a computer follows a precise set of instructions and cannot fill in what you meant.
 
-I thought of that sandwich in November 2026 while taking Google Cloud's Generative AI Leader training, taught by Patrick Haggerty of ROI Training. The class had reached the part on prompting, and the sandwich explained it better than any slide could. You know what you want. The tool only knows what you typed.
+I thought of that sandwich in November 2026 while taking Google Cloud's Generative AI Leader training through Google Launchpad for Veterans, presented by VetNet, Google's veterans network, and taught by Patrick Haggerty of ROI Training. The class had reached the part on prompting, and the sandwich explained it better than any slide could. You know what you want. The tool only knows what you typed.
 
 ## What does "garbage in, garbage out" mean for AI?
 
@@ -84,6 +84,7 @@ That one extra question has saved me many times. I expect it will continue.
 - [*Bill Cosby: Himself*](https://en.wikipedia.org/wiki/Bill_Cosby:_Himself) (1983), "Same Thing Happens Every Night," the stand-up routine described above
 - [Generative AI Leader certification exam guide](https://services.google.com/fh/files/misc/generative_ai_leader_exam_guide_english.pdf), Google Cloud, on prompting techniques including prompt chaining
 - [Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices), Anthropic, on the colleague test, giving reasons, and examples
+- [Google Launchpad for Veterans](https://cloud.google.com/blog/topics/training-certifications/register-for-the-gen-ai-training-and-certification-program-for-veterans/), Google Cloud, on the no-cost Generative AI Leader training for veterans
 - [Patrick Haggerty](https://www.linkedin.com/in/patrickhaggerty/), Director of Google Cloud Learning at ROI Training
 - [ROI Training](https://www.roitraining.com/)
 
