@@ -6,6 +6,7 @@ author: John M Pogue
 date: 2026-11-13
 category: AI and Automation
 reading_time: 5 min
+source: https://www.linkedin.com/pulse/how-write-better-ai-prompt-lessons-from-peanut-butter-john-m-pogue-tcqkc/
 image: img/john-m-pogue-how-to-write-a-better-ai-prompt-social.jpg
 image_alt: Article banner for 'How to Write a Better AI Prompt: Lessons From a Peanut Butter and Jelly Sandwich' by John M Pogue. He is on the left, smiling, with a gray beard, wearing a black cap with a 'Hello My Name Is Trouble' patch and a navy T-shirt, against a dark navy background. To the right, the title appears in white and gold above a peanut butter and jelly sandwich cut in half. The Pogue Digital Solutions, LLC logo is at the bottom left, and the Brand Voice AI logo with the tagline 'Capture knowledge. Define your voice. Scale with AI.' is at the bottom right. PogueDigitalSolutions.com
 keywords: AI prompt, how to write a better AI prompt, prompt engineering, prompting strategies, garbage in garbage out, prompt chaining, peanut butter and jelly exercise, checking AI output
