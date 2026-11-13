@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Write a Better AI Prompt: Lessons From a Peanut Butter and Jelly Sandwich | Reader and Print View | Pogue Digital Solutions</title>
+<meta name="description" content="John M Pogue uses the peanut butter and jelly sandwich exercise, the old saying garbage in, garbage out, and his own missed request to show how to write a better AI prompt and how to check what the AI did.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/how-to-write-a-better-ai-prompt">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+/* Black and white for printing: the page uses only black, grays, and white so it prints sharp on any printer
+   and saves color ink. Brand colors appear only in the screen toolbar, which never prints. */
+:root { --ink:#000; --text:#1a1a1a; --mid:#444; --soft:#666; --rule:#bdbdbd; --brand-navy:#0B1F3A; --brand-gold:#D4AF37; }
+* { box-sizing:border-box; }
+/* Reading font: Libre Caslon Text (brand serif, cut for body paragraphs). Georgia is the fallback built into nearly every device. */
+body { margin:0; background:#e6e6e6; color:var(--text); font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--ink); font-weight:700; line-height:1.2; }
+a { color:var(--ink); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--brand-navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { display:inline-flex; align-items:center; gap:8px; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--brand-gold); color:var(--brand-navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { break-inside:avoid; }
+.letterhead img { display:block; width:100%; height:auto; margin:0; padding-bottom:6px; border-bottom:2px solid var(--ink); }
+.letterhead .site { display:block; text-align:right; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9pt; letter-spacing:.06em; color:var(--ink); text-decoration:none; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:var(--mid); margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--mid);
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--ink); }
+
+.body { font-size:11.5pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--ink); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--ink); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:var(--text); }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; border-left:3px solid var(--ink); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:var(--soft); font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11.5pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:var(--mid); }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--ink); display:grid; grid-template-columns:1fr; gap:6px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:var(--mid); margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--ink); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:var(--mid); word-break:break-all; }
+.subscribe-qr { grid-column:1 / -1; display:flex; gap:14px; align-items:center; margin:6px 0 4px; padding:10px 12px; border:1px solid var(--ink); break-inside:avoid; }
+.subscribe-qr img { width:.95in; height:.95in; display:block; flex:0 0 auto; }
+.subscribe-qr p { margin:0; font-size:9pt; line-height:1.45; color:var(--mid); }
+.subscribe-qr strong { display:block; font-family:'Libre Caslon Text',Georgia,serif; font-size:10.5pt; color:var(--ink); margin-bottom:2px; }
+.subscribe-qr .u { font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--soft); }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"poguedigitalsolutions.com/blog"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/how-to-write-a-better-ai-prompt" class="back-link">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()"><svg class="print-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/><circle cx="18" cy="12" r=".6" fill="currentColor" stroke="none"/></svg><span>Print or Save as PDF</span></button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/print-header.png" alt="Pogue Digital Solutions, LLC. Strategy, Systems, Solutions. Strategic thinking. Smarter systems. Measurable results.">
+    <a class="site" href="https://poguedigitalsolutions.com/blog/">poguedigitalsolutions.com/blog</a>
+  </header>
+  <span class="eyebrow">AI and Automation</span>
+  <h1>How to Write a Better AI Prompt: Lessons From a Peanut Butter and Jelly Sandwich</h1>
+  <p class="dek">John M Pogue uses the peanut butter and jelly sandwich exercise, the old saying garbage in, garbage out, and his own missed request to show how to write a better AI prompt and how to check what the AI did.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published November 13, 2026 &middot; 5 min read</div>
+  <article class="body">
+<p class="lede" id="short-answer"><strong>The short answer:</strong> An AI prompt is the instruction you type into an artificial intelligence (AI) tool. To write a better AI prompt, spell out each step you want, give one task per request, and then ask the tool to tell you what it did and what it left out. A vague prompt still gets an answer that sounds sure of itself, so the checking step matters as much as the asking.</p>
+<h2 id="why-does-a-vague-ai-prompt-get-a-poor-answer">Why does a vague AI prompt get a poor answer?</h2>
+<p>A vague prompt gets a poor answer because the tool only has your words to go on. It cannot see the picture in your head.</p>
+<p>Teachers have used a simple exercise for decades to prove this. They ask a class to write instructions for making a peanut butter and jelly sandwich. Then the teacher follows those instructions exactly as written. "Put the peanut butter on the bread" ends with the whole jar sitting on top of the loaf. Nobody said to open the jar, pick up a knife, or take out a slice.</p>
+<p>The exercise was built to teach children how computers work. A 1999 classroom version from National Engineers Week, adapted from an Intel education kit, states the goal plainly: a computer follows a precise set of instructions and cannot fill in what you meant.</p>
+<p>I thought of that sandwich in November 2026 while taking Google Cloud's Generative AI Leader training, taught by Patrick Haggerty of ROI Training. The class had reached the part on prompting, and the sandwich explained it better than any slide could. You know what you want. The tool only knows what you typed.</p>
+<h2 id="what-does-garbage-in-garbage-out-mean-for-ai">What does "garbage in, garbage out" mean for AI?</h2>
+<p>"Garbage in, garbage out" means a computer's results can only be as good as what you feed it. The saying is older than most people think. Its earliest known appearance in print is a 1957 newspaper article about United States Army mathematicians working with early computers. George Fuechsel, an IBM programmer and instructor, is usually credited with spreading it in the early 1960s.</p>
+<p>The saying still holds for AI, with one change that catches people off guard. An early computer given bad input gave back an error or plain nonsense, so you knew something was wrong. An AI tool given a vague prompt fills the gaps with a reasonable guess and hands back a polished answer.</p>
+<p>I call that "vague in, confident out." The answer reads well, so you trust it, and the gap stays hidden until it costs you something.</p>
+<h2 id="how-do-you-break-a-big-request-into-steps">How do you break a big request into steps?</h2>
+<p>You break a big request into steps by naming each action in the order you want it done, the way a parent talks a child through a chore.</p>
+<p>An old stand-up routine from the early 1980s shows it well. A mom wants her kids clean before bed, and she does not leave it at "go take a shower." Every night she walks them through it one move at a time: leave the table, head upstairs, undress, step in, and start the water. Any parent in the audience knew why.</p>
+<p>People who work with AI have a name for this habit. They call it prompt chaining, which means splitting one big job into smaller requests and handing them over one at a time. Google lists it among the prompting techniques its Generative AI Leader exam covers.</p>
+<p>The mom in the routine did not need the term. She had kids, and she knew that one big instruction leaves too much room for surprises. Personally, I was the King of Loopholes.</p>
+<h2 id="how-do-you-check-what-the-ai-did">How do you check what the AI did?</h2>
+<p>You check by asking the tool to tell you, in plain words, what it did and what it left out.</p>
+<p>I learned this the hard way in November 2026. I was using Claude Duet, an AI assistant from Anthropic that was in preview at the time, to help me apply for accommodations. I gave it my request and it went to work. Before I moved on, I asked one clarifying question about what it had done.</p>
+<p>The answer was eye opening. The main accommodation, the one that mattered most to me, had not been applied for.</p>
+<p>Nothing on my screen had looked wrong. The form only allowed one accommodation per request, and I had asked for several at once. So I gave new directions: put in a separate request for each accommodation. That fixed it.</p>
+<p>I think about how close I came to walking away. I would have believed the job was done, and I would have found out weeks later, when the thing I needed most never showed up. One question saved me from that.</p>
+<h2 id="what-does-a-better-ai-prompt-look-like">What does a better AI prompt look like?</h2>
+<p>A better AI prompt gives the tool what you would give a new coworker on day one. Anthropic suggests a simple test in its prompting guide: show your prompt to a colleague who knows little about the task and ask them to follow it. If they would be confused, the AI will be too.</p>
+<p>Before you send a prompt, check it against this list:</p>
+<ol>
+<li><strong>Say the goal.</strong> Write one sentence on what you want and why you want it. Anthropic's guide says the reason helps the tool aim its answer.</li>
+<li><strong>Give the background.</strong> Say who the result is for, what you already have, and any limits.</li>
+<li><strong>List the steps in order.</strong> Name each action, the way the mom in the routine did.</li>
+<li><strong>Give one task per request.</strong> If the job has four parts, send four requests.</li>
+<li><strong>Show an example.</strong> If you have a sample of the result you want, include it. Anthropic's guide recommends three to five examples.</li>
+<li><strong>Ask for a playback.</strong> End with: "Tell me what you did and what you left out."</li>
+</ol>
+<p>Steps one through five are the sandwich and the shower. Step six is the one most people skip, and it is the one that caught my missing request.</p>
+<h2 id="say-what-you-mean-then-ask-what-it-heard">Say what you mean, then ask what it heard</h2>
+<p>None of these habits started with AI. A teacher with a jar of peanut butter, a mom at bedtime, and an Army mathematician in 1957 were all teaching the same lesson: the one giving the instructions is responsible for making them clear. I like to say you never start from zero, and prompting is one more proof. The people who came before us already worked out how to give clear instructions. We only have to carry it forward.</p>
+<p>The new part is the second half. AI tools answer with so much polish that it is easy to stop checking. So I now treat every request as a two-way conversation. I say what I mean, one step at a time. Then I ask what it heard.</p>
+<p>That one extra question has saved me many times. I expect it will continue.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://gems.education.purdue.edu/wp-content/uploads/2019/01/The_Microprocessor_Peanut_Butter__Jelly_Activity.pdf">The Microprocessor: Peanut Butter &amp; Jelly Activity</a><sup class="ref">[1]</sup>, National Engineers Week (1999), hosted by Purdue University</li>
+<li><a href="https://www.techtarget.com/searchsoftwarequality/definition/garbage-in-garbage-out">Garbage in, garbage out (GIGO)</a><sup class="ref">[2]</sup>, TechTarget, on the 1957 first use and George Fuechsel</li>
+<li><a href="https://www.worldwidewords.org/qa-gar1.html">Garbage in, garbage out</a><sup class="ref">[3]</sup>, World Wide Words, on the history of the saying</li>
+<li><a href="https://en.wikipedia.org/wiki/Bill_Cosby:_Himself"><em>Bill Cosby: Himself</em></a><sup class="ref">[4]</sup> (1983), "Same Thing Happens Every Night," the stand-up routine described above</li>
+<li><a href="https://services.google.com/fh/files/misc/generative_ai_leader_exam_guide_english.pdf">Generative AI Leader certification exam guide</a><sup class="ref">[5]</sup>, Google Cloud, on prompting techniques including prompt chaining</li>
+<li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices">Prompting best practices</a><sup class="ref">[6]</sup>, Anthropic, on the colleague test, giving reasons, and examples</li>
+<li><a href="https://www.linkedin.com/in/patrickhaggerty/">Patrick Haggerty</a><sup class="ref">[7]</sup>, Director of Google Cloud Learning at ROI Training</li>
+<li><a href="https://www.roitraining.com/">ROI Training</a><sup class="ref">[8]</sup></li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<p>Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p>
+<p><strong>Start here if you are new to AI prompts</strong></p>
+<ul>
+<li><a href="https://link.amazon/B05ZEqhIc"><em>AI Prompt Engineering Absolute Beginner's Guide</em></a><sup class="ref">[9]</sup> by Michael Miller (Addison-Wesley Professional, 2025). A plain-language walk through the parts of a good prompt, written for everyday users.</li>
+</ul>
+<p><strong>Watch</strong></p>
+<ul>
+<li><a href="https://link.amazon/B082QuHoz"><em>The AI Doc: Or How I Became an Apocaloptimist</em></a><sup class="ref">[10]</sup> (2026), directed by Daniel Roher and Charlie Tyrell. A father-to-be interviews the people building AI about its promise and its risks. Available to rent or buy on Prime Video as of November 2026.</li>
+</ul>
+<p><strong>Go deeper if you build with AI</strong></p>
+<ul>
+<li><a href="https://link.amazon/B02yydSkn"><em>Prompt Engineering for LLMs</em></a><sup class="ref">[11]</sup> by John Berryman and Albert Ziegler (O'Reilly Media, 2024). Written for people building apps on large language models (LLMs), the technology behind AI chat tools.</li>
+</ul>
+<p><strong>From my instructor, for Google Cloud professionals</strong></p>
+<ul>
+<li><a href="https://link.amazon/B02cS2zQl"><em>Google Professional Cloud Architect Study Guide</em></a><sup class="ref">[12]</sup> by Patrick Haggerty (O'Reilly Media, 2026). A guide to Google Cloud design and to passing the Professional Cloud Architect exam.</li>
+</ul>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://gems.education.purdue.edu/wp-content/uploads/2019/01/The_Microprocessor_Peanut_Butter__Jelly_Activity.pdf</li><li>https://www.techtarget.com/searchsoftwarequality/definition/garbage-in-garbage-out</li><li>https://www.worldwidewords.org/qa-gar1.html</li><li>https://en.wikipedia.org/wiki/Bill_Cosby:_Himself</li><li>https://services.google.com/fh/files/misc/generative_ai_leader_exam_guide_english.pdf</li><li>https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices</li><li>https://www.linkedin.com/in/patrickhaggerty/</li><li>https://www.roitraining.com/</li><li>https://link.amazon/B05ZEqhIc</li><li>https://link.amazon/B082QuHoz</li><li>https://link.amazon/B02yydSkn</li><li>https://link.amazon/B02cS2zQl</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="subscribe-qr">
+      <img src="/img/qr-subscribe.svg" alt="QR code to sign up for new articles by email at poguedigitalsolutions.com/subscribe">
+      <p><strong>Get new articles by email</strong>Scan the code with your phone camera to sign up for updates.<br><span class="u">poguedigitalsolutions.com/subscribe</span></p>
+    </div>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/how-to-write-a-better-ai-prompt</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>
+document.querySelector(".back-link").addEventListener("click", e => {
+  let fromSite = false;
+  try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (_) {}
+  if (fromSite && history.length > 1) { e.preventDefault(); history.back(); }
+});
+if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>

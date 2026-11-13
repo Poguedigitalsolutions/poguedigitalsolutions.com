@@ -6,7 +6,16 @@
   <atom:link href="https://poguedigitalsolutions.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Articles by John M Pogue on brand voice, AI adoption, automation, and capturing founder knowledge.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 13 Nov 2026 12:00:00 +0000</lastBuildDate>
+  <item>
+    <title>How to Write a Better AI Prompt: Lessons From a Peanut Butter and Jelly Sandwich</title>
+    <link>https://poguedigitalsolutions.com/blog/how-to-write-a-better-ai-prompt</link>
+    <guid isPermaLink="true">https://poguedigitalsolutions.com/blog/how-to-write-a-better-ai-prompt</guid>
+    <pubDate>Fri, 13 Nov 2026 12:00:00 +0000</pubDate>
+    <category>AI and Automation</category>
+    <dc:creator>John M Pogue</dc:creator>
+    <description>John M Pogue uses the peanut butter and jelly sandwich exercise, the old saying garbage in, garbage out, and his own missed request to show how to write a better AI prompt and how to check what the AI did.</description>
+  </item>
   <item>
     <title>What Adam Sandler&#x27;s Click Teaches Us About Letting AI Run Your Life</title>
     <link>https://poguedigitalsolutions.com/blog/what-adam-sandlers-click-teaches-us-about-letting-ai-run-your-life</link>
