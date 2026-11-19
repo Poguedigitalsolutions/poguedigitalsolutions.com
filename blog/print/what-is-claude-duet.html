@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Claude Duet? A Plain-Language Guide to the AI Assistant That Messages You First | Reader and Print View | Pogue Digital Solutions</title>
+<meta name="description" content="A plain-language guide to Claude Duet, Anthropic's AI assistant that messages you first: what it does, what it asks before it acts, who can get it, and its limits as of November 2026.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://poguedigitalsolutions.com/blog/what-is-claude-duet">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+/* Black and white for printing: the page uses only black, grays, and white so it prints sharp on any printer
+   and saves color ink. Brand colors appear only in the screen toolbar, which never prints. */
+:root { --ink:#000; --text:#1a1a1a; --mid:#444; --soft:#666; --rule:#bdbdbd; --brand-navy:#0B1F3A; --brand-gold:#D4AF37; }
+* { box-sizing:border-box; }
+/* Reading font: Libre Caslon Text (brand serif, cut for body paragraphs). Georgia is the fallback built into nearly every device. */
+body { margin:0; background:#e6e6e6; color:var(--text); font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; }
+h1, h2, h3 { font-family:'Libre Caslon Text',Georgia,'Times New Roman',serif; color:var(--ink); font-weight:700; line-height:1.2; }
+a { color:var(--ink); }
+
+/* ---- screen-only toolbar ---- */
+.print-bar { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  padding:12px 16px; background:var(--brand-navy); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+.print-bar a { color:#f0d77a; text-decoration:none; }
+.print-bar button { display:inline-flex; align-items:center; gap:8px; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; border:0; border-radius:999px;
+  padding:10px 20px; background:var(--brand-gold); color:var(--brand-navy); font-weight:600; }
+.print-bar .hint { color:rgba(255,255,255,.6); text-transform:none; letter-spacing:0; font-family:'Inter',sans-serif; font-size:12.5px; }
+
+/* ---- the sheet: looks like paper on screen ---- */
+.sheet { background:#fff; max-width:8.5in; margin:24px auto 48px; padding:.75in .8in; box-shadow:0 2px 18px rgba(0,0,0,.12); }
+@media (max-width:700px) { .sheet { margin:0; padding:28px 18px; box-shadow:none; } .print-bar .hint { display:none; } }
+
+.letterhead { break-inside:avoid; }
+.letterhead img { display:block; width:100%; height:auto; margin:0; padding-bottom:6px; border-bottom:2px solid var(--ink); }
+.letterhead .site { display:block; text-align:right; margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:9pt; letter-spacing:.06em; color:var(--ink); text-decoration:none; }
+
+.eyebrow { display:block; margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+h1 { font-size:24pt; margin:8px 0 10px; }
+.dek { font-size:12pt; line-height:1.5; color:var(--mid); margin:0 0 14px; }
+.byline { font-family:'IBM Plex Mono',monospace; font-size:8.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--mid);
+  padding:8px 0 14px; border-bottom:1px solid var(--rule); margin-bottom:22px; }
+.byline strong { font-family:'Libre Caslon Text',Georgia,serif; font-size:11pt; letter-spacing:0; text-transform:none; color:var(--ink); }
+
+.body { font-size:11.5pt; line-height:1.6; }
+.body p { margin:0 0 .85em; orphans:3; widows:3; }
+.body h2 { font-size:16pt; margin:1.4em 0 .5em; break-after:avoid; page-break-after:avoid; }
+.body h3 { font-size:13pt; margin:1.2em 0 .4em; break-after:avoid; page-break-after:avoid; }
+.body ul, .body ol { padding-left:1.4em; margin:0 0 1em; }
+.body li { margin-bottom:.35em; }
+.body strong { color:var(--ink); }
+.body a { text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--rule); }
+.body blockquote { margin:1em 0; padding:.2em 0 .2em 1em; border-left:3px solid var(--ink); font-family:'Libre Caslon Text',Georgia,serif; font-style:italic; color:var(--text); }
+.body img { max-width:100%; height:auto; break-inside:avoid; }
+.body table { width:100%; border-collapse:collapse; font-size:10pt; margin:1em 0; break-inside:avoid; }
+.body th, .body td { border:1px solid var(--rule); padding:5px 8px; text-align:left; vertical-align:top; }
+.body hr { border:0; border-top:1px solid var(--rule); margin:1.5em 0; }
+.body .lede { font-size:12pt; padding:12px 16px; border-left:3px solid var(--ink); break-inside:avoid; }
+.body .source-note { font-size:9.5pt; color:var(--soft); font-style:italic; }
+sup.ref { font-family:'IBM Plex Mono',monospace; font-size:7pt; color:var(--soft); margin-left:1px; }
+
+.faq-print h2 { font-size:16pt; margin:1.4em 0 .5em; }
+.faq-print h3 { font-size:12pt; margin:1em 0 .3em; break-after:avoid; }
+.faq-print .a { font-size:11.5pt; line-height:1.6; margin-bottom:.6em; }
+
+.endnotes { margin-top:28px; padding-top:12px; border-top:1px solid var(--rule); break-inside:auto; }
+.endnotes h2 { font-size:12pt; margin:0 0 8px; }
+.endnotes ol { margin:0; padding-left:2.2em; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; line-height:1.5; color:var(--mid); }
+.endnotes li { margin-bottom:3px; word-break:break-all; break-inside:avoid; }
+
+.colophon { margin-top:26px; padding-top:14px; border-top:2px solid var(--ink); display:grid; grid-template-columns:1fr; gap:6px; break-inside:avoid; }
+.colophon .bio { font-size:9.5pt; line-height:1.5; color:var(--mid); margin:0; }
+.colophon .bio strong { font-family:'Libre Caslon Text',Georgia,serif; color:var(--ink); font-size:10.5pt; }
+.colophon .url { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:8.5pt; color:var(--mid); word-break:break-all; }
+.subscribe-qr { grid-column:1 / -1; display:flex; gap:14px; align-items:center; margin:6px 0 4px; padding:10px 12px; border:1px solid var(--ink); break-inside:avoid; }
+.subscribe-qr img { width:.95in; height:.95in; display:block; flex:0 0 auto; }
+.subscribe-qr p { margin:0; font-size:9pt; line-height:1.45; color:var(--mid); }
+.subscribe-qr strong { display:block; font-family:'Libre Caslon Text',Georgia,serif; font-size:10.5pt; color:var(--ink); margin-bottom:2px; }
+.subscribe-qr .u { font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+.colophon .copy { grid-column:1 / -1; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--soft); }
+
+/* ---- paper ---- */
+@page { size:letter; margin:.7in .75in .8in;
+  @bottom-left { content:"poguedigitalsolutions.com/blog"; font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); }
+  @bottom-right { content:"Page " counter(page) " of " counter(pages); font-family:'IBM Plex Mono',monospace; font-size:7.5pt; color:var(--soft); } }
+@media print {
+  body { background:#fff; }
+  .print-bar { display:none !important; }
+  .sheet { margin:0; padding:0; max-width:none; box-shadow:none; }
+  a { color:inherit; }
+}
+</style>
+</head>
+<body>
+<div class="print-bar">
+  <a href="/blog/what-is-claude-duet" class="back-link">&larr; Back to the article</a>
+  <span class="hint">Tip: choose &ldquo;Save as PDF&rdquo; as the printer to keep a digital copy.</span>
+  <button type="button" onclick="window.print()"><svg class="print-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/><circle cx="18" cy="12" r=".6" fill="currentColor" stroke="none"/></svg><span>Print or Save as PDF</span></button>
+</div>
+<main class="sheet">
+  <header class="letterhead">
+    <img src="/img/print-header.png" alt="Pogue Digital Solutions, LLC. Strategy, Systems, Solutions. Strategic thinking. Smarter systems. Measurable results.">
+    <a class="site" href="https://poguedigitalsolutions.com/blog/">poguedigitalsolutions.com/blog</a>
+  </header>
+  <span class="eyebrow">AI and Automation</span>
+  <h1>What Is Claude Duet? A Plain-Language Guide to the AI Assistant That Messages You First</h1>
+  <p class="dek">A plain-language guide to Claude Duet, Anthropic's AI assistant that messages you first: what it does, what it asks before it acts, who can get it, and its limits as of November 2026.</p>
+  <div class="byline">By <strong>John M Pogue</strong> &middot; Published November 19, 2026 &middot; 5 min read</div>
+  <article class="body">
+<p><em>What it does, what it asks before it acts, who can get it, and where it stops, as of November 2026.</em></p>
+<p class="lede" id="short-answer"><strong>The short answer:</strong> Claude Duet is an artificial intelligence (AI) assistant from Anthropic that you message like a person, and it can message you first.  It checks the apps you connect, such as email and calendar, prepares work in the background, and asks your permission before it sends, pays, signs, or deletes anything.  As of November 2026, it is a research preview for Claude Pro, Max, and Ultra subscribers in the United States.</p>
+<p><em>Follow me for plain-language guides to new AI tools.</em></p>
+<h2 id="what-is-claude-duet">What is Claude Duet?</h2>
+<p>Claude Duet is an AI agent, which means software that can carry out tasks for you as well as answer questions.  Anthropic, the company that makes Claude, announced it on October 21, 2026.</p>
+<p>Most people know AI as a chat window.  You type a question, it answers, and then it waits for you to come back.  Claude Duet works the other way around.  It looks at the apps you have connected, such as your email, calendar, and files, and it sends you a message when something needs your attention.</p>
+<p>Anthropic says it built Claude Duet for professionals and small business owners who have more going on than they can keep track of.  Other companies are building the same kind of tool.  MacRumors reported in October 2026 that OpenAI has an agent called Dots and Meta has one called Muse.</p>
+<h2 id="how-does-claude-duet-work">How does Claude Duet work?</h2>
+<p>You talk to Claude Duet in one ongoing message thread, by typing or by voice, and it does the work on its own computer in the cloud.  "In the cloud" means the work runs on computers you reach over the internet, so your own phone or laptop can be off.</p>
+<p>According to Anthropic, a day with Claude Duet looks like this:</p>
+<ul>
+<li><strong>A morning brief.</strong>  Each morning it reviews your email and calendar, flags what matters most, and can draft replies for you to review.</li>
+<li><strong>Check-ins during the day.</strong>  It checks your connected accounts every few hours and messages you when something needs your attention.</li>
+<li><strong>Bigger jobs on request.</strong>  Ask for a research brief, a slide deck, a financial model, or a dashboard, and the finished file appears in a tab called Make.</li>
+<li><strong>A running task list.</strong>  A Tasks tab shows what it is working on and what is waiting on you.  It can suggest that a task looks finished, and only you can mark it complete.</li>
+</ul>
+<p>Claude Duet uses the apps you have already connected to Claude, such as Gmail, Google Calendar, Slack, QuickBooks, and Docusign.  You start every connection yourself, and you can disconnect any app at any time.  You can also keep separate channels for different topics, and all of them share one memory.</p>
+<h2 id="what-does-claude-duet-ask-before-it-acts">What does Claude Duet ask before it acts?</h2>
+<p>Claude Duet asks for your approval before it sends a message, makes a payment, signs a document, or deletes anything.  It shows you what it plans to do and waits.  If you can't answer right away, it finishes the rest of the job and comes back for the approval.</p>
+<p>When I worked in surgery, the best surgical technologists had the next instrument ready before the surgeon asked for it.  One of their jobs was to pass instruments, and another was to anticipate the needs of the surgeon.  They never made the cut.  That decision stayed with the surgeon, who answered for the patient.</p>
+<p>Claude Duet is built on the same split.  It gets the work ready, and the decision stays with you.</p>
+<p>Some actions are off limits even if you say yes.  It will not trade stocks or other securities, move money between your accounts, or go into someone else's account.  When a website needs a password, you type it into a separate form on your own device.  Anthropic says that form is designed to keep the password out of the chat.</p>
+<h2 id="who-can-get-claude-duet-and-what-does-it-cost">Who can get Claude Duet, and what does it cost?</h2>
+<p>As of November 2026, Claude Duet is open by invitation to paying Claude subscribers in the United States, at no extra charge.  It is a research preview, which means an early version released so the company can learn from how people use it.</p>
+<p>To get in, you need three things:</p>
+<ol>
+<li>A Claude account in the United States.</li>
+<li>A Claude Pro, Max, or Ultra plan.  Team and Enterprise plans are not supported yet.</li>
+<li>An invitation, either from the waitlist or from someone who already uses Claude Duet.  I have three invites.  Drop a comment and I will send you a direct message (DM).</li>
+</ol>
+<p>Invitations go out in waves, so joining the waitlist does not come with a date.  The app runs on iPhone and Android, and on the web at claude.ai.</p>
+<p>The cost shows up in usage.  Claude plans have usage limits, and Claude Duet draws from the same limits as your regular Claude chats.  Its background work counts too, including the morning brief and the check-ins, so heavy Claude users may reach their limit sooner.</p>
+<h2 id="what-cant-claude-duet-do">What can't Claude Duet do?</h2>
+<p>Claude Duet has clear limits in this early version.  Anthropic lists these as of November 2026:</p>
+<ul>
+<li>It checks your accounts on a schedule, so an urgent email may wait until the next check.</li>
+<li>It can't make phone calls or send text messages.</li>
+<li>You can't choose the AI model it uses, and you can't watch its web browser while it works.</li>
+<li>It is weaker at personal errands, such as booking tickets, because it was built for work.</li>
+<li>It can make mistakes, such as misreading an email thread or misjudging what is urgent.</li>
+</ul>
+<p>There is also a security risk called prompt injection.  An email or web page can carry hidden text written to trick an AI into doing something its owner never asked for.  Claude Duet is built to treat what it reads as information and to take instructions from you.  Anthropic says no defense is perfect, which is why the approval step matters.</p>
+<h2 id="how-should-you-start-with-claude-duet">How should you start with Claude Duet?</h2>
+<p>Start small, and read everything before you approve it.  A new assistant earns trust one handoff at a time, and that goes for software too.</p>
+<ol>
+<li>Connect one or two apps first, such as email and calendar.  Add more once you trust what you see.</li>
+<li>Hand off one low-risk job, such as a morning summary or a brief before a meeting.</li>
+<li>Read every approval request in full before you say yes, the way you would read a letter before you sign it.</li>
+<li>Check your usage during the first week, because background work spends the same limits as your chats.</li>
+</ol>
+<p>Claude Duet can have the instrument ready before you ask.  The cut is still yours to make.</p>
+<p><em>John M Pogue writes about the gap between what people are told and what they actually understand.  Curiosity is my superpower.</em></p>
+<h2 id="references">References</h2>
+<p>These are the sources behind the facts in this article.</p>
+<ol>
+<li>Anthropic, <a href="https://www.claude.com/resources/articles/claude-duet">"Introducing Claude Duet,"</a><sup class="ref">[1]</sup> October 21, 2026.  Source for the announcement date, who it is built for, the morning brief, the check-ins every few hours, where the app runs, and the weaker handling of personal errands.</li>
+<li>Claude Help Center, <a href="https://support.claude.com/en/articles/17631495-get-started-with-claude-duet">"Get started with Claude Duet,"</a><sup class="ref">[2]</sup> viewed November 19, 2026.  Source for the access requirements, approvals, off-limit actions, password handling, usage limits, the Tasks and Make tabs, channels, prompt injection, and the listed limits.</li>
+<li>Juli Clover, MacRumors, <a href="https://www.macrumors.com/2026/10/21/anthropic-claude-duet/">"Anthropic Launches Claude Duet, a Proactive AI Agent,"</a><sup class="ref">[3]</sup> October 21, 2026.  Source for the OpenAI Dots and Meta Muse comparison.</li>
+</ol>
+<h2 id="further-reading">Further Reading</h2>
+<p><em>Some links in this article are affiliate links.  As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</em></p>
+<ul>
+<li><a href="https://link.amazon/B0eRoY6zi"><em>Co-Intelligence: Living and Working with AI</em></a><sup class="ref">[4]</sup> by Ethan Mollick (Portfolio, 2024).  A Wharton professor's guide to working beside AI, including his rule to be the human in the loop.</li>
+<li><a href="https://link.amazon/B08Kl15u2"><em>Who Not How: The Formula to Achieve Bigger Goals Through Accelerating Teamwork</em></a><sup class="ref">[5]</sup> by Dan Sullivan with Dr. Benjamin Hardy (Hay House Business, 2020).  A coach to entrepreneurs teaches you to ask who can do a job for you before you take it on yourself.</li>
+<li><a href="https://link.amazon/B0bl7jw5o"><em>The Checklist Manifesto: How to Get Things Right</em></a><sup class="ref">[6]</sup> by Atul Gawande (Metropolitan Books, 2009).  A surgeon shows how a short pause to check the work prevents mistakes, in operating rooms and far outside them.</li>
+<li><a href="https://link.amazon/B08zhWei2"><em>Human Compatible: Artificial Intelligence and the Problem of Control</em></a><sup class="ref">[7]</sup> by Stuart Russell (Viking, 2019).  A Berkeley computer scientist explains why AI should be built to stay under human control.</li>
+<li>Ivan Mehta, TechCrunch, <a href="https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/">"Claude Duet app is Anthropic's bet on agents,"</a><sup class="ref">[8]</sup> October 22, 2026.  A news report that places Claude Duet among the competing AI agents.</li>
+</ul>
+  </article>
+  
+  <section class="endnotes"><h2>Links in this article</h2><ol><li>https://www.claude.com/resources/articles/claude-duet</li><li>https://support.claude.com/en/articles/17631495-get-started-with-claude-duet</li><li>https://www.macrumors.com/2026/10/21/anthropic-claude-duet/</li><li>https://link.amazon/B0eRoY6zi</li><li>https://link.amazon/B08Kl15u2</li><li>https://link.amazon/B0bl7jw5o</li><li>https://link.amazon/B08zhWei2</li><li>https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/</li></ol></section>
+  <footer class="colophon">
+    <p class="bio"><strong>John M Pogue</strong> is the Founder and Creative Strategist of Pogue Digital Solutions, LLC in Conroe, Texas. Navy veteran and former Hospital Corpsman with an M.S. in Digital Marketing from Full Sail University.</p>
+    <div class="subscribe-qr">
+      <img src="/img/qr-subscribe.svg" alt="QR code to sign up for new articles by email at poguedigitalsolutions.com/subscribe">
+      <p><strong>Get new articles by email</strong>Scan the code with your phone camera to sign up for updates.<br><span class="u">poguedigitalsolutions.com/subscribe</span></p>
+    </div>
+    <div class="url">Read online, comment, or share: https://poguedigitalsolutions.com/blog/what-is-claude-duet</div>
+    <div class="copy">&copy; 2026 Pogue Digital Solutions, LLC &middot; Conroe, TX</div>
+  </footer>
+</main>
+<script>
+document.querySelector(".back-link").addEventListener("click", e => {
+  let fromSite = false;
+  try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (_) {}
+  if (fromSite && history.length > 1) { e.preventDefault(); history.back(); }
+});
+if (new URLSearchParams(location.search).has("print")) window.addEventListener("load", () => setTimeout(() => window.print(), 400));</script>
+</body>
+</html>
