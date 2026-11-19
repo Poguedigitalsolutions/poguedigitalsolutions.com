@@ -56,7 +56,7 @@ To get in, you need three things:
 
 1. A Claude account in the United States.
 2. A Claude Pro, Max, or Ultra plan.  Team and Enterprise plans are not supported yet.
-3. An invitation, either from the waitlist or from someone who already uses Claude Duet.  I have three invites.  Drop a comment and I will send you a direct message (DM).
+3. An invitation, either from the waitlist or from someone who already uses Claude Duet.  I have three invites.  Email me at [john@poguedigitalsolutions.com](mailto:john@poguedigitalsolutions.com) and I will send you one.
 
 Invitations go out in waves, so joining the waitlist does not come with a date.  The app runs on iPhone and Android, and on the web at claude.ai.
 
