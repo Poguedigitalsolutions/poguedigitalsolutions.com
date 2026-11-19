@@ -6,6 +6,8 @@ author: John M Pogue
 date: 2026-11-19
 category: AI and Automation
 reading_time: 5 min
+image: img/john-m-pogue-what-is-claude-duet-social.jpg
+image_alt: Article banner for 'What Is Claude Duet? A Plain-Language Guide to the AI Assistant That Messages You First' by John M Pogue. On a dark navy background, a glowing gold smartphone sends out a speech bubble with three dots. The title appears on the right in white, with 'Messages You First' in gold, above the byline John M Pogue. The Pogue Digital Solutions, LLC logo sits at the lower left. PogueDigitalSolutions.com
 keywords: Claude Duet, what is Claude Duet, Anthropic Claude Duet, proactive AI agent, AI assistant, AI agent approvals, Claude Pro Max Ultra, prompt injection
 ---
 
