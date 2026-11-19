@@ -4,6 +4,7 @@ slug: ai-marketing-is-not-a-funnel-anymore
 description: Customers do not fall through a funnel. Marketing in the AI era needs continuity across research, brand, offers, content, and approval: a business operating system.
 author: John M Pogue
 date: 2026-07-30
+updated: 2026-11-19
 category: Marketing
 reading_time: 6 min
 source: https://www.linkedin.com/pulse/ai-marketing-funnel-anymore-business-operating-system-john-m-pogue-re2ac
@@ -319,6 +320,8 @@ Open big by giving AI a real problem, clear context, and honest knowledge.
 Let AI handle the repetitive work in the middle.
 
 Then close big by adding the human judgment, stories, and perspective that make the message yours.
+
+I teach this method as Navigate, Accelerate, Validate: a person sets the direction (open big), AI does the heavy lifting, and a person checks the work before it reaches a customer (close big).
 
 Because the future of marketing will not belong to the businesses that produce the most content.
 

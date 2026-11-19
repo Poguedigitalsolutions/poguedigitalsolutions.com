@@ -2178,7 +2178,7 @@ The question is whether you are willing to evolve with it.
 # What's Your Bottleneck? Can AI Be the Solution?
 
 URL: https://poguedigitalsolutions.com/blog/whats-your-bottleneck-can-ai-be-the-solution
-Published: 2026-08-06  Updated: 2026-08-06  Topic: AI and Automation
+Published: 2026-08-06  Updated: 2026-11-19  Topic: AI and Automation
 
 Artificial intelligence can generate ideas, analyze information, draft content, organize data, and automate repetitive work in seconds.
 
@@ -2280,6 +2280,8 @@ Open with a clearly defined problem.
 Let AI handle the repetitive, time-consuming work in the middle.
 
 Then close with human judgment, experience, stories, and approval.
+
+I teach this method as Navigate, Accelerate, Validate: a person sets the direction (Open Big), AI does the heavy lifting, and a person checks the work before it reaches a customer (Close Big).
 
 AI should accelerate the process.
 
@@ -2788,7 +2790,7 @@ Comment **PROMPT,** and I'll send it to you.
 # AI Marketing Is Not a Funnel Anymore. It Is a Business Operating System.
 
 URL: https://poguedigitalsolutions.com/blog/ai-marketing-is-not-a-funnel-anymore
-Published: 2026-07-30  Updated: 2026-07-30  Topic: Marketing
+Published: 2026-07-30  Updated: 2026-11-19  Topic: Marketing
 
 For years, marketing has been presented as a simple funnel:
 
@@ -3098,6 +3100,8 @@ Open big by giving AI a real problem, clear context, and honest knowledge.
 Let AI handle the repetitive work in the middle.
 
 Then close big by adding the human judgment, stories, and perspective that make the message yours.
+
+I teach this method as Navigate, Accelerate, Validate: a person sets the direction (open big), AI does the heavy lifting, and a person checks the work before it reaches a customer (close big).
 
 Because the future of marketing will not belong to the businesses that produce the most content.
 

@@ -4,6 +4,7 @@ slug: whats-your-bottleneck-can-ai-be-the-solution
 description: Adding AI does not remove a bottleneck. It can help you reach it faster. Where AI work slows down before, during, and after, and how to open the flow.
 author: John M Pogue
 date: 2026-08-06
+updated: 2026-11-19
 category: AI and Automation
 reading_time: 5 min
 source: https://www.linkedin.com/pulse/whats-your-bottleneck-can-ai-solution-john-m-pogue-aqmcc
@@ -111,6 +112,8 @@ Open with a clearly defined problem.
 Let AI handle the repetitive, time-consuming work in the middle.
 
 Then close with human judgment, experience, stories, and approval.
+
+I teach this method as Navigate, Accelerate, Validate: a person sets the direction (Open Big), AI does the heavy lifting, and a person checks the work before it reaches a customer (Close Big).
 
 AI should accelerate the process.
 
