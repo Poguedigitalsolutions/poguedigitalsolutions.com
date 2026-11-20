@@ -48,7 +48,7 @@ html = head("Free Business Assessments | Brand Voice, AI Readiness, Systems, Com
         <h3 style="font-size:22px;">Request a Strategic Assessment</h3>
         <p>A focused review designed to identify your strongest opportunities, immediate gaps, and logical next steps. Best for businesses that know something needs to improve but are not sure where to begin.</p>
       </div>
-      <a href="{CALENDLY}" class="btn btn-gold" target="_blank" rel="noopener">Request a Call <span class="btn-arrow">&rarr;</span></a>
+      <a href="{CALENDLY}" class="btn btn-gold" target="_blank" rel="noopener">Book a Strategy Call <span class="btn-arrow">&rarr;</span></a>
     </div>
   </div>
 </section>

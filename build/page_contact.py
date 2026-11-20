@@ -24,6 +24,11 @@ CONTACT_LD = json.dumps({"@context": "https://schema.org", "@graph": [
             "sameAs": [LINKEDIN, STARWEAVER]}},
  json.loads(breadcrumb("Contact", "contact.html"))]}, indent=1)
 
+TOPIC_LABELS = {"strategy": "A strategy call", "assessment": "An assessment", "brand-voice-ai": "Brand Voice AI",
+  "project": "A project", "advisory": "Advisory support", "workshop": "A workshop or speaking engagement",
+  "government": "Government contracting", "partnerships": "Partnerships or affiliates", "general": "Something else"}
+options = "".join(f'        <option value="{k}"{" selected" if k == "general" else ""}>{v}</option>\n' for k, v in TOPIC_LABELS.items())
+
 cards = ""
 for id_, title, desc, label, href, ext in INTENTS:
     attrs = ' target="_blank" rel="noopener"' if ext else ''
@@ -40,9 +45,9 @@ html = head("Contact | Book a Strategy Call with Pogue Digital Solutions",
     <div class="reveal">
       <span class="eyebrow">Contact</span>
       <h1 style="font-size:clamp(36px,5.4vw,64px); color:#fff; margin-top:16px;">Let&rsquo;s find out how it <em>can</em> be done.</h1>
-      <p style="font-size:17px; max-width:560px; margin-top:20px;">Pick the path that matches what you need. The fastest one is a 30-minute call. Everything else lands in John&rsquo;s inbox with the subject line already filled in.</p>
+      <p style="font-size:17px; max-width:560px; margin-top:20px;">Pick the path that matches what you need. The fastest one is a 30-minute call. You can also send a message with the form below, or use one of the paths that opens your email with the subject line already filled in.</p>
       <div style="display:flex; gap:16px; margin-top:30px; flex-wrap:wrap;">
-        <a href="{CALENDLY}" class="btn btn-gold" target="_blank" rel="noopener">Book a 30-Minute Call <span class="btn-arrow">&rarr;</span></a>
+        <a href="{CALENDLY}" class="btn btn-gold" target="_blank" rel="noopener">Book a Strategy Call <span class="btn-arrow">&rarr;</span></a>
         <a href="mailto:{EMAIL}" class="btn btn-outline-gold">{EMAIL}</a>
       </div>
       <div class="bearing" style="margin-top:44px; max-width:480px;"><span class="bearing-label">CONROE, TX</span><div class="bearing-rule"></div><span class="bearing-label">NATIONWIDE</span></div>
@@ -73,8 +78,36 @@ html = head("Contact | Book a Strategy Call with Pogue Digital Solutions",
   </div>
 </section>
 
+<!-- MESSAGE FORM -->
+<section class="on-paper-dim" id="message">
+  <div class="wrap" style="max-width:820px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Send a Message</span>
+      <h2>Prefer to write it out?</h2>
+      <p>Your message goes straight to John. He replies by email.</p>
+    </div>
+    <form id="contact-form" class="comments-form reveal" data-turnstile="{TURNSTILE_SITE_KEY}" novalidate style="margin-top:0;">
+      <div class="row-2">
+        <label>Name <input name="name" type="text" maxlength="80" required autocomplete="name"></label>
+        <label>Email <input name="email" type="email" maxlength="254" required autocomplete="email"></label>
+      </div>
+      <label>Topic <select name="topic">
+{options}      </select></label>
+      <label>Message <textarea name="message" maxlength="4000" required></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Website <input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <div class="cf-turnstile"></div>
+      <div class="comments-foot">
+        <button class="btn btn-gold" type="submit">Send Message <span class="btn-arrow">&rarr;</span></button>
+        <p class="comments-note"></p>
+      </div>
+      <p class="comments-hint">Your name, email, and message are used only to reply to you. See the <a href="privacy.html">privacy policy</a>.</p>
+    </form>
+  </div>
+</section>
+<script src="js/contact.js?v={ASSET_VER}" defer></script>
+
 <!-- GOVERNMENT DETAIL -->
-<section class="on-paper-dim">
+<section>
   <div class="wrap" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
     <div class="reveal">
       <span class="eyebrow">Government and Organizational Clients</span>

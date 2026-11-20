@@ -23,3 +23,15 @@ CREATE TABLE IF NOT EXISTS link_clicks (
   day   TEXT NOT NULL DEFAULT (date('now'))  -- UTC date only
 );
 CREATE INDEX IF NOT EXISTS idx_link_clicks_day ON link_clicks (day);
+
+-- Contact form messages (functions/api/contact.js also creates this table on first use).
+CREATE TABLE IF NOT EXISTS messages (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  name       TEXT NOT NULL,
+  email      TEXT NOT NULL,
+  topic      TEXT NOT NULL,
+  body       TEXT NOT NULL,
+  status     TEXT NOT NULL DEFAULT 'new',  -- new | read
+  ip_hash    TEXT,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);

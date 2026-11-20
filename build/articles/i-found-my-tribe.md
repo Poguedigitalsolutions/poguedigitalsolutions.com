@@ -24,8 +24,6 @@ Fifty years after the film flopped in theaters, people still show up at midnight
 
 I understood that fan. I found my tribe too!
 
-*Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.*
-
 ## My tribe wears a ballcap
 
 I'm a Navy veteran. My tribe follows me everywhere I go. When I meet another veteran, a stranger becomes family in about thirty seconds. We swap ships and rates, and then we're just talking like we've known each other for years, swapping stories and making jokes. We both leave with a smile, and it brightens our day.
@@ -96,11 +94,9 @@ That's what a tribe does. It puts its people on a pedestal. The Navy Memorial sa
 - [Carisa Hendrix's Magic Algorithm](https://www.youtube.com/watch?v=YFe1NFEBWYA). *Comedy Means Business*, Deadline (YouTube).
 - [Carisa Hendrix on her Rocky Horror shadow cast](https://www.youtube.com/shorts/5HNtY437h6k). YouTube Short.
 - [Interview: Carisa Hendrix on Lucy Darling](https://www.talktheatretome.com/theatre/lucydarlinginterview). Talk Theatre to Me.
-- [*Tribe: On Homecoming and Belonging*](https://link.amazon/B0hrf8BFF), Sebastian Junger (2016).
+- [*Tribe: On Homecoming and Belonging*](https://www.hachettebookgroup.com/titles/sebastian-junger/tribe/9781455566402/), Sebastian Junger (2016). Twelve, Hachette Book Group.
 
 ## Further reading
-
-*Some links in this article are affiliate links. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you.*
 
 - [*Tribe: On Homecoming and Belonging*](https://link.amazon/B0hrf8BFF), Sebastian Junger. Why veterans miss the belonging of their units, and what modern life lost.
 - [*Tribes: We Need You to Lead Us*](https://link.amazon/B0hDJ1JTm), Seth Godin. How anyone can gather a tribe around an idea, written for people building businesses and movements.

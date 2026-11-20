@@ -4,8 +4,8 @@ outbound links to Calendly and LinkedIn, and email through Gmail. Update it when
 from parts import *
 import json
 
-UPDATED = "November 7, 2026"
-UPDATED_ISO = "2026-11-07"
+UPDATED = "November 19, 2026"
+UPDATED_ISO = "2026-11-19"
 
 SECTIONS = [
 ("Who we are", f'''
@@ -14,7 +14,7 @@ SECTIONS = [
 '''),
 ("The short version", '''
 <ul>
-<li>There are two forms on this site: the blog signup, which asks for your first name and email so we can send you new articles, and the comment box under each blog post, which asks for a name and an optional email. There are no accounts.</li>
+<li>There are three forms on this site: the blog signup, which asks for your first name and email so we can send you new articles; the comment box under each blog post, which asks for a name and an optional email; and the message form on the contact page, which asks for your name, email, and message so John can reply. There are no accounts.</li>
 <li>We do not use advertising cookies or tracking pixels, and we do not sell or rent your information to anyone.</li>
 <li>We count visits with Cloudflare Web Analytics, which does not use cookies and does not follow you across other websites.</li>
 <li>When you click a link to Amazon, we count which book or product was clicked and on which page. Nothing about you is recorded with that count.</li>
@@ -23,9 +23,10 @@ SECTIONS = [
 '''),
 ("Information you choose to give us", f'''
 <p><strong>Email.</strong> Buttons on this site that say "email" open your own email program with a message addressed to {EMAIL}. Nothing is sent until you press send. When you do, we receive whatever you wrote, along with your name and email address.</p>
-<p><strong>Booking a call.</strong> The "Book a Call" buttons take you to Calendly, a separate scheduling service. Calendly collects the details you enter there, such as your name, email address, and answers to any booking questions, and shares them with us so we can hold the meeting. Calendly's own privacy policy covers how Calendly handles that information.</p>
+<p><strong>Booking a call.</strong> The "Book a Strategy Call" buttons take you to Calendly, a separate scheduling service. Calendly collects the details you enter there, such as your name, email address, and answers to any booking questions, and shares them with us so we can hold the meeting. Calendly's own privacy policy covers how Calendly handles that information.</p>
 <p><strong>Blog email updates.</strong> If you subscribe to the blog, you give us your first name and email address. The signup form is run by ClickFunnels, which stores your details as a contact for us and sends the emails. We use them only to send new articles and occasional updates from Pogue Digital Solutions, LLC. Every email has an unsubscribe link, and you can also ask us by email to remove you.</p>
 <p><strong>Blog comments.</strong> If you comment on a blog post, you give us a display name, your comment, and, if you choose, an email address. The name and comment are shown publicly once John approves them. The email address is never shown and is used only if we need to reply to you about your comment. We also keep a scrambled (hashed) version of your IP address for a short time to limit spam; it cannot be turned back into your address. Comments are stored in a Cloudflare database. You can ask us to edit or delete a comment at any time.</p>
+<p><strong>Contact form.</strong> If you use the message form on the contact page, you give us your name, email address, the topic you picked, and your message. We use them only to reply to you and to do the work you asked about. Messages are stored in a Cloudflare database, along with the same scrambled (hashed) IP address used to limit spam. You can ask us to delete your message at any time.</p>
 <p><strong>Assessments and workshop requests.</strong> These currently work by email, so the same rules as email apply.</p>
 <p>We use this information to answer your questions, schedule and hold meetings, prepare proposals, and deliver services you hire us for. We keep it only as long as we need it for those purposes or as long as the law or our own records require, such as for tax and contract records.</p>
 '''),
@@ -34,12 +35,12 @@ SECTIONS = [
 <p><strong>Amazon link clicks.</strong> Some pages link to books and products on Amazon, and some of those links earn us a commission. When you click one, your browser sends us three things: the page you were on, the Amazon product number, and the Amazon tracking code in the link. We store those with the date. We do not store your IP address, a cookie, your browser details, or the time of day, so a click cannot be traced back to you. We use these counts to see which books and products readers find useful. Amazon's own handling of your visit is covered by Amazon's privacy notice.</p>
 <p><strong>Server and security logs.</strong> Cloudflare hosts and protects this site. Like any web host, it processes technical information such as your IP address and browser details to deliver pages, block attacks, and keep the site running.</p>
 <p><strong>Fonts.</strong> This site loads its typefaces from Google Fonts. When a page loads, your browser asks Google's servers for the font files, which means Google receives your IP address and basic browser information. Google says it does not use Google Fonts requests to build advertising profiles.</p>
-<p><strong>Cookies.</strong> We do not set advertising cookies on this site. Cloudflare may use a strictly necessary security cookie to tell real visitors from automated attacks, and the comment form uses Cloudflare Turnstile, a cookie-free check that stops bots without making you solve a puzzle. The blog signup form loads a ClickFunnels script that may set its own cookies and record that the form was viewed and submitted. Calendly and LinkedIn set their own cookies once you go to their sites.</p>
+<p><strong>Cookies.</strong> We do not set advertising cookies on this site. Cloudflare may use a strictly necessary security cookie to tell real visitors from automated attacks, and the comment and contact forms use Cloudflare Turnstile, a cookie-free check that stops bots without making you solve a puzzle. The blog signup form loads a ClickFunnels script that may set its own cookies and record that the form was viewed and submitted. Calendly and LinkedIn set their own cookies once you go to their sites.</p>
 '''),
 ("Services we rely on", '''
 <p>A few outside companies handle parts of how this site and business run. Each has its own privacy policy:</p>
 <ul>
-<li><strong>Cloudflare</strong>: website hosting, security, email forwarding, cookie-free visit counts, the Turnstile bot check, and storage for blog comments and Amazon link click counts.</li>
+<li><strong>Cloudflare</strong>: website hosting, security, email forwarding, cookie-free visit counts, the Turnstile bot check, and storage for blog comments, Amazon link click counts, and contact form messages.</li>
 <li><strong>Google</strong>: Google Fonts on this site, and Gmail for business email.</li>
 <li><strong>Calendly</strong>: scheduling calls.</li>
 <li><strong>ClickFunnels</strong>: the blog signup form, the subscriber list, and blog update emails.</li>

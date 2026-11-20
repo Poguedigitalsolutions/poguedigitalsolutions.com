@@ -49,7 +49,7 @@ html = head(
       <p style="font-size:17px; max-width:560px;">Pogue Digital Solutions, LLC helps you organize that knowledge, clarify your direction, and build practical AI-assisted systems that support better marketing, communication, customer experiences, and business operations.</p>
       <div style="display:flex; gap:16px; margin-top:30px; flex-wrap:wrap;">
         <a href="assessments.html" class="btn btn-gold">Find the Right Solution <span class="btn-arrow">&rarr;</span></a>
-        <a href="{CALENDLY}" class="btn btn-outline-gold" target="_blank" rel="noopener">Schedule a Strategy Conversation</a>
+        <a href="{CALENDLY}" class="btn btn-outline-gold" target="_blank" rel="noopener">Book a Strategy Call</a>
       </div>
       <p class="quote-band" style="margin-top:40px; font-size:19px;">We do not begin with software. We begin with the problem your business needs to solve.</p>
     </div>
@@ -238,7 +238,7 @@ html = head(
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
           <span class="pill">SAM.gov active</span><span class="pill">UEI Y6S7ZHLJH5V6</span><span class="pill">CAGE 219K1</span><span class="pill">NAICS 541613</span><span class="pill">Veteran-owned</span>
         </div>
-        <a href="government.html" class="btn btn-outline-gold" style="margin-top:26px;">Explore Government and Organizational Services <span class="btn-arrow">&rarr;</span></a>
+        <a href="government.html" class="btn btn-outline-gold" style="margin-top:26px;">Explore Government Services <span class="btn-arrow">&rarr;</span></a>
       </div>
       <div class="grid-2" style="gap:18px;">
         <div class="card-glass">
@@ -282,7 +282,7 @@ html = head(
     </div>
     <div class="bento reveal">
       <div class="card"><span class="card-eyebrow">Assessment</span><h3 style="font-size:19px;">Strategic Assessment</h3><p style="font-size:14.5px;">A focused review designed to identify your strongest opportunities, immediate gaps, and logical next steps.</p><p style="font-size:13px;"><strong>Best for:</strong> businesses that know something needs to improve but are not sure where to begin.</p><a href="assessments.html#strategic" class="btn btn-outline-navy" style="margin-top:12px; font-size:11px; padding:10px 16px;">Request a Strategic Assessment</a></div>
-      <div class="card"><span class="card-eyebrow">Session</span><h3 style="font-size:19px;">Strategy Session</h3><p style="font-size:14.5px;">A working conversation focused on a specific problem, decision, system, campaign, or opportunity.</p><p style="font-size:13px;"><strong>Best for:</strong> founders who need clarity before committing to a larger project.</p><a href="{CALENDLY}" class="btn btn-outline-navy" style="margin-top:12px; font-size:11px; padding:10px 16px;" target="_blank" rel="noopener">Schedule a Strategy Session</a></div>
+      <div class="card"><span class="card-eyebrow">Call</span><h3 style="font-size:19px;">Strategy Call</h3><p style="font-size:14.5px;">A working conversation focused on a specific problem, decision, system, campaign, or opportunity.</p><p style="font-size:13px;"><strong>Best for:</strong> founders who need clarity before committing to a larger project.</p><a href="{CALENDLY}" class="btn btn-outline-navy" style="margin-top:12px; font-size:11px; padding:10px 16px;" target="_blank" rel="noopener">Book a Strategy Call</a></div>
       <div class="card span-2"><span class="card-eyebrow">Project</span><h3 style="font-size:19px;">Project-Based Consulting</h3><p style="font-size:14.5px;">A defined engagement with specific deliverables, milestones, and outcomes.</p>{li(["Brand Voice AI foundations","Website strategy","Customer journey mapping","AI workflow planning","Messaging systems","Content operations","Training development"], cols=2)}<a href="contact.html#project" class="btn btn-outline-navy" style="margin-top:18px; font-size:11px; padding:10px 16px;">Discuss a Project</a></div>
       <div class="card span-2"><span class="card-eyebrow">Training</span><h3 style="font-size:19px;">Workshops and Training</h3><p style="font-size:14.5px;">Customized education for teams, organizations, communities, and professional groups.</p><a href="contact.html#workshop" class="btn btn-outline-navy" style="margin-top:12px; font-size:11px; padding:10px 16px;">Request a Workshop</a></div>
       <div class="card span-2"><span class="card-eyebrow">Advisory</span><h3 style="font-size:19px;">Ongoing Advisory Support</h3><p style="font-size:14.5px;">Continued strategic guidance for businesses implementing new systems, marketing plans, AI workflows, or organizational changes.</p><p style="font-size:13px;"><strong>Best for:</strong> businesses that need consistent support without hiring a full-time strategist.</p><a href="contact.html#advisory" class="btn btn-outline-navy" style="margin-top:12px; font-size:11px; padding:10px 16px;">Ask About Advisory Support</a></div>
